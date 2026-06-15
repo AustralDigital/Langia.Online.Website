@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
 
-import { MarketingPageShell } from "@/components/MarketingPageShell";
-import { pagesContent } from "@/content/pages";
-
-const content = pagesContent.es.workWithUs;
+import WorkWithUsClient from "./WorkWithUsClient";
 
 export const metadata: Metadata = {
-  title: `${content.title} | Langia Online`,
-  description: content.subtitle,
+  title: "Work with Langia | Teacher Collaboration",
+  description:
+    "Express interest in future remote freelance teaching collaboration opportunities with Langia for English, French, Spanish, and Portuguese.",
 };
 
 export default function WorkWithUsPage() {
-  return <MarketingPageShell content={content} />;
+  return <WorkWithUsClient />;
 }

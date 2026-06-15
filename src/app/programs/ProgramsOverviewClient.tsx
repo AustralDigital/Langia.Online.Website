@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, type ReactNode } from "react";
 
+import { SiteFooter } from "@/components/site/SiteFooter";
+import { SiteNavbar } from "@/components/site/SiteNavbar";
 import {
   defaultPageLanguage,
   pagesContent,
@@ -13,11 +15,6 @@ import {
 } from "@/content/pages";
 
 const LANGUAGE_STORAGE_KEY = "langiaLanguage";
-const languages: { value: PageLanguage; label: string }[] = [
-  { value: "es", label: "ES" },
-  { value: "pt", label: "PT" },
-  { value: "en", label: "EN" },
-];
 
 type ImageAvailability = Record<string, boolean>;
 
@@ -113,58 +110,6 @@ function Button({
       {children}
       <ArrowIcon />
     </Link>
-  );
-}
-
-function MarketingNav({
-  language,
-  onLanguageChange,
-}: {
-  language: PageLanguage;
-  onLanguageChange: (language: PageLanguage) => void;
-}) {
-  return (
-    <header className="border-b border-[#E4EDF7] bg-white/90 px-4 py-4 backdrop-blur-xl sm:px-6 lg:px-10">
-      <nav className="mx-auto flex max-w-[1180px] flex-wrap items-center justify-between gap-4">
-        <Link href="/" className="font-heading text-xl font-semibold text-[#0B1F3A]">
-          Langia
-        </Link>
-        <div className="flex flex-wrap items-center gap-2 text-sm font-semibold text-[#42526A]">
-          <Link className="rounded-full px-3 py-2 hover:bg-[#F3F7FB] hover:text-[#048EFF]" href="/programs">
-            Programas
-          </Link>
-          <Link className="rounded-full px-3 py-2 hover:bg-[#F3F7FB] hover:text-[#048EFF]" href="/about">
-            Sobre Langia
-          </Link>
-          <Link className="rounded-full px-3 py-2 hover:bg-[#F3F7FB] hover:text-[#048EFF]" href="/corporate">
-            Corporativo
-          </Link>
-          <Link className="rounded-full px-3 py-2 hover:bg-[#F3F7FB] hover:text-[#048EFF]" href="/blog">
-            Blog
-          </Link>
-          <Link className="rounded-full px-3 py-2 hover:bg-[#F3F7FB] hover:text-[#048EFF]" href="/contact">
-            Contacto
-          </Link>
-          <div className="ml-1 inline-flex rounded-full border border-[#D8E6F4] bg-white p-1">
-            {languages.map((item) => (
-              <button
-                key={item.value}
-                type="button"
-                onClick={() => onLanguageChange(item.value)}
-                className={`rounded-full px-3 py-1.5 text-xs font-semibold transition ${
-                  language === item.value
-                    ? "bg-[#0B1F3A] text-white"
-                    : "text-[#42526A] hover:text-[#048EFF]"
-                }`}
-                aria-pressed={language === item.value}
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
-        </div>
-      </nav>
-    </header>
   );
 }
 
@@ -488,73 +433,12 @@ function CorporateSection({
   );
 }
 
-function FooterColumn({ title, links }: { title: string; links: { label: string; href: string }[] }) {
-  return (
-    <div>
-      <h2 className="font-heading text-sm font-semibold text-white">{title}</h2>
-      <div className="mt-5 grid gap-3 text-sm text-white/65">
-        {links.map((link) => (
-          <Link key={link.href} href={link.href} className="hover:text-white">
-            {link.label}
-          </Link>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function MarketingFooter() {
-  return (
-    <footer className="bg-white px-4 pb-5 pt-10 sm:px-6 lg:px-10">
-      <div className="mx-auto grid max-w-[1180px] gap-10 rounded-[2rem] bg-[#0B1F3A] p-8 text-white shadow-[0_30px_90px_rgba(11,31,58,0.2)] md:grid-cols-[1.1fr_1.6fr] sm:p-10">
-        <div>
-          <Link href="/" className="font-heading text-2xl font-semibold">
-            Langia
-          </Link>
-          <p className="mt-4 max-w-sm text-sm leading-7 text-white/65">
-            Idiomas con estructura para comunicación global.
-          </p>
-        </div>
-        <div className="grid gap-8 sm:grid-cols-3">
-          <FooterColumn
-            title="Programas"
-            links={[
-              { label: "Programas", href: "/programs" },
-              { label: "Langia Online", href: "/programs/langia-online" },
-              { label: "Talkin' Club", href: "/programs/talkin-club" },
-              { label: "Test Prep", href: "/programs/test-prep" },
-              { label: "Kids n Teens", href: "/programs/langia-4-kids-n-teens" },
-            ]}
-          />
-          <FooterColumn
-            title="Empresa"
-            links={[
-              { label: "Sobre Langia", href: "/about" },
-              { label: "Corporativo", href: "/corporate" },
-              { label: "Legal", href: "/legal" },
-              { label: "Trabaja con nosotros", href: "/work-with-us" },
-            ]}
-          />
-          <FooterColumn
-            title="Recursos"
-            links={[
-              { label: "Blog", href: "/blog" },
-              { label: "Prueba de nivel", href: "/test-your-english-level" },
-              { label: "Contacto", href: "/contact" },
-            ]}
-          />
-        </div>
-      </div>
-    </footer>
-  );
-}
-
 export function ProgramsOverviewClient({
   imageAvailability,
 }: {
   imageAvailability: ImageAvailability;
 }) {
-  const [language, setLanguage] = useState<PageLanguage>(() => {
+  const [language] = useState<PageLanguage>(() => {
     if (typeof window === "undefined") {
       return defaultPageLanguage;
     }
@@ -563,18 +447,13 @@ export function ProgramsOverviewClient({
     return isPageLanguage(storedLanguage) ? storedLanguage : detectBrowserLanguage();
   });
 
-  function handleLanguageChange(nextLanguage: PageLanguage) {
-    setLanguage(nextLanguage);
-    window.localStorage.setItem(LANGUAGE_STORAGE_KEY, nextLanguage);
-  }
-
   const content = getProgramsOverview(language);
   const individualPrograms = content.programCards.slice(0, 4);
   const corporateProgram = content.programCards[4];
 
   return (
     <main className="min-h-screen bg-white text-[#0B1F3A]">
-      <MarketingNav language={language} onLanguageChange={handleLanguageChange} />
+      <SiteNavbar variant="light" />
 
       <section className="bg-[#F3F7FB] px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
         <div className="mx-auto grid max-w-[1180px] gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
@@ -641,7 +520,7 @@ export function ProgramsOverviewClient({
         </div>
       </section>
 
-      <MarketingFooter />
+      <SiteFooter />
     </main>
   );
 }

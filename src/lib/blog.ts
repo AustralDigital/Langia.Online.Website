@@ -1,10 +1,26 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 
+import matter from "gray-matter";
+
 const BLOG_CONTENT_DIR = path.join(process.cwd(), "src/content/blog");
 const PUBLIC_DIR = path.join(process.cwd(), "public");
+const DEFAULT_AUTHOR_NAME = "Langia Editorial Team";
+const DEFAULT_CTA_LABEL = "Talk to Langia";
+const DEFAULT_CTA_HREF = "/contact";
+
+export const blogCategories = [
+  "Learning Guides",
+  "Test Prep",
+  "Kids & Teens",
+  "Corporate",
+  "Languages",
+  "Immigration / Study Abroad",
+  "Langia News",
+] as const;
 
 export type BlogLanguage = "es" | "pt" | "en";
+export type BlogCategory = (typeof blogCategories)[number];
 
 export type BlogPost = {
   slug: string;
@@ -12,61 +28,58 @@ export type BlogPost = {
   description: string;
   date: string;
   language: BlogLanguage;
-  coverImage: string;
+  category: BlogCategory;
+  coverImage?: string;
   coverImageExists: boolean;
-  category: string;
+  authorName: string;
+  authorRole?: string;
+  authorImage?: string;
+  authorImageExists: boolean;
   published: boolean;
-  body: string;
+  featured?: boolean;
+  ctaLabel: string;
+  ctaHref: string;
+  readingTime: number;
+  content: string;
 };
 
-type BlogFrontmatter = Omit<BlogPost, "slug" | "body" | "coverImageExists">;
-
-function parseFrontmatterValue(value: string): string | boolean {
-  const trimmed = value.trim();
-
-  if (trimmed === "true") {
-    return true;
-  }
-
-  if (trimmed === "false") {
-    return false;
-  }
-
-  if (
-    (trimmed.startsWith('"') && trimmed.endsWith('"')) ||
-    (trimmed.startsWith("'") && trimmed.endsWith("'"))
-  ) {
-    return trimmed.slice(1, -1);
-  }
-
-  return trimmed;
-}
+type BlogFrontmatter = {
+  title?: unknown;
+  description?: unknown;
+  date?: unknown;
+  language?: unknown;
+  category?: unknown;
+  coverImage?: unknown;
+  authorName?: unknown;
+  authorRole?: unknown;
+  authorImage?: unknown;
+  published?: unknown;
+  featured?: unknown;
+  ctaLabel?: unknown;
+  ctaHref?: unknown;
+};
 
 function isBlogLanguage(value: unknown): value is BlogLanguage {
   return value === "es" || value === "pt" || value === "en";
 }
 
-function requireString(
-  frontmatter: Record<string, string | boolean>,
-  key: keyof BlogFrontmatter,
-  slug: string,
-): string {
-  const value = frontmatter[key];
+function isBlogCategory(value: unknown): value is BlogCategory {
+  return typeof value === "string" && blogCategories.includes(value as BlogCategory);
+}
 
-  if (typeof value !== "string" || value.length === 0) {
+function requireString(value: unknown, key: string, slug: string): string {
+  if (typeof value !== "string" || value.trim().length === 0) {
     throw new Error(`Blog post "${slug}" is missing a valid "${key}" field.`);
   }
 
-  return value;
+  return value.trim();
 }
 
-function requireBoolean(
-  frontmatter: Record<string, string | boolean>,
-  key: keyof BlogFrontmatter,
-  slug: string,
-): boolean {
-  const value = frontmatter[key];
+function optionalString(value: unknown): string | undefined {
+  return typeof value === "string" && value.trim().length > 0 ? value.trim() : undefined;
+}
 
+function requireBoolean(value: unknown, key: string, slug: string): boolean {
   if (typeof value !== "boolean") {
     throw new Error(`Blog post "${slug}" is missing a valid "${key}" field.`);
   }
@@ -74,77 +87,93 @@ function requireBoolean(
   return value;
 }
 
-function parseBlogFile(fileName: string): BlogPost {
-  const slug = fileName.replace(/\.md$/, "");
-  const filePath = path.join(BLOG_CONTENT_DIR, fileName);
-  const fileContent = readFileSync(filePath, "utf8");
-  const match = /^---\n([\s\S]*?)\n---\n?([\s\S]*)$/u.exec(fileContent);
+function optionalBoolean(value: unknown): boolean | undefined {
+  return typeof value === "boolean" ? value : undefined;
+}
 
-  if (!match) {
-    throw new Error(`Blog post "${slug}" must start with frontmatter.`);
+function publicFileExists(publicPath?: string): boolean {
+  if (!publicPath?.startsWith("/")) {
+    return false;
   }
 
-  const frontmatter = match[1].split("\n").reduce<Record<string, string | boolean>>(
-    (fields, line) => {
-      const separatorIndex = line.indexOf(":");
+  return existsSync(path.join(PUBLIC_DIR, publicPath));
+}
 
-      if (separatorIndex === -1) {
-        return fields;
-      }
+export function calculateReadingTime(content: string): number {
+  const words = content
+    .replace(/[`*_>#\-[\]()]/gu, " ")
+    .split(/\s+/u)
+    .filter(Boolean);
 
-      const key = line.slice(0, separatorIndex).trim();
-      const value = line.slice(separatorIndex + 1);
+  return Math.max(1, Math.ceil(words.length / 200));
+}
 
-      return {
-        ...fields,
-        [key]: parseFrontmatterValue(value),
-      };
-    },
-    {},
-  );
-
+function parseBlogFile(fileName: string): BlogPost {
+  const slug = fileName.replace(/\.md$/u, "");
+  const filePath = path.join(BLOG_CONTENT_DIR, fileName);
+  const fileContent = readFileSync(filePath, "utf8");
+  const parsed = matter(fileContent);
+  const frontmatter = parsed.data as BlogFrontmatter;
   const language = frontmatter.language;
+  const category = frontmatter.category;
 
   if (!isBlogLanguage(language)) {
     throw new Error(`Blog post "${slug}" is missing a valid "language" field.`);
   }
 
-  const coverImage = requireString(frontmatter, "coverImage", slug);
-  const publicImagePath = coverImage.startsWith("/")
-    ? path.join(PUBLIC_DIR, coverImage)
-    : "";
+  if (!isBlogCategory(category)) {
+    throw new Error(`Blog post "${slug}" is missing a supported "category" field.`);
+  }
+
+  const coverImage = optionalString(frontmatter.coverImage);
+  const authorImage = optionalString(frontmatter.authorImage);
+  const content = parsed.content.trim();
 
   return {
     slug,
-    title: requireString(frontmatter, "title", slug),
-    description: requireString(frontmatter, "description", slug),
-    date: requireString(frontmatter, "date", slug),
+    title: requireString(frontmatter.title, "title", slug),
+    description: requireString(frontmatter.description, "description", slug),
+    date: requireString(frontmatter.date, "date", slug),
     language,
+    category,
     coverImage,
-    coverImageExists: publicImagePath.length > 0 && existsSync(publicImagePath),
-    category: requireString(frontmatter, "category", slug),
-    published: requireBoolean(frontmatter, "published", slug),
-    body: match[2].trim(),
+    coverImageExists: publicFileExists(coverImage),
+    authorName: optionalString(frontmatter.authorName) ?? DEFAULT_AUTHOR_NAME,
+    authorRole: optionalString(frontmatter.authorRole),
+    authorImage,
+    authorImageExists: publicFileExists(authorImage),
+    published: requireBoolean(frontmatter.published, "published", slug),
+    featured: optionalBoolean(frontmatter.featured),
+    ctaLabel: optionalString(frontmatter.ctaLabel) ?? DEFAULT_CTA_LABEL,
+    ctaHref: optionalString(frontmatter.ctaHref) ?? DEFAULT_CTA_HREF,
+    readingTime: calculateReadingTime(content),
+    content,
   };
 }
 
-export function getAllBlogPosts(): BlogPost[] {
+export function getAllPosts(): BlogPost[] {
   return readdirSync(BLOG_CONTENT_DIR)
     .filter((fileName) => fileName.endsWith(".md"))
     .map(parseBlogFile)
-    .sort((firstPost, secondPost) =>
-      secondPost.date.localeCompare(firstPost.date),
-    );
+    .sort((firstPost, secondPost) => secondPost.date.localeCompare(firstPost.date));
 }
 
-export function getPublishedBlogPosts(): BlogPost[] {
-  return getAllBlogPosts().filter((post) => post.published);
+export function getPublishedPosts(): BlogPost[] {
+  return getAllPosts().filter((post) => post.published);
 }
 
-export function getLatestPublishedBlogPosts(limit: number): BlogPost[] {
-  return getPublishedBlogPosts().slice(0, limit);
+export function getPostBySlug(slug: string): BlogPost | null {
+  return getPublishedPosts().find((post) => post.slug === slug) ?? null;
 }
 
-export function getPublishedBlogPost(slug: string): BlogPost | null {
-  return getPublishedBlogPosts().find((post) => post.slug === slug) ?? null;
+export function getLatestPosts(limit: number): BlogPost[] {
+  return getPublishedPosts().slice(0, limit);
 }
+
+export function getPostsByCategory(category: BlogCategory): BlogPost[] {
+  return getPublishedPosts().filter((post) => post.category === category);
+}
+
+export const getPublishedBlogPosts = getPublishedPosts;
+export const getPublishedBlogPost = getPostBySlug;
+export const getLatestPublishedBlogPosts = getLatestPosts;

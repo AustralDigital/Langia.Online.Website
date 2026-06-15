@@ -12,6 +12,8 @@ import {
 } from "framer-motion";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
+import { SiteNavbar } from "@/components/site/SiteNavbar";
+import { navigationContent } from "@/content/navigation";
 import {
   defaultLanguage,
   homepageContent,
@@ -21,8 +23,8 @@ import {
   type HomepageIconName,
   type HomepageLanguage,
 } from "@/content/homepage";
+import { languageStorageKey, notifyLanguageChange } from "@/lib/language";
 
-const LANGUAGE_STORAGE_KEY = "langiaLanguage";
 const eyebrowClasses =
   "font-heading text-xs font-semibold uppercase tracking-[0.18em] text-[#048EFF]";
 const cardClasses =
@@ -277,115 +279,7 @@ function HeroHeadline({ copy }: { copy: HomepageCopy["hero"] }) {
   );
 }
 
-function Navbar({ copy }: { copy: HomepageCopy }) {
-  const [open, setOpen] = useState(false);
-
-  const links = [
-    { label: copy.nav.programs, href: "/programs", menu: copy.nav.programsMenu },
-    { label: copy.nav.about, href: "/about", menu: copy.nav.aboutMenu },
-    { label: copy.nav.contact, href: "/contact" },
-  ];
-
-  return (
-    <div className="absolute inset-x-8 top-4 z-20 sm:inset-x-12 sm:top-6 lg:inset-x-16 xl:inset-x-20">
-      <nav className="flex items-center justify-between gap-4">
-        <div>
-          <LogoMark dark imageClassName="h-24 w-auto" logo={copy.logo} />
-        </div>
-
-        <div className="hidden min-h-16 items-center gap-2 rounded-full border border-white/20 bg-white/12 px-3 shadow-[0_18px_48px_rgba(0,0,0,0.14)] backdrop-blur-2xl lg:flex">
-          <div className="flex items-center gap-1 px-2">
-            {links.map((link) => (
-              <div key={link.label} className="group relative">
-                <Link
-                  href={link.href}
-                  className="inline-flex rounded-full px-4 py-2 text-sm font-medium !text-[#FFFFFF] transition hover:bg-white/10 hover:!text-[#FFFFFF]"
-                >
-                  {link.label}
-                </Link>
-                {link.menu ? (
-                  <div className="invisible absolute left-0 top-full z-30 mt-3 min-w-64 rounded-[1.5rem] border border-white/20 bg-[#0B1F3A]/92 p-3 opacity-0 shadow-[0_18px_48px_rgba(0,0,0,0.22)] backdrop-blur-2xl transition group-hover:visible group-hover:opacity-100">
-                    <div className="grid gap-1">
-                      {link.menu.map((item) => (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          className="rounded-2xl px-3 py-2.5 text-sm font-semibold !text-white/75 transition hover:bg-white/10 hover:!text-[#FFFFFF]"
-                        >
-                          {item.label}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                ) : null}
-              </div>
-            ))}
-          </div>
-
-          <Link
-            href="#"
-            className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/20 bg-white/15 px-4 text-sm font-semibold !text-[#FFFFFF] transition hover:bg-white/20"
-          >
-            {copy.nav.login}
-          </Link>
-          <Button href="/contact" variant="dark">{copy.nav.cta}</Button>
-        </div>
-
-        <button
-          type="button"
-          onClick={() => setOpen((value) => !value)}
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/12 text-[#FFFFFF] shadow-[0_12px_28px_rgba(0,0,0,0.14)] backdrop-blur-xl lg:hidden"
-          aria-label={copy.nav.mobileMenuLabel}
-          aria-expanded={open}
-        >
-          <Icon name={open ? "close" : "menu"} className="h-5 w-5" />
-        </button>
-      </nav>
-
-      {open ? (
-        <div className="mt-3 rounded-[1.75rem] border border-white/20 bg-[#0B1F3A]/85 p-4 shadow-[0_18px_48px_rgba(0,0,0,0.18)] backdrop-blur-2xl lg:hidden">
-          <div className="grid gap-2">
-            {links.map((link) => (
-              <div key={link.label} className="grid gap-1">
-                <Link
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className="rounded-2xl px-3 py-3 text-sm font-semibold !text-[#FFFFFF] hover:bg-white/10 hover:!text-[#FFFFFF]"
-                >
-                  {link.label}
-                </Link>
-                {link.menu ? (
-                  <div className="grid gap-1 pl-3">
-                    {link.menu.map((item) => (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        onClick={() => setOpen(false)}
-                        className="rounded-2xl px-3 py-2 text-sm font-semibold !text-white/70 hover:bg-white/10 hover:!text-[#FFFFFF]"
-                      >
-                        {item.label}
-                      </Link>
-                    ))}
-                  </div>
-                ) : null}
-              </div>
-            ))}
-            <Link
-              href="#"
-              onClick={() => setOpen(false)}
-              className="rounded-2xl px-3 py-3 text-sm font-semibold !text-[#FFFFFF] hover:bg-white/10 hover:!text-[#FFFFFF]"
-            >
-              {copy.nav.login}
-            </Link>
-            <Button href="/contact">{copy.nav.cta}</Button>
-          </div>
-        </div>
-      ) : null}
-    </div>
-  );
-}
-
-function Hero({ copy }: { copy: HomepageCopy }) {
+function Hero({ copy, language }: { copy: HomepageCopy; language: HomepageLanguage }) {
   return (
     <section className="bg-[#FFFFFF] px-4 pb-8 pt-4 sm:px-6 lg:px-10">
       <div
@@ -395,7 +289,7 @@ function Hero({ copy }: { copy: HomepageCopy }) {
           backgroundPosition: "right 28% center",
         }}
       >
-        <Navbar copy={copy} />
+        <SiteNavbar variant="dark" language={language} />
         <div className="grid min-h-[720px] gap-10 px-8 pb-12 pt-40 sm:px-12 sm:pb-14 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:px-16 lg:pb-16 lg:pt-36 xl:px-20">
           <div className="relative z-10 max-w-xl">
             <h1 className="font-heading text-4xl font-semibold leading-[1.05] text-[#FFFFFF] text-balance sm:text-5xl xl:text-[4rem]">
@@ -976,63 +870,6 @@ function Resources({ copy }: { copy: HomepageCopy["resources"] }) {
   );
 }
 
-function footerHref(label: string) {
-  const normalized = label
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/gu, "");
-
-  if (normalized.includes("langia online")) {
-    return "/programs/langia-online";
-  }
-
-  if (normalized.includes("talkin")) {
-    return "/programs/talkin-club";
-  }
-
-  if (normalized.includes("test prep")) {
-    return "/programs/test-prep";
-  }
-
-  if (normalized.includes("kids")) {
-    return "/programs/langia-4-kids-n-teens";
-  }
-
-  if (normalized.includes("program")) {
-    return "/programs";
-  }
-
-  if (normalized.includes("corpor")) {
-    return "/corporate";
-  }
-
-  if (normalized.includes("legal")) {
-    return "/legal";
-  }
-
-  if (normalized.includes("trabaja") || normalized.includes("trabalhe") || normalized.includes("work")) {
-    return "/work-with-us";
-  }
-
-  if (normalized.includes("nosotros") || normalized.includes("sobre") || normalized.includes("about")) {
-    return "/about";
-  }
-
-  if (normalized.includes("recurso") || normalized.includes("resource")) {
-    return "/blog";
-  }
-
-  if (normalized.includes("nivel") || normalized.includes("level")) {
-    return "/test-your-english-level";
-  }
-
-  if (normalized.includes("contact") || normalized.includes("contato")) {
-    return "/contact";
-  }
-
-  return "#";
-}
-
 function Footer({
   copy,
   language,
@@ -1042,6 +879,8 @@ function Footer({
   language: HomepageLanguage;
   setLanguage: (language: HomepageLanguage) => void;
 }) {
+  const navigation = navigationContent[language];
+
   return (
     <footer className="bg-[#FFFFFF] px-4 pb-4 pt-20 sm:px-6 lg:px-10">
       <div className="mx-auto rounded-[3rem] bg-gradient-to-br from-[#0B1F3A] via-[#081A2F] to-[#06243F] p-8 text-[#FFFFFF] shadow-[0_30px_100px_rgba(11,31,58,0.22)] sm:p-10 lg:p-14">
@@ -1049,7 +888,7 @@ function Footer({
           <div>
             <LogoMark dark logo={copy.logo} />
             <p className="mt-6 max-w-sm text-base leading-8 text-white/70">
-              {copy.footer.tagline}
+              {navigation.footer.brandLine}
             </p>
             <div className="mt-8 flex gap-3">
               {[1, 2, 3].map((item) => (
@@ -1062,13 +901,13 @@ function Footer({
           </div>
 
           <div className="grid gap-8 sm:grid-cols-3">
-            {copy.footer.columns.map((column) => (
+            {navigation.footer.columns.map((column) => (
               <div key={column.title}>
                 <h3 className="font-heading text-sm font-semibold text-[#FFFFFF]">{column.title}</h3>
                 <div className="mt-5 grid gap-3 text-sm text-white/60">
                   {column.links.map((link) => (
-                    <Link key={link} href={footerHref(link)} className="hover:text-[#FFFFFF]">
-                      {link}
+                    <Link key={link.href + link.label} href={link.href} className="hover:text-[#FFFFFF]">
+                      {link.label}
                     </Link>
                   ))}
                 </div>
@@ -1078,12 +917,12 @@ function Footer({
 
           <div>
             <h3 className="font-heading text-sm font-semibold text-[#FFFFFF]">
-              {copy.footer.newsletter}
+              {navigation.updates}
             </h3>
             <div className="mt-5 flex rounded-full border border-white/15 bg-white/10 p-1">
               <input
-                aria-label={copy.footer.newsletter}
-                placeholder={copy.footer.newsletterPlaceholder}
+                aria-label={navigation.updates}
+                placeholder={navigation.emailPlaceholder}
                 className="min-w-0 flex-1 bg-transparent px-4 text-sm text-[#FFFFFF] outline-none placeholder:text-white/45"
               />
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#048EFF] text-[#FFFFFF] transition hover:bg-[#F3B737]">
@@ -1091,13 +930,13 @@ function Footer({
               </span>
             </div>
             <div className="mt-8">
-              <p className="mb-3 text-sm font-semibold text-[#FFFFFF]">{copy.footerLanguageLabel}</p>
+              <p className="mb-3 text-sm font-semibold text-[#FFFFFF]">{navigation.footer.languageLabel}</p>
               <LanguageToggle language={language} onChange={setLanguage} />
             </div>
           </div>
         </div>
         <div className="mt-12 border-t border-white/10 pt-6 text-xs text-white/50">
-          {copy.footer.structuralLabel}
+          Langia Language Solutions LLC. {navigation.footer.copyright}
         </div>
       </div>
     </footer>
@@ -1112,16 +951,18 @@ export default function LangiaMarketingHomepage() {
     setLanguage(nextLanguage);
 
     try {
-      window.localStorage.setItem(LANGUAGE_STORAGE_KEY, nextLanguage);
+      window.localStorage.setItem(languageStorageKey, nextLanguage);
     } catch {
       // The selected language still updates when storage is unavailable.
     }
+
+    notifyLanguageChange(nextLanguage);
   }
 
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => {
       try {
-        const storedLanguage = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
+        const storedLanguage = window.localStorage.getItem(languageStorageKey);
 
         if (storedLanguage && isHomepageLanguage(storedLanguage)) {
           setLanguage(storedLanguage);
@@ -1130,7 +971,7 @@ export default function LangiaMarketingHomepage() {
 
         const detectedLanguage = detectBrowserLanguage();
         setLanguage(detectedLanguage);
-        window.localStorage.setItem(LANGUAGE_STORAGE_KEY, detectedLanguage);
+        window.localStorage.setItem(languageStorageKey, detectedLanguage);
       } catch {
         setLanguage(detectBrowserLanguage());
       }
@@ -1141,7 +982,7 @@ export default function LangiaMarketingHomepage() {
 
   return (
     <main className="min-h-screen bg-[#FFFFFF] text-[#0B1F3A]">
-      <Hero copy={copy} />
+      <Hero copy={copy} language={language} />
       <SupportStrip copy={copy.support} />
       <SignatureFeature copy={copy.signature} />
       <SolutionsGrid copy={copy.solutions} />

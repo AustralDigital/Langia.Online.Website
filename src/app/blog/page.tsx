@@ -1,15 +1,23 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { MarketingPageShell } from "@/components/MarketingPageShell";
-import { pagesContent } from "@/content/pages";
-import { getPublishedBlogPosts, type BlogPost } from "@/lib/blog";
-
-const content = pagesContent.es.blog;
+import { SiteFooter } from "@/components/site/SiteFooter";
+import { SiteNavbar } from "@/components/site/SiteNavbar";
+import { blogCategories, getPublishedPosts, type BlogPost } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: `${content.title} | Langia Online`,
-  description: content.subtitle,
+  title: "Resources | Langia",
+  description:
+    "Guides, ideas, and resources for clearer language learning, test preparation, corporate communication, and language growth.",
+};
+
+const pageCopy = {
+  eyebrow: "Resources",
+  title: "Short reads to make better decisions.",
+  body: "Guides, ideas, and resources for clearer language learning.",
+  ctaTitle: "Need help choosing your path?",
+  ctaBody: "Talk to Langia and we'll help you find the program that fits your goals.",
+  cta: "Talk to Langia",
 };
 
 function formatDate(date: string): string {
@@ -21,60 +29,178 @@ function formatDate(date: string): string {
   }).format(new Date(`${date}T00:00:00.000Z`));
 }
 
-function CoverPreview({ post }: { post: BlogPost }) {
-  if (post.coverImageExists) {
+function ArrowIcon({ className = "h-4 w-4" }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path d="M5 12h14" />
+      <path d="m13 6 6 6-6 6" />
+    </svg>
+  );
+}
+
+function Eyebrow({ children }: { children: string }) {
+  return (
+    <p className="font-heading text-xs font-semibold uppercase tracking-[0.18em] text-[#048EFF]">
+      {children}
+    </p>
+  );
+}
+
+function CoverPreview({ post, large = false }: { post: BlogPost; large?: boolean }) {
+  const height = large ? "min-h-[340px]" : "h-56";
+
+  if (post.coverImageExists && post.coverImage) {
     return (
       <div
-        className="h-56 rounded-[1.5rem] border border-[#E4EDF7] bg-cover bg-center"
+        className={`${height} rounded-[1.5rem] border border-[#E4EDF7] bg-cover bg-center`}
         style={{ backgroundImage: `url(${post.coverImage})` }}
       />
     );
   }
 
   return (
-    <div className="relative h-56 overflow-hidden rounded-[1.5rem] border border-[#E4EDF7] bg-[#F3F7FB]">
-      <div className="absolute left-6 top-6 h-28 w-40 rounded-[1.25rem] border border-[#D8E6F4] bg-[#FFFFFF]" />
+    <div className={`relative ${height} overflow-hidden rounded-[1.5rem] border border-[#E4EDF7] bg-[#F3F7FB]`}>
+      <div className="absolute left-6 top-6 h-28 w-40 rounded-[1.25rem] border border-[#D8E6F4] bg-white" />
       <div className="absolute bottom-6 right-6 h-32 w-48 rounded-[1.5rem] border border-[#CFE5FA] bg-[#EAF6FF]" />
-      <div className="absolute bottom-10 left-8 h-3 w-28 rounded-full bg-[#048EFF]/35" />
-      <div className="absolute bottom-6 left-8 h-3 w-40 rounded-full bg-[#D8E6F4]" />
+      <div className="absolute bottom-12 left-8 h-3 w-28 rounded-full bg-[#048EFF]/35" />
+      <div className="absolute bottom-7 left-8 h-3 w-44 rounded-full bg-[#D8E6F4]" />
+      <div className="absolute right-14 top-14 h-10 w-10 rounded-full bg-[#F3B737]" />
     </div>
   );
 }
 
+function PostMeta({ post }: { post: BlogPost }) {
+  return (
+    <div className="flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#048EFF]">
+      <span>{post.category}</span>
+      <span>/</span>
+      <time dateTime={post.date}>{formatDate(post.date)}</time>
+      <span>/</span>
+      <span>{post.readingTime} min read</span>
+    </div>
+  );
+}
+
+function ArticleCard({ post }: { post: BlogPost }) {
+  return (
+    <Link
+      href={`/blog/${post.slug}`}
+      className="group rounded-[1.75rem] border border-[#E4EDF7] bg-white p-5 shadow-[0_16px_42px_rgba(11,31,58,0.055)] transition hover:-translate-y-1 hover:border-[#048EFF]/45"
+    >
+      <CoverPreview post={post} />
+      <div className="mt-6">
+        <PostMeta post={post} />
+        <h2 className="mt-4 font-heading text-2xl font-semibold leading-tight text-[#0B1F3A]">
+          {post.title}
+        </h2>
+        <p className="mt-4 text-base leading-7 text-[#42526A]">{post.description}</p>
+        <p className="mt-5 text-sm font-semibold text-[#0B1F3A]">{post.authorName}</p>
+        <span className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#048EFF]">
+          Read article
+          <ArrowIcon className="h-4 w-4 transition group-hover:translate-x-1" />
+        </span>
+      </div>
+    </Link>
+  );
+}
+
 export default function BlogIndexPage() {
-  const posts = getPublishedBlogPosts();
+  const posts = getPublishedPosts();
+  const featuredPost = posts.find((post) => post.featured) ?? posts[0];
+  const gridPosts = featuredPost
+    ? posts.filter((post) => post.slug !== featuredPost.slug)
+    : posts;
 
   return (
-    <MarketingPageShell content={content}>
-      <section className="px-4 py-16 sm:px-6 lg:px-10">
-        <div className="mx-auto grid max-w-[1100px] gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {posts.map((post) => (
-            <Link
-              key={post.slug}
-              href={`/blog/${post.slug}`}
-              className="group rounded-[1.75rem] border border-[#E4EDF7] bg-[#FFFFFF] p-5 shadow-[0_16px_42px_rgba(11,31,58,0.055)] transition hover:-translate-y-1 hover:border-[#048EFF]/45"
-            >
-              <CoverPreview post={post} />
-              <div className="mt-6 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#048EFF]">
-                <span>{post.category}</span>
-                <span>/</span>
-                <span>{post.language}</span>
-                <span>/</span>
-                <time dateTime={post.date}>{formatDate(post.date)}</time>
-              </div>
-              <h2 className="mt-4 font-heading text-2xl font-semibold leading-tight text-[#0B1F3A]">
-                {post.title}
+    <main className="min-h-screen bg-white text-[#0B1F3A]">
+      <SiteNavbar variant="light" />
+
+      <section className="bg-white px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-[1180px]">
+          <Eyebrow>{pageCopy.eyebrow}</Eyebrow>
+          <h1 className="mt-5 max-w-4xl font-heading text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
+            {pageCopy.title}
+          </h1>
+          <p className="mt-6 max-w-2xl text-base leading-8 text-[#42526A] sm:text-lg">
+            {pageCopy.body}
+          </p>
+        </div>
+      </section>
+
+      {featuredPost ? (
+        <section className="bg-[#F3F7FB] px-4 py-16 sm:px-6 lg:px-10">
+          <div className="mx-auto grid max-w-[1180px] gap-8 rounded-[2rem] border border-[#E4EDF7] bg-white p-5 shadow-[0_18px_60px_rgba(11,31,58,0.055)] lg:grid-cols-[0.95fr_1.05fr] lg:items-center sm:p-7">
+            <CoverPreview post={featuredPost} large />
+            <div className="p-2 sm:p-4">
+              <Eyebrow>Featured</Eyebrow>
+              <PostMeta post={featuredPost} />
+              <h2 className="mt-5 font-heading text-3xl font-semibold leading-tight text-[#0B1F3A] sm:text-4xl">
+                {featuredPost.title}
               </h2>
-              <p className="mt-4 text-base leading-7 text-[#42526A]">
-                {post.description}
-              </p>
-              <span className="mt-7 inline-flex text-sm font-semibold text-[#048EFF]">
+              <p className="mt-5 text-base leading-8 text-[#42526A]">{featuredPost.description}</p>
+              <p className="mt-5 text-sm font-semibold text-[#0B1F3A]">{featuredPost.authorName}</p>
+              <Link
+                href={`/blog/${featuredPost.slug}`}
+                className="mt-8 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#048EFF] px-5 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(4,142,255,0.22)] transition hover:bg-[#F3B737]"
+              >
                 Read article
+                <ArrowIcon />
+              </Link>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      <section className="bg-white px-4 py-12 sm:px-6 lg:px-10">
+        <div className="mx-auto max-w-[1180px]">
+          <div className="flex flex-wrap gap-3">
+            {blogCategories.map((category) => (
+              <span
+                key={category}
+                className="rounded-full border border-[#D8E6F4] bg-[#F3F7FB] px-4 py-2 text-sm font-semibold text-[#0B1F3A]"
+              >
+                {category}
               </span>
-            </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white px-4 py-16 sm:px-6 lg:px-10">
+        <div className="mx-auto grid max-w-[1180px] gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {gridPosts.map((post) => (
+            <ArticleCard key={post.slug} post={post} />
           ))}
         </div>
       </section>
-    </MarketingPageShell>
+
+      <section className="bg-white px-4 py-16 sm:px-6 lg:px-10">
+        <div className="mx-auto grid max-w-[1180px] gap-8 overflow-hidden rounded-[2rem] bg-[#0B1F3A] p-8 text-white shadow-[0_28px_90px_rgba(11,31,58,0.2)] md:grid-cols-[1fr_auto] md:items-center sm:p-10">
+          <div>
+            <h2 className="font-heading text-3xl font-semibold leading-tight sm:text-4xl">
+              {pageCopy.ctaTitle}
+            </h2>
+            <p className="mt-4 max-w-2xl text-base leading-8 text-white/70">{pageCopy.ctaBody}</p>
+          </div>
+          <Link
+            href="/contact"
+            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#048EFF] px-5 text-sm font-semibold text-white transition hover:bg-[#F3B737]"
+          >
+            {pageCopy.cta}
+            <ArrowIcon />
+          </Link>
+        </div>
+      </section>
+      <SiteFooter />
+    </main>
   );
 }

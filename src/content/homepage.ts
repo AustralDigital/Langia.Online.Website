@@ -276,8 +276,8 @@ export const homepageContent = {
       title: "Ideas y guías para aprender con más claridad.",
       body: "Un espacio editorial para orientar decisiones, rutinas y próximos pasos.",
       articles: [
-        { title: "Cómo elegir un programa", body: "Una guía breve para comparar objetivos, horarios y soporte.", href: "/blog/how-to-choose-an-english-program" },
-        { title: "Aprendizaje con apoyo de IA", body: "Ideas para usar tecnología sin perder guía humana.", href: "/blog/ai-assisted-language-learning" },
+        { title: "Cómo elegir un programa", body: "Una guía breve para comparar objetivos, horarios y soporte.", href: "/blog/how-to-choose-the-right-english-program" },
+        { title: "Aprendizaje con apoyo de IA", body: "Ideas para usar tecnología sin perder guía humana.", href: "/blog/what-is-ai-assisted-language-learning" },
       ],
       newsletterTitle: "Recibe novedades",
       newsletterBody: "Un campo visual por ahora. La suscripción se conectará más adelante.",
@@ -454,8 +454,8 @@ export const homepageContent = {
       title: "Ideias e guias para aprender com mais clareza.",
       body: "Um espaço editorial para orientar escolhas, rotinas e próximos passos.",
       articles: [
-        { title: "Como escolher um programa", body: "Um guia breve para comparar objetivos, horários e suporte.", href: "/blog/how-to-choose-an-english-program" },
-        { title: "Aprendizagem com apoio de IA", body: "Ideias para usar tecnologia sem perder orientação humana.", href: "/blog/ai-assisted-language-learning" },
+        { title: "Como escolher um programa", body: "Um guia breve para comparar objetivos, horários e suporte.", href: "/blog/how-to-choose-the-right-english-program" },
+        { title: "Aprendizagem com apoio de IA", body: "Ideias para usar tecnologia sem perder orientação humana.", href: "/blog/what-is-ai-assisted-language-learning" },
       ],
       newsletterTitle: "Receba novidades",
       newsletterBody: "Um campo visual por enquanto. A assinatura será conectada mais adiante.",
@@ -632,8 +632,8 @@ export const homepageContent = {
       title: "Ideas and guides for clearer learning.",
       body: "An editorial space for decisions, routines, and next steps.",
       articles: [
-        { title: "Choosing a learning path", body: "A short guide to compare goals, schedules, and support.", href: "/blog/how-to-choose-an-english-program" },
-        { title: "AI-assisted learning", body: "Ideas for using technology without losing human guidance.", href: "/blog/ai-assisted-language-learning" },
+        { title: "Choosing a learning path", body: "A short guide to compare goals, schedules, and support.", href: "/blog/how-to-choose-the-right-english-program" },
+        { title: "AI-assisted learning", body: "Ideas for using technology without losing human guidance.", href: "/blog/what-is-ai-assisted-language-learning" },
       ],
       newsletterTitle: "Subscribe for updates",
       newsletterBody: "A visual field for now. Subscription behavior will be connected later.",

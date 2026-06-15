@@ -1,28 +1,10 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-import type { MarketingPageContent, PageLink } from "@/content/pages";
+import type { MarketingPageContent } from "@/content/pages";
+import { SiteFooter } from "@/components/site/SiteFooter";
+import { SiteNavbar } from "@/components/site/SiteNavbar";
 
-const navPrograms: PageLink[] = [
-  { label: "Programas", href: "/programs" },
-  { label: "Langia Online", href: "/programs/langia-online" },
-  { label: "Talkin' Club", href: "/programs/talkin-club" },
-  { label: "Test Prep", href: "/programs/test-prep" },
-  { label: "Kids n Teens", href: "/programs/langia-4-kids-n-teens" },
-];
-
-const navCompany: PageLink[] = [
-  { label: "Sobre Langia", href: "/about" },
-  { label: "Corporativo", href: "/corporate" },
-  { label: "Legal", href: "/legal" },
-  { label: "Trabaja con nosotros", href: "/work-with-us" },
-];
-
-const navResources: PageLink[] = [
-  { label: "Blog", href: "/blog" },
-  { label: "Prueba de nivel", href: "/test-your-english-level" },
-  { label: "Contacto", href: "/contact" },
-];
 
 function ArrowIcon({ className = "h-4 w-4" }: { className?: string }) {
   return (
@@ -42,35 +24,6 @@ function ArrowIcon({ className = "h-4 w-4" }: { className?: string }) {
   );
 }
 
-function MarketingNav() {
-  return (
-    <header className="border-b border-[#E4EDF7] bg-[#FFFFFF]/90 px-4 py-4 backdrop-blur-xl sm:px-6 lg:px-10">
-      <nav className="mx-auto flex max-w-[1180px] flex-wrap items-center justify-between gap-4">
-        <Link href="/" className="font-heading text-xl font-semibold text-[#0B1F3A]">
-          Langia
-        </Link>
-        <div className="flex flex-wrap items-center gap-2 text-sm font-semibold text-[#42526A]">
-          <Link className="rounded-full px-3 py-2 hover:bg-[#F3F7FB] hover:text-[#048EFF]" href="/programs">
-            Programas
-          </Link>
-          <Link className="rounded-full px-3 py-2 hover:bg-[#F3F7FB] hover:text-[#048EFF]" href="/about">
-            Sobre Langia
-          </Link>
-          <Link className="rounded-full px-3 py-2 hover:bg-[#F3F7FB] hover:text-[#048EFF]" href="/corporate">
-            Corporativo
-          </Link>
-          <Link className="rounded-full px-3 py-2 hover:bg-[#F3F7FB] hover:text-[#048EFF]" href="/blog">
-            Blog
-          </Link>
-          <Link className="rounded-full px-3 py-2 hover:bg-[#F3F7FB] hover:text-[#048EFF]" href="/contact">
-            Contacto
-          </Link>
-        </div>
-      </nav>
-    </header>
-  );
-}
-
 function VisualPanel() {
   return (
     <div className="relative min-h-[330px] overflow-hidden rounded-[2rem] border border-[#E4EDF7] bg-[#F3F7FB] p-5 shadow-[0_24px_80px_rgba(11,31,58,0.08)]">
@@ -84,43 +37,6 @@ function VisualPanel() {
   );
 }
 
-function FooterColumn({ title, links }: { title: string; links: PageLink[] }) {
-  return (
-    <div>
-      <h2 className="font-heading text-sm font-semibold text-[#FFFFFF]">{title}</h2>
-      <div className="mt-5 grid gap-3 text-sm text-white/65">
-        {links.map((link) => (
-          <Link key={link.href} href={link.href} className="hover:text-[#FFFFFF]">
-            {link.label}
-          </Link>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function MarketingFooter() {
-  return (
-    <footer className="bg-[#FFFFFF] px-4 pb-5 pt-16 sm:px-6 lg:px-10">
-      <div className="mx-auto grid max-w-[1180px] gap-10 rounded-[2rem] bg-[#0B1F3A] p-8 text-[#FFFFFF] shadow-[0_30px_90px_rgba(11,31,58,0.2)] md:grid-cols-[1.1fr_1.6fr] sm:p-10">
-        <div>
-          <Link href="/" className="font-heading text-2xl font-semibold">
-            Langia
-          </Link>
-          <p className="mt-4 max-w-sm text-sm leading-7 text-white/65">
-            Idiomas con estructura para comunicación global.
-          </p>
-        </div>
-        <div className="grid gap-8 sm:grid-cols-3">
-          <FooterColumn title="Programas" links={navPrograms} />
-          <FooterColumn title="Empresa" links={navCompany} />
-          <FooterColumn title="Recursos" links={navResources} />
-        </div>
-      </div>
-    </footer>
-  );
-}
-
 export function MarketingPageShell({
   content,
   children,
@@ -130,7 +46,7 @@ export function MarketingPageShell({
 }) {
   return (
     <main className="min-h-screen bg-[#FFFFFF] text-[#0B1F3A]">
-      <MarketingNav />
+      <SiteNavbar variant="light" />
 
       <section className="bg-[#FFFFFF] px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
         <div className="mx-auto grid max-w-[1180px] gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
@@ -208,7 +124,7 @@ export function MarketingPageShell({
         </div>
       </section>
 
-      <MarketingFooter />
+      <SiteFooter />
     </main>
   );
 }

@@ -5,6 +5,8 @@ import { existsSync } from "node:fs";
 import path from "node:path";
 import type { ReactNode } from "react";
 
+import { SiteFooter } from "@/components/site/SiteFooter";
+import { SiteNavbar } from "@/components/site/SiteNavbar";
 import { pagesContent, type CorporatePageContent } from "@/content/pages";
 
 const content = pagesContent.es.corporate.corporatePage;
@@ -65,23 +67,6 @@ function Eyebrow({ children, light = false }: { children: ReactNode; light?: boo
   );
 }
 
-function MarketingNav() {
-  return (
-    <header className="border-b border-[#E4EDF7] bg-white/90 px-4 py-4 backdrop-blur-xl sm:px-6 lg:px-10">
-      <nav className="mx-auto flex max-w-[1180px] flex-wrap items-center justify-between gap-4">
-        <Link href="/" className="font-heading text-xl font-semibold text-[#0B1F3A]">Langia</Link>
-        <div className="flex flex-wrap items-center gap-2 text-sm font-semibold text-[#42526A]">
-          <Link className="rounded-full px-3 py-2 hover:bg-[#F3F7FB] hover:text-[#048EFF]" href="/programs">Programas</Link>
-          <Link className="rounded-full px-3 py-2 hover:bg-[#F3F7FB] hover:text-[#048EFF]" href="/about">Sobre Langia</Link>
-          <Link className="rounded-full px-3 py-2 hover:bg-[#F3F7FB] hover:text-[#048EFF]" href="/corporate">Corporativo</Link>
-          <Link className="rounded-full px-3 py-2 hover:bg-[#F3F7FB] hover:text-[#048EFF]" href="/blog">Blog</Link>
-          <Link className="rounded-full px-3 py-2 hover:bg-[#F3F7FB] hover:text-[#048EFF]" href="/contact">Contacto</Link>
-        </div>
-      </nav>
-    </header>
-  );
-}
-
 function HeroVisual() {
   return (
     <div className="relative min-h-[400px] overflow-hidden rounded-[2rem] border border-[#173B66] bg-[#0B1F3A] shadow-[0_30px_90px_rgba(11,31,58,0.24)] lg:min-h-[520px]">
@@ -131,39 +116,12 @@ function CardGrid({ cards, columns = "md:grid-cols-4" }: { cards: readonly { tit
   );
 }
 
-function MarketingFooter() {
-  return (
-    <footer className="bg-white px-4 pb-5 pt-10 sm:px-6 lg:px-10">
-      <div className="mx-auto grid max-w-[1180px] gap-10 rounded-[2rem] bg-[#0B1F3A] p-8 text-white shadow-[0_30px_90px_rgba(11,31,58,0.2)] md:grid-cols-[1.1fr_1.6fr] sm:p-10">
-        <div>
-          <Link href="/" className="font-heading text-2xl font-semibold">Langia</Link>
-          <p className="mt-4 max-w-sm text-sm leading-7 text-white/65">Idiomas con estructura para comunicación global.</p>
-        </div>
-        <div className="grid gap-8 sm:grid-cols-3">
-          {[
-            { title: "Programas", links: [["Programas", "/programs"], ["Langia Online", "/programs/langia-online"], ["Talkin' Club", "/programs/talkin-club"], ["Test Prep", "/programs/test-prep"], ["Kids n Teens", "/programs/langia-4-kids-n-teens"]] },
-            { title: "Empresa", links: [["Sobre Langia", "/about"], ["Corporativo", "/corporate"], ["Legal", "/legal"], ["Trabaja con nosotros", "/work-with-us"]] },
-            { title: "Recursos", links: [["Blog", "/blog"], ["Prueba de nivel", "/test-your-english-level"], ["Contacto", "/contact"]] },
-          ].map((column) => (
-            <div key={column.title}>
-              <h2 className="font-heading text-sm font-semibold text-white">{column.title}</h2>
-              <div className="mt-5 grid gap-3 text-sm text-white/65">
-                {column.links.map(([label, href]) => <Link key={href} href={href} className="hover:text-white">{label}</Link>)}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </footer>
-  );
-}
-
 export default function CorporatePage() {
   const page = getContent();
 
   return (
     <main className="min-h-screen bg-white text-[#0B1F3A]">
-      <MarketingNav />
+      <SiteNavbar variant="light" />
 
       <section className="bg-[#F3F7FB] px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
         <div className="mx-auto grid max-w-[1180px] gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
@@ -313,7 +271,7 @@ export default function CorporatePage() {
         </div>
       </section>
 
-      <MarketingFooter />
+      <SiteFooter />
     </main>
   );
 }

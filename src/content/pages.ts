@@ -45,6 +45,9 @@ export type MarketingPageContent = {
   kidsTeensPage?: KidsTeensPageContent;
   corporatePage?: CorporatePageContent;
   contactPage?: ContactPageContent;
+  aboutPage?: AboutPageContent;
+  legalPage?: LegalPageContent;
+  workWithUsPage?: WorkWithUsPageContent;
 };
 
 export type ProgramCardContent = {
@@ -588,6 +591,214 @@ export type ContactPageContent = {
   };
 };
 
+export type AboutPageContent = {
+  hero: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    primaryCta: string;
+    secondaryCta: string;
+    quickFacts: readonly string[];
+  };
+  origin: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    timeline: readonly {
+      year: string;
+      label: string;
+    }[];
+  };
+  why: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    cards: readonly PageBlock[];
+  };
+  difference: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    cards: readonly PageBlock[];
+  };
+  ai: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    bullets: readonly string[];
+  };
+  values: {
+    eyebrow: string;
+    title: string;
+    items: readonly PageBlock[];
+  };
+  presence: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    languages: readonly string[];
+    locationNote: string;
+  };
+  not: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    items: readonly string[];
+  };
+  finalCta: {
+    title: string;
+    body: string;
+    primaryCta: string;
+    secondaryCta: string;
+  };
+};
+
+export type LegalSectionContent = {
+  id: string;
+  title: string;
+  body: readonly string[];
+};
+
+export type LegalPageContent = {
+  hero: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    quickFacts: readonly string[];
+    note: string;
+  };
+  nav: readonly {
+    label: string;
+    href: string;
+  }[];
+  sections: readonly LegalSectionContent[];
+  contact: {
+    title: string;
+    body: string;
+    companyLabel: string;
+    addressLabel: string;
+    jurisdictionLabel: string;
+    company: string;
+    address: string;
+    jurisdiction: string;
+    cta: string;
+  };
+  finalCta: {
+    title: string;
+    body: string;
+    primaryCta: string;
+  };
+};
+
+export type WorkWithUsPageContent = {
+  hero: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    primaryCta: string;
+    secondaryCta: string;
+    quickFacts: readonly string[];
+  };
+  why: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    cards: readonly PageBlock[];
+  };
+  profile: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    cards: readonly PageBlock[];
+  };
+  languages: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    items: readonly string[];
+  };
+  requirements: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    items: readonly PageBlock[];
+    deviceNote: string;
+  };
+  process: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    steps: readonly PageBlock[];
+  };
+  form: {
+    title: string;
+    body: string;
+    note: string;
+    fields: {
+      name: string;
+      email: string;
+      whatsapp: string;
+      country: string;
+      teachingLanguages: string;
+      spokenLanguages: string;
+      experience: string;
+      audience: string;
+      technicalConfirmation: string;
+      message: string;
+      link: string;
+      availability: string;
+      notes: string;
+    };
+    placeholders: {
+      name: string;
+      email: string;
+      whatsapp: string;
+      country: string;
+      spokenLanguages: string;
+      message: string;
+      link: string;
+      availability: string;
+      notes: string;
+    };
+    teachingLanguageOptions: readonly string[];
+    experienceOptions: readonly string[];
+    audienceOptions: readonly string[];
+    technicalConfirmation: string;
+    submit: string;
+    requiredError: string;
+    configWarning: string;
+    selectPlaceholder: string;
+    fallbackNotProvided: string;
+    yes: string;
+    no: string;
+  };
+  whatsappMessage: {
+    intro: string;
+    name: string;
+    email: string;
+    whatsapp: string;
+    country: string;
+    teachingLanguages: string;
+    spokenLanguages: string;
+    experience: string;
+    audience: string;
+    availability: string;
+    link: string;
+    technicalConfirmation: string;
+    message: string;
+  };
+  faq: {
+    eyebrow: string;
+    title: string;
+    items: readonly PageBlock[];
+  };
+  finalCta: {
+    title: string;
+    body: string;
+    primaryCta: string;
+  };
+};
+
 const programBlocks = {
   es: [
     { title: "Para quién es", body: "Un espacio para describir el perfil de estudiante, sus metas y el ritmo ideal." },
@@ -640,6 +851,353 @@ const programImagePaths = {
   kidsTeens: "/images/programs/kids-teens.webp",
   corporate: "/images/programs/corporate.webp",
 } as const;
+
+const aboutPageContent: Record<PageLanguage, AboutPageContent> = {
+  es: {
+    hero: {
+      eyebrow: "Sobre Langia",
+      title: "Una compañía creada para aprender idiomas con más claridad.",
+      body: "Desde 2020, Langia combina clases en vivo, guía humana y tecnología útil para crear rutas de aprendizaje más flexibles, seguras y personales.",
+      primaryCta: "Hablar con Langia",
+      secondaryCta: "Explorar programas",
+      quickFacts: ["Fundada en 2020", "Compañía internacional", "Human-led, AI-assisted", "4 idiomas"],
+    },
+    origin: {
+      eyebrow: "Origen",
+      title: "Nacimos escuchando a estudiantes y docentes.",
+      body: "Langia fue creada con la mirada de clientes y profesores de idiomas de distintas partes del mundo. Esa conversación nos ayudó a entender una idea simple: aprender un idioma funciona mejor cuando la experiencia se adapta a la persona, al contexto y al objetivo.",
+      timeline: [
+        { year: "2020", label: "Fundada" },
+        { year: "Hoy", label: "Aprendizaje online internacional" },
+      ],
+    },
+    why: {
+      eyebrow: "Por qué existimos",
+      title: "Había un espacio entre lo que los estudiantes necesitaban y lo que el mercado ofrecía.",
+      body: "Muchas personas necesitaban aprender idiomas de una forma más flexible, más cercana y más accesible. Muchos docentes también necesitaban mejores herramientas para adaptar sus clases a cada caso. Langia existe para cerrar esa brecha.",
+      cards: [
+        { title: "Para estudiantes", body: "Rutas más claras, clases en vivo y aprendizaje que se ajusta a metas reales." },
+        { title: "Para familias", body: "Acompañamiento, seguimiento y una experiencia educativa más confiable." },
+        { title: "Para compañías", body: "Soluciones lingüísticas diseñadas alrededor de equipos, roles y objetivos operativos." },
+        { title: "Para docentes", body: "Herramientas y estructura para enseñar con más contexto y dirección." },
+      ],
+    },
+    difference: {
+      eyebrow: "Diferencia",
+      title: "Aprendizaje humano, con estructura y personalización.",
+      body: "Langia no busca reemplazar al docente ni convertir el aprendizaje en una experiencia automática. Usamos tecnología para apoyar mejores decisiones, pero la experiencia sigue siendo humana, cercana y guiada.",
+      cards: [
+        { title: "Clases en vivo", body: "La interacción humana sigue en el centro." },
+        { title: "Rutas claras", body: "Cada programa tiene estructura, seguimiento y dirección." },
+        { title: "Personalización real", body: "Los objetivos, ritmos y contextos importan." },
+        { title: "Tecnología útil", body: "La IA apoya el proceso sin reemplazar la relación educativa." },
+      ],
+    },
+    ai: {
+      eyebrow: "Human-led, AI-assisted",
+      title: "La tecnología ayuda. El aprendizaje sigue siendo humano.",
+      body: "Langia usa herramientas personalizables de IA para apoyar cada caso y cada estudiante: diagnóstico, objetivos, contexto, ritmo, feedback y seguimiento. Pero las clases, la guía y la relación educativa siguen siendo lideradas por personas.",
+      bullets: ["Docentes expertos", "Herramientas personalizables", "Feedback humano", "Seguimiento con más contexto", "Aprendizaje orientado a metas"],
+    },
+    values: {
+      eyebrow: "Valores",
+      title: "Lo que guía nuestra forma de enseñar.",
+      items: [
+        { title: "Claridad", body: "Aprender mejor empieza por entender hacia dónde vas y qué viene después." },
+        { title: "Flexibilidad", body: "La vida cambia; la ruta de aprendizaje debe poder adaptarse." },
+        { title: "Humanidad", body: "La confianza crece cuando hay guía, escucha y feedback real." },
+        { title: "Cercanía", body: "La educación funciona mejor cuando se siente acompañada, no distante." },
+      ],
+    },
+    presence: {
+      eyebrow: "Presencia internacional",
+      title: "Cuatro idiomas para personas y equipos que se mueven entre culturas.",
+      body: "Langia trabaja con estudiantes, familias y compañías en distintos países. Somos una compañía internacional legalmente ubicada en Estados Unidos, con una operación online pensada para comunicación global.",
+      languages: ["Inglés", "Francés", "Español", "Portugués"],
+      locationNote: "Langia está legalmente ubicada en Estados Unidos.",
+    },
+    not: {
+      eyebrow: "Lo que no somos",
+      title: "No somos una plataforma más.",
+      body: "Langia no es una app, un catálogo masivo de cursos grabados ni una experiencia automática sin acompañamiento. Nuestro trabajo está en combinar estructura, tecnología útil y guía humana para crear aprendizaje con dirección.",
+      items: ["No somos solo una app", "No somos cursos masivos pregrabados", "No somos clases genéricas de talla única", "No somos una experiencia automática sin guía humana"],
+    },
+    finalCta: {
+      title: "Hablemos de la ruta que necesitas.",
+      body: "Ya sea para ti, tu familia o tu equipo, Langia puede ayudarte a encontrar una forma más clara de avanzar.",
+      primaryCta: "Hablar con Langia",
+      secondaryCta: "Ver programas",
+    },
+  },
+  pt: {
+    hero: {
+      eyebrow: "Sobre a Langia",
+      title: "Uma empresa criada para aprender idiomas com mais clareza.",
+      body: "Desde 2020, a Langia combina aulas ao vivo, orientação humana e tecnologia útil para criar rotas de aprendizagem mais flexíveis, seguras e pessoais.",
+      primaryCta: "Falar com a Langia",
+      secondaryCta: "Explorar programas",
+      quickFacts: ["Fundada em 2020", "Empresa internacional", "Human-led, AI-assisted", "4 idiomas"],
+    },
+    origin: {
+      eyebrow: "Origem",
+      title: "Nascemos ouvindo alunos e professores.",
+      body: "A Langia foi criada com a visão de clientes e professores de idiomas de diferentes partes do mundo. Essa conversa nos ajudou a entender uma ideia simples: aprender um idioma funciona melhor quando a experiência se adapta à pessoa, ao contexto e ao objetivo.",
+      timeline: [
+        { year: "2020", label: "Fundada" },
+        { year: "Hoje", label: "Aprendizagem online internacional" },
+      ],
+    },
+    why: {
+      eyebrow: "Por que existimos",
+      title: "Havia um espaço entre o que os alunos precisavam e o que o mercado oferecia.",
+      body: "Muitas pessoas precisavam aprender idiomas de uma forma mais flexível, próxima e acessível. Muitos professores também precisavam de melhores ferramentas para adaptar suas aulas a cada caso. A Langia existe para fechar essa lacuna.",
+      cards: [
+        { title: "Para alunos", body: "Rotas mais claras, aulas ao vivo e aprendizagem ajustada a objetivos reais." },
+        { title: "Para famílias", body: "Acompanhamento, relatórios e uma experiência educativa mais confiável." },
+        { title: "Para empresas", body: "Soluções linguísticas desenhadas ao redor de equipes, funções e objetivos operacionais." },
+        { title: "Para professores", body: "Ferramentas e estrutura para ensinar com mais contexto e direção." },
+      ],
+    },
+    difference: {
+      eyebrow: "Diferença",
+      title: "Aprendizagem humana, com estrutura e personalização.",
+      body: "A Langia não busca substituir o professor nem transformar a aprendizagem em uma experiência automática. Usamos tecnologia para apoiar melhores decisões, mas a experiência continua humana, próxima e guiada.",
+      cards: [
+        { title: "Aulas ao vivo", body: "A interação humana continua no centro." },
+        { title: "Rotas claras", body: "Cada programa tem estrutura, acompanhamento e direção." },
+        { title: "Personalização real", body: "Objetivos, ritmos e contextos importam." },
+        { title: "Tecnologia útil", body: "A IA apoia o processo sem substituir a relação educativa." },
+      ],
+    },
+    ai: {
+      eyebrow: "Human-led, AI-assisted",
+      title: "A tecnologia ajuda. A aprendizagem continua humana.",
+      body: "A Langia usa ferramentas personalizáveis de IA para apoiar cada caso e cada aluno: diagnóstico, objetivos, contexto, ritmo, feedback e acompanhamento. Mas as aulas, a orientação e a relação educativa continuam lideradas por pessoas.",
+      bullets: ["Professores especialistas", "Ferramentas personalizáveis", "Feedback humano", "Acompanhamento com mais contexto", "Aprendizagem orientada a objetivos"],
+    },
+    values: {
+      eyebrow: "Valores",
+      title: "O que guia nossa forma de ensinar.",
+      items: [
+        { title: "Clareza", body: "Aprender melhor começa por entender para onde você vai e o que vem depois." },
+        { title: "Flexibilidade", body: "A vida muda; a rota de aprendizagem precisa poder se adaptar." },
+        { title: "Humanidade", body: "A confiança cresce quando há orientação, escuta e feedback real." },
+        { title: "Proximidade", body: "A educação funciona melhor quando se sente acompanhada, não distante." },
+      ],
+    },
+    presence: {
+      eyebrow: "Presença internacional",
+      title: "Quatro idiomas para pessoas e equipes que se movem entre culturas.",
+      body: "A Langia trabalha com alunos, famílias e empresas em diferentes países. Somos uma empresa internacional legalmente localizada nos Estados Unidos, com uma operação online pensada para comunicação global.",
+      languages: ["Inglês", "Francês", "Espanhol", "Português"],
+      locationNote: "A Langia está legalmente localizada nos Estados Unidos.",
+    },
+    not: {
+      eyebrow: "O que não somos",
+      title: "Não somos mais uma plataforma.",
+      body: "A Langia não é um app, um catálogo massivo de cursos gravados nem uma experiência automática sem acompanhamento. Nosso trabalho está em combinar estrutura, tecnologia útil e orientação humana para criar aprendizagem com direção.",
+      items: ["Não somos apenas um app", "Não somos cursos massivos gravados", "Não somos aulas genéricas iguais para todos", "Não somos uma experiência automática sem orientação humana"],
+    },
+    finalCta: {
+      title: "Vamos falar sobre a rota que você precisa.",
+      body: "Seja para você, sua família ou sua equipe, a Langia pode ajudar a encontrar uma forma mais clara de avançar.",
+      primaryCta: "Falar com a Langia",
+      secondaryCta: "Ver programas",
+    },
+  },
+  en: {
+    hero: {
+      eyebrow: "About Langia",
+      title: "A company built for clearer language learning.",
+      body: "Since 2020, Langia has combined live classes, human guidance, and useful technology to create more flexible, safe, and personal learning paths.",
+      primaryCta: "Talk to Langia",
+      secondaryCta: "Explore programs",
+      quickFacts: ["Founded in 2020", "International company", "Human-led, AI-assisted", "4 languages"],
+    },
+    origin: {
+      eyebrow: "Origin",
+      title: "We were built by listening to learners and teachers.",
+      body: "Langia was created with input from customers and language teachers from different parts of the world. That conversation helped us understand a simple idea: language learning works better when the experience adapts to the person, the context, and the goal.",
+      timeline: [
+        { year: "2020", label: "Founded" },
+        { year: "Today", label: "International online language learning" },
+      ],
+    },
+    why: {
+      eyebrow: "Why we exist",
+      title: "There was a gap between what learners needed and what the market offered.",
+      body: "Many people needed language learning that was more flexible, closer, and more accessible. Many teachers also needed better tools to adapt their classes to each case. Langia exists to close that gap.",
+      cards: [
+        { title: "For learners", body: "Clearer paths, live classes, and learning aligned with real goals." },
+        { title: "For families", body: "Guidance, follow-up, and a more trustworthy educational experience." },
+        { title: "For companies", body: "Language solutions designed around teams, roles, and operational goals." },
+        { title: "For teachers", body: "Tools and structure to teach with more context and direction." },
+      ],
+    },
+    difference: {
+      eyebrow: "Difference",
+      title: "Human learning, with structure and personalization.",
+      body: "Langia does not try to replace the teacher or turn learning into an automated experience. We use technology to support better decisions, but the experience remains human, close, and guided.",
+      cards: [
+        { title: "Live classes", body: "Human interaction stays at the center." },
+        { title: "Clear paths", body: "Every program has structure, follow-up, and direction." },
+        { title: "Real personalization", body: "Goals, rhythms, and contexts matter." },
+        { title: "Useful technology", body: "AI supports the process without replacing the educational relationship." },
+      ],
+    },
+    ai: {
+      eyebrow: "Human-led, AI-assisted",
+      title: "Technology helps. Learning stays human.",
+      body: "Langia uses customizable AI tools to support every case and every student: diagnostics, goals, context, rhythm, feedback, and follow-up. But classes, guidance, and the educational relationship remain led by people.",
+      bullets: ["Expert teachers", "Customizable tools", "Human feedback", "More contextual follow-up", "Goal-oriented learning"],
+    },
+    values: {
+      eyebrow: "Values",
+      title: "What guides the way we teach.",
+      items: [
+        { title: "Clarity", body: "Better learning begins with understanding where you are going and what comes next." },
+        { title: "Flexibility", body: "Life changes; the learning path should be able to adapt." },
+        { title: "Humanity", body: "Confidence grows when there is guidance, listening, and real feedback." },
+        { title: "Closeness", body: "Education works better when it feels supported, not distant." },
+      ],
+    },
+    presence: {
+      eyebrow: "International presence",
+      title: "Four languages for people and teams moving between cultures.",
+      body: "Langia works with learners, families, and companies across countries. We are an international company legally located in the United States, with an online operation designed for global communication.",
+      languages: ["English", "French", "Spanish", "Portuguese"],
+      locationNote: "Langia is legally located in the United States.",
+    },
+    not: {
+      eyebrow: "What we are not",
+      title: "We are not just another platform.",
+      body: "Langia is not an app, a massive catalog of recorded courses, or an automated experience without support. Our work is to combine structure, useful technology, and human guidance to create learning with direction.",
+      items: ["We are not just an app", "We are not massive pre-recorded courses", "We are not generic one-size-fits-all classes", "We are not an automated experience without human guidance"],
+    },
+    finalCta: {
+      title: "Let's talk about the path you need.",
+      body: "Whether it is for you, your family, or your team, Langia can help you find a clearer way forward.",
+      primaryCta: "Talk to Langia",
+      secondaryCta: "View programs",
+    },
+  },
+};
+
+const legalPageContent: Record<PageLanguage, LegalPageContent> = {
+  es: {
+    hero: {
+      eyebrow: "Legal",
+      title: "Políticas e información legal.",
+      body: "Consulta las políticas generales de Langia Language Solutions LLC sobre servicios, privacidad, pagos, reprogramaciones y comunicación.",
+      quickFacts: ["Langia Language Solutions LLC", "Wyoming, Estados Unidos", "Servicios online e internacionales", "Políticas generales"],
+      note: "Esta página resume políticas generales de Langia Language Solutions LLC. La versión final puede ser actualizada o complementada por acuerdos específicos de servicio.",
+    },
+    nav: [
+      { label: "Términos de servicio", href: "#terms" },
+      { label: "Privacidad", href: "#privacy" },
+      { label: "WhatsApp", href: "#whatsapp" },
+      { label: "Pagos y reembolsos", href: "#payments" },
+      { label: "Reprogramaciones", href: "#rescheduling" },
+      { label: "Menores", href: "#minors" },
+      { label: "Exámenes y resultados", href: "#results" },
+      { label: "Propiedad intelectual", href: "#intellectual-property" },
+      { label: "Servicios corporativos", href: "#corporate" },
+      { label: "Cookies y analítica", href: "#cookies" },
+    ],
+    sections: [
+      { id: "terms", title: "Términos de servicio", body: ["Al contratar o utilizar servicios de Langia Language Solutions LLC, el usuario acepta participar de forma respetuosa, proporcionar información veraz y cumplir con las condiciones acordadas para el servicio elegido. Los servicios de Langia pueden incluir clases en vivo, programas de idiomas, preparación de exámenes, servicios corporativos, traducción, localización e interpretación.", "Los detalles específicos de cada servicio, incluyendo alcance, duración, frecuencia, modalidad, precio y condiciones adicionales, pueden ser definidos en una propuesta, conversación comercial, confirmación escrita o acuerdo específico."] },
+      { id: "privacy", title: "Privacidad y datos personales", body: ["Langia puede recopilar información personal cuando una persona completa formularios, escribe por WhatsApp, solicita información, participa en entrevistas de diagnóstico o contrata un servicio.", "Esta información puede incluir nombre, correo electrónico, número de WhatsApp, país, idioma de interés, empresa, programa de interés, mensaje, objetivos de aprendizaje, nivel aproximado, disponibilidad, necesidades educativas y otra información compartida voluntariamente durante el proceso.", "Langia utiliza esta información para responder solicitudes, orientar al usuario, personalizar programas, coordinar servicios, dar seguimiento académico, preparar propuestas y mejorar la experiencia educativa.", "Langia no debe vender información personal a terceros. La información puede ser compartida internamente con personal autorizado, docentes, coordinadores o proveedores necesarios para prestar el servicio."] },
+      { id: "whatsapp", title: "Comunicación por WhatsApp", body: ["Al enviar el formulario de contacto o comunicarse con Langia por WhatsApp, el usuario acepta continuar la conversación a través de este canal. WhatsApp puede estar sujeto a sus propias políticas de privacidad y condiciones de uso.", "Langia puede utilizar WhatsApp para responder solicitudes, coordinar entrevistas, compartir información de programas, confirmar detalles de servicio, dar seguimiento y atender preguntas relacionadas con la experiencia contratada."] },
+      { id: "payments", title: "Pagos y reembolsos", body: ["Los precios, formas de pago, cuotas, descuentos y condiciones específicas pueden variar según el programa o servicio contratado. Los detalles aplicables se confirmarán durante el proceso comercial o en la propuesta correspondiente.", "Un reembolso completo puede estar disponible antes de que el usuario haya tomado el 10% del programa contratado. Después de ese punto, cualquier reembolso, crédito, ajuste o solución alternativa podrá ser evaluado según el caso, el servicio contratado, el avance del programa y las condiciones acordadas.", "Los servicios corporativos, traducción, localización e interpretación pueden estar sujetos a condiciones de pago, cancelación y alcance definidas en propuestas o acuerdos específicos."] },
+      { id: "rescheduling", title: "Reprogramaciones", body: ["Langia busca ser flexible con la agenda de sus estudiantes y clientes. Como regla general, las solicitudes de reprogramación deben realizarse con al menos 6 horas de anticipación para que puedan aplicar plenamente.", "Las solicitudes realizadas con menos de 6 horas de anticipación podrán ser aceptadas, reprogramadas o movidas a otro momento a discreción de la compañía y según la disponibilidad del docente, proveedor o equipo correspondiente.", "La disponibilidad de horarios, docentes y proveedores puede variar según el programa, idioma, modalidad y zona horaria."] },
+      { id: "minors", title: "Menores y consentimiento de padres", body: ["Los programas para niños y adolescentes requieren la participación o autorización de un padre, madre, acudiente o representante legal. Al contratar un servicio para un menor, el adulto responsable confirma que tiene autoridad para hacerlo y acepta participar en la comunicación necesaria para coordinar el programa.", "Langia puede compartir reportes, observaciones y actualizaciones con el adulto responsable del menor, especialmente en programas como Langia 4 Kids n Teens."] },
+      { id: "results", title: "Exámenes, resultados y garantías", body: ["Langia puede ofrecer preparación para exámenes, certificaciones y metas académicas o profesionales. Sin embargo, Langia no garantiza resultados oficiales, puntajes específicos, aprobación de exámenes, visas, admisiones, empleos, ascensos ni resultados externos.", "El progreso y desempeño del estudiante pueden depender de factores como nivel inicial, asistencia, frecuencia, dedicación, práctica, condiciones del examen y circunstancias personales. Los reportes de desempeño de Langia sirven como referencia educativa, no como garantía de resultado oficial."] },
+      { id: "intellectual-property", title: "Propiedad intelectual", body: ["Los materiales, diseños, textos, imágenes, recursos, metodologías, contenidos de clase, documentos, actividades, estructuras de programas, materiales de marca y elementos digitales creados o proporcionados por Langia pueden estar protegidos por derechos de propiedad intelectual.", "El usuario no debe copiar, distribuir, revender, publicar, modificar o utilizar materiales de Langia con fines comerciales o no autorizados sin permiso escrito."] },
+      { id: "corporate", title: "Servicios corporativos y propuestas", body: ["Los servicios corporativos, incluyendo capacitación, traducción, localización e interpretación, pueden estar sujetos a propuestas, alcances, precios, cronogramas, entregables y condiciones particulares.", "En servicios corporativos, los objetivos definidos por la compañía pueden guiar el diseño del programa o servicio. Los acuerdos corporativos específicos pueden complementar o reemplazar ciertas condiciones generales de esta página."] },
+      { id: "cookies", title: "Cookies y analítica", body: ["Langia puede utilizar cookies, herramientas de analítica o tecnologías similares para entender el uso del sitio web, mejorar la experiencia del usuario y evaluar el desempeño de sus páginas. Esta sección podrá actualizarse cuando se implementen herramientas específicas."] },
+      { id: "updates", title: "Actualizaciones", body: ["Langia puede actualizar estas políticas para reflejar cambios en servicios, procesos, requisitos legales o decisiones operativas. La versión publicada en esta página será la referencia general disponible para los usuarios."] },
+    ],
+    contact: { title: "Contacto legal", body: "Para preguntas relacionadas con estas políticas, puedes contactar a Langia a través de la página de contacto.", companyLabel: "Compañía", addressLabel: "Dirección", jurisdictionLabel: "Jurisdicción", company: "Langia Language Solutions LLC", address: "1309 Coffeen Avenue, Sheridan, Wyoming", jurisdiction: "Wyoming, Estados Unidos", cta: "Contactar a Langia" },
+    finalCta: { title: "¿Tienes preguntas sobre nuestras políticas?", body: "Escríbenos y te orientaremos sobre el servicio, programa o proceso correspondiente.", primaryCta: "Contactar a Langia" },
+  },
+  pt: {
+    hero: { eyebrow: "Legal", title: "Políticas e informações legais.", body: "Consulte as políticas gerais da Langia Language Solutions LLC sobre serviços, privacidade, pagamentos, remarcações e comunicação.", quickFacts: ["Langia Language Solutions LLC", "Wyoming, Estados Unidos", "Serviços online e internacionais", "Políticas gerais"], note: "Esta página resume políticas gerais da Langia Language Solutions LLC. A versão final pode ser atualizada ou complementada por acordos específicos de serviço." },
+    nav: [{ label: "Termos de serviço", href: "#terms" }, { label: "Privacidade", href: "#privacy" }, { label: "WhatsApp", href: "#whatsapp" }, { label: "Pagamentos e reembolsos", href: "#payments" }, { label: "Remarcações", href: "#rescheduling" }, { label: "Menores", href: "#minors" }, { label: "Exames e resultados", href: "#results" }, { label: "Propriedade intelectual", href: "#intellectual-property" }, { label: "Serviços corporativos", href: "#corporate" }, { label: "Cookies e análise", href: "#cookies" }],
+    sections: [
+      { id: "terms", title: "Termos de serviço", body: ["Ao contratar ou utilizar serviços da Langia Language Solutions LLC, o usuário aceita participar de forma respeitosa, fornecer informações verdadeiras e cumprir as condições acordadas para o serviço escolhido. Os serviços da Langia podem incluir aulas ao vivo, programas de idiomas, preparação para exames, serviços corporativos, tradução, localização e interpretação.", "Os detalhes específicos de cada serviço, incluindo escopo, duração, frequência, modalidade, preço e condições adicionais, podem ser definidos em uma proposta, conversa comercial, confirmação escrita ou acordo específico."] },
+      { id: "privacy", title: "Privacidade e dados pessoais", body: ["A Langia pode coletar informações pessoais quando uma pessoa preenche formulários, escreve pelo WhatsApp, solicita informações, participa de entrevistas de diagnóstico ou contrata um serviço.", "Essas informações podem incluir nome, e-mail, número de WhatsApp, país, idioma de interesse, empresa, programa de interesse, mensagem, objetivos de aprendizagem, nível aproximado, disponibilidade, necessidades educacionais e outras informações compartilhadas voluntariamente durante o processo.", "A Langia utiliza essas informações para responder solicitações, orientar o usuário, personalizar programas, coordenar serviços, acompanhar o progresso acadêmico, preparar propostas e melhorar a experiência educativa.", "A Langia não deve vender informações pessoais a terceiros. As informações podem ser compartilhadas internamente com pessoal autorizado, professores, coordenadores ou fornecedores necessários para prestar o serviço."] },
+      { id: "whatsapp", title: "Comunicação pelo WhatsApp", body: ["Ao enviar o formulário de contato ou se comunicar com a Langia pelo WhatsApp, o usuário aceita continuar a conversa por esse canal. O WhatsApp pode estar sujeito às suas próprias políticas de privacidade e condições de uso.", "A Langia pode utilizar o WhatsApp para responder solicitações, coordenar entrevistas, compartilhar informações de programas, confirmar detalhes de serviço, acompanhar processos e responder perguntas relacionadas à experiência contratada."] },
+      { id: "payments", title: "Pagamentos e reembolsos", body: ["Preços, formas de pagamento, parcelas, descontos e condições específicas podem variar conforme o programa ou serviço contratado. Os detalhes aplicáveis serão confirmados durante o processo comercial ou na proposta correspondente.", "Um reembolso completo pode estar disponível antes de o usuário ter realizado 10% do programa contratado. Após esse ponto, qualquer reembolso, crédito, ajuste ou solução alternativa poderá ser avaliado conforme o caso, o serviço contratado, o avanço do programa e as condições acordadas.", "Serviços corporativos, tradução, localização e interpretação podem estar sujeitos a condições de pagamento, cancelamento e escopo definidas em propostas ou acordos específicos."] },
+      { id: "rescheduling", title: "Remarcações", body: ["A Langia busca ser flexível com a agenda de seus alunos e clientes. Como regra geral, as solicitações de remarcação devem ser feitas com pelo menos 6 horas de antecedência para que possam ser aplicadas plenamente.", "Solicitações feitas com menos de 6 horas de antecedência poderão ser aceitas, remarcadas ou transferidas para outro momento a critério da empresa e conforme a disponibilidade do professor, fornecedor ou equipe correspondente.", "A disponibilidade de horários, professores e fornecedores pode variar conforme o programa, idioma, modalidade e fuso horário."] },
+      { id: "minors", title: "Menores e consentimento dos pais", body: ["Programas para crianças e adolescentes exigem a participação ou autorização de um pai, mãe, responsável ou representante legal. Ao contratar um serviço para um menor, o adulto responsável confirma que tem autoridade para fazê-lo e aceita participar da comunicação necessária para coordenar o programa.", "A Langia pode compartilhar relatórios, observações e atualizações com o adulto responsável pelo menor, especialmente em programas como Langia 4 Kids n Teens."] },
+      { id: "results", title: "Exames, resultados e garantias", body: ["A Langia pode oferecer preparação para exames, certificações e objetivos acadêmicos ou profissionais. No entanto, a Langia não garante resultados oficiais, pontuações específicas, aprovação em exames, vistos, admissões, empregos, promoções ou resultados externos.", "O progresso e desempenho do aluno podem depender de fatores como nível inicial, presença, frequência, dedicação, prática, condições do exame e circunstâncias pessoais. Os relatórios de desempenho da Langia servem como referência educativa, não como garantia de resultado oficial."] },
+      { id: "intellectual-property", title: "Propriedade intelectual", body: ["Materiais, designs, textos, imagens, recursos, metodologias, conteúdos de aula, documentos, atividades, estruturas de programas, materiais de marca e elementos digitais criados ou fornecidos pela Langia podem estar protegidos por direitos de propriedade intelectual.", "O usuário não deve copiar, distribuir, revender, publicar, modificar ou utilizar materiais da Langia para fins comerciais ou não autorizados sem permissão escrita."] },
+      { id: "corporate", title: "Serviços corporativos e propostas", body: ["Serviços corporativos, incluindo treinamento, tradução, localização e interpretação, podem estar sujeitos a propostas, escopos, preços, cronogramas, entregáveis e condições particulares.", "Em serviços corporativos, os objetivos definidos pela empresa podem orientar o desenho do programa ou serviço. Acordos corporativos específicos podem complementar ou substituir certas condições gerais desta página."] },
+      { id: "cookies", title: "Cookies e análise", body: ["A Langia pode utilizar cookies, ferramentas de análise ou tecnologias semelhantes para entender o uso do site, melhorar a experiência do usuário e avaliar o desempenho de suas páginas. Esta seção poderá ser atualizada quando ferramentas específicas forem implementadas."] },
+      { id: "updates", title: "Atualizações", body: ["A Langia pode atualizar estas políticas para refletir mudanças em serviços, processos, requisitos legais ou decisões operacionais. A versão publicada nesta página será a referência geral disponível para os usuários."] },
+    ],
+    contact: { title: "Contato legal", body: "Para perguntas relacionadas a estas políticas, você pode entrar em contato com a Langia pela página de contato.", companyLabel: "Empresa", addressLabel: "Endereço", jurisdictionLabel: "Jurisdição", company: "Langia Language Solutions LLC", address: "1309 Coffeen Avenue, Sheridan, Wyoming", jurisdiction: "Wyoming, Estados Unidos", cta: "Falar com a Langia" },
+    finalCta: { title: "Tem perguntas sobre nossas políticas?", body: "Escreva para nós e orientaremos você sobre o serviço, programa ou processo correspondente.", primaryCta: "Falar com a Langia" },
+  },
+  en: {
+    hero: { eyebrow: "Legal", title: "Policies and legal information.", body: "Review the general policies of Langia Language Solutions LLC regarding services, privacy, payments, rescheduling, and communication.", quickFacts: ["Langia Language Solutions LLC", "Wyoming, United States", "Online and international services", "General policies"], note: "This page summarizes general policies for Langia Language Solutions LLC. The final version may be updated or supplemented by specific service agreements." },
+    nav: [{ label: "Terms of service", href: "#terms" }, { label: "Privacy", href: "#privacy" }, { label: "WhatsApp", href: "#whatsapp" }, { label: "Payments and refunds", href: "#payments" }, { label: "Rescheduling", href: "#rescheduling" }, { label: "Minors", href: "#minors" }, { label: "Exams and results", href: "#results" }, { label: "Intellectual property", href: "#intellectual-property" }, { label: "Corporate services", href: "#corporate" }, { label: "Cookies and analytics", href: "#cookies" }],
+    sections: [
+      { id: "terms", title: "Terms of service", body: ["By purchasing or using services from Langia Language Solutions LLC, the user agrees to participate respectfully, provide truthful information, and follow the conditions agreed for the selected service. Langia services may include live classes, language programs, exam preparation, corporate services, translation, localization, and interpretation.", "The specific details of each service, including scope, duration, frequency, format, price, and additional conditions, may be defined in a proposal, commercial conversation, written confirmation, or specific agreement."] },
+      { id: "privacy", title: "Privacy and personal data", body: ["Langia may collect personal information when a person completes forms, contacts us through WhatsApp, requests information, participates in diagnostic interviews, or purchases a service.", "This information may include name, email address, WhatsApp number, country, language of interest, company, program of interest, message, learning goals, approximate level, availability, educational needs, and other information voluntarily shared during the process.", "Langia uses this information to respond to requests, guide the user, personalize programs, coordinate services, provide academic follow-up, prepare proposals, and improve the educational experience.", "Langia should not sell personal information to third parties. Information may be shared internally with authorized staff, teachers, coordinators, or providers necessary to deliver the service."] },
+      { id: "whatsapp", title: "WhatsApp communication", body: ["By submitting the contact form or communicating with Langia through WhatsApp, the user agrees to continue the conversation through this channel. WhatsApp may be subject to its own privacy policies and terms of use.", "Langia may use WhatsApp to respond to requests, coordinate interviews, share program information, confirm service details, provide follow-up, and answer questions related to the contracted experience."] },
+      { id: "payments", title: "Payments and refunds", body: ["Prices, payment methods, installments, discounts, and specific conditions may vary depending on the program or service purchased. Applicable details will be confirmed during the commercial process or in the relevant proposal.", "A full refund may be available before the user has completed 10% of the contracted program. After that point, any refund, credit, adjustment, or alternative solution may be evaluated according to the case, the contracted service, program progress, and agreed conditions.", "Corporate services, translation, localization, and interpretation may be subject to payment, cancellation, and scope conditions defined in specific proposals or agreements."] },
+      { id: "rescheduling", title: "Rescheduling", body: ["Langia aims to be flexible with student and client schedules. As a general rule, rescheduling requests should be made at least 6 hours in advance for them to fully apply.", "Requests made with less than 6 hours' notice may be accepted, rescheduled, or moved to another time at the company's discretion and according to the availability of the teacher, provider, or relevant team.", "Availability of schedules, teachers, and providers may vary depending on the program, language, format, and time zone."] },
+      { id: "minors", title: "Minors and parental consent", body: ["Programs for children and teenagers require the participation or authorization of a parent, guardian, or legal representative. By purchasing a service for a minor, the responsible adult confirms that they have authority to do so and agrees to participate in the communication necessary to coordinate the program.", "Langia may share reports, observations, and updates with the responsible adult, especially in programs such as Langia 4 Kids n Teens."] },
+      { id: "results", title: "Exams, results, and guarantees", body: ["Langia may offer preparation for exams, certifications, and academic or professional goals. However, Langia does not guarantee official results, specific scores, exam approval, visas, admissions, jobs, promotions, or external outcomes.", "Student progress and performance may depend on factors such as initial level, attendance, frequency, dedication, practice, exam conditions, and personal circumstances. Langia performance reports serve as educational references, not as guarantees of official results."] },
+      { id: "intellectual-property", title: "Intellectual property", body: ["Materials, designs, texts, images, resources, methodologies, class content, documents, activities, program structures, brand materials, and digital elements created or provided by Langia may be protected by intellectual property rights.", "The user must not copy, distribute, resell, publish, modify, or use Langia materials for commercial or unauthorized purposes without written permission."] },
+      { id: "corporate", title: "Corporate services and proposals", body: ["Corporate services, including training, translation, localization, and interpretation, may be subject to specific proposals, scopes, prices, timelines, deliverables, and conditions.", "In corporate services, company-defined objectives may guide the design of the program or service. Specific corporate agreements may supplement or replace certain general conditions on this page."] },
+      { id: "cookies", title: "Cookies and analytics", body: ["Langia may use cookies, analytics tools, or similar technologies to understand website usage, improve user experience, and evaluate page performance. This section may be updated when specific tools are implemented."] },
+      { id: "updates", title: "Updates", body: ["Langia may update these policies to reflect changes in services, processes, legal requirements, or operational decisions. The version published on this page will serve as the general reference available to users."] },
+    ],
+    contact: { title: "Legal contact", body: "For questions related to these policies, you can contact Langia through the contact page.", companyLabel: "Company", addressLabel: "Address", jurisdictionLabel: "Jurisdiction", company: "Langia Language Solutions LLC", address: "1309 Coffeen Avenue, Sheridan, Wyoming", jurisdiction: "Wyoming, United States", cta: "Contact Langia" },
+    finalCta: { title: "Have questions about our policies?", body: "Contact us and we'll guide you regarding the relevant service, program, or process.", primaryCta: "Contact Langia" },
+  },
+};
+
+const workWithUsPageContent: Record<PageLanguage, WorkWithUsPageContent> = {
+  es: {
+    hero: { eyebrow: "Trabaja con nosotros", title: "Enseña idiomas desde cualquier lugar con Langia.", body: "Estamos construyendo una red internacional de docentes freelance para futuras oportunidades de colaboración en inglés, francés, español y portugués.", primaryCta: "Trabaja con Langia", secondaryCta: "Ver requisitos", quickFacts: ["Remoto", "Freelance", "Todas las lenguas Langia", "Docentes con experiencia"] },
+    why: { eyebrow: "Por qué Langia", title: "Una forma más humana y organizada de enseñar online.", body: "Langia combina clases en vivo, acompañamiento académico y herramientas personalizables para ayudar a los docentes a trabajar con más contexto y dirección.", cards: [{ title: "Trabajo remoto", body: "Enseña desde donde estés, con una dinámica online profesional." }, { title: "Freelance", body: "Colabora por servicios y disponibilidad, sin prometer una posición fija." }, { title: "Buen pago", body: "Buscamos ofrecer una compensación freelance competitiva para docentes preparados." }, { title: "Mejor contexto", body: "Langia TailorED ayuda a conectar objetivos, estudiantes y seguimiento." }] },
+    profile: { eyebrow: "Perfil docente", title: "Buscamos docentes confiables, cercanos y preparados.", body: "El docente Langia debe combinar conocimiento, puntualidad, empatía y capacidad de guiar al estudiante en un entorno online.", cards: [{ title: "Experiencia enseñando", body: "Personas que ya han trabajado enseñando idiomas." }, { title: "Comunicación clara", body: "Docentes capaces de explicar, corregir y acompañar con tacto." }, { title: "Empatía", body: "Profesores que entienden que aprender un idioma requiere confianza." }, { title: "Puntualidad", body: "La confiabilidad es parte esencial de la experiencia Langia." }] },
+    languages: { eyebrow: "Idiomas", title: "Buscamos docentes para todas nuestras lenguas.", body: "Trabajamos con inglés, francés, español y portugués. Si puedes enseñar más de un idioma, eso suma mucho.", items: ["Inglés", "Francés", "Español", "Portugués"] },
+    requirements: { eyebrow: "Requisitos", title: "Lo básico para enseñar bien en Langia.", body: "La experiencia online depende de la preparación del docente, su conexión, su puntualidad y su capacidad de acompañar al estudiante.", items: [{ title: "Hablar inglés", body: "El inglés es un requisito indispensable para colaborar con Langia." }, { title: "Experiencia docente", body: "Experiencia previa enseñando idiomas." }, { title: "Dominio del idioma que enseñas", body: "Conocimiento sólido y capacidad de corregir con claridad." }, { title: "Computador confiable", body: "Laptop o desktop que ejecute Microsoft Teams y/o Zoom de forma nativa." }, { title: "Buena conexión a internet", body: "Conexión estable para clases en vivo." }, { title: "Puntualidad", body: "Respeto por horarios y compromisos." }, { title: "Empatía", body: "Capacidad de acompañar al estudiante con paciencia y cercanía." }, { title: "Profesionalismo remoto", body: "Comunicación clara y presentación adecuada en clases online." }], deviceNote: "No exigimos una marca específica de equipo. Puede ser macOS, Windows o Linux, siempre que funcione de forma confiable y ejecute Teams y/o Zoom nativamente." },
+    process: { eyebrow: "Proceso", title: "Expresa tu interés y revisaremos si hay una oportunidad adecuada.", body: "Esta página no garantiza una posición abierta. Nos ayuda a conocer docentes que podrían encajar con futuras necesidades de Langia.", steps: [{ title: "Completa el formulario", body: "Cuéntanos tu perfil, idiomas y experiencia." }, { title: "Revisamos tu información", body: "Evaluamos si tu perfil coincide con futuras necesidades." }, { title: "Conversamos si hay ajuste", body: "Si existe una oportunidad compatible, el equipo podrá contactarte." }, { title: "Definimos colaboración", body: "Cuando haya fit, coordinamos disponibilidad, condiciones y proceso." }] },
+    form: { title: "Expresa tu interés docente", body: "Completa este formulario para compartir tu perfil con Langia.", note: "Enviar este formulario no garantiza una posición abierta. Nos permite conocer tu perfil para futuras oportunidades de colaboración.", fields: { name: "Nombre completo", email: "Email", whatsapp: "WhatsApp", country: "País", teachingLanguages: "Idiomas que enseñas", spokenLanguages: "Idiomas que hablas", experience: "Experiencia docente", audience: "Audiencia principal", technicalConfirmation: "Confirmación técnica", message: "Mensaje", link: "LinkedIn / portafolio / sitio web", availability: "Disponibilidad", notes: "Notas adicionales" }, placeholders: { name: "Tu nombre completo", email: "tu@email.com", whatsapp: "Código de país + número", country: "País donde estás", spokenLanguages: "Ej. inglés, español, portugués", message: "Cuéntanos sobre tu experiencia y por qué quieres colaborar con Langia.", link: "Opcional", availability: "Opcional", notes: "Opcional" }, teachingLanguageOptions: ["English", "French", "Spanish", "Portuguese", "More than one"], experienceOptions: ["Less than 1 year", "1-2 years", "3-5 years", "5+ years"], audienceOptions: ["Adults", "Kids/Teens", "Test Prep", "Corporate", "Mixed"], technicalConfirmation: "Confirmo que tengo un computador confiable, buena conexión a internet y puedo usar Microsoft Teams y/o Zoom de forma nativa.", submit: "Enviar interés por WhatsApp", requiredError: "Completa este campo para continuar.", configWarning: "WhatsApp aún no está configurado. Agrega NEXT_PUBLIC_LANGIA_WHATSAPP_NUMBER para activar el envío.", selectPlaceholder: "Selecciona una opción", fallbackNotProvided: "No indicado", yes: "Sí", no: "No" },
+    whatsappMessage: { intro: "Hola Langia, quiero expresar mi interés en colaborar como docente.", name: "Nombre", email: "Email", whatsapp: "WhatsApp", country: "País", teachingLanguages: "Idiomas que enseño", spokenLanguages: "Idiomas que hablo", experience: "Experiencia docente", audience: "Audiencia principal", availability: "Disponibilidad", link: "LinkedIn/Portafolio", technicalConfirmation: "Confirmación técnica", message: "Mensaje" },
+    faq: { eyebrow: "Preguntas frecuentes", title: "Antes de compartir tu perfil.", items: [{ title: "¿Langia está contratando ahora?", body: "Este formulario permite expresar interés para futuras oportunidades. No garantiza una posición abierta." }, { title: "¿El trabajo es remoto?", body: "Sí. La colaboración docente con Langia es remota." }, { title: "¿Es freelance?", body: "Sí. Las colaboraciones docentes son freelance." }, { title: "¿Qué idiomas buscan?", body: "Buscamos docentes de inglés, francés, español y portugués." }, { title: "¿Debo hablar inglés?", body: "Sí. Hablar inglés es un requisito indispensable para colaborar con Langia." }, { title: "¿Necesito un computador?", body: "Sí. Necesitas un computador confiable que ejecute Microsoft Teams y/o Zoom nativamente." }] },
+    finalCta: { title: "¿Te gustaría enseñar con Langia?", body: "Comparte tu perfil y podremos considerarte para futuras oportunidades de colaboración docente.", primaryCta: "Trabaja con Langia" },
+  },
+  pt: {
+    hero: { eyebrow: "Trabalhe conosco", title: "Ensine idiomas de qualquer lugar com a Langia.", body: "Estamos construindo uma rede internacional de professores freelance para futuras oportunidades de colaboração em inglês, francês, espanhol e português.", primaryCta: "Trabalhe com a Langia", secondaryCta: "Ver requisitos", quickFacts: ["Remoto", "Freelance", "Todos os idiomas Langia", "Professores com experiência"] },
+    why: { eyebrow: "Por que a Langia", title: "Uma forma mais humana e organizada de ensinar online.", body: "A Langia combina aulas ao vivo, acompanhamento acadêmico e ferramentas personalizáveis para ajudar professores a trabalhar com mais contexto e direção.", cards: [{ title: "Trabalho remoto", body: "Ensine de onde estiver, com uma dinâmica online profissional." }, { title: "Freelance", body: "Colabore por serviços e disponibilidade, sem promessa de posição fixa." }, { title: "Boa remuneração", body: "Buscamos oferecer uma compensação freelance competitiva para professores preparados." }, { title: "Mais contexto", body: "Langia TailorED ajuda a conectar objetivos, alunos e acompanhamento." }] },
+    profile: { eyebrow: "Perfil docente", title: "Buscamos professores confiáveis, próximos e preparados.", body: "O professor Langia deve combinar conhecimento, pontualidade, empatia e capacidade de guiar o aluno em um ambiente online.", cards: [{ title: "Experiência ensinando", body: "Pessoas que já trabalharam ensinando idiomas." }, { title: "Comunicação clara", body: "Professores capazes de explicar, corrigir e acompanhar com cuidado." }, { title: "Empatia", body: "Professores que entendem que aprender um idioma exige confiança." }, { title: "Pontualidade", body: "A confiabilidade é parte essencial da experiência Langia." }] },
+    languages: { eyebrow: "Idiomas", title: "Buscamos professores para todos os nossos idiomas.", body: "Trabalhamos com inglês, francês, espanhol e português. Se você pode ensinar mais de um idioma, isso é um grande diferencial.", items: ["Inglês", "Francês", "Espanhol", "Português"] },
+    requirements: { eyebrow: "Requisitos", title: "O básico para ensinar bem na Langia.", body: "A experiência online depende da preparação do professor, conexão, pontualidade e capacidade de acompanhar o aluno.", items: [{ title: "Falar inglês", body: "O inglês é um requisito indispensável para colaborar com a Langia." }, { title: "Experiência docente", body: "Experiência prévia ensinando idiomas." }, { title: "Domínio do idioma que ensina", body: "Conhecimento sólido e capacidade de corrigir com clareza." }, { title: "Computador confiável", body: "Laptop ou desktop que execute Microsoft Teams e/ou Zoom de forma nativa." }, { title: "Boa conexão à internet", body: "Conexão estável para aulas ao vivo." }, { title: "Pontualidade", body: "Respeito por horários e compromissos." }, { title: "Empatia", body: "Capacidade de acompanhar o aluno com paciência e proximidade." }, { title: "Profissionalismo remoto", body: "Comunicação clara e apresentação adequada em aulas online." }], deviceNote: "Não exigimos uma marca específica de equipamento. Pode ser macOS, Windows ou Linux, desde que funcione de forma confiável e execute Teams e/ou Zoom nativamente." },
+    process: { eyebrow: "Processo", title: "Expresse seu interesse e avaliaremos se há uma oportunidade adequada.", body: "Esta página não garante uma vaga aberta. Ela nos ajuda a conhecer professores que podem combinar com futuras necessidades da Langia.", steps: [{ title: "Complete o formulário", body: "Conte seu perfil, idiomas e experiência." }, { title: "Revisamos suas informações", body: "Avaliamos se seu perfil combina com futuras necessidades." }, { title: "Conversamos se houver fit", body: "Se existir uma oportunidade compatível, a equipe poderá entrar em contato." }, { title: "Definimos colaboração", body: "Quando houver fit, coordenamos disponibilidade, condições e processo." }] },
+    form: { title: "Expresse seu interesse docente", body: "Complete este formulário para compartilhar seu perfil com a Langia.", note: "Enviar este formulário não garante uma vaga aberta. Ele nos permite conhecer seu perfil para futuras oportunidades de colaboração.", fields: { name: "Nome completo", email: "Email", whatsapp: "WhatsApp", country: "País", teachingLanguages: "Idiomas que ensino", spokenLanguages: "Idiomas que falo", experience: "Experiência docente", audience: "Público principal", technicalConfirmation: "Confirmação técnica", message: "Mensagem", link: "LinkedIn / portfólio / site", availability: "Disponibilidade", notes: "Notas adicionais" }, placeholders: { name: "Seu nome completo", email: "voce@email.com", whatsapp: "Código do país + número", country: "País onde você está", spokenLanguages: "Ex. inglês, espanhol, português", message: "Conte sobre sua experiência e por que quer colaborar com a Langia.", link: "Opcional", availability: "Opcional", notes: "Opcional" }, teachingLanguageOptions: ["English", "French", "Spanish", "Portuguese", "More than one"], experienceOptions: ["Less than 1 year", "1-2 years", "3-5 years", "5+ years"], audienceOptions: ["Adults", "Kids/Teens", "Test Prep", "Corporate", "Mixed"], technicalConfirmation: "Confirmo que tenho um computador confiável, boa conexão à internet e posso usar Microsoft Teams e/ou Zoom de forma nativa.", submit: "Enviar interesse pelo WhatsApp", requiredError: "Complete este campo para continuar.", configWarning: "WhatsApp ainda não está configurado. Adicione NEXT_PUBLIC_LANGIA_WHATSAPP_NUMBER para ativar o envio.", selectPlaceholder: "Selecione uma opção", fallbackNotProvided: "Não indicado", yes: "Sim", no: "Não" },
+    whatsappMessage: { intro: "Olá Langia, quero expressar meu interesse em colaborar como professor(a).", name: "Nome", email: "Email", whatsapp: "WhatsApp", country: "País", teachingLanguages: "Idiomas que ensino", spokenLanguages: "Idiomas que falo", experience: "Experiência docente", audience: "Público principal", availability: "Disponibilidade", link: "LinkedIn/Portfólio", technicalConfirmation: "Confirmação técnica", message: "Mensagem" },
+    faq: { eyebrow: "Perguntas frequentes", title: "Antes de compartilhar seu perfil.", items: [{ title: "A Langia está contratando agora?", body: "Este formulário permite expressar interesse para futuras oportunidades. Não garante uma vaga aberta." }, { title: "O trabalho é remoto?", body: "Sim. A colaboração docente com a Langia é remota." }, { title: "É freelance?", body: "Sim. As colaborações docentes são freelance." }, { title: "Quais idiomas vocês buscam?", body: "Buscamos professores de inglês, francês, espanhol e português." }, { title: "Preciso falar inglês?", body: "Sim. Falar inglês é um requisito indispensável para colaborar com a Langia." }, { title: "Preciso de um computador?", body: "Sim. Você precisa de um computador confiável que execute Microsoft Teams e/ou Zoom nativamente." }] },
+    finalCta: { title: "Gostaria de ensinar com a Langia?", body: "Compartilhe seu perfil e poderemos considerar você para futuras oportunidades de colaboração docente.", primaryCta: "Trabalhe com a Langia" },
+  },
+  en: {
+    hero: { eyebrow: "Work with us", title: "Teach languages from anywhere with Langia.", body: "We are building an international network of freelance teachers for future collaboration opportunities in English, French, Spanish, and Portuguese.", primaryCta: "Work with Langia", secondaryCta: "View requirements", quickFacts: ["Remote", "Freelance", "All Langia languages", "Experienced teachers"] },
+    why: { eyebrow: "Why Langia", title: "A more human and organized way to teach online.", body: "Langia combines live classes, academic support, and customizable tools to help teachers work with more context and direction.", cards: [{ title: "Remote work", body: "Teach from wherever you are through a professional online dynamic." }, { title: "Freelance", body: "Collaborate based on services and availability, without a fixed-position promise." }, { title: "Strong compensation", body: "We aim to offer competitive freelance compensation for prepared teachers." }, { title: "Better context", body: "Langia TailorED helps connect goals, learners, and follow-up." }] },
+    profile: { eyebrow: "Teacher profile", title: "We look for reliable, prepared, and human teachers.", body: "A Langia teacher should combine knowledge, punctuality, empathy, and the ability to guide learners in an online environment.", cards: [{ title: "Teaching experience", body: "People who have already worked teaching languages." }, { title: "Clear communication", body: "Teachers who can explain, correct, and support with care." }, { title: "Empathy", body: "Teachers who understand that language learning requires confidence." }, { title: "Punctuality", body: "Reliability is an essential part of the Langia experience." }] },
+    languages: { eyebrow: "Languages", title: "We look for teachers across all Langia languages.", body: "We work with English, French, Spanish, and Portuguese. If you can teach more than one language, that is a strong plus.", items: ["English", "French", "Spanish", "Portuguese"] },
+    requirements: { eyebrow: "Requirements", title: "The basics for teaching well at Langia.", body: "The online experience depends on teacher preparation, connection quality, punctuality, and the ability to support learners.", items: [{ title: "Speak English", body: "English is a must-have requirement to collaborate with Langia." }, { title: "Teaching experience", body: "Previous experience teaching languages." }, { title: "Proficiency in the language you teach", body: "Strong command and the ability to correct clearly." }, { title: "Reliable computer", body: "Laptop or desktop that runs Microsoft Teams and/or Zoom natively." }, { title: "Good internet connection", body: "Stable connection for live classes." }, { title: "Punctuality", body: "Respect for schedules and commitments." }, { title: "Empathy", body: "Ability to support learners with patience and closeness." }, { title: "Remote professionalism", body: "Clear communication and appropriate presentation in online classes." }], deviceNote: "We do not require a specific device brand. macOS, Windows, or Linux is fine as long as it works reliably and runs Teams and/or Zoom natively." },
+    process: { eyebrow: "Process", title: "Express your interest and we'll review if there is a fit.", body: "This page does not guarantee an open position. It helps us learn about teachers who may fit future Langia needs.", steps: [{ title: "Complete the form", body: "Tell us about your profile, languages, and experience." }, { title: "We review your information", body: "We evaluate whether your profile matches future needs." }, { title: "We talk if there is a fit", body: "If there is a compatible opportunity, the team may contact you." }, { title: "We define collaboration", body: "When there is a fit, we coordinate availability, conditions, and process." }] },
+    form: { title: "Express teacher interest", body: "Complete this form to share your profile with Langia.", note: "Submitting this form does not guarantee an open position. It helps us learn about your profile for future collaboration opportunities.", fields: { name: "Full name", email: "Email", whatsapp: "WhatsApp", country: "Country", teachingLanguages: "Languages you teach", spokenLanguages: "Languages you speak", experience: "Teaching experience", audience: "Main teaching audience", technicalConfirmation: "Technical confirmation", message: "Message", link: "LinkedIn / portfolio / website", availability: "Availability", notes: "Additional notes" }, placeholders: { name: "Your full name", email: "you@email.com", whatsapp: "Country code + number", country: "Country where you are", spokenLanguages: "Ex. English, Spanish, Portuguese", message: "Tell us about your experience and why you want to collaborate with Langia.", link: "Optional", availability: "Optional", notes: "Optional" }, teachingLanguageOptions: ["English", "French", "Spanish", "Portuguese", "More than one"], experienceOptions: ["Less than 1 year", "1-2 years", "3-5 years", "5+ years"], audienceOptions: ["Adults", "Kids/Teens", "Test Prep", "Corporate", "Mixed"], technicalConfirmation: "I confirm that I have a reliable computer, a good internet connection, and can use Microsoft Teams and/or Zoom natively.", submit: "Send interest through WhatsApp", requiredError: "Complete this field to continue.", configWarning: "WhatsApp is not configured yet. Add NEXT_PUBLIC_LANGIA_WHATSAPP_NUMBER to enable submission.", selectPlaceholder: "Select an option", fallbackNotProvided: "Not provided", yes: "Yes", no: "No" },
+    whatsappMessage: { intro: "Hello Langia, I would like to express my interest in collaborating as a teacher.", name: "Name", email: "Email", whatsapp: "WhatsApp", country: "Country", teachingLanguages: "Languages I teach", spokenLanguages: "Languages I speak", experience: "Teaching experience", audience: "Main teaching audience", availability: "Availability", link: "LinkedIn/Portfolio", technicalConfirmation: "Technical confirmation", message: "Message" },
+    faq: { eyebrow: "FAQ", title: "Before sharing your profile.", items: [{ title: "Is Langia hiring right now?", body: "This form allows you to express interest for future opportunities. It does not guarantee an open position." }, { title: "Is the work remote?", body: "Yes. Teaching collaboration with Langia is remote." }, { title: "Is it freelance?", body: "Yes. Teaching collaborations are freelance." }, { title: "Which languages are you looking for?", body: "We look for teachers of English, French, Spanish, and Portuguese." }, { title: "Do I need to speak English?", body: "Yes. Speaking English is a must-have requirement to collaborate with Langia." }, { title: "Do I need a computer?", body: "Yes. You need a reliable computer that runs Microsoft Teams and/or Zoom natively." }] },
+    finalCta: { title: "Would you like to teach with Langia?", body: "Share your profile and we may consider you for future teaching collaboration opportunities.", primaryCta: "Work with Langia" },
+  },
+};
 
 const programsOverview = {
   es: {
@@ -3148,6 +3706,7 @@ export const pagesContent: Record<PageLanguage, Record<PageKey, MarketingPageCon
         { title: "Comunicación global", body: "Langia existe para abrir conversaciones entre personas, culturas y mercados." },
       ],
       cta: cta.es,
+      aboutPage: aboutPageContent.es,
     },
     legal: {
       eyebrow: "Legal",
@@ -3159,6 +3718,7 @@ export const pagesContent: Record<PageLanguage, Record<PageKey, MarketingPageCon
         { title: "Políticas de servicio", body: "Placeholder para políticas académicas, operativas y comerciales." },
       ],
       cta: cta.es,
+      legalPage: legalPageContent.es,
     },
     workWithUs: {
       eyebrow: "Trabaja con nosotros",
@@ -3170,6 +3730,7 @@ export const pagesContent: Record<PageLanguage, Record<PageKey, MarketingPageCon
         { title: "Futuras aperturas", body: "Aquí se publicarán oportunidades cuando estén disponibles." },
       ],
       cta: cta.es,
+      workWithUsPage: workWithUsPageContent.es,
     },
     contact: {
       eyebrow: "Contacto",
@@ -3231,9 +3792,9 @@ export const pagesContent: Record<PageLanguage, Record<PageKey, MarketingPageCon
     testPrep: { eyebrow: "Programas", title: "Test Prep", subtitle: "Preparação focada para exames, certificações e objetivos acadêmicos.", blocks: programBlocks.pt, cta: cta.pt, testPrepPage: testPrepPageContent.pt },
     kidsTeens: { eyebrow: "Programas", title: "Langia 4 Kids n Teens", subtitle: "Aprendizagem de idiomas para crianças e adolescentes com estrutura e acompanhamento.", blocks: programBlocks.pt, cta: cta.pt, kidsTeensPage: kidsTeensPageContent.pt },
     corporate: { eyebrow: "Corporativo", title: "Idiomas para equipes que cruzam fronteiras.", subtitle: "Programas ao vivo para empresas que precisam se comunicar melhor com clientes, mercados e equipes internacionais.", blocks: [{ title: "Necessidades da equipe", body: "Um espaço para mapear situações, níveis e objetivos de comunicação." }, { title: "Desenho do programa", body: "Aqui será apresentada a estrutura acadêmica para cada organização." }, { title: "Formato de entrega", body: "Esta seção receberá modalidades, acompanhamento e coordenação operacional." }], cta: cta.pt, corporatePage: corporatePageContent.pt },
-    about: { eyebrow: "Sobre a Langia", title: "Uma academia online para pessoas que vão mais longe.", subtitle: "A Langia combina aulas ao vivo, acompanhamento humano e tecnologia útil para criar rotas de aprendizagem mais claras.", blocks: [{ title: "O que acreditamos", body: "A aprendizagem deve ser clara, humana e orientada a objetivos reais." }, { title: "Orientação humana", body: "Professores e acompanhamento sustentam o progresso em cada etapa." }, { title: "Método assistido por IA", body: "A tecnologia ajuda a organizar objetivos, prática e acompanhamento." }, { title: "Comunicação global", body: "A Langia existe para abrir conversas entre pessoas, culturas e mercados." }], cta: cta.pt },
-    legal: { eyebrow: "Legal", title: "Informações legais e políticas.", subtitle: "Um espaço para políticas, termos, privacidade e documentação institucional.", blocks: [{ title: "Termos e condições", body: "Placeholder para termos de uso e condições do serviço." }, { title: "Política de privacidade", body: "Placeholder para informações de privacidade e uso de dados." }, { title: "Políticas de serviço", body: "Placeholder para políticas acadêmicas, operacionais e comerciais." }], cta: cta.pt },
-    workWithUs: { eyebrow: "Trabalhe conosco", title: "Construa o futuro da aprendizagem com a Langia.", subtitle: "Um espaço para futuras oportunidades docentes, operacionais e colaborativas.", blocks: [{ title: "Oportunidades docentes", body: "Um lugar para futuras chamadas de professores e mentores." }, { title: "Operações e crescimento", body: "Um espaço para funções de coordenação, suporte e expansão." }, { title: "Futuras vagas", body: "Aqui serão publicadas oportunidades quando estiverem disponíveis." }], cta: cta.pt },
+    about: { eyebrow: "Sobre a Langia", title: "Uma academia online para pessoas que vão mais longe.", subtitle: "A Langia combina aulas ao vivo, acompanhamento humano e tecnologia útil para criar rotas de aprendizagem mais claras.", blocks: [{ title: "O que acreditamos", body: "A aprendizagem deve ser clara, humana e orientada a objetivos reais." }, { title: "Orientação humana", body: "Professores e acompanhamento sustentam o progresso em cada etapa." }, { title: "Método assistido por IA", body: "A tecnologia ajuda a organizar objetivos, prática e acompanhamento." }, { title: "Comunicação global", body: "A Langia existe para abrir conversas entre pessoas, culturas e mercados." }], cta: cta.pt, aboutPage: aboutPageContent.pt },
+    legal: { eyebrow: "Legal", title: "Informações legais e políticas.", subtitle: "Um espaço para políticas, termos, privacidade e documentação institucional.", blocks: [{ title: "Termos e condições", body: "Placeholder para termos de uso e condições do serviço." }, { title: "Política de privacidade", body: "Placeholder para informações de privacidade e uso de dados." }, { title: "Políticas de serviço", body: "Placeholder para políticas acadêmicas, operacionais e comerciais." }], cta: cta.pt, legalPage: legalPageContent.pt },
+    workWithUs: { eyebrow: "Trabalhe conosco", title: "Construa o futuro da aprendizagem com a Langia.", subtitle: "Um espaço para futuras oportunidades docentes, operacionais e colaborativas.", blocks: [{ title: "Oportunidades docentes", body: "Um lugar para futuras chamadas de professores e mentores." }, { title: "Operações e crescimento", body: "Um espaço para funções de coordenação, suporte e expansão." }, { title: "Futuras vagas", body: "Aqui serão publicadas oportunidades quando estiverem disponíveis." }], cta: cta.pt, workWithUsPage: workWithUsPageContent.pt },
     contact: { eyebrow: "Contato", title: "Seu próximo capítulo começa com uma conversa.", subtitle: "Conte o que você quer alcançar e vamos orientar você para o programa ou serviço que melhor combina com seu momento.", blocks: contactPageContent.pt.contactCards, cta: { title: contactPageContent.pt.finalCta.title, body: contactPageContent.pt.finalCta.body, primaryLabel: contactPageContent.pt.finalCta.cta, primaryHref: "/contact#contact-form" }, contactPage: contactPageContent.pt },
     levelTest: { eyebrow: "Teste de nível", title: "Comece entendendo seu ponto de partida.", subtitle: "Esta página receberá a experiência de teste de nível e recomendação de programa.", blocks: [{ title: "Diagnóstico inicial", body: "Aqui ficará a avaliação de referência para orientar o ponto de partida." }, { title: "Recomendação de programa", body: "A experiência conectará resultados com uma rota sugerida." }, { title: "Em breve", body: "The level test experience is coming soon." }], cta: cta.pt },
     blog: { eyebrow: "Recursos", title: "Leituras breves para decidir melhor.", subtitle: "Guias, ideias e recursos para aprender idiomas com mais clareza.", blocks: [{ title: "Guias de decisão", body: "Recursos para comparar programas, ritmos e próximos passos." }, { title: "Ideias de aprendizagem", body: "Leituras para estudar com mais estrutura e confiança." }], cta: cta.pt },
@@ -3263,9 +3824,9 @@ export const pagesContent: Record<PageLanguage, Record<PageKey, MarketingPageCon
     testPrep: { eyebrow: "Programs", title: "Test Prep", subtitle: "Focused preparation for exams, certifications, and academic goals.", blocks: programBlocks.en, cta: cta.en, testPrepPage: testPrepPageContent.en },
     kidsTeens: { eyebrow: "Programs", title: "Langia 4 Kids n Teens", subtitle: "Language learning for children and teens with structure and support.", blocks: programBlocks.en, cta: cta.en, kidsTeensPage: kidsTeensPageContent.en },
     corporate: { eyebrow: "Corporate", title: "Languages for teams crossing borders.", subtitle: "Live programs for companies that need to communicate better with clients, markets, and international teams.", blocks: [{ title: "Team needs", body: "A space to map situations, levels, and communication goals." }, { title: "Program design", body: "This will present the academic structure for each organization." }, { title: "Delivery format", body: "This section will host formats, follow-up, and operating details." }], cta: cta.en, corporatePage: corporatePageContent.en },
-    about: { eyebrow: "About Langia", title: "An online academy for people going places.", subtitle: "Langia combines live classes, human guidance, and useful technology to create clearer learning paths.", blocks: [{ title: "What Langia believes", body: "Learning should feel clear, human, and connected to real goals." }, { title: "Human guidance", body: "Teachers and support keep progress grounded at every stage." }, { title: "AI-assisted method", body: "Technology helps organize goals, practice, and follow-up." }, { title: "Global communication", body: "Langia exists to open conversations across people, cultures, and markets." }], cta: cta.en },
-    legal: { eyebrow: "Legal", title: "Legal information and policies.", subtitle: "A place for policies, terms, privacy, and institutional documentation.", blocks: [{ title: "Terms and conditions", body: "Placeholder for terms of use and service conditions." }, { title: "Privacy policy", body: "Placeholder for privacy information and data handling." }, { title: "Service policies", body: "Placeholder for academic, operational, and commercial policies." }], cta: cta.en },
-    workWithUs: { eyebrow: "Work with us", title: "Build the future of learning with Langia.", subtitle: "A place for future teaching, operations, and collaboration opportunities.", blocks: [{ title: "Teaching opportunities", body: "A place for future teacher and mentor openings." }, { title: "Operations and growth", body: "A space for coordination, support, and growth roles." }, { title: "Future openings", body: "Opportunities will be published here when available." }], cta: cta.en },
+    about: { eyebrow: "About Langia", title: "An online academy for people going places.", subtitle: "Langia combines live classes, human guidance, and useful technology to create clearer learning paths.", blocks: [{ title: "What Langia believes", body: "Learning should feel clear, human, and connected to real goals." }, { title: "Human guidance", body: "Teachers and support keep progress grounded at every stage." }, { title: "AI-assisted method", body: "Technology helps organize goals, practice, and follow-up." }, { title: "Global communication", body: "Langia exists to open conversations across people, cultures, and markets." }], cta: cta.en, aboutPage: aboutPageContent.en },
+    legal: { eyebrow: "Legal", title: "Legal information and policies.", subtitle: "A place for policies, terms, privacy, and institutional documentation.", blocks: [{ title: "Terms and conditions", body: "Placeholder for terms of use and service conditions." }, { title: "Privacy policy", body: "Placeholder for privacy information and data handling." }, { title: "Service policies", body: "Placeholder for academic, operational, and commercial policies." }], cta: cta.en, legalPage: legalPageContent.en },
+    workWithUs: { eyebrow: "Work with us", title: "Build the future of learning with Langia.", subtitle: "A place for future teaching, operations, and collaboration opportunities.", blocks: [{ title: "Teaching opportunities", body: "A place for future teacher and mentor openings." }, { title: "Operations and growth", body: "A space for coordination, support, and growth roles." }, { title: "Future openings", body: "Opportunities will be published here when available." }], cta: cta.en, workWithUsPage: workWithUsPageContent.en },
     contact: { eyebrow: "Contact", title: "Your next chapter starts with a conversation.", subtitle: "Tell us what you want to achieve and we'll guide you toward the program or service that best fits your moment.", blocks: contactPageContent.en.contactCards, cta: { title: contactPageContent.en.finalCta.title, body: contactPageContent.en.finalCta.body, primaryLabel: contactPageContent.en.finalCta.cta, primaryHref: "/contact#contact-form" }, contactPage: contactPageContent.en },
     levelTest: { eyebrow: "Level test", title: "Start by understanding your baseline.", subtitle: "This page will host the level test and program recommendation experience.", blocks: [{ title: "Initial diagnosis", body: "The reference assessment will live here to orient the starting point." }, { title: "Program recommendation", body: "The experience will connect results with a suggested route." }, { title: "Coming soon", body: "The level test experience is coming soon." }], cta: cta.en },
     blog: { eyebrow: "Resources", title: "Short reads to make better decisions.", subtitle: "Guides, ideas, and resources for clearer language learning.", blocks: [{ title: "Decision guides", body: "Resources for comparing programs, rhythms, and next steps." }, { title: "Learning ideas", body: "Reads for studying with more structure and confidence." }], cta: cta.en },
