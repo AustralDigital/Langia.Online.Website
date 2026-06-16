@@ -1,25 +1,24 @@
-import type { Metadata } from "next";
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { existsSync } from "node:fs";
-import path from "node:path";
 import type { ReactNode } from "react";
 
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteNavbar } from "@/components/site/SiteNavbar";
+import { siteButtonClass } from "@/components/site/buttonStyles";
+import { commonContent } from "@/content/common";
 import { pagesContent, type CorporatePageContent } from "@/content/pages";
+import { useSiteLanguage } from "@/hooks/useSiteLanguage";
+import { defaultLanguage, type SiteLanguage } from "@/lib/language";
 
-const content = pagesContent.es.corporate.corporatePage;
 const imageCandidates = ["/images/programs/corporate.webp", "/images/corporate.webp"] as const;
-const imagePath = imageCandidates.find((candidate) => existsSync(path.join(process.cwd(), "public", candidate)));
+const imagePath = imageCandidates[0];
 
-export const metadata: Metadata = {
-  title: "Langia Corporate | Language Solutions for Teams",
-  description:
-    "Custom language training, translation, localization, and live interpretation solutions for companies across the Americas.",
-};
+const hasProgramImage = false;
 
-function getContent(): CorporatePageContent {
+function getContent(language: SiteLanguage): CorporatePageContent {
+  const content = pagesContent[language].corporate.corporatePage;
   if (!content) {
     throw new Error("Corporate page content is missing.");
   }
@@ -45,14 +44,8 @@ function CheckIcon() {
 }
 
 function Button({ href, children, variant = "primary" }: { href: string; children: ReactNode; variant?: "primary" | "secondary" | "dark" }) {
-  const classes = {
-    primary: "bg-[#048EFF] text-white shadow-[0_16px_34px_rgba(4,142,255,0.24)] hover:bg-[#F3B737]",
-    secondary: "border border-[#D8E6F4] bg-white text-[#0B1F3A] hover:border-[#048EFF] hover:text-[#048EFF]",
-    dark: "bg-white text-[#0B1F3A] hover:bg-[#F3B737] hover:text-white",
-  };
-
   return (
-    <Link href={href} className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-5 text-sm font-semibold transition ${classes[variant]}`}>
+    <Link href={href} className={siteButtonClass({ variant: variant === "dark" ? "darkSecondary" : variant })}>
       {children}
       <ArrowIcon />
     </Link>
@@ -70,7 +63,7 @@ function Eyebrow({ children, light = false }: { children: ReactNode; light?: boo
 function HeroVisual() {
   return (
     <div className="relative min-h-[400px] overflow-hidden rounded-[2rem] border border-[#173B66] bg-[#0B1F3A] shadow-[0_30px_90px_rgba(11,31,58,0.24)] lg:min-h-[520px]">
-      {imagePath ? (
+      {hasProgramImage ? (
         <Image src={imagePath} alt="" fill className="object-cover" sizes="(min-width: 1024px) 46vw, 100vw" priority />
       ) : (
         <div className="absolute inset-0 overflow-hidden bg-[linear-gradient(135deg,#0B1F3A_0%,#12345C_58%,#048EFF_100%)]">
@@ -117,11 +110,13 @@ function CardGrid({ cards, columns = "md:grid-cols-4" }: { cards: readonly { tit
 }
 
 export default function CorporatePage() {
-  const page = getContent();
+  const { language } = useSiteLanguage(defaultLanguage);
+  const page = getContent(language);
+  const common = commonContent[language];
 
   return (
-    <main className="min-h-screen bg-white text-[#0B1F3A]">
-      <SiteNavbar variant="light" />
+    <main className="min-h-screen bg-[#F3F7FB] text-[#0B1F3A]">
+      <SiteNavbar variant="light" language={language} />
 
       <section className="bg-[#F3F7FB] px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
         <div className="mx-auto grid max-w-[1180px] gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
@@ -224,11 +219,11 @@ export default function CorporatePage() {
           <SectionHeader {...page.useCases} />
           <div className="grid gap-6">
             <div>
-              <h3 className="font-heading text-xl font-semibold text-[#0B1F3A]">Use cases</h3>
+              <h3 className="font-heading text-xl font-semibold text-[#0B1F3A]">{common.useCases}</h3>
               <div className="mt-4 flex flex-wrap gap-2">{page.useCases.useCases.map((item) => <span key={item} className="rounded-full bg-[#F3F7FB] px-3 py-2 text-xs font-semibold text-[#0B1F3A]">{item}</span>)}</div>
             </div>
             <div>
-              <h3 className="font-heading text-xl font-semibold text-[#0B1F3A]">Industries</h3>
+              <h3 className="font-heading text-xl font-semibold text-[#0B1F3A]">{common.industries}</h3>
               <div className="mt-4 flex flex-wrap gap-2">{page.useCases.industries.map((item) => <span key={item} className="rounded-full bg-[#EAF6FF] px-3 py-2 text-xs font-semibold text-[#0B1F3A]">{item}</span>)}</div>
             </div>
           </div>

@@ -13,6 +13,7 @@ import {
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
 import { SiteNavbar } from "@/components/site/SiteNavbar";
+import { iconButtonClass, siteButtonClass } from "@/components/site/buttonStyles";
 import { navigationContent } from "@/content/navigation";
 import {
   defaultLanguage,
@@ -150,19 +151,10 @@ function Button({
   href: string;
   variant?: "primary" | "secondary" | "dark";
 }) {
-  const classes = {
-    primary:
-      "bg-[#048EFF] !text-[#FFFFFF] shadow-[0_16px_34px_rgba(4,142,255,0.24)] hover:bg-[#F3B737] hover:!text-[#FFFFFF]",
-    secondary:
-      "border border-[#D8E6F4] bg-[#FFFFFF] text-[#0B1F3A] hover:border-[#048EFF] hover:text-[#048EFF]",
-    dark:
-      "bg-[#048EFF] !text-[#FFFFFF] shadow-[0_16px_34px_rgba(4,142,255,0.26)] hover:bg-[#F3B737] hover:!text-[#FFFFFF]",
-  };
-
   return (
     <Link
       href={href}
-      className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-5 text-sm font-semibold transition ${classes[variant]}`}
+      className={siteButtonClass({ variant: variant === "dark" ? "dark" : variant })}
     >
       <span>{children}</span>
       <Icon name="arrow" className="h-4 w-4" />
@@ -283,12 +275,25 @@ function Hero({ copy, language }: { copy: HomepageCopy; language: HomepageLangua
   return (
     <section className="bg-[#FFFFFF] px-4 pb-8 pt-4 sm:px-6 lg:px-10">
       <div
-        className="relative mx-auto min-h-[720px] max-w-[1180px] overflow-hidden rounded-[2.5rem] border border-white/20 bg-[#0B1F3A] bg-cover shadow-[0_30px_100px_rgba(11,31,58,0.2)]"
-        style={{
-          backgroundImage: "url('/images/langia-hero-aurora-human.webp')",
-          backgroundPosition: "right 28% center",
-        }}
+        className="relative mx-auto min-h-[720px] max-w-[1180px] overflow-hidden rounded-[2.5rem] border border-white/20 bg-[#0B1F3A] shadow-[0_30px_100px_rgba(11,31,58,0.2)]"
       >
+        <Image
+          src="/images/Home/Home1-2.png"
+          alt="Langia mobile hero image for online language learning"
+          fill
+          sizes="(max-width: 767px) 100vw, 0px"
+          className="object-cover md:hidden"
+          priority
+        />
+        <Image
+          src="/images/Home/Home1-1.png"
+          alt="Langia learner in an AI-assisted language learning environment"
+          fill
+          sizes="(min-width: 768px) 1180px, 0px"
+          className="hidden object-cover object-[right_28%_center] md:block"
+          priority
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0B1F3A]/95 via-[#0B1F3A]/68 to-[#0B1F3A]/10" />
         <SiteNavbar variant="dark" language={language} />
         <div className="grid min-h-[720px] gap-10 px-8 pb-12 pt-40 sm:px-12 sm:pb-14 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:px-16 lg:pb-16 lg:pt-36 xl:px-20">
           <div className="relative z-10 max-w-xl">
@@ -302,7 +307,7 @@ function Hero({ copy, language }: { copy: HomepageCopy; language: HomepageLangua
               <Button href="/contact" variant="dark">{copy.hero.primary}</Button>
               <Link
                 href="#solutions"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 text-sm font-semibold !text-[#FFFFFF] backdrop-blur-xl transition hover:bg-white/20 hover:!text-[#FFFFFF]"
+                className={siteButtonClass({ variant: "darkSecondary" })}
               >
                 {copy.hero.secondary}
                 <Icon name="arrow" className="h-4 w-4" />
@@ -345,7 +350,7 @@ function SupportStrip({ copy }: { copy: HomepageCopy["support"] }) {
                     alt={logo.name}
                     width={160}
                     height={56}
-                    className="h-10 w-auto opacity-80 grayscale transition hover:opacity-100"
+                    className="h-10 w-40 object-contain transition [filter:grayscale(1)_saturate(0)_opacity(0.62)] hover:[filter:grayscale(1)_saturate(0)_opacity(0.85)]"
                   />
                 ) : (
                   <LogoPlaceholder name={logo.name} />
@@ -389,7 +394,7 @@ function SignatureFeature({ copy }: { copy: HomepageCopy["signature"] }) {
           <div className="relative min-h-[520px] overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/10">
             <Image
               src={copy.image}
-              alt={copy.title}
+              alt={copy.imageAlt}
               fill
               sizes="(min-width: 1024px) 980px, 100vw"
               className="object-cover"
@@ -485,7 +490,7 @@ function ProcessStepCard({
         {step.image ? (
           <Image
             src={step.image}
-            alt={step.title}
+            alt={step.imageAlt ?? step.title}
             fill
             sizes="(min-width: 1024px) 360px, 100vw"
             className="object-cover"
@@ -557,7 +562,7 @@ function HowItWorks({ copy }: { copy: HomepageCopy["how"] }) {
               <div className="lg:justify-self-end lg:pt-2">
                 <Link
                   href="/test-your-english-level"
-                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#048EFF] px-5 text-sm font-semibold !text-[#FFFFFF] shadow-[0_14px_30px_rgba(4,142,255,0.2)] transition hover:bg-[#F3B737] hover:!text-[#FFFFFF]"
+                  className={siteButtonClass()}
                 >
                   <span>{copy.cta}</span>
                   <Icon name="arrow" className="h-4 w-4" />
@@ -618,7 +623,7 @@ function Capabilities({ copy }: { copy: HomepageCopy["capabilities"] }) {
                 {card.image ? (
                   <Image
                     src={card.image}
-                    alt={card.title}
+                    alt={card.imageAlt ?? card.title}
                     fill
                     sizes="(min-width: 1024px) 360px, 100vw"
                     className="object-cover"
@@ -851,7 +856,15 @@ function Resources({ copy }: { copy: HomepageCopy["resources"] }) {
           </div>
         </div>
         <div className="rounded-[3rem] bg-[#0B1F3A] p-8 text-[#FFFFFF] shadow-[0_24px_80px_rgba(11,31,58,0.18)] sm:p-10">
-          <div className="mb-16 h-40 rounded-[2rem] border border-white/10 bg-[#048EFF]/12" />
+          <div className="relative mb-16 h-40 overflow-hidden rounded-[2rem] border border-white/10 bg-[#048EFF]/12">
+            <Image
+              src={copy.newsletterImage}
+              alt={copy.newsletterImageAlt}
+              fill
+              sizes="(min-width: 1024px) 420px, 100vw"
+              className="object-cover"
+            />
+          </div>
           <h3 className="font-heading text-3xl font-semibold leading-tight">{copy.newsletterTitle}</h3>
           <p className="mt-4 text-base leading-8 text-white/75">{copy.newsletterBody}</p>
           <div className="mt-8 flex rounded-full border border-white/15 bg-[#FFFFFF] p-1">
@@ -860,7 +873,7 @@ function Resources({ copy }: { copy: HomepageCopy["resources"] }) {
               placeholder={copy.placeholder}
               className="min-w-0 flex-1 bg-transparent px-4 text-sm text-[#0B1F3A] outline-none placeholder:text-[#6B7A90]"
             />
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#048EFF] text-[#FFFFFF] transition hover:bg-[#F3B737]">
+            <span className={`${iconButtonClass} h-11 w-11`}>
               <Icon name="arrow" className="h-4 w-4" />
             </span>
           </div>
@@ -925,7 +938,7 @@ function Footer({
                 placeholder={navigation.emailPlaceholder}
                 className="min-w-0 flex-1 bg-transparent px-4 text-sm text-[#FFFFFF] outline-none placeholder:text-white/45"
               />
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#048EFF] text-[#FFFFFF] transition hover:bg-[#F3B737]">
+              <span className={`${iconButtonClass} h-10 w-10`}>
                 <Icon name="arrow" className="h-4 w-4" />
               </span>
             </div>

@@ -1,9 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import type { ReactNode } from "react";
 
 import type { MarketingPageContent } from "@/content/pages";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteNavbar } from "@/components/site/SiteNavbar";
+import { siteButtonClass } from "@/components/site/buttonStyles";
 
 
 function ArrowIcon({ className = "h-4 w-4" }: { className?: string }) {
@@ -66,7 +69,7 @@ export function MarketingPageShell({
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="inline-flex min-h-11 items-center gap-2 rounded-full border border-[#D8E6F4] bg-[#FFFFFF] px-4 text-sm font-semibold text-[#0B1F3A] transition hover:border-[#048EFF] hover:text-[#048EFF]"
+                    className={siteButtonClass({ size: "sm", variant: "secondary" })}
                   >
                     {link.label}
                     <ArrowIcon />
@@ -107,7 +110,7 @@ export function MarketingPageShell({
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link
               href={content.cta.primaryHref}
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#048EFF] px-5 text-sm font-semibold text-[#FFFFFF] transition hover:bg-[#F3B737]"
+              className={siteButtonClass({ variant: "dark" })}
             >
               {content.cta.primaryLabel}
               <ArrowIcon />
@@ -115,7 +118,7 @@ export function MarketingPageShell({
             {content.cta.secondaryHref && content.cta.secondaryLabel ? (
               <Link
                 href={content.cta.secondaryHref}
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/20 px-5 text-sm font-semibold text-[#FFFFFF] transition hover:border-[#048EFF] hover:text-[#7EC7FF]"
+                className={siteButtonClass({ variant: "darkSecondary" })}
               >
                 {content.cta.secondaryLabel}
               </Link>

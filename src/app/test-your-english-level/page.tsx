@@ -1,15 +1,13 @@
-import type { Metadata } from "next";
+"use client";
 
 import { MarketingPageShell } from "@/components/MarketingPageShell";
 import { pagesContent } from "@/content/pages";
-
-const content = pagesContent.es.levelTest;
-
-export const metadata: Metadata = {
-  title: `${content.title} | Langia Online`,
-  description: content.subtitle,
-};
+import { useSiteLanguage } from "@/hooks/useSiteLanguage";
+import { defaultLanguage } from "@/lib/language";
 
 export default function TestYourEnglishLevelPage() {
+  const { language } = useSiteLanguage(defaultLanguage);
+  const content = pagesContent[language].levelTest;
+
   return <MarketingPageShell content={content} />;
 }

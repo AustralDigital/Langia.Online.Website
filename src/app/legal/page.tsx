@@ -1,17 +1,23 @@
-import type { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
 
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteNavbar } from "@/components/site/SiteNavbar";
+import { siteButtonClass } from "@/components/site/buttonStyles";
 import { pagesContent, type LegalPageContent, type LegalSectionContent } from "@/content/pages";
+import { useSiteLanguage } from "@/hooks/useSiteLanguage";
+import { defaultLanguage, type SiteLanguage } from "@/lib/language";
 
-const content = pagesContent.es.legal.legalPage;
+function getContent(language: SiteLanguage): LegalPageContent {
+  const content = pagesContent[language].legal.legalPage;
 
-export const metadata: Metadata = {
-  title: "Legal | Langia Language Solutions LLC",
-  description:
-    "Legal policies for Langia Language Solutions LLC, including terms, privacy, payments, refunds, rescheduling, minors, intellectual property, corporate services, and contact information.",
-};
+  if (!content) {
+    throw new Error("Legal page content is missing.");
+  }
+
+  return content;
+}
 
 function ArrowIcon({ className = "h-4 w-4" }: { className?: string }) {
   return (
@@ -134,7 +140,7 @@ function Policies({ page }: { page: LegalPageContent }) {
   );
 }
 
-function LegalContact({ page }: { page: LegalPageContent }) {
+function LegalContact({ page, eyebrow }: { page: LegalPageContent; eyebrow: string }) {
   const rows = [
     { label: page.contact.companyLabel, value: page.contact.company },
     { label: page.contact.addressLabel, value: page.contact.address },
@@ -145,14 +151,14 @@ function LegalContact({ page }: { page: LegalPageContent }) {
     <section className="bg-[#F3F7FB] px-4 py-16 sm:px-6 lg:px-10">
       <div className="mx-auto grid max-w-[1180px] gap-8 rounded-[2rem] border border-[#E4EDF7] bg-[#FFFFFF] p-8 shadow-[0_16px_50px_rgba(11,31,58,0.045)] lg:grid-cols-[1fr_0.95fr] sm:p-10">
         <div>
-          <Eyebrow>Legal</Eyebrow>
+          <Eyebrow>{eyebrow}</Eyebrow>
           <h2 className="mt-4 font-heading text-3xl font-semibold leading-tight text-[#0B1F3A] sm:text-4xl">
             {page.contact.title}
           </h2>
           <p className="mt-5 text-base leading-8 text-[#42526A]">{page.contact.body}</p>
           <Link
             href="/contact"
-            className="mt-8 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#048EFF] px-5 text-sm font-semibold text-[#FFFFFF] transition hover:bg-[#F3B737]"
+            className={siteButtonClass({ className: "mt-8" })}
           >
             {page.contact.cta}
             <ArrowIcon />
@@ -183,7 +189,7 @@ function FinalCta({ page }: { page: LegalPageContent }) {
         </div>
         <Link
           href="/contact"
-          className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#048EFF] px-5 text-sm font-semibold text-[#FFFFFF] transition hover:bg-[#F3B737]"
+          className={siteButtonClass({ variant: "dark" })}
         >
           {page.finalCta.primaryCta}
           <ArrowIcon />
@@ -194,17 +200,16 @@ function FinalCta({ page }: { page: LegalPageContent }) {
 }
 
 export default function LegalPage() {
-  if (!content) {
-    return null;
-  }
+  const { language } = useSiteLanguage(defaultLanguage);
+  const content = getContent(language);
 
   return (
     <main id="top" className="min-h-screen bg-[#FFFFFF] text-[#0B1F3A]">
-      <SiteNavbar variant="light" />
+      <SiteNavbar variant="light" language={language} />
       <Hero page={content} />
       <PolicyNav page={content} />
       <Policies page={content} />
-      <LegalContact page={content} />
+      <LegalContact page={content} eyebrow={content.hero.eyebrow} />
       <FinalCta page={content} />
       <SiteFooter />
     </main>

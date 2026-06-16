@@ -5,7 +5,10 @@ import { useState, type ChangeEvent, type FormEvent, type ReactNode } from "reac
 
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteNavbar } from "@/components/site/SiteNavbar";
+import { siteButtonClass } from "@/components/site/buttonStyles";
 import { pagesContent, type PageBlock, type WorkWithUsPageContent } from "@/content/pages";
+import { useSiteLanguage } from "@/hooks/useSiteLanguage";
+import { defaultLanguage, type SiteLanguage } from "@/lib/language";
 
 type TeacherFormState = {
   name: string;
@@ -64,8 +67,8 @@ const requiredFields: RequiredField[] = [
   "message",
 ];
 
-function getPageContent(): WorkWithUsPageContent {
-  const page = pagesContent.es.workWithUs.workWithUsPage;
+function getPageContent(language: SiteLanguage): WorkWithUsPageContent {
+  const page = pagesContent[language].workWithUs.workWithUsPage;
 
   if (!page) {
     throw new Error("Work with Us page content is missing.");
@@ -126,14 +129,8 @@ function ButtonLink({
   children: ReactNode;
   variant?: "primary" | "secondary" | "darkSecondary";
 }) {
-  const classes = {
-    primary: "bg-[#048EFF] text-white shadow-[0_16px_34px_rgba(4,142,255,0.22)] hover:bg-[#F3B737]",
-    secondary: "border border-[#D8E6F4] bg-white text-[#0B1F3A] hover:border-[#048EFF] hover:text-[#048EFF]",
-    darkSecondary: "border border-white/20 text-white hover:border-[#048EFF] hover:text-[#7EC7FF]",
-  };
-
   return (
-    <Link href={href} className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-5 text-sm font-semibold transition ${classes[variant]}`}>
+    <Link href={href} className={siteButtonClass({ variant })}>
       {children}
       <ArrowIcon />
     </Link>
@@ -424,7 +421,7 @@ function TeacherInterestForm({ page }: { page: WorkWithUsPageContent }) {
 
       <button
         type="submit"
-        className="mt-7 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-[#048EFF] px-6 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(4,142,255,0.22)] transition hover:bg-[#F3B737] sm:w-auto"
+        className={siteButtonClass({ className: "mt-7 w-full px-6 sm:w-auto" })}
       >
         {page.form.submit}
         <ArrowIcon />
@@ -434,11 +431,12 @@ function TeacherInterestForm({ page }: { page: WorkWithUsPageContent }) {
 }
 
 export default function WorkWithUsClient() {
-  const page = getPageContent();
+  const { language } = useSiteLanguage(defaultLanguage);
+  const page = getPageContent(language);
 
   return (
-    <main className="min-h-screen bg-white text-[#0B1F3A]">
-      <SiteNavbar variant="light" />
+    <main className="min-h-screen bg-[#F3F7FB] text-[#0B1F3A]">
+      <SiteNavbar variant="light" language={language} />
 
       <section className="bg-[#F3F7FB] px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
         <div className="mx-auto grid max-w-[1180px] gap-10 lg:grid-cols-[1.04fr_0.96fr] lg:items-center">

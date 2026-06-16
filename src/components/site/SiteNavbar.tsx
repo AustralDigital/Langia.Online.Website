@@ -7,6 +7,7 @@ import { useState } from "react";
 import { navigationContent } from "@/content/navigation";
 import { useSiteLanguage } from "@/hooks/useSiteLanguage";
 import { defaultLanguage, type SiteLanguage } from "@/lib/language";
+import { siteButtonClass } from "@/components/site/buttonStyles";
 
 type SiteNavbarProps = {
   variant?: "dark" | "light";
@@ -52,7 +53,10 @@ function Icon({ name }: { name: "menu" | "close" | "arrow" }) {
   );
 }
 
-export function SiteNavbar({ variant = "light", language: languageProp }: SiteNavbarProps) {
+export function SiteNavbar({
+  variant = "light",
+  language: languageProp,
+}: SiteNavbarProps) {
   const [open, setOpen] = useState(false);
   const { language: storedLanguage } = useSiteLanguage(defaultLanguage);
   const language = languageProp ?? storedLanguage;
@@ -68,11 +72,15 @@ export function SiteNavbar({ variant = "light", language: languageProp }: SiteNa
 
   const shellClass = dark
     ? "absolute inset-x-8 top-4 z-20 sm:inset-x-12 sm:top-6 lg:inset-x-16 xl:inset-x-20"
-    : "sticky top-0 z-40 border-b border-[#E4EDF7] bg-white/90 px-4 py-4 backdrop-blur-xl sm:px-6 lg:px-10";
+    : "sticky top-0 z-40 bg-transparent px-4 pb-3 pt-4 shadow-none sm:px-6 sm:pt-5 lg:px-10";
+
+  const navClass = dark
+    ? "mx-auto flex max-w-[1180px] items-center justify-between gap-4"
+    : "mx-auto flex max-w-[1180px] items-center justify-between gap-4 overflow-visible rounded-[2rem] border border-[#E4EDF7]/90 bg-white/85 px-4 py-3 shadow-[0_18px_55px_rgba(11,31,58,0.10)] backdrop-blur-xl sm:px-5 lg:rounded-full lg:px-4";
 
   const desktopClass = dark
     ? "hidden min-h-16 items-center gap-2 rounded-full border border-white/20 bg-white/12 px-3 shadow-[0_18px_48px_rgba(0,0,0,0.14)] backdrop-blur-2xl lg:flex"
-    : "hidden min-h-14 items-center gap-2 rounded-full border border-[#E4EDF7] bg-white px-3 shadow-[0_14px_34px_rgba(11,31,58,0.06)] lg:flex";
+    : "hidden min-h-12 items-center gap-2 lg:flex";
 
   const linkClass = dark
     ? "rounded-full px-4 py-2 text-sm font-medium !text-white transition hover:bg-white/10 hover:!text-white"
@@ -80,7 +88,7 @@ export function SiteNavbar({ variant = "light", language: languageProp }: SiteNa
 
   const loginClass = dark
     ? "inline-flex min-h-11 items-center justify-center rounded-full border border-white/20 bg-white/15 px-4 text-sm font-semibold !text-white transition hover:bg-white/20"
-    : "inline-flex min-h-11 items-center justify-center rounded-full border border-[#D8E6F4] bg-white px-4 text-sm font-semibold text-[#0B1F3A] transition hover:border-[#048EFF] hover:text-[#048EFF]";
+    : "inline-flex min-h-11 items-center justify-center rounded-full border border-[#D8E6F4] bg-white px-4 text-sm font-semibold text-[#0B1F3A] transition hover:border-[#D7E6F5] hover:bg-[#F3F7FB] hover:text-[#0B1F3A]";
 
   const menuPanelClass = dark
     ? "border-white/20 bg-[#0B1F3A]/92 shadow-[0_18px_48px_rgba(0,0,0,0.22)]"
@@ -88,14 +96,14 @@ export function SiteNavbar({ variant = "light", language: languageProp }: SiteNa
 
   return (
     <header className={shellClass}>
-      <nav className="mx-auto flex max-w-[1180px] items-center justify-between gap-4">
+      <nav className={navClass}>
         <Link href="/" className="flex items-center" aria-label={copy.logoAlt}>
           <Image
             src={logo}
-            alt={copy.logoAlt}
+            alt={dark ? copy.logoAlt : "Langia"}
             width={272}
             height={104}
-            className="h-24 w-auto"
+            className={dark ? "h-24 w-auto" : "h-16 w-auto sm:h-20"}
             priority={dark}
           />
         </Link>
@@ -136,7 +144,7 @@ export function SiteNavbar({ variant = "light", language: languageProp }: SiteNa
           </Link>
           <Link
             href="/contact"
-            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#048EFF] px-5 text-sm font-semibold !text-white shadow-[0_16px_34px_rgba(4,142,255,0.26)] transition hover:bg-[#F3B737] hover:!text-white"
+            className={siteButtonClass({ variant: dark ? "dark" : "primary" })}
           >
             {copy.primaryCta}
             <Icon name="arrow" />
@@ -188,7 +196,7 @@ export function SiteNavbar({ variant = "light", language: languageProp }: SiteNa
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#048EFF] px-5 text-sm font-semibold !text-white transition hover:bg-[#F3B737]"
+              className={siteButtonClass({ variant: dark ? "dark" : "primary" })}
             >
               {copy.primaryCta}
               <Icon name="arrow" />

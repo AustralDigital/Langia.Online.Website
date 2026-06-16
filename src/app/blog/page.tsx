@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import type { ReactNode } from "react";
 
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteNavbar } from "@/components/site/SiteNavbar";
+import { CommonLabel, LocalizedDate, LocalizedText } from "@/components/site/LocalizedText";
+import { siteButtonClass } from "@/components/site/buttonStyles";
 import { blogCategories, getPublishedPosts, type BlogPost } from "@/lib/blog";
 
 export const metadata: Metadata = {
@@ -12,22 +15,37 @@ export const metadata: Metadata = {
 };
 
 const pageCopy = {
-  eyebrow: "Resources",
-  title: "Short reads to make better decisions.",
-  body: "Guides, ideas, and resources for clearer language learning.",
-  ctaTitle: "Need help choosing your path?",
-  ctaBody: "Talk to Langia and we'll help you find the program that fits your goals.",
-  cta: "Talk to Langia",
+  eyebrow: {
+    es: "Recursos",
+    pt: "Recursos",
+    en: "Resources",
+  },
+  title: {
+    es: "Lecturas breves para tomar mejores decisiones.",
+    pt: "Leituras breves para tomar melhores decisões.",
+    en: "Short reads to make better decisions.",
+  },
+  body: {
+    es: "Guías, ideas y recursos para aprender idiomas con más claridad.",
+    pt: "Guias, ideias e recursos para aprender idiomas com mais clareza.",
+    en: "Guides, ideas, and resources for clearer language learning.",
+  },
+  ctaTitle: {
+    es: "¿Necesitas ayuda para elegir tu ruta?",
+    pt: "Precisa de ajuda para escolher sua rota?",
+    en: "Need help choosing your path?",
+  },
+  ctaBody: {
+    es: "Habla con Langia y te ayudaremos a encontrar el programa que se ajusta a tus metas.",
+    pt: "Fale com a Langia e ajudaremos você a encontrar o programa que combina com seus objetivos.",
+    en: "Talk to Langia and we'll help you find the program that fits your goals.",
+  },
+  cta: {
+    es: "Hablar con Langia",
+    pt: "Falar com a Langia",
+    en: "Talk to Langia",
+  },
 };
-
-function formatDate(date: string): string {
-  return new Intl.DateTimeFormat("en", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-    timeZone: "UTC",
-  }).format(new Date(`${date}T00:00:00.000Z`));
-}
 
 function ArrowIcon({ className = "h-4 w-4" }: { className?: string }) {
   return (
@@ -47,7 +65,7 @@ function ArrowIcon({ className = "h-4 w-4" }: { className?: string }) {
   );
 }
 
-function Eyebrow({ children }: { children: string }) {
+function Eyebrow({ children }: { children: ReactNode }) {
   return (
     <p className="font-heading text-xs font-semibold uppercase tracking-[0.18em] text-[#048EFF]">
       {children}
@@ -83,9 +101,9 @@ function PostMeta({ post }: { post: BlogPost }) {
     <div className="flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#048EFF]">
       <span>{post.category}</span>
       <span>/</span>
-      <time dateTime={post.date}>{formatDate(post.date)}</time>
+      <time dateTime={post.date}><LocalizedDate date={post.date} /></time>
       <span>/</span>
-      <span>{post.readingTime} min read</span>
+      <span>{post.readingTime} <CommonLabel label="minRead" /></span>
     </div>
   );
 }
@@ -105,7 +123,7 @@ function ArticleCard({ post }: { post: BlogPost }) {
         <p className="mt-4 text-base leading-7 text-[#42526A]">{post.description}</p>
         <p className="mt-5 text-sm font-semibold text-[#0B1F3A]">{post.authorName}</p>
         <span className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#048EFF]">
-          Read article
+          <CommonLabel label="readArticle" />
           <ArrowIcon className="h-4 w-4 transition group-hover:translate-x-1" />
         </span>
       </div>
@@ -126,12 +144,12 @@ export default function BlogIndexPage() {
 
       <section className="bg-white px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
         <div className="mx-auto max-w-[1180px]">
-          <Eyebrow>{pageCopy.eyebrow}</Eyebrow>
+          <Eyebrow><LocalizedText content={pageCopy.eyebrow} /></Eyebrow>
           <h1 className="mt-5 max-w-4xl font-heading text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
-            {pageCopy.title}
+            <LocalizedText content={pageCopy.title} />
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-8 text-[#42526A] sm:text-lg">
-            {pageCopy.body}
+            <LocalizedText content={pageCopy.body} />
           </p>
         </div>
       </section>
@@ -141,7 +159,7 @@ export default function BlogIndexPage() {
           <div className="mx-auto grid max-w-[1180px] gap-8 rounded-[2rem] border border-[#E4EDF7] bg-white p-5 shadow-[0_18px_60px_rgba(11,31,58,0.055)] lg:grid-cols-[0.95fr_1.05fr] lg:items-center sm:p-7">
             <CoverPreview post={featuredPost} large />
             <div className="p-2 sm:p-4">
-              <Eyebrow>Featured</Eyebrow>
+              <Eyebrow><CommonLabel label="featured" /></Eyebrow>
               <PostMeta post={featuredPost} />
               <h2 className="mt-5 font-heading text-3xl font-semibold leading-tight text-[#0B1F3A] sm:text-4xl">
                 {featuredPost.title}
@@ -150,9 +168,9 @@ export default function BlogIndexPage() {
               <p className="mt-5 text-sm font-semibold text-[#0B1F3A]">{featuredPost.authorName}</p>
               <Link
                 href={`/blog/${featuredPost.slug}`}
-                className="mt-8 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#048EFF] px-5 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(4,142,255,0.22)] transition hover:bg-[#F3B737]"
+                className={siteButtonClass({ className: "mt-8" })}
               >
-                Read article
+                <CommonLabel label="readArticle" />
                 <ArrowIcon />
               </Link>
             </div>
@@ -187,15 +205,15 @@ export default function BlogIndexPage() {
         <div className="mx-auto grid max-w-[1180px] gap-8 overflow-hidden rounded-[2rem] bg-[#0B1F3A] p-8 text-white shadow-[0_28px_90px_rgba(11,31,58,0.2)] md:grid-cols-[1fr_auto] md:items-center sm:p-10">
           <div>
             <h2 className="font-heading text-3xl font-semibold leading-tight sm:text-4xl">
-              {pageCopy.ctaTitle}
+              <LocalizedText content={pageCopy.ctaTitle} />
             </h2>
-            <p className="mt-4 max-w-2xl text-base leading-8 text-white/70">{pageCopy.ctaBody}</p>
+            <p className="mt-4 max-w-2xl text-base leading-8 text-white/70"><LocalizedText content={pageCopy.ctaBody} /></p>
           </div>
           <Link
             href="/contact"
-            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#048EFF] px-5 text-sm font-semibold text-white transition hover:bg-[#F3B737]"
+            className={siteButtonClass({ variant: "dark" })}
           >
-            {pageCopy.cta}
+            <LocalizedText content={pageCopy.cta} />
             <ArrowIcon />
           </Link>
         </div>

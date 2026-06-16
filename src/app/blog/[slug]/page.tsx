@@ -5,6 +5,8 @@ import type { ReactNode } from "react";
 
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteNavbar } from "@/components/site/SiteNavbar";
+import { CommonLabel, LocalizedDate, LocalizedText } from "@/components/site/LocalizedText";
+import { siteButtonClass } from "@/components/site/buttonStyles";
 import { getPostBySlug, getPublishedPosts, type BlogPost } from "@/lib/blog";
 
 type BlogPostPageProps = {
@@ -30,15 +32,6 @@ const ctaCopy = {
     button: "Falar com a Langia",
   },
 };
-
-function formatDate(date: string): string {
-  return new Intl.DateTimeFormat("en", {
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-    timeZone: "UTC",
-  }).format(new Date(`${date}T00:00:00.000Z`));
-}
 
 function ArrowIcon({ className = "h-4 w-4" }: { className?: string }) {
   return (
@@ -250,24 +243,24 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const localizedCta = ctaCopy[post.language];
 
   return (
-    <main className="min-h-screen bg-white text-[#0B1F3A]">
+    <main className="min-h-screen bg-[#F3F7FB] text-[#0B1F3A]">
       <SiteNavbar variant="light" />
       <section className="bg-[#F3F7FB] px-4 py-6 sm:px-6 lg:px-10">
         <div className="mx-auto max-w-[1100px] rounded-[2rem] border border-[#E4EDF7] bg-white px-6 py-12 shadow-[0_18px_60px_rgba(11,31,58,0.055)] sm:px-10 lg:px-14">
           <Link
             href="/blog"
-            className="inline-flex rounded-full border border-[#D8E6F4] bg-[#F3F7FB] px-4 py-2 text-sm font-semibold text-[#0B1F3A] transition hover:border-[#048EFF] hover:text-[#048EFF]"
+            className={siteButtonClass({ size: "sm", variant: "secondary" })}
           >
-            Back to resources
+            <CommonLabel label="backToResources" />
           </Link>
           <div className="mt-14 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#048EFF]">
             <span>{post.category}</span>
             <span>/</span>
             <span>{post.language}</span>
             <span>/</span>
-            <time dateTime={post.date}>{formatDate(post.date)}</time>
+            <time dateTime={post.date}><LocalizedDate date={post.date} /></time>
             <span>/</span>
-            <span>{post.readingTime} min read</span>
+            <span>{post.readingTime} <CommonLabel label="minRead" /></span>
           </div>
           <h1 className="mt-5 max-w-4xl font-heading text-4xl font-semibold leading-tight text-[#0B1F3A] sm:text-5xl lg:text-6xl">
             {post.title}
@@ -304,9 +297,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
           <Link
             href={post.ctaHref}
-            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#048EFF] px-5 text-sm font-semibold text-white transition hover:bg-[#F3B737]"
+            className={siteButtonClass({ variant: "dark" })}
           >
-            {post.ctaLabel || localizedCta.button}
+            <LocalizedText content={{ es: ctaCopy.es.button, pt: ctaCopy.pt.button, en: post.ctaLabel || localizedCta.button }} />
             <ArrowIcon />
           </Link>
         </div>

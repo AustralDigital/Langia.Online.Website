@@ -1,23 +1,27 @@
-import { existsSync } from "node:fs";
-import path from "node:path";
+"use client";
 
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteNavbar } from "@/components/site/SiteNavbar";
+import { siteButtonClass } from "@/components/site/buttonStyles";
 import { pagesContent, type AboutPageContent, type PageBlock } from "@/content/pages";
+import { useSiteLanguage } from "@/hooks/useSiteLanguage";
+import { defaultLanguage, type SiteLanguage } from "@/lib/language";
 
-const content = pagesContent.es.about.aboutPage;
 const aboutImagePath = "/images/about/about-langia.webp";
-const hasAboutImage = existsSync(path.join(process.cwd(), "public", aboutImagePath));
+const hasAboutImage = false;
 
-export const metadata: Metadata = {
-  title: "About Langia | Human-Led, AI-Assisted Language Learning",
-  description:
-    "Learn about Langia, an international language education company founded in 2020 to provide human-led, AI-assisted language learning for learners, families, and teams.",
-};
+function getContent(language: SiteLanguage): AboutPageContent {
+  const content = pagesContent[language].about.aboutPage;
+
+  if (!content) {
+    throw new Error("About page content is missing.");
+  }
+
+  return content;
+}
 
 function ArrowIcon({ className = "h-4 w-4" }: { className?: string }) {
   return (
@@ -71,19 +75,10 @@ function CtaLink({
   children: string;
   variant?: "primary" | "secondary" | "darkSecondary";
 }) {
-  const classes = {
-    primary:
-      "bg-[#048EFF] text-[#FFFFFF] shadow-[0_16px_34px_rgba(4,142,255,0.22)] hover:bg-[#F3B737]",
-    secondary:
-      "border border-[#D8E6F4] bg-[#FFFFFF] text-[#0B1F3A] hover:border-[#048EFF] hover:text-[#048EFF]",
-    darkSecondary:
-      "border border-white/20 text-[#FFFFFF] hover:border-[#048EFF] hover:text-[#7EC7FF]",
-  };
-
   return (
     <Link
       href={href}
-      className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-5 text-sm font-semibold transition ${classes[variant]}`}
+      className={siteButtonClass({ variant })}
     >
       {children}
       <ArrowIcon />
@@ -354,13 +349,12 @@ function FinalCta({ page: { finalCta } }: { page: AboutPageContent }) {
 }
 
 export default function AboutPage() {
-  if (!content) {
-    return null;
-  }
+  const { language } = useSiteLanguage(defaultLanguage);
+  const content = getContent(language);
 
   return (
     <main className="min-h-screen bg-[#FFFFFF] text-[#0B1F3A]">
-      <SiteNavbar variant="light" />
+      <SiteNavbar variant="light" language={language} />
       <Hero page={content} />
       <Origin page={content} />
       <EditorialSection

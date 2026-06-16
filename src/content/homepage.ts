@@ -17,6 +17,7 @@ type HomepageCard = {
   href?: string;
   icon?: HomepageIconName;
   image?: string;
+  imageAlt?: string;
   linkLabel?: string;
   step?: string;
 };
@@ -66,6 +67,7 @@ export type HomepageCopy = {
     title: string;
     body: string;
     image: string;
+    imageAlt: string;
     benefits: HomepageCard[];
   };
   solutions: {
@@ -111,6 +113,8 @@ export type HomepageCopy = {
     articles: HomepageCard[];
     newsletterTitle: string;
     newsletterBody: string;
+    newsletterImage: string;
+    newsletterImageAlt: string;
     placeholder: string;
   };
   footer: {
@@ -133,6 +137,17 @@ export type HomepageCopy = {
     name: string;
   };
 };
+
+const homeCompanyLogos = [
+  { name: "Bancoldex", src: "/images/Home/Home-Companies/Bancoldex.png" },
+  { name: "Cummins", src: "/images/Home/Home-Companies/Cummins.png" },
+  { name: "FMC", src: "/images/Home/Home-Companies/FMC.png" },
+  { name: "Hospital Angeles", src: "/images/Home/Home-Companies/HospitalAngeles.png" },
+  { name: "Lululemon", src: "/images/Home/Home-Companies/Lululemon.png" },
+  { name: "Microsoft", src: "/images/Home/Home-Companies/Microsoft.png" },
+  { name: "Pepsico", src: "/images/Home/Home-Companies/Pepsico.png" },
+  { name: "Turnitin", src: "/images/Home/Home-Companies/Turnitin.png" },
+];
 
 export const homepageContent = {
   es: {
@@ -171,23 +186,15 @@ export const homepageContent = {
       eyebrow: "PRESENCIA GLOBAL",
       title: "Donde nuestros estudiantes trabajan, lideran y crecen.",
       body: "Los logotipos representan lugares donde estudiantes o egresados de Langia han desarrollado su vida profesional. No implican patrocinio, alianza o relación comercial.",
-      logos: [
-        { name: "Converra", src: null },
-        { name: "Nexora", src: null },
-        { name: "Syncell", src: null },
-        { name: "Socium", src: null },
-        { name: "Bridgr", src: null },
-        { name: "Netspire", src: null },
-        { name: "Vireon", src: null },
-        { name: "Linkora", src: null },
-      ],
+      logos: homeCompanyLogos,
     },
     signature: {
       eyebrow: "Nuestro método",
       titlePrefix: "Langia TailorED:",
       title: "Más que clases: una ruta hecha para avanzar contigo.",
       body: "Langia TailorED combina diagnóstico, clases en vivo, objetivos personales y seguimiento inteligente para que cada etapa tenga dirección.",
-      image: "/images/LangiaTailoredHome.png",
+      image: "/images/Home/Home2.png",
+      imageAlt: "Langia TailorED personalized learning system",
       benefits: [
         { title: "Ruta por nivel", body: "Un camino claro desde tu punto de partida hasta tu próximo objetivo.", icon: "target" },
         { title: "Guía humana", body: "Docentes expertos mantienen el aprendizaje cercano, práctico y enfocado.", icon: "users" },
@@ -218,7 +225,8 @@ export const homepageContent = {
           title: "Descubre tu punto de partida",
           body: "Empieza con una referencia clara de tu nivel, tus metas y tus necesidades.",
           href: "/test-your-english-level",
-          image: "/images/howitworks1.png",
+          image: "/images/Home/Home3.png",
+          imageAlt: "Discover your starting point",
           linkLabel: "Conocer más",
         },
         {
@@ -226,7 +234,8 @@ export const homepageContent = {
           title: "Elige tu camino",
           body: "Conecta tus objetivos con el programa y el ritmo que mejor se ajustan a ti.",
           href: "/programs",
-          image: "/images/howitworks2.png",
+          image: "/images/Home/Home4.png",
+          imageAlt: "Choose your language learning path",
           linkLabel: "Conocer más",
         },
         {
@@ -234,7 +243,8 @@ export const homepageContent = {
           title: "Empieza con apoyo",
           body: "Avanza con clases en vivo, estructura y seguimiento cercano.",
           href: "/contact",
-          image: "/images/howitworks3.png",
+          image: "/images/Home/Home5.png",
+          imageAlt: "Begin guided language practice",
           linkLabel: "Conocer más",
         },
       ],
@@ -245,9 +255,9 @@ export const homepageContent = {
       title: "Una experiencia premium, organizada con claridad.",
       body: "Herramientas y acompañamiento para mantener el aprendizaje enfocado.",
       cards: [
-        { title: "Soporte humano", body: "Orientación docente y retroalimentación en cada etapa.", icon: "users", image: "/images/capabilities1.png" },
-        { title: "Seguimiento visual", body: "Un espacio central para ver progreso, objetivos y planificación.", icon: "target", image: "/images/capabilities2.png" },
-        { title: "Flexibilidad online", body: "Un formato estructurado para distintas agendas.", icon: "globe", image: "/images/capabilities3.png" },
+        { title: "Soporte humano", body: "Orientación docente y retroalimentación en cada etapa.", icon: "users", image: "/images/Home/Home6.png", imageAlt: "Human support for language learning" },
+        { title: "Seguimiento visual", body: "Un espacio central para ver progreso, objetivos y planificación.", icon: "target", image: "/images/Home/Home7.png", imageAlt: "Visual progress dashboard for language learning" },
+        { title: "Flexibilidad online", body: "Un formato estructurado para distintas agendas.", icon: "globe", image: "/images/Home/Home8.png", imageAlt: "Online flexibility for language learning" },
       ],
     },
     conversion: {
@@ -281,6 +291,8 @@ export const homepageContent = {
       ],
       newsletterTitle: "Recibe novedades",
       newsletterBody: "Un campo visual por ahora. La suscripción se conectará más adelante.",
+      newsletterImage: "/images/Home/Newsletterimage.png",
+      newsletterImageAlt: "Langia newsletter resource image",
       placeholder: "Correo electrónico",
     },
     footer: {
@@ -349,23 +361,15 @@ export const homepageContent = {
       eyebrow: "PRESENÇA GLOBAL",
       title: "Onde nossos alunos trabalham, lideram e crescem.",
       body: "Os logotipos representam lugares onde alunos ou ex-alunos da Langia desenvolveram sua vida profissional. Não implicam patrocínio, parceria ou relação comercial.",
-      logos: [
-        { name: "Converra", src: null },
-        { name: "Nexora", src: null },
-        { name: "Syncell", src: null },
-        { name: "Socium", src: null },
-        { name: "Bridgr", src: null },
-        { name: "Netspire", src: null },
-        { name: "Vireon", src: null },
-        { name: "Linkora", src: null },
-      ],
+      logos: homeCompanyLogos,
     },
     signature: {
       eyebrow: "Nosso método",
       titlePrefix: "Langia TailorED:",
       title: "Mais que aulas: uma rota feita para avançar com você.",
       body: "Langia TailorED combina diagnóstico, aulas ao vivo, objetivos pessoais e acompanhamento inteligente para que cada etapa tenha direção.",
-      image: "/images/LangiaTailoredHome.png",
+      image: "/images/Home/Home2.png",
+      imageAlt: "Langia TailorED personalized learning system",
       benefits: [
         { title: "Rota por nível", body: "Um caminho claro desde o seu ponto de partida até o próximo objetivo.", icon: "target" },
         { title: "Orientação humana", body: "Professores especialistas mantêm o aprendizado próximo, prático e focado.", icon: "users" },
@@ -396,7 +400,8 @@ export const homepageContent = {
           title: "Descubra seu ponto de partida",
           body: "Comece com uma referência clara do seu nível, objetivos e necessidades.",
           href: "/test-your-english-level",
-          image: "/images/howitworks1.png",
+          image: "/images/Home/Home3.png",
+          imageAlt: "Discover your starting point",
           linkLabel: "Saiba mais",
         },
         {
@@ -404,7 +409,8 @@ export const homepageContent = {
           title: "Escolha seu caminho",
           body: "Conecte seus objetivos ao programa e ao ritmo que melhor combinam com você.",
           href: "/programs",
-          image: "/images/howitworks2.png",
+          image: "/images/Home/Home4.png",
+          imageAlt: "Choose your language learning path",
           linkLabel: "Saiba mais",
         },
         {
@@ -412,7 +418,8 @@ export const homepageContent = {
           title: "Comece com apoio",
           body: "Avance com aulas ao vivo, estrutura e acompanhamento próximo.",
           href: "/contact",
-          image: "/images/howitworks3.png",
+          image: "/images/Home/Home5.png",
+          imageAlt: "Begin guided language practice",
           linkLabel: "Saiba mais",
         },
       ],
@@ -423,9 +430,9 @@ export const homepageContent = {
       title: "Uma experiência premium, organizada com clareza.",
       body: "Ferramentas e acompanhamento para manter o aprendizado em movimento.",
       cards: [
-        { title: "Suporte humano", body: "Orientação docente e feedback em cada etapa.", icon: "users", image: "/images/capabilities1.png" },
-        { title: "Acompanhamento visual", body: "Um espaço central para progresso, objetivos e planejamento.", icon: "target", image: "/images/capabilities2.png" },
-        { title: "Flexibilidade online", body: "Um formato estruturado para diferentes agendas.", icon: "globe", image: "/images/capabilities3.png" },
+        { title: "Suporte humano", body: "Orientação docente e feedback em cada etapa.", icon: "users", image: "/images/Home/Home6.png", imageAlt: "Human support for language learning" },
+        { title: "Acompanhamento visual", body: "Um espaço central para progresso, objetivos e planejamento.", icon: "target", image: "/images/Home/Home7.png", imageAlt: "Visual progress dashboard for language learning" },
+        { title: "Flexibilidade online", body: "Um formato estruturado para diferentes agendas.", icon: "globe", image: "/images/Home/Home8.png", imageAlt: "Online flexibility for language learning" },
       ],
     },
     conversion: {
@@ -459,6 +466,8 @@ export const homepageContent = {
       ],
       newsletterTitle: "Receba novidades",
       newsletterBody: "Um campo visual por enquanto. A assinatura será conectada mais adiante.",
+      newsletterImage: "/images/Home/Newsletterimage.png",
+      newsletterImageAlt: "Langia newsletter resource image",
       placeholder: "E-mail",
     },
     footer: {
@@ -527,23 +536,15 @@ export const homepageContent = {
       eyebrow: "GLOBAL PRESENCE",
       title: "Where our learners work, lead, and grow.",
       body: "Logos represent places where Langia learners or alumni have developed their professional lives. They do not imply sponsorship, partnership, or a commercial relationship.",
-      logos: [
-        { name: "Converra", src: null },
-        { name: "Nexora", src: null },
-        { name: "Syncell", src: null },
-        { name: "Socium", src: null },
-        { name: "Bridgr", src: null },
-        { name: "Netspire", src: null },
-        { name: "Vireon", src: null },
-        { name: "Linkora", src: null },
-      ],
+      logos: homeCompanyLogos,
     },
     signature: {
       eyebrow: "Our method",
       titlePrefix: "Langia TailorED:",
       title: "More than classes: a path built to move with you.",
       body: "Langia TailorED combines diagnostics, live classes, personal goals, and intelligent follow-up so every stage has direction.",
-      image: "/images/LangiaTailoredHome.png",
+      image: "/images/Home/Home2.png",
+      imageAlt: "Langia TailorED personalized learning system",
       benefits: [
         { title: "Level-based path", body: "A clear route from your starting point to your next goal.", icon: "target" },
         { title: "Human guidance", body: "Expert teachers keep learning practical, focused, and personal.", icon: "users" },
@@ -574,7 +575,8 @@ export const homepageContent = {
           title: "Discover your starting point",
           body: "Start with a clear reference for your level, goals, and learning needs.",
           href: "/test-your-english-level",
-          image: "/images/howitworks1.png",
+          image: "/images/Home/Home3.png",
+          imageAlt: "Discover your starting point",
           linkLabel: "Learn more",
         },
         {
@@ -582,7 +584,8 @@ export const homepageContent = {
           title: "Choose your path",
           body: "Match your goals with the program and rhythm that fits you best.",
           href: "/programs",
-          image: "/images/howitworks2.png",
+          image: "/images/Home/Home4.png",
+          imageAlt: "Choose your language learning path",
           linkLabel: "Learn more",
         },
         {
@@ -590,7 +593,8 @@ export const homepageContent = {
           title: "Begin with support",
           body: "Move into live classes with structure, guidance, and close follow-up.",
           href: "/contact",
-          image: "/images/howitworks3.png",
+          image: "/images/Home/Home5.png",
+          imageAlt: "Begin guided language practice",
           linkLabel: "Learn more",
         },
       ],
@@ -601,9 +605,9 @@ export const homepageContent = {
       title: "A premium learning experience, organized with clarity.",
       body: "Tools and support designed to keep learning focused and moving.",
       cards: [
-        { title: "Human support", body: "Teacher guidance and feedback throughout the path.", icon: "users", image: "/images/capabilities1.png" },
-        { title: "Visual progress", body: "A central space for progress, goals, and planning.", icon: "target", image: "/images/capabilities2.png" },
-        { title: "Online flexibility", body: "A structured format for different schedules.", icon: "globe", image: "/images/capabilities3.png" },
+        { title: "Human support", body: "Teacher guidance and feedback throughout the path.", icon: "users", image: "/images/Home/Home6.png", imageAlt: "Human support for language learning" },
+        { title: "Visual progress", body: "A central space for progress, goals, and planning.", icon: "target", image: "/images/Home/Home7.png", imageAlt: "Visual progress dashboard for language learning" },
+        { title: "Online flexibility", body: "A structured format for different schedules.", icon: "globe", image: "/images/Home/Home8.png", imageAlt: "Online flexibility for language learning" },
       ],
     },
     conversion: {
@@ -637,6 +641,8 @@ export const homepageContent = {
       ],
       newsletterTitle: "Subscribe for updates",
       newsletterBody: "A visual field for now. Subscription behavior will be connected later.",
+      newsletterImage: "/images/Home/Newsletterimage.png",
+      newsletterImageAlt: "Langia newsletter resource image",
       placeholder: "Email address",
     },
     footer: {

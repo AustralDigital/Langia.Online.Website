@@ -5,7 +5,10 @@ import { useState, type ChangeEvent, type FormEvent, type ReactNode } from "reac
 
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteNavbar } from "@/components/site/SiteNavbar";
+import { siteButtonClass } from "@/components/site/buttonStyles";
 import { pagesContent, type ContactPageContent } from "@/content/pages";
+import { useSiteLanguage } from "@/hooks/useSiteLanguage";
+import { defaultLanguage, type SiteLanguage } from "@/lib/language";
 
 type ContactFormState = {
   name: string;
@@ -43,8 +46,8 @@ const requiredFields: RequiredField[] = [
 
 const socialLinks = ["Instagram", "LinkedIn", "Facebook", "YouTube"] as const;
 
-function getContactContent(): ContactPageContent {
-  const page = pagesContent.es.contact.contactPage;
+function getContactContent(language: SiteLanguage): ContactPageContent {
+  const page = pagesContent[language].contact.contactPage;
 
   if (!page) {
     throw new Error("Contact page content is missing.");
@@ -260,7 +263,7 @@ function ContactForm({ page }: { page: ContactPageContent }) {
 
       <button
         type="submit"
-        className="mt-7 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-[#048EFF] px-6 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(4,142,255,0.22)] transition hover:bg-[#F3B737] sm:w-auto"
+        className={siteButtonClass({ className: "mt-7 w-full px-6 sm:w-auto" })}
       >
         {page.form.submit}
         <ArrowIcon />
@@ -270,11 +273,12 @@ function ContactForm({ page }: { page: ContactPageContent }) {
 }
 
 export default function ContactPageClient() {
-  const page = getContactContent();
+  const { language } = useSiteLanguage(defaultLanguage);
+  const page = getContactContent(language);
 
   return (
-    <main className="min-h-screen bg-white text-[#0B1F3A]">
-      <SiteNavbar variant="light" />
+    <main className="min-h-screen bg-[#F3F7FB] text-[#0B1F3A]">
+      <SiteNavbar variant="light" language={language} />
 
       <section className="bg-[#F3F7FB] px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
         <div className="mx-auto grid max-w-[1180px] gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
@@ -365,7 +369,7 @@ export default function ContactPageClient() {
             <p className="mt-8 text-xs font-semibold uppercase tracking-[0.16em] text-[#048EFF]">{page.presence.socialLabel}</p>
             <div className="mt-4 flex flex-wrap gap-3">
               {socialLinks.map((label) => (
-                <a key={label} href="#" aria-label={`Langia ${label}`} className="rounded-full border border-[#D8E6F4] bg-white px-4 py-2 text-sm font-semibold text-[#0B1F3A] transition hover:border-[#F3B737] hover:text-[#048EFF]">
+                <a key={label} href="#" aria-label={`Langia ${label}`} className={siteButtonClass({ size: "sm", variant: "secondary" })}>
                   {label}
                 </a>
               ))}
@@ -382,7 +386,7 @@ export default function ContactPageClient() {
           </div>
           <Link
             href="#contact-form"
-            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#048EFF] px-5 text-sm font-semibold text-white transition hover:bg-[#F3B737]"
+            className={siteButtonClass()}
           >
             {page.finalCta.cta}
             <ArrowIcon />

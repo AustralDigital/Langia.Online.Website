@@ -6,6 +6,7 @@ import Link from "next/link";
 import { navigationContent } from "@/content/navigation";
 import { useSiteLanguage } from "@/hooks/useSiteLanguage";
 import { defaultLanguage, supportedLanguages } from "@/lib/language";
+import { iconButtonClass } from "@/components/site/buttonStyles";
 
 function ArrowIcon() {
   return (
@@ -71,7 +72,7 @@ export function SiteFooter() {
                 placeholder={copy.emailPlaceholder}
                 className="min-w-0 flex-1 bg-transparent px-4 text-sm text-white outline-none placeholder:text-white/45"
               />
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#048EFF] text-white transition hover:bg-[#F3B737]">
+              <span className={`${iconButtonClass} h-10 w-10`}>
                 <ArrowIcon />
               </span>
             </div>

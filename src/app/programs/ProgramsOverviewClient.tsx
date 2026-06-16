@@ -2,27 +2,22 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, type ReactNode } from "react";
+import { type ReactNode } from "react";
 
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteNavbar } from "@/components/site/SiteNavbar";
+import { siteButtonClass } from "@/components/site/buttonStyles";
 import {
-  defaultPageLanguage,
   pagesContent,
-  type PageLanguage,
   type ProgramCardContent,
   type ProgramsOverviewContent,
 } from "@/content/pages";
-
-const LANGUAGE_STORAGE_KEY = "langiaLanguage";
+import { useSiteLanguage } from "@/hooks/useSiteLanguage";
+import { defaultLanguage, type SiteLanguage } from "@/lib/language";
 
 type ImageAvailability = Record<string, boolean>;
 
-function isPageLanguage(value: string | null): value is PageLanguage {
-  return value === "es" || value === "pt" || value === "en";
-}
-
-function getProgramsOverview(language: PageLanguage): ProgramsOverviewContent {
+function getProgramsOverview(language: SiteLanguage): ProgramsOverviewContent {
   const content = pagesContent[language].programs.overview ?? pagesContent.es.programs.overview;
 
   if (!content) {
@@ -30,24 +25,6 @@ function getProgramsOverview(language: PageLanguage): ProgramsOverviewContent {
   }
 
   return content;
-}
-
-function detectBrowserLanguage(): PageLanguage {
-  const browserLanguage =
-    typeof navigator !== "undefined"
-      ? navigator.languages?.[0] ?? navigator.language
-      : "";
-  const normalized = browserLanguage.toLowerCase();
-
-  if (normalized.startsWith("pt")) {
-    return "pt";
-  }
-
-  if (normalized.startsWith("en")) {
-    return "en";
-  }
-
-  return defaultPageLanguage;
 }
 
 function ArrowIcon({ className = "h-4 w-4" }: { className?: string }) {
@@ -94,18 +71,12 @@ function Button({
   children: ReactNode;
   variant?: "primary" | "secondary" | "dark";
 }) {
-  const classes = {
-    primary:
-      "bg-[#048EFF] text-white shadow-[0_16px_34px_rgba(4,142,255,0.24)] hover:bg-[#F3B737]",
-    secondary:
-      "border border-[#D8E6F4] bg-white text-[#0B1F3A] hover:border-[#048EFF] hover:text-[#048EFF]",
-    dark: "bg-white text-[#0B1F3A] hover:bg-[#F3B737] hover:text-white",
-  };
-
   return (
     <Link
       href={href}
-      className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-5 text-sm font-semibold transition ${classes[variant]}`}
+      className={siteButtonClass({
+        variant: variant === "dark" ? "darkSecondary" : variant,
+      })}
     >
       {children}
       <ArrowIcon />
@@ -292,7 +263,7 @@ function ComparisonSection({ content }: { content: ProgramsOverviewContent }) {
           <table className="w-full border-collapse text-left text-sm">
             <thead className="bg-[#F3F7FB] text-xs font-semibold uppercase tracking-[0.12em] text-[#42526A]">
               <tr>
-                <th className="px-5 py-5 text-[#0B1F3A]">Program</th>
+                <th className="px-5 py-5 text-[#0B1F3A]">{headers.program}</th>
                 <th className="px-5 py-5">{headers.bestFor}</th>
                 <th className="px-5 py-5">{headers.format}</th>
                 <th className="px-5 py-5">{headers.focus}</th>
@@ -438,22 +409,14 @@ export function ProgramsOverviewClient({
 }: {
   imageAvailability: ImageAvailability;
 }) {
-  const [language] = useState<PageLanguage>(() => {
-    if (typeof window === "undefined") {
-      return defaultPageLanguage;
-    }
-
-    const storedLanguage = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
-    return isPageLanguage(storedLanguage) ? storedLanguage : detectBrowserLanguage();
-  });
-
+  const { language } = useSiteLanguage(defaultLanguage);
   const content = getProgramsOverview(language);
   const individualPrograms = content.programCards.slice(0, 4);
   const corporateProgram = content.programCards[4];
 
   return (
-    <main className="min-h-screen bg-white text-[#0B1F3A]">
-      <SiteNavbar variant="light" />
+    <main className="min-h-screen bg-[#F3F7FB] text-[#0B1F3A]">
+      <SiteNavbar variant="light" language={language} />
 
       <section className="bg-[#F3F7FB] px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
         <div className="mx-auto grid max-w-[1180px] gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">

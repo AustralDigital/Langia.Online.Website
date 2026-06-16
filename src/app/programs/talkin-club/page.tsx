@@ -1,25 +1,21 @@
-import type { Metadata } from "next";
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { existsSync } from "node:fs";
-import path from "node:path";
 import type { ReactNode } from "react";
 
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteNavbar } from "@/components/site/SiteNavbar";
+import { siteButtonClass } from "@/components/site/buttonStyles";
 import { pagesContent, type TalkinClubPageContent } from "@/content/pages";
+import { useSiteLanguage } from "@/hooks/useSiteLanguage";
+import { defaultLanguage, type SiteLanguage } from "@/lib/language";
 
-const content = pagesContent.es.talkinClub.talkinClubPage;
 const imagePath = "/images/programs/talkin-club.webp";
-const hasProgramImage = existsSync(path.join(process.cwd(), "public", imagePath));
+const hasProgramImage = false;
 
-export const metadata: Metadata = {
-  title: "Langia Talkin' Club | Private Conversation Practice",
-  description:
-    "Private 45-minute conversation sessions to build fluency, confidence, and natural speaking.",
-};
-
-function getContent(): TalkinClubPageContent {
+function getContent(language: SiteLanguage): TalkinClubPageContent {
+  const content = pagesContent[language].talkinClub.talkinClubPage;
   if (!content) {
     throw new Error("Talkin' Club page content is missing.");
   }
@@ -71,18 +67,12 @@ function Button({
   children: ReactNode;
   variant?: "primary" | "secondary" | "dark";
 }) {
-  const classes = {
-    primary:
-      "bg-[#048EFF] text-white shadow-[0_16px_34px_rgba(4,142,255,0.24)] hover:bg-[#F3B737]",
-    secondary:
-      "border border-[#D8E6F4] bg-white text-[#0B1F3A] hover:border-[#048EFF] hover:text-[#048EFF]",
-    dark: "bg-white text-[#0B1F3A] hover:bg-[#F3B737] hover:text-white",
-  };
-
   return (
     <Link
       href={href}
-      className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-5 text-sm font-semibold transition ${classes[variant]}`}
+      className={siteButtonClass({
+        variant: variant === "dark" ? "darkSecondary" : variant,
+      })}
     >
       {children}
       <ArrowIcon />
@@ -102,7 +92,7 @@ function Eyebrow({ children, light = false }: { children: ReactNode; light?: boo
   );
 }
 
-function HeroVisual() {
+function HeroVisual({ page }: { page: TalkinClubPageContent }) {
   return (
     <div className="relative min-h-[390px] overflow-hidden rounded-[2rem] border border-[#D8E6F4] bg-[#F3F7FB] shadow-[0_24px_80px_rgba(11,31,58,0.08)] lg:min-h-[500px]">
       {hasProgramImage ? (
@@ -127,10 +117,10 @@ function HeroVisual() {
       )}
       <div className="absolute inset-x-5 bottom-5 rounded-[1.5rem] border border-white/60 bg-white/86 p-5 shadow-[0_18px_46px_rgba(11,31,58,0.1)] backdrop-blur-xl">
         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#048EFF]">
-          Private conversation
+          {page.hero.quickFacts[0]}
         </p>
         <p className="mt-2 max-w-md font-heading text-xl font-semibold leading-snug text-[#0B1F3A]">
-          Topic-based practice, useful correction, and supportive feedback.
+          {page.hero.quickFacts[1]}
         </p>
       </div>
     </div>
@@ -168,11 +158,12 @@ function SectionHeader({
 }
 
 export default function TalkinClubPage() {
-  const page = getContent();
+  const { language } = useSiteLanguage(defaultLanguage);
+  const page = getContent(language);
 
   return (
-    <main className="min-h-screen bg-white text-[#0B1F3A]">
-      <SiteNavbar variant="light" />
+    <main className="min-h-screen bg-[#F3F7FB] text-[#0B1F3A]">
+      <SiteNavbar variant="light" language={language} />
 
       <section className="bg-[#F3F7FB] px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
         <div className="mx-auto grid max-w-[1180px] gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
@@ -201,7 +192,7 @@ export default function TalkinClubPage() {
               ))}
             </div>
           </div>
-          <HeroVisual />
+          <HeroVisual page={page} />
         </div>
       </section>
 

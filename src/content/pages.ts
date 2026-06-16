@@ -85,6 +85,7 @@ export type ProgramsOverviewContent = {
     title: string;
     body: string;
     headers: {
+      program: string;
       bestFor: string;
       format: string;
       focus: string;
@@ -1259,6 +1260,7 @@ const programsOverview = {
       title: "Compara las rutas antes de elegir.",
       body: "Una vista rápida para entender qué programa se ajusta mejor a tu objetivo.",
       headers: {
+        program: "Programa",
         bestFor: "Ideal para",
         format: "Formato",
         focus: "Enfoque",
@@ -1395,6 +1397,7 @@ const programsOverview = {
       title: "Compare as rotas antes de escolher.",
       body: "Uma visão rápida para entender qual programa combina melhor com seu objetivo.",
       headers: {
+        program: "Programa",
         bestFor: "Ideal para",
         format: "Formato",
         focus: "Foco",
@@ -1531,6 +1534,7 @@ const programsOverview = {
       title: "Compare paths before choosing.",
       body: "A quick view to understand which program fits your goal best.",
       headers: {
+        program: "Program",
         bestFor: "Best for",
         format: "Format",
         focus: "Focus",
