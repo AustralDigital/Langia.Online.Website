@@ -5,7 +5,7 @@ import type { ReactNode } from "react";
 
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteNavbar } from "@/components/site/SiteNavbar";
-import { CommonLabel, LocalizedDate, LocalizedText } from "@/components/site/LocalizedText";
+import { BlogLanguageNote, CommonLabel, LocalizedCategory, LocalizedDate, LocalizedText } from "@/components/site/LocalizedText";
 import { siteButtonClass } from "@/components/site/buttonStyles";
 import { getPostBySlug, getPublishedPosts, type BlogPost } from "@/lib/blog";
 
@@ -254,7 +254,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <CommonLabel label="backToResources" />
           </Link>
           <div className="mt-14 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#048EFF]">
-            <span>{post.category}</span>
+            <span><LocalizedCategory category={post.category} /></span>
             <span>/</span>
             <span>{post.language}</span>
             <span>/</span>
@@ -268,6 +268,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <p className="mt-6 max-w-3xl text-base leading-8 text-[#42526A] sm:text-lg">
             {post.description}
           </p>
+          <BlogLanguageNote postLanguage={post.language} />
           <div className="mt-8 flex items-center gap-4">
             <AuthorAvatar post={post} />
             <div>

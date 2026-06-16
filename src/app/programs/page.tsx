@@ -9,9 +9,9 @@ const content = pagesContent.es.programs;
 const overview = content.overview;
 
 export const metadata: Metadata = {
-  title: "Programs | Langia",
+  title: "Langia Programs | Choose Your Language Path",
   description:
-    "Explore Langia's language learning programs for adults, conversation, test preparation, kids and teens, and corporate teams.",
+    "Compare Langia programs for structured training, conversation practice, exam preparation, kids and teens, and corporate teams.",
 };
 
 export default function ProgramsPage() {

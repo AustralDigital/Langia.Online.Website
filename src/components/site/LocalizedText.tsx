@@ -20,6 +20,37 @@ export function CommonLabel({ label }: { label: keyof (typeof commonContent)["en
   return <>{commonContent[language][label]}</>;
 }
 
+const categoryLabels: Record<string, Record<SiteLanguage, string>> = {
+  "Learning Guides": {
+    es: "Guías de aprendizaje",
+    pt: "Guias de aprendizagem",
+    en: "Learning Guides",
+  },
+};
+
+export function LocalizedCategory({ category }: { category: string }) {
+  const { language } = useSiteLanguage(defaultLanguage);
+
+  return <>{categoryLabels[category]?.[language] ?? category}</>;
+}
+
+export function BlogLanguageNote({ postLanguage }: { postLanguage: string }) {
+  const { language } = useSiteLanguage(defaultLanguage);
+  const isEnglishPost = postLanguage.toLowerCase() === "en" || postLanguage.toLowerCase() === "english";
+
+  if (!isEnglishPost || language === "en") {
+    return null;
+  }
+
+  return (
+    <p className="mt-5 rounded-2xl border border-[#D8E6F4] bg-[#F3F7FB] px-4 py-3 text-sm font-semibold text-[#42526A]">
+      {language === "es"
+        ? "Este artículo está disponible en inglés por ahora."
+        : "Este artigo está disponível em inglês por enquanto."}
+    </p>
+  );
+}
+
 export function LocalizedDate({ date }: { date: string }) {
   const { language } = useSiteLanguage(defaultLanguage);
   const locale = language === "pt" ? "pt-BR" : language === "es" ? "es" : "en";

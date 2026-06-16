@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteNavbar } from "@/components/site/SiteNavbar";
+import { LocalizedText } from "@/components/site/LocalizedText";
 import { siteButtonClass } from "@/components/site/buttonStyles";
 import { pagesContent, type LegalPageContent, type LegalSectionContent } from "@/content/pages";
 import { useSiteLanguage } from "@/hooks/useSiteLanguage";
@@ -115,7 +116,7 @@ function LegalSection({ section, index }: { section: LegalSectionContent; index:
             </h2>
           </div>
           <Link href="#top" className="text-sm font-semibold text-[#048EFF] hover:text-[#0B1F3A]">
-            Arriba
+            <LocalizedText content={{ es: "Arriba", pt: "Topo", en: "Top" }} />
           </Link>
         </div>
         <div className="mt-6 grid gap-4 text-base leading-8 text-[#42526A]">

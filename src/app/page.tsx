@@ -1002,7 +1002,7 @@ export default function LangiaMarketingHomepage() {
       <HowItWorks copy={copy.how} />
       <Capabilities copy={copy.capabilities} />
       <DarkCTA copy={copy.conversion} />
-      <Testimonials copy={copy.testimonials} />
+      {copy.testimonials.items.length > 0 ? <Testimonials copy={copy.testimonials} /> : null}
       <Resources copy={copy.resources} />
       <Footer
         copy={copy}

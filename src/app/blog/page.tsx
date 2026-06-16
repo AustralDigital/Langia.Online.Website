@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteNavbar } from "@/components/site/SiteNavbar";
-import { CommonLabel, LocalizedDate, LocalizedText } from "@/components/site/LocalizedText";
+import { CommonLabel, LocalizedCategory, LocalizedDate, LocalizedText } from "@/components/site/LocalizedText";
 import { siteButtonClass } from "@/components/site/buttonStyles";
 import { blogCategories, getPublishedPosts, type BlogPost } from "@/lib/blog";
 
@@ -99,7 +99,7 @@ function CoverPreview({ post, large = false }: { post: BlogPost; large?: boolean
 function PostMeta({ post }: { post: BlogPost }) {
   return (
     <div className="flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#048EFF]">
-      <span>{post.category}</span>
+      <span><LocalizedCategory category={post.category} /></span>
       <span>/</span>
       <time dateTime={post.date}><LocalizedDate date={post.date} /></time>
       <span>/</span>
@@ -186,7 +186,7 @@ export default function BlogIndexPage() {
                 key={category}
                 className="rounded-full border border-[#D8E6F4] bg-[#F3F7FB] px-4 py-2 text-sm font-semibold text-[#0B1F3A]"
               >
-                {category}
+                <LocalizedCategory category={category} />
               </span>
             ))}
           </div>
