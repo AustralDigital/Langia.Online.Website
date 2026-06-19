@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-import { navigationContent } from "@/content/navigation";
+import { LOGIN_URL, navigationContent } from "@/content/navigation";
 import { useSiteLanguage } from "@/hooks/useSiteLanguage";
 import { defaultLanguage, type SiteLanguage } from "@/lib/language";
 import { siteButtonClass } from "@/components/site/buttonStyles";
@@ -139,9 +139,9 @@ export function SiteNavbar({
             ))}
           </div>
 
-          <Link href="#" className={loginClass}>
+          <a href={LOGIN_URL} className={loginClass}>
             {copy.login}
-          </Link>
+          </a>
           <Link
             href="/contact"
             className={siteButtonClass({ variant: dark ? "dark" : "primary" })}
@@ -190,9 +190,9 @@ export function SiteNavbar({
                 ) : null}
               </div>
             ))}
-            <Link href="#" onClick={() => setOpen(false)} className={`rounded-2xl px-3 py-3 text-sm font-semibold ${dark ? "!text-white hover:bg-white/10" : "text-[#0B1F3A] hover:bg-[#F3F7FB]"}`}>
+            <a href={LOGIN_URL} onClick={() => setOpen(false)} className={`rounded-2xl px-3 py-3 text-sm font-semibold ${dark ? "!text-white hover:bg-white/10" : "text-[#0B1F3A] hover:bg-[#F3F7FB]"}`}>
               {copy.login}
-            </Link>
+            </a>
             <Link
               href="/contact"
               onClick={() => setOpen(false)}

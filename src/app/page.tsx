@@ -699,19 +699,22 @@ function TestimonialCard({
 }: {
   item: HomepageCopy["testimonials"]["items"][number];
 }) {
+  const [imageFailed, setImageFailed] = useState(false);
   const meta = [item.role, item.location].filter(Boolean).join(" / ");
+  const showImage = Boolean(item.image && !imageFailed);
 
   return (
     <article className="min-h-[170px] rounded-[2rem] border border-[#E4EDF7] bg-[#F8FBFF] p-6 shadow-[0_16px_38px_rgba(11,31,58,0.045)]">
       <p className="text-base leading-8 text-[#42526A]">&ldquo;{item.quote}&rdquo;</p>
       <div className="mt-6 flex items-center gap-3">
-        {item.image ? (
+        {showImage ? (
           <Image
-            src={item.image}
+            src={item.image ?? ""}
             alt={item.name}
             width={48}
             height={48}
             className="h-12 w-12 rounded-full border border-[#E4EDF7] object-cover"
+            onError={() => setImageFailed(true)}
           />
         ) : (
           <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#CFE5FA] bg-[#EAF6FF] font-heading text-sm font-semibold text-[#048EFF]">

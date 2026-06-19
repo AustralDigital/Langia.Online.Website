@@ -1,5 +1,7 @@
 import type { SiteLanguage } from "@/lib/language";
 
+export const LOGIN_URL = "https://langia-tailored-v2.vercel.app/sign-in";
+
 type NavigationItem = {
   title: string;
   description: string;
