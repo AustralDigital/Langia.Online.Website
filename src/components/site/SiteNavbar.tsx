@@ -94,6 +94,10 @@ export function SiteNavbar({
     ? "border-white/20 bg-[#0B1F3A]/92 shadow-[0_18px_48px_rgba(0,0,0,0.22)]"
     : "border-[#E4EDF7] bg-white shadow-[0_18px_48px_rgba(11,31,58,0.12)]";
 
+  const mobileLoginClass = dark
+    ? "border-white/25 bg-white/10 !text-white hover:bg-white/15 focus-visible:ring-[#F3B737]/45 focus-visible:ring-offset-[#0B1F3A]"
+    : "border-[#E4EDF7] bg-[#FFFFFF] text-[#0B1F3A] hover:bg-[#F3F7FB] hover:text-[#0B1F3A] focus-visible:ring-[#048EFF]/40 focus-visible:ring-offset-white";
+
   return (
     <header className={shellClass}>
       <nav className={navClass}>
@@ -163,8 +167,8 @@ export function SiteNavbar({
       </nav>
 
       {open ? (
-        <div className={`mx-auto mt-3 max-w-[1180px] rounded-[1.75rem] border p-4 backdrop-blur-2xl lg:hidden ${menuPanelClass}`}>
-          <div className="grid gap-2">
+        <div className={`mx-auto mt-3 flex max-h-[calc(100dvh-7rem)] max-w-[1180px] flex-col rounded-[1.75rem] border p-4 backdrop-blur-2xl lg:hidden ${menuPanelClass}`}>
+          <div className="grid min-h-0 gap-2 overflow-y-auto overscroll-contain pr-1">
             {navLinks.map((link) => (
               <div key={link.label} className="grid gap-1">
                 <Link
@@ -190,17 +194,27 @@ export function SiteNavbar({
                 ) : null}
               </div>
             ))}
-            <a href={LOGIN_URL} onClick={() => setOpen(false)} className={`rounded-2xl px-3 py-3 text-sm font-semibold ${dark ? "!text-white hover:bg-white/10" : "text-[#0B1F3A] hover:bg-[#F3F7FB]"}`}>
-              {copy.login}
-            </a>
+          </div>
+
+          <div className={`mt-3 grid shrink-0 gap-3 border-t pt-4 ${dark ? "border-white/15" : "border-[#E4EDF7]"}`}>
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className={siteButtonClass({ variant: dark ? "dark" : "primary" })}
+              className={siteButtonClass({
+                variant: dark ? "dark" : "primary",
+                className: "w-full",
+              })}
             >
               {copy.primaryCta}
               <Icon name="arrow" />
             </Link>
+            <a
+              href={LOGIN_URL}
+              onClick={() => setOpen(false)}
+              className={`inline-flex min-h-12 w-full items-center justify-center rounded-full border px-5 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${mobileLoginClass}`}
+            >
+              {copy.login}
+            </a>
           </div>
         </div>
       ) : null}

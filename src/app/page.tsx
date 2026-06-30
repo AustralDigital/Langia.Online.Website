@@ -307,10 +307,13 @@ function Hero({ copy, language }: { copy: HomepageCopy; language: HomepageLangua
               <Button href="/contact" variant="dark">{copy.hero.primary}</Button>
               <Link
                 href="#solutions"
-                className={siteButtonClass({ variant: "darkSecondary" })}
+                className={siteButtonClass({
+                  variant: "darkSecondary",
+                  className: "!text-white hover:!text-white",
+                })}
               >
                 {copy.hero.secondary}
-                <Icon name="arrow" className="h-4 w-4" />
+                <Icon name="arrow" className="h-4 w-4 !text-white" />
               </Link>
             </div>
           </div>
