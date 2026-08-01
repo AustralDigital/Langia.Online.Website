@@ -1,26 +1,24 @@
-export type SiteButtonVariant = "primary" | "secondary" | "ghost" | "dark" | "darkSecondary";
+export type SiteButtonVariant = "primary" | "secondary" | "ghost" | "navigation";
 export type SiteButtonSize = "sm" | "md" | "lg";
 
 const baseButtonClass =
-  "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#048EFF]/40 focus-visible:ring-offset-2";
+  "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--langia-signal)]/40 focus-visible:ring-offset-2";
 
 const sizeClasses: Record<SiteButtonSize, string> = {
-  sm: "min-h-10 px-4 text-sm",
+  sm: "min-h-11 px-4 text-sm",
   md: "min-h-12 px-5 text-sm",
   lg: "min-h-14 px-6 text-base",
 };
 
 const variantClasses: Record<SiteButtonVariant, string> = {
   primary:
-    "border border-[#048EFF] bg-[#048EFF] !text-[#FFFFFF] shadow-[0_16px_34px_rgba(4,142,255,0.22)] hover:border-[#F3B737] hover:bg-[#F3B737] hover:!text-[#FFFFFF]",
+    "border border-[var(--langia-gold)] bg-[var(--langia-gold)] !text-white shadow-[0_14px_30px_rgba(243,183,55,0.2)] hover:border-[var(--langia-gold-hover)] hover:bg-[var(--langia-gold-hover)] hover:!text-white",
+  navigation:
+    "border border-[var(--langia-signal)] bg-[var(--langia-signal)] !text-white shadow-[0_14px_30px_rgba(7,85,143,0.26)] hover:border-[var(--langia-gold-hover)] hover:bg-[var(--langia-gold-hover)] hover:!text-white",
   secondary:
-    "border border-[#D8E6F4] bg-[#FFFFFF] text-[#0B1F3A] shadow-[0_10px_28px_rgba(11,31,58,0.035)] hover:border-[#D7E6F5] hover:bg-[#F3F7FB] hover:text-[#0B1F3A]",
+    "border border-[var(--langia-navy)]/18 bg-[var(--langia-white)] !text-[var(--langia-navy)] hover:border-[var(--langia-navy)]/35 hover:bg-[var(--langia-mist)] hover:!text-[var(--langia-navy)]",
   ghost:
-    "border border-transparent bg-transparent text-[#0B1F3A] hover:bg-[#F3F7FB] hover:text-[#0B1F3A]",
-  dark:
-    "border border-[#048EFF] bg-[#048EFF] !text-[#FFFFFF] shadow-[0_16px_34px_rgba(4,142,255,0.24)] hover:border-[#F3B737] hover:bg-[#F3B737] hover:!text-[#FFFFFF] focus-visible:ring-[#F3B737]/45 focus-visible:ring-offset-[#0B1F3A]",
-  darkSecondary:
-    "border border-white/22 bg-white/10 text-[#FFFFFF] backdrop-blur-xl hover:border-white/32 hover:bg-white/18 hover:text-[#FFFFFF] focus-visible:ring-[#F3B737]/45 focus-visible:ring-offset-[#0B1F3A]",
+    "border border-transparent bg-transparent !text-[var(--langia-navy)] hover:bg-[var(--langia-mist)] hover:!text-[var(--langia-navy)]",
 };
 
 export function siteButtonClass({
@@ -38,4 +36,4 @@ export function siteButtonClass({
 }
 
 export const iconButtonClass =
-  "inline-flex shrink-0 items-center justify-center rounded-full border border-[#048EFF] bg-[#048EFF] !text-[#FFFFFF] transition-all duration-200 hover:border-[#F3B737] hover:bg-[#F3B737] hover:!text-[#FFFFFF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#048EFF]/40";
+  "inline-flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-full border border-[var(--langia-gold)] bg-[var(--langia-gold)] !text-white transition-all duration-200 hover:border-[var(--langia-gold-hover)] hover:bg-[var(--langia-gold-hover)] hover:!text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--langia-gold)]/55";

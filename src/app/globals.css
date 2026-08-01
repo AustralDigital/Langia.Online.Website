@@ -1,17 +1,41 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fdfefe;
-  --foreground: #111827;
-  --muted-foreground: #5d6675;
-  --langia-blue: #048eff;
+  --langia-white: #ffffff;
+  --langia-mist: #f3f7fb;
+  --langia-signal: #07558f;
+  --langia-legacy: #064e83;
+  --langia-bright-sky: #00528e;
   --langia-gold: #f3b737;
-  --surface: #ffffff;
+  --langia-gold-hover: #e5a823;
+  --langia-navy: #0b1f3a;
+  --langia-muted: #52657a;
+  --langia-border: #d8e6f4;
+
+  /* Compatibility aliases for existing route-level compositions. */
+  --langia-blue: var(--langia-signal);
+  --langia-blue-ink: #0068b8;
+  --langia-luminous: #6ebeff;
+  --langia-light: var(--langia-mist);
+  --langia-sky: var(--langia-mist);
+
+  --background: var(--langia-white);
+  --foreground: var(--langia-navy);
+  --muted-foreground: var(--langia-muted);
+  --surface: var(--langia-white);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-langia-white: var(--langia-white);
+  --color-langia-mist: var(--langia-mist);
+  --color-langia-signal: var(--langia-signal);
+  --color-langia-legacy: var(--langia-legacy);
+  --color-langia-gold: var(--langia-gold);
+  --color-langia-navy: var(--langia-navy);
+  --color-langia-muted: var(--langia-muted);
+  --color-langia-border: var(--langia-border);
   --font-sans: var(--font-poppins);
   --font-body: var(--font-poppins);
   --font-heading: var(--font-plus-jakarta);
@@ -48,8 +72,92 @@ a {
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--langia-blue) 18%, white);
+  background: color-mix(in srgb, var(--langia-signal) 20%, white);
   color: var(--foreground);
+}
+
+.langia-signal-surface {
+  background:
+    radial-gradient(circle at 84% 12%, rgb(255 255 255 / 42%), transparent 34%),
+    linear-gradient(
+      135deg,
+      var(--langia-signal) 0%,
+      var(--langia-legacy) 62%,
+      var(--langia-bright-sky) 100%
+    );
+  color: var(--langia-white);
+}
+
+.langia-hero-image {
+  object-position: 63% center;
+  transform: scale(1.1);
+  transform-origin: left center;
+}
+
+.langia-hero-wash {
+  background:
+    linear-gradient(
+      180deg,
+      rgb(255 255 255 / 26%) 0%,
+      transparent 48%,
+      rgb(255 255 255 / 22%) 100%
+    ),
+    linear-gradient(
+      90deg,
+      rgb(255 255 255 / 94%) 0%,
+      rgb(255 255 255 / 82%) 42%,
+      rgb(243 247 251 / 45%) 68%,
+      rgb(243 247 251 / 8%) 100%
+    );
+}
+
+@media (min-width: 640px) {
+  .langia-hero-image {
+    object-position: 56% center;
+    transform: none;
+  }
+
+  .langia-hero-wash {
+    background:
+      linear-gradient(
+        180deg,
+        rgb(255 255 255 / 18%) 0%,
+        transparent 56%,
+        rgb(255 255 255 / 16%) 100%
+      ),
+      linear-gradient(
+        90deg,
+        rgb(255 255 255 / 95%) 0%,
+        rgb(255 255 255 / 82%) 44%,
+        rgb(243 247 251 / 38%) 67%,
+        rgb(243 247 251 / 5%) 100%
+      );
+  }
+}
+
+@media (min-width: 1024px) {
+  .langia-hero-image {
+    object-position: 46% center;
+    transform: none;
+  }
+
+  .langia-hero-wash {
+    background:
+      linear-gradient(
+        180deg,
+        rgb(255 255 255 / 12%) 0%,
+        transparent 45%,
+        rgb(255 255 255 / 8%) 100%
+      ),
+      linear-gradient(
+        90deg,
+        rgb(255 255 255 / 98%) 0%,
+        rgb(255 255 255 / 91%) 28%,
+        rgb(255 255 255 / 58%) 46%,
+        rgb(243 247 251 / 13%) 64%,
+        transparent 78%
+      );
+  }
 }
 
 @keyframes langia-logo-marquee {
@@ -63,6 +171,18 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
   .langia-logo-marquee-track {
     animation: none;
     transform: none;

@@ -1,24 +1,34 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
-import type { ReactNode } from "react";
-
+import {
+  EditorialHeading,
+  FAQList,
+  FeatureList,
+  FinalCTA,
+  MarketingButton,
+  MarketingSection,
+  MediaFrame,
+  PageHero,
+  ProcessSteps,
+  SectionHeader,
+  SiteContainer,
+} from "@/components/site/MarketingPrimitives";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteNavbar } from "@/components/site/SiteNavbar";
-import { siteButtonClass } from "@/components/site/buttonStyles";
 import { commonContent } from "@/content/common";
-import { pagesContent, type CorporatePageContent } from "@/content/pages";
+import { pagesContent, type CorporatePageContent, type PageBlock } from "@/content/pages";
 import { useSiteLanguage } from "@/hooks/useSiteLanguage";
 import { defaultLanguage, type SiteLanguage } from "@/lib/language";
 
-const imageCandidates = ["/images/programs/corporate.webp", "/images/corporate.webp"] as const;
-const imagePath = imageCandidates[0];
-
-const hasProgramImage = false;
+const corporateImageAlt: Record<SiteLanguage, string> = {
+  es: "Profesional presentando con confianza ante un equipo internacional",
+  pt: "Profissional apresentando com confiança para uma equipe internacional",
+  en: "A professional presenting confidently to an international team",
+};
 
 function getContent(language: SiteLanguage): CorporatePageContent {
   const content = pagesContent[language].corporate.corporatePage;
+
   if (!content) {
     throw new Error("Corporate page content is missing.");
   }
@@ -26,246 +36,288 @@ function getContent(language: SiteLanguage): CorporatePageContent {
   return content;
 }
 
-function ArrowIcon({ className = "h-4 w-4" }: { className?: string }) {
+function EditorialList({ items }: { items: readonly PageBlock[] }) {
   return (
-    <svg className={className} fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M5 12h14" />
-      <path d="m13 6 6 6-6 6" />
-    </svg>
-  );
-}
-
-function CheckIcon() {
-  return (
-    <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="m5 12 4 4L19 6" />
-    </svg>
-  );
-}
-
-function Button({ href, children, variant = "primary" }: { href: string; children: ReactNode; variant?: "primary" | "secondary" | "dark" }) {
-  return (
-    <Link href={href} className={siteButtonClass({ variant: variant === "dark" ? "darkSecondary" : variant })}>
-      {children}
-      <ArrowIcon />
-    </Link>
-  );
-}
-
-function Eyebrow({ children, light = false }: { children: ReactNode; light?: boolean }) {
-  return (
-    <p className={`font-heading text-xs font-semibold uppercase tracking-[0.18em] ${light ? "text-[#7EC7FF]" : "text-[#048EFF]"}`}>
-      {children}
-    </p>
-  );
-}
-
-function HeroVisual() {
-  return (
-    <div className="relative min-h-[400px] overflow-hidden rounded-[2rem] border border-[#173B66] bg-[#0B1F3A] shadow-[0_30px_90px_rgba(11,31,58,0.24)] lg:min-h-[520px]">
-      {hasProgramImage ? (
-        <Image src={imagePath} alt="" fill className="object-cover" sizes="(min-width: 1024px) 46vw, 100vw" priority />
-      ) : (
-        <div className="absolute inset-0 overflow-hidden bg-[linear-gradient(135deg,#0B1F3A_0%,#12345C_58%,#048EFF_100%)]">
-          <div className="absolute left-8 top-8 h-24 w-40 rounded-[1.5rem] border border-white/15 bg-white/12 shadow-[0_14px_40px_rgba(0,0,0,0.12)] backdrop-blur-md" />
-          <div className="absolute right-8 top-16 h-44 w-[58%] rounded-[1.75rem] border border-white/15 bg-white/12 shadow-[0_18px_48px_rgba(0,0,0,0.15)] backdrop-blur-md" />
-          <div className="absolute bottom-8 left-8 h-48 w-[68%] rounded-[1.75rem] border border-white/18 bg-white/14 shadow-[0_22px_58px_rgba(0,0,0,0.18)] backdrop-blur-md" />
-          <div className="absolute bottom-31 left-14 h-3 w-32 rounded-full bg-[#7EC7FF]/55" />
-          <div className="absolute bottom-22 left-14 h-3 w-52 max-w-[58%] rounded-full bg-white/25" />
-          <div className="absolute bottom-14 left-14 h-3 w-40 rounded-full bg-white/25" />
-          <div className="absolute right-14 top-12 h-12 w-12 rounded-full bg-[#F3B737]" />
-        </div>
-      )}
-      <div className="absolute inset-x-5 bottom-5 rounded-[1.5rem] border border-white/18 bg-white/12 p-5 text-white shadow-[0_18px_46px_rgba(0,0,0,0.18)] backdrop-blur-xl">
-        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#7EC7FF]">Corporate operating layer</p>
-        <p className="mt-2 max-w-md font-heading text-xl font-semibold leading-snug">
-          Training, services, tracking, and reporting designed around company goals.
-        </p>
-      </div>
-    </div>
-  );
-}
-
-function SectionHeader({ eyebrow, title, body, light = false }: { eyebrow: string; title: string; body?: string; light?: boolean }) {
-  return (
-    <div className="max-w-3xl">
-      <Eyebrow light={light}>{eyebrow}</Eyebrow>
-      <h2 className={`mt-4 font-heading text-3xl font-semibold leading-tight sm:text-4xl ${light ? "text-white" : "text-[#0B1F3A]"}`}>{title}</h2>
-      {body ? <p className={`mt-4 text-base leading-8 ${light ? "text-white/72" : "text-[#42526A]"}`}>{body}</p> : null}
-    </div>
-  );
-}
-
-function CardGrid({ cards, columns = "md:grid-cols-4" }: { cards: readonly { title: string; body: string }[]; columns?: string }) {
-  return (
-    <div className={`mt-10 grid gap-5 ${columns}`}>
-      {cards.map((card) => (
-        <article key={card.title} className="rounded-[1.5rem] border border-[#E4EDF7] bg-white p-6 shadow-[0_16px_44px_rgba(11,31,58,0.055)]">
-          <h3 className="font-heading text-xl font-semibold text-[#0B1F3A]">{card.title}</h3>
-          <p className="mt-4 text-sm leading-7 text-[#42526A]">{card.body}</p>
+    <div className="border-t border-[#0B1F3A]/18">
+      {items.map((item, index) => (
+        <article
+          key={item.title}
+          className={`grid gap-5 border-b border-[#0B1F3A]/18 py-8 sm:grid-cols-[3.5rem_1fr] sm:gap-7 ${
+            index % 2 === 1 ? "lg:ml-14" : "lg:mr-14"
+          }`}
+        >
+          <span className="pt-1 text-sm font-semibold tabular-nums text-[#0068B8]">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+          <div>
+            <EditorialHeading as="h3" size="card">
+              {item.title}
+            </EditorialHeading>
+            <p className="mt-4 max-w-xl text-base leading-8 text-[#42566E]">{item.body}</p>
+          </div>
         </article>
       ))}
     </div>
   );
 }
 
-export default function CorporatePage() {
-  const { language } = useSiteLanguage(defaultLanguage);
-  const page = getContent(language);
+function Hero({ language, page }: { language: SiteLanguage; page: CorporatePageContent }) {
+  return (
+    <PageHero
+      tone="mist"
+      eyebrow={page.hero.eyebrow}
+      title={page.hero.title}
+      body={page.hero.body}
+      actions={
+        <>
+          <MarketingButton href="/contact">{page.hero.primaryCta}</MarketingButton>
+          <MarketingButton href="#services" variant="secondary">
+            {page.hero.secondaryCta}
+          </MarketingButton>
+        </>
+      }
+      media={
+        <div>
+          <MediaFrame
+            src="/images/marketing-2026/corporate/global-team-presentation.webp"
+            alt={corporateImageAlt[language]}
+            aspectClassName="aspect-[5/4] sm:aspect-[16/11]"
+            imageClassName="object-cover object-center"
+            className="ring-1 ring-[#0B1F3A]/8"
+            priority
+          />
+          <ul className="mt-6 grid grid-cols-2 border-y border-[#0B1F3A]/16">
+            {page.hero.quickFacts.map((fact, index) => (
+              <li
+                key={fact}
+                className={`flex min-h-16 items-center py-4 text-base font-semibold leading-6 text-[#0B1F3A] ${
+                  index % 2 === 0 ? "pr-4" : "border-l border-[#0B1F3A]/16 pl-4"
+                } ${index < 2 ? "border-b border-[#0B1F3A]/16" : ""}`}
+              >
+                {fact}
+              </li>
+            ))}
+          </ul>
+        </div>
+      }
+    />
+  );
+}
+
+function Overview({ page }: { page: CorporatePageContent }) {
+  return (
+    <MarketingSection tone="white">
+      <SiteContainer>
+        <div className="grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
+          <SectionHeader eyebrow={page.overview.eyebrow} title={page.overview.title} body={page.overview.body} />
+          <EditorialList items={page.overview.cards} />
+        </div>
+      </SiteContainer>
+    </MarketingSection>
+  );
+}
+
+function SplitContentSection({
+  body,
+  eyebrow,
+  items,
+  title,
+  tone,
+}: {
+  body: string;
+  eyebrow: string;
+  items: readonly PageBlock[];
+  title: string;
+  tone: "white" | "mist";
+}) {
+  return (
+    <MarketingSection tone={tone}>
+      <SiteContainer>
+        <div className="grid gap-14 lg:grid-cols-[0.82fr_1.18fr] lg:gap-24">
+          <SectionHeader eyebrow={eyebrow} title={title} body={body} />
+          <EditorialList items={items} />
+        </div>
+      </SiteContainer>
+    </MarketingSection>
+  );
+}
+
+function Tailored({ page }: { page: CorporatePageContent }) {
+  return (
+    <MarketingSection
+      tone="mist"
+      className="bg-[radial-gradient(circle_at_86%_18%,rgba(4,142,255,.2),transparent_32%),linear-gradient(135deg,#EAF6FF_0%,#F3F7FB_58%,#FFFFFF_100%)]"
+    >
+      <SiteContainer>
+        <div className="grid gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-end lg:gap-24">
+          <SectionHeader eyebrow={page.tailored.eyebrow} title={page.tailored.title} body={page.tailored.body} />
+          <FeatureList items={page.tailored.bullets} />
+        </div>
+      </SiteContainer>
+    </MarketingSection>
+  );
+}
+
+function Process({ page }: { page: CorporatePageContent }) {
+  return (
+    <MarketingSection tone="mist">
+      <SiteContainer>
+        <div className="grid gap-14 lg:grid-cols-[0.78fr_1.22fr] lg:gap-24">
+          <SectionHeader eyebrow={page.process.eyebrow} title={page.process.title} body={page.process.body} />
+          <ProcessSteps items={page.process.steps} />
+        </div>
+      </SiteContainer>
+    </MarketingSection>
+  );
+}
+
+function UseCases({ page, language }: { page: CorporatePageContent; language: SiteLanguage }) {
   const common = commonContent[language];
 
   return (
-    <main className="min-h-screen bg-[#F3F7FB] text-[#0B1F3A]">
-      <SiteNavbar variant="light" language={language} />
-
-      <section className="bg-[#F3F7FB] px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
-        <div className="mx-auto grid max-w-[1180px] gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-          <div>
-            <Eyebrow>{page.hero.eyebrow}</Eyebrow>
-            <h1 className="mt-5 max-w-4xl font-heading text-4xl font-semibold leading-tight text-[#0B1F3A] sm:text-5xl lg:text-6xl">{page.hero.title}</h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-[#42526A] sm:text-lg">{page.hero.body}</p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button href="/contact">{page.hero.primaryCta}</Button>
-              <Button href="#services" variant="secondary">{page.hero.secondaryCta}</Button>
+    <MarketingSection tone="white">
+      <SiteContainer>
+        <div className="grid gap-14 lg:grid-cols-[0.78fr_1.22fr] lg:gap-24">
+          <SectionHeader eyebrow={page.useCases.eyebrow} title={page.useCases.title} body={page.useCases.body} />
+          <div className="grid gap-12 md:grid-cols-2">
+            <div>
+              <EditorialHeading as="h3" size="card">
+                {common.useCases}
+              </EditorialHeading>
+              <ul className="mt-6 border-t border-[#0B1F3A]/16">
+                {page.useCases.useCases.map((item) => (
+                  <li key={item} className="border-b border-[#0B1F3A]/16 py-4 text-base font-semibold leading-7 text-[#0B1F3A]">
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              {page.hero.quickFacts.map((fact) => (
-                <div key={fact} className="flex items-center gap-3 rounded-2xl border border-[#D8E6F4] bg-white px-4 py-3 text-sm font-semibold text-[#0B1F3A]">
-                  <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-[#EAF6FF] text-[#048EFF]"><CheckIcon /></span>
-                  {fact}
-                </div>
-              ))}
+            <div>
+              <EditorialHeading as="h3" size="card">
+                {common.industries}
+              </EditorialHeading>
+              <ul className="mt-6 border-t border-[#0B1F3A]/16">
+                {page.useCases.industries.map((item) => (
+                  <li key={item} className="border-b border-[#0B1F3A]/16 py-4 text-base font-semibold leading-7 text-[#0B1F3A]">
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
-          <HeroVisual />
         </div>
-      </section>
+      </SiteContainer>
+    </MarketingSection>
+  );
+}
 
-      <section className="bg-white px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
-        <div className="mx-auto max-w-[1180px]">
-          <SectionHeader {...page.overview} />
-          <CardGrid cards={page.overview.cards} />
-        </div>
-      </section>
-
-      <section className="bg-[#F3F7FB] px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
-        <div className="mx-auto max-w-[1180px]">
-          <SectionHeader {...page.who} />
-          <CardGrid cards={page.who.cards} />
-        </div>
-      </section>
-
-      <section id="services" className="bg-white px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
-        <div className="mx-auto max-w-[1180px]">
-          <SectionHeader {...page.services} />
-          <CardGrid cards={page.services.cards} />
-        </div>
-      </section>
-
-      <section className="bg-[#F3F7FB] px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
-        <div className="mx-auto max-w-[1180px]">
-          <SectionHeader {...page.training} />
-          <CardGrid cards={page.training.cards} />
-        </div>
-      </section>
-
-      <section className="bg-white px-4 py-16 sm:px-6 lg:px-10">
-        <div className="mx-auto grid max-w-[1180px] gap-10 rounded-[2rem] bg-[#0B1F3A] p-8 text-white shadow-[0_28px_90px_rgba(11,31,58,0.2)] md:grid-cols-[1fr_0.85fr] md:items-center sm:p-10 lg:p-12">
+function Formats({ page }: { page: CorporatePageContent }) {
+  return (
+    <MarketingSection tone="mist">
+      <SiteContainer>
+        <div className="grid gap-14 lg:grid-cols-[0.82fr_1.18fr] lg:gap-24">
+          <SectionHeader eyebrow={page.formats.eyebrow} title={page.formats.title} body={page.formats.body} />
           <div>
-            <SectionHeader eyebrow={page.tailored.eyebrow} title={page.tailored.title} body={page.tailored.body} light />
-            <div className="mt-8 flex flex-wrap gap-3">
-              {page.tailored.bullets.map((item) => (
-                <span key={item} className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-3 py-2 text-sm font-medium text-white/82">
-                  <CheckIcon />
+            <EditorialList items={page.formats.cards} />
+            <ul className="mt-10 flex flex-wrap border-y border-[#0B1F3A]/16">
+              {page.formats.delivery.map((item, index) => (
+                <li
+                  key={item}
+                  className={`py-5 pr-8 text-base font-semibold text-[#0B1F3A] ${index > 0 ? "border-l border-[#0B1F3A]/16 pl-8" : ""}`}
+                >
                   {item}
-                </span>
+                </li>
               ))}
-            </div>
-          </div>
-          <div className="rounded-[1.5rem] border border-white/15 bg-white/8 p-5">
-            <div className="rounded-[1.25rem] bg-white p-5">
-              <div className="flex items-center justify-between"><span className="h-3 w-28 rounded-full bg-[#048EFF]/35" /><span className="h-9 w-9 rounded-full bg-[#F3B737]" /></div>
-              <div className="mt-7 grid gap-3"><span className="h-3 w-full rounded-full bg-[#D8E6F4]" /><span className="h-3 w-9/12 rounded-full bg-[#D8E6F4]" /><span className="h-3 w-7/12 rounded-full bg-[#D8E6F4]" /></div>
-              <div className="mt-8 grid grid-cols-3 gap-3"><span className="h-16 rounded-2xl bg-[#F3F7FB]" /><span className="h-16 rounded-2xl bg-[#EAF6FF]" /><span className="h-16 rounded-2xl bg-[#F3F7FB]" /></div>
-            </div>
+            </ul>
           </div>
         </div>
-      </section>
+      </SiteContainer>
+    </MarketingSection>
+  );
+}
 
-      <section className="bg-white px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
-        <div className="mx-auto max-w-[1180px]">
-          <SectionHeader {...page.tracking} />
-          <CardGrid cards={page.tracking.cards} />
+function Proposal({ page }: { page: CorporatePageContent }) {
+  return (
+    <MarketingSection
+      tone="white"
+      className="bg-[linear-gradient(110deg,#BFE4FF_0%,#EAF6FF_48%,#FFF4D6_100%)]"
+    >
+      <SiteContainer>
+        <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-20">
+          <SectionHeader eyebrow={page.proposal.eyebrow} title={page.proposal.title} body={page.proposal.body} />
+          <MarketingButton href="/contact">{page.proposal.cta}</MarketingButton>
         </div>
-      </section>
+      </SiteContainer>
+    </MarketingSection>
+  );
+}
 
-      <section className="bg-[#F3F7FB] px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
-        <div className="mx-auto max-w-[1180px]">
-          <SectionHeader {...page.process} />
-          <div className="mt-10 grid gap-5 md:grid-cols-4">
-            {page.process.steps.map((step, index) => (
-              <article key={step.title} className="rounded-[1.5rem] border border-[#D8E6F4] bg-white p-6 shadow-[0_16px_44px_rgba(11,31,58,0.055)]">
-                <span className="grid h-10 w-10 place-items-center rounded-full bg-[#0B1F3A] font-heading text-sm font-semibold text-white">{index + 1}</span>
-                <h3 className="mt-5 font-heading text-xl font-semibold text-[#0B1F3A]">{step.title}</h3>
-                <p className="mt-4 text-sm leading-7 text-[#42526A]">{step.body}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
-        <div className="mx-auto grid max-w-[1180px] gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
-          <SectionHeader {...page.useCases} />
-          <div className="grid gap-6">
-            <div>
-              <h3 className="font-heading text-xl font-semibold text-[#0B1F3A]">{common.useCases}</h3>
-              <div className="mt-4 flex flex-wrap gap-2">{page.useCases.useCases.map((item) => <span key={item} className="rounded-full bg-[#F3F7FB] px-3 py-2 text-xs font-semibold text-[#0B1F3A]">{item}</span>)}</div>
-            </div>
-            <div>
-              <h3 className="font-heading text-xl font-semibold text-[#0B1F3A]">{common.industries}</h3>
-              <div className="mt-4 flex flex-wrap gap-2">{page.useCases.industries.map((item) => <span key={item} className="rounded-full bg-[#EAF6FF] px-3 py-2 text-xs font-semibold text-[#0B1F3A]">{item}</span>)}</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#F3F7FB] px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
-        <div className="mx-auto max-w-[1180px]">
-          <SectionHeader {...page.formats} />
-          <CardGrid cards={page.formats.cards} />
-          <div className="mt-8 flex flex-wrap gap-3">{page.formats.delivery.map((item) => <span key={item} className="rounded-full border border-[#D8E6F4] bg-white px-4 py-2 text-sm font-semibold text-[#0B1F3A]">{item}</span>)}</div>
-        </div>
-      </section>
-
-      <section className="bg-white px-4 py-16 sm:px-6 lg:px-10">
-        <div className="mx-auto grid max-w-[1180px] gap-8 rounded-[2rem] bg-[#0B1F3A] p-8 text-white shadow-[0_28px_90px_rgba(11,31,58,0.22)] md:grid-cols-[1fr_auto] md:items-center sm:p-10 lg:p-12">
-          <SectionHeader {...page.proposal} light />
-          <Button href="/contact" variant="dark">{page.proposal.cta}</Button>
-        </div>
-      </section>
-
-      <section className="bg-white px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
-        <div className="mx-auto grid max-w-[1180px] gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+function Faq({ page }: { page: CorporatePageContent }) {
+  return (
+    <MarketingSection tone="white">
+      <SiteContainer>
+        <div className="grid gap-14 lg:grid-cols-[0.72fr_1.28fr] lg:gap-24">
           <SectionHeader eyebrow={page.faq.eyebrow} title={page.faq.title} />
-          <div className="grid gap-3">
-            {page.faq.items.map((item) => (
-              <details key={item.title} className="group rounded-[1.25rem] border border-[#E4EDF7] bg-white p-5 shadow-[0_12px_34px_rgba(11,31,58,0.045)]">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-heading text-lg font-semibold text-[#0B1F3A]">{item.title}<span className="text-[#048EFF] transition group-open:rotate-90"><ArrowIcon /></span></summary>
-                <p className="mt-4 text-sm leading-7 text-[#42526A]">{item.body}</p>
-              </details>
-            ))}
+          <FAQList items={page.faq.items} />
+        </div>
+      </SiteContainer>
+    </MarketingSection>
+  );
+}
+
+export default function CorporatePage() {
+  const { language } = useSiteLanguage(defaultLanguage);
+  const page = getContent(language);
+
+  return (
+    <main className="min-h-screen bg-white text-[#0B1F3A]">
+      <SiteNavbar variant="light" language={language} />
+      <Hero language={language} page={page} />
+      <Overview page={page} />
+      <SplitContentSection
+        eyebrow={page.who.eyebrow}
+        title={page.who.title}
+        body={page.who.body}
+        items={page.who.cards}
+        tone="mist"
+      />
+      <MarketingSection
+        id="services"
+        tone="white"
+        className="bg-[linear-gradient(135deg,#DDF1FF_0%,#F3F7FB_55%,#FFFFFF_100%)]"
+      >
+        <SiteContainer>
+          <div className="grid gap-14 lg:grid-cols-[0.82fr_1.18fr] lg:gap-24">
+            <SectionHeader eyebrow={page.services.eyebrow} title={page.services.title} body={page.services.body} />
+            <EditorialList items={page.services.cards} />
           </div>
-        </div>
-      </section>
-
-      <section className="bg-[#F3F7FB] px-4 py-16 sm:px-6 lg:px-10">
-        <div className="mx-auto grid max-w-[1180px] gap-8 rounded-[2rem] bg-[#0B1F3A] p-8 text-white shadow-[0_28px_90px_rgba(11,31,58,0.22)] md:grid-cols-[1fr_auto] md:items-center sm:p-10 lg:p-12">
-          <div><h2 className="font-heading text-3xl font-semibold leading-tight sm:text-4xl">{page.finalCta.title}</h2><p className="mt-4 max-w-2xl text-base leading-8 text-white/70">{page.finalCta.body}</p></div>
-          <div className="flex flex-col gap-3 sm:flex-row"><Button href="/contact">{page.finalCta.primaryCta}</Button><Button href="/contact" variant="dark">{page.finalCta.secondaryCta}</Button></div>
-        </div>
-      </section>
-
+        </SiteContainer>
+      </MarketingSection>
+      <SplitContentSection
+        eyebrow={page.training.eyebrow}
+        title={page.training.title}
+        body={page.training.body}
+        items={page.training.cards}
+        tone="white"
+      />
+      <Tailored page={page} />
+      <SplitContentSection
+        eyebrow={page.tracking.eyebrow}
+        title={page.tracking.title}
+        body={page.tracking.body}
+        items={page.tracking.cards}
+        tone="white"
+      />
+      <Process page={page} />
+      <UseCases page={page} language={language} />
+      <Formats page={page} />
+      <Proposal page={page} />
+      <Faq page={page} />
+      <FinalCTA
+        title={page.finalCta.title}
+        body={page.finalCta.body}
+        primary={{ href: "/contact", label: page.finalCta.primaryCta }}
+      />
       <SiteFooter />
     </main>
   );

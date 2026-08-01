@@ -1,13 +1,25 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
 
+import {
+  ArrowIcon,
+  EditorialHeading,
+  FinalCTA,
+  MarketingSection,
+  MediaFrame,
+  SectionEyebrow,
+  SiteContainer,
+} from "@/components/site/MarketingPrimitives";
+import { LocalizedLink as Link } from "@/components/site/LocalizedLink";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteNavbar } from "@/components/site/SiteNavbar";
-import { BlogLanguageNote, CommonLabel, LocalizedCategory, LocalizedDate, LocalizedText } from "@/components/site/LocalizedText";
+import { BlogLanguageNote, CommonLabel, LocalizedDate, LocalizedText } from "@/components/site/LocalizedText";
 import { siteButtonClass } from "@/components/site/buttonStyles";
 import { getPostBySlug, getPublishedPosts, type BlogPost } from "@/lib/blog";
+
+import { BlogCategoryLabel, BlogLanguageLabel } from "../BlogLocalized";
 
 type BlogPostPageProps = {
   params: Promise<{
@@ -33,54 +45,25 @@ const ctaCopy = {
   },
 };
 
-function ArrowIcon({ className = "h-4 w-4" }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="1.8"
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-    >
-      <path d="M5 12h14" />
-      <path d="m13 6 6 6-6 6" />
-    </svg>
-  );
-}
-
-function CoverHero({ post }: { post: BlogPost }) {
-  if (post.coverImageExists && post.coverImage) {
-    return (
-      <div
-        className="min-h-[420px] rounded-[2rem] border border-[#E4EDF7] bg-cover bg-center shadow-[0_20px_70px_rgba(11,31,58,0.08)]"
-        style={{ backgroundImage: `url(${post.coverImage})` }}
-      />
-    );
-  }
-
-  return (
-    <div className="relative min-h-[420px] overflow-hidden rounded-[2rem] border border-[#E4EDF7] bg-[#F3F7FB] shadow-[0_20px_70px_rgba(11,31,58,0.08)]">
-      <div className="absolute left-8 top-8 h-56 w-[42%] rounded-[1.75rem] border border-[#D8E6F4] bg-white" />
-      <div className="absolute bottom-8 left-[18%] h-44 w-[46%] rounded-[1.75rem] border border-[#CFE5FA] bg-[#EAF6FF]" />
-      <div className="absolute right-8 top-16 h-64 w-[34%] rounded-[2rem] border border-[#D8E6F4] bg-white" />
-      <div className="absolute bottom-12 right-16 h-3 w-40 rounded-full bg-[#048EFF]/35" />
-      <div className="absolute bottom-7 right-16 h-3 w-56 rounded-full bg-[#D8E6F4]" />
-      <div className="absolute right-20 top-28 h-10 w-10 rounded-full bg-[#F3B737]" />
-    </div>
-  );
-}
+const relatedCopy = {
+  eyebrow: {
+    es: "Más recursos",
+    pt: "Mais recursos",
+    en: "More resources",
+  },
+  title: {
+    es: "Continúa explorando.",
+    pt: "Continue explorando.",
+    en: "Continue exploring.",
+  },
+};
 
 function AuthorAvatar({ post }: { post: BlogPost }) {
   if (post.authorImageExists && post.authorImage) {
     return (
-      <span
-        className="h-12 w-12 rounded-full border border-[#D8E6F4] bg-cover bg-center"
-        style={{ backgroundImage: `url(${post.authorImage})` }}
-        aria-hidden="true"
-      />
+      <span className="relative h-12 w-12 overflow-hidden rounded-xl border border-[#CFE5FA] bg-[#EAF6FF]">
+        <Image src={post.authorImage} alt="" fill sizes="48px" className="object-contain p-2" />
+      </span>
     );
   }
 
@@ -93,9 +76,26 @@ function AuthorAvatar({ post }: { post: BlogPost }) {
     .toUpperCase();
 
   return (
-    <span className="grid h-12 w-12 place-items-center rounded-full border border-[#CFE5FA] bg-[#EAF6FF] font-heading text-sm font-semibold text-[#048EFF]">
+    <span
+      aria-hidden="true"
+      className="grid h-12 w-12 place-items-center rounded-xl border border-[#CFE5FA] bg-[#EAF6FF] font-heading text-sm font-semibold text-[#0B1F3A]"
+    >
       {initials}
     </span>
+  );
+}
+
+function ArticleMeta({ post }: { post: BlogPost }) {
+  return (
+    <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs font-semibold uppercase tracking-[0.14em] text-[#52657A]">
+      <span className="text-[#0B1F3A]"><BlogCategoryLabel category={post.category} /></span>
+      <span aria-hidden="true">/</span>
+      <span><BlogLanguageLabel postLanguage={post.language} /></span>
+      <span aria-hidden="true">/</span>
+      <time dateTime={post.date}><LocalizedDate date={post.date} /></time>
+      <span aria-hidden="true">/</span>
+      <span>{post.readingTime} <CommonLabel label="minRead" /></span>
+    </div>
   );
 }
 
@@ -118,7 +118,11 @@ function renderInlineMarkdown(text: string): ReactNode[] {
       );
     } else if (match[3] && match[4]) {
       nodes.push(
-        <Link key={`${match.index}-link`} href={match[4]} className="font-semibold text-[#048EFF] hover:text-[#0B1F3A]">
+        <Link
+          key={`${match.index}-link`}
+          href={match[4]}
+          className="font-semibold text-[#0B1F3A] underline decoration-[#048EFF] decoration-2 underline-offset-4 transition-colors hover:text-[#048EFF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#048EFF]"
+        >
           {match[3]}
         </Link>,
       );
@@ -138,13 +142,14 @@ function MarkdownBody({ content }: { content: string }) {
   const blocks = content.split(/\n{2,}/u);
 
   return (
-    <div className="mx-auto max-w-3xl">
-      {blocks.map((block) => {
+    <>
+      {blocks.map((block, index) => {
         const trimmed = block.trim();
+        const key = `${index}-${trimmed.slice(0, 36)}`;
 
         if (trimmed.startsWith("## ")) {
           return (
-            <h2 key={trimmed} className="mt-12 font-heading text-3xl font-semibold leading-tight text-[#0B1F3A]">
+            <h2 key={key} className="mt-14 font-heading text-[clamp(1.8rem,3vw,2.35rem)] font-medium leading-[1.12] tracking-[-0.04em] text-[#0B1F3A]">
               {renderInlineMarkdown(trimmed.replace(/^## /u, ""))}
             </h2>
           );
@@ -152,7 +157,7 @@ function MarkdownBody({ content }: { content: string }) {
 
         if (trimmed.startsWith("# ")) {
           return (
-            <h2 key={trimmed} className="mt-12 font-heading text-3xl font-semibold leading-tight text-[#0B1F3A]">
+            <h2 key={key} className="mt-14 font-heading text-[clamp(1.8rem,3vw,2.35rem)] font-medium leading-[1.12] tracking-[-0.04em] text-[#0B1F3A]">
               {renderInlineMarkdown(trimmed.replace(/^# /u, ""))}
             </h2>
           );
@@ -160,7 +165,7 @@ function MarkdownBody({ content }: { content: string }) {
 
         if (trimmed.startsWith("> ")) {
           return (
-            <blockquote key={trimmed} className="mt-8 rounded-[1.5rem] border border-[#E4EDF7] bg-[#F3F7FB] p-6 text-lg leading-8 text-[#0B1F3A]">
+            <blockquote key={key} className="mt-10 border-l-2 border-[#048EFF] pl-6 font-heading text-xl leading-9 text-[#0B1F3A] sm:pl-8 sm:text-2xl">
               {renderInlineMarkdown(trimmed.replace(/^>\s?/u, ""))}
             </blockquote>
           );
@@ -173,24 +178,21 @@ function MarkdownBody({ content }: { content: string }) {
             .filter(Boolean);
 
           return (
-            <ul key={trimmed} className="mt-6 grid gap-3 text-lg leading-8 text-[#42526A]">
-              {items.map((item) => (
-                <li key={item} className="flex gap-3">
-                  <span className="mt-3 h-2 w-2 shrink-0 rounded-full bg-[#048EFF]" />
-                  <span>{renderInlineMarkdown(item)}</span>
-                </li>
+            <ul key={key} className="mt-7 list-disc space-y-3 pl-6 text-[1.0625rem] leading-8 text-[#52657A] marker:text-[#048EFF] sm:text-lg">
+              {items.map((item, itemIndex) => (
+                <li key={`${itemIndex}-${item}`}>{renderInlineMarkdown(item)}</li>
               ))}
             </ul>
           );
         }
 
         return (
-          <p key={trimmed} className="mt-6 text-lg leading-9 text-[#42526A]">
+          <p key={key} className="mt-7 text-[1.0625rem] leading-[1.8] text-[#52657A] sm:text-lg sm:leading-[1.75]">
             {renderInlineMarkdown(trimmed)}
           </p>
         );
       })}
-    </div>
+    </>
   );
 }
 
@@ -210,7 +212,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     };
   }
 
-  const images = post.coverImage
+  const images = post.coverImageExists && post.coverImage
     ? [
         {
           url: post.coverImage,
@@ -241,71 +243,104 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   const localizedCta = ctaCopy[post.language];
+  const relatedPosts = getPublishedPosts()
+    .filter((candidate) => candidate.slug !== post.slug)
+    .sort((first, second) => Number(second.category === post.category) - Number(first.category === post.category))
+    .slice(0, 2);
 
   return (
-    <main className="min-h-screen bg-[#F3F7FB] text-[#0B1F3A]">
+    <>
       <SiteNavbar variant="light" />
-      <section className="bg-[#F3F7FB] px-4 py-6 sm:px-6 lg:px-10">
-        <div className="mx-auto max-w-[1100px] rounded-[2rem] border border-[#E4EDF7] bg-white px-6 py-12 shadow-[0_18px_60px_rgba(11,31,58,0.055)] sm:px-10 lg:px-14">
-          <Link
-            href="/blog"
-            className={siteButtonClass({ size: "sm", variant: "secondary" })}
-          >
-            <CommonLabel label="backToResources" />
-          </Link>
-          <div className="mt-14 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#048EFF]">
-            <span><LocalizedCategory category={post.category} /></span>
-            <span>/</span>
-            <span>{post.language}</span>
-            <span>/</span>
-            <time dateTime={post.date}><LocalizedDate date={post.date} /></time>
-            <span>/</span>
-            <span>{post.readingTime} <CommonLabel label="minRead" /></span>
-          </div>
-          <h1 className="mt-5 max-w-4xl font-heading text-4xl font-semibold leading-tight text-[#0B1F3A] sm:text-5xl lg:text-6xl">
-            {post.title}
-          </h1>
-          <p className="mt-6 max-w-3xl text-base leading-8 text-[#42526A] sm:text-lg">
-            {post.description}
-          </p>
-          <BlogLanguageNote postLanguage={post.language} />
-          <div className="mt-8 flex items-center gap-4">
-            <AuthorAvatar post={post} />
-            <div>
-              <p className="font-heading text-sm font-semibold text-[#0B1F3A]">{post.authorName}</p>
-              {post.authorRole ? <p className="mt-1 text-sm text-[#6B7A90]">{post.authorRole}</p> : null}
+      <main className="min-h-screen bg-white text-[#0B1F3A]">
+        <section className="bg-white px-5 pb-20 pt-32 sm:px-8 sm:pb-24 sm:pt-36 lg:px-12 lg:pb-28 lg:pt-40">
+          <SiteContainer>
+            <Link
+              href="/blog"
+              className={siteButtonClass({ className: "min-h-11", size: "sm", variant: "secondary" })}
+            >
+              <ArrowIcon className="h-4 w-4 rotate-180" />
+              <CommonLabel label="backToResources" />
+            </Link>
+
+            <div className="mt-12 max-w-5xl">
+              <ArticleMeta post={post} />
+              <div lang={post.language}>
+                <EditorialHeading as="h1" className="mt-7 max-w-[16ch]" size="hero">
+                  {post.title}
+                </EditorialHeading>
+                <p className="mt-7 max-w-3xl text-lg leading-8 text-[#52657A]">{post.description}</p>
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      <section className="px-4 py-16 sm:px-6 lg:px-10">
-        <div className="mx-auto max-w-[1100px]">
-          <CoverHero post={post} />
-          <article className="py-12">
-            <MarkdownBody content={post.content} />
-          </article>
-        </div>
-      </section>
+            <BlogLanguageNote postLanguage={post.language} />
+            <div className="mt-8 flex items-center gap-4">
+              <AuthorAvatar post={post} />
+              <div lang={post.language}>
+                <p className="font-heading text-sm font-semibold text-[#0B1F3A]">{post.authorName}</p>
+                {post.authorRole ? <p className="mt-1 text-sm text-[#52657A]">{post.authorRole}</p> : null}
+              </div>
+            </div>
+          </SiteContainer>
+        </section>
 
-      <section className="bg-white px-4 pb-20 sm:px-6 lg:px-10">
-        <div className="mx-auto grid max-w-[980px] gap-8 overflow-hidden rounded-[2rem] bg-[#0B1F3A] p-8 text-white shadow-[0_28px_90px_rgba(11,31,58,0.2)] md:grid-cols-[1fr_auto] md:items-center sm:p-10">
-          <div>
-            <h2 className="font-heading text-3xl font-semibold leading-tight sm:text-4xl">
-              {localizedCta.title}
-            </h2>
-            <p className="mt-4 max-w-2xl text-base leading-8 text-white/70">{localizedCta.body}</p>
-          </div>
-          <Link
-            href={post.ctaHref}
-            className={siteButtonClass({ variant: "dark" })}
-          >
-            <LocalizedText content={{ es: ctaCopy.es.button, pt: ctaCopy.pt.button, en: post.ctaLabel || localizedCta.button }} />
-            <ArrowIcon />
-          </Link>
-        </div>
-      </section>
+        <MarketingSection tone="mist">
+          <SiteContainer>
+            {post.coverImageExists && post.coverImage ? (
+              <MediaFrame
+                src={post.coverImage}
+                alt=""
+                aspectClassName="aspect-[4/3] sm:aspect-[16/9]"
+                className="mb-16 lg:mb-24"
+                sizes="(min-width: 1360px) 1360px, 100vw"
+              />
+            ) : null}
+            <article lang={post.language} className="mx-auto max-w-[70ch]">
+              <MarkdownBody content={post.content} />
+            </article>
+          </SiteContainer>
+        </MarketingSection>
+
+        {relatedPosts.length > 0 ? (
+          <MarketingSection tone="white">
+            <SiteContainer>
+              <SectionEyebrow><LocalizedText content={relatedCopy.eyebrow} /></SectionEyebrow>
+              <EditorialHeading as="h2" className="mt-7 max-w-[13ch]">
+                <LocalizedText content={relatedCopy.title} />
+              </EditorialHeading>
+              <div className="mt-12 grid gap-x-16 gap-y-12 md:grid-cols-2">
+                {relatedPosts.map((relatedPost) => (
+                  <article key={relatedPost.slug} className="border-t border-[#0B1F3A]/18 pt-7">
+                    <ArticleMeta post={relatedPost} />
+                    <div lang={relatedPost.language}>
+                      <EditorialHeading as="h3" className="mt-5 max-w-[19ch]" size="card">
+                        {relatedPost.title}
+                      </EditorialHeading>
+                      <p className="mt-5 max-w-xl text-base leading-8 text-[#52657A]">{relatedPost.description}</p>
+                    </div>
+                    <Link
+                      href={`/blog/${relatedPost.slug}`}
+                      className="mt-7 inline-flex min-h-11 items-center gap-3 border-b border-[#0B1F3A]/35 text-sm font-semibold text-[#0B1F3A] transition-colors hover:border-[#048EFF] hover:text-[#048EFF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#048EFF]"
+                    >
+                      <CommonLabel label="readArticle" />
+                      <ArrowIcon />
+                    </Link>
+                  </article>
+                ))}
+              </div>
+            </SiteContainer>
+          </MarketingSection>
+        ) : null}
+
+        <FinalCTA
+          title={<span lang={post.language}>{localizedCta.title}</span>}
+          body={<span lang={post.language}>{localizedCta.body}</span>}
+          primary={{
+            href: post.ctaHref,
+            label: <LocalizedText content={{ es: ctaCopy.es.button, pt: ctaCopy.pt.button, en: post.ctaLabel || localizedCta.button }} />,
+          }}
+        />
+      </main>
       <SiteFooter />
-    </main>
+    </>
   );
 }

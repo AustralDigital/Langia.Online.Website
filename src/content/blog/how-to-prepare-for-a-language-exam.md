@@ -4,10 +4,10 @@ description: "A practical overview of diagnostic mock tests, skill gaps, timelin
 date: "2026-01-03"
 language: "en"
 category: "Test Prep"
-coverImage: "/blog/how-to-prepare-for-a-language-exam.webp"
+coverImage: "/images/marketing-2026/editorial/language-exam-next-step.webp"
 authorName: "Langia Editorial Team"
 authorRole: "Langia Resources"
-authorImage: "/blog/authors/langia-editorial-team.webp"
+authorImage: "/images/marketing-2026/editorial/langia-editorial-mark.svg"
 published: true
 featured: false
 ctaLabel: "Talk to Langia"

@@ -22,14 +22,6 @@ type HomepageCard = {
   step?: string;
 };
 
-type HomepageTestimonial = {
-  quote: string;
-  name: string;
-  role?: string;
-  location?: string;
-  image?: string;
-};
-
 export type HomepageCopy = {
   nav: {
     programs: string;
@@ -47,6 +39,7 @@ export type HomepageCopy = {
     rotating: string[];
     line2: string;
     line3: string;
+    imageAlt: string;
     body: string;
     primary: string;
     secondary: string;
@@ -60,6 +53,14 @@ export type HomepageCopy = {
       name: string;
       src: string | null;
     }>;
+  };
+  intro: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    reasons: string[];
+    image: string;
+    imageAlt: string;
   };
   signature: {
     eyebrow: string;
@@ -86,51 +87,30 @@ export type HomepageCopy = {
     steps: HomepageCard[];
     stepLinkLabel: string;
   };
-  capabilities: {
+  reveal: {
     eyebrow: string;
     title: string;
+    titleAccent: string;
     body: string;
-    cards: HomepageCard[];
+    interfaceTitle: string;
+    signals: Array<{ label: string; detail: string }>;
+    directionLabel: string;
+    directionValue: string;
   };
   conversion: {
     title: string;
     body: string;
+    imageAlt: string;
     primary: string;
     secondary: string;
     details: string[];
   };
-  testimonials: {
+  faq: {
     eyebrow: string;
     title: string;
     body: string;
-    cta: string;
-    items: HomepageTestimonial[];
+    items: Array<{ title: string; body: string }>;
   };
-  resources: {
-    eyebrow: string;
-    title: string;
-    body: string;
-    articles: HomepageCard[];
-    newsletterTitle: string;
-    newsletterBody: string;
-    newsletterImage: string;
-    newsletterImageAlt: string;
-    placeholder: string;
-  };
-  footer: {
-    tagline: string;
-    programs: string;
-    company: string;
-    resources: string;
-    newsletter: string;
-    newsletterPlaceholder: string;
-    structuralLabel: string;
-    columns: Array<{
-      title: string;
-      links: string[];
-    }>;
-  };
-  footerLanguageLabel: string;
   logo: {
     homeLabel: string;
     mark: string;
@@ -177,6 +157,7 @@ export const homepageContent = {
       rotating: ["Inglés", "Español", "Portugués", "Francés"],
       line2: "para personas",
       line3: "que van más lejos.",
+      imageAlt: "Profesional preparándose para una nueva oportunidad",
       body: "Clases en vivo, acompañamiento experto y una ruta clara hacia tu próxima oportunidad.",
       primary: "Empezar ahora",
       secondary: "Ver programas",
@@ -188,13 +169,21 @@ export const homepageContent = {
       body: "Los logotipos representan lugares donde estudiantes o egresados de Langia han desarrollado su vida profesional. No implican patrocinio, alianza o relación comercial.",
       logos: homeCompanyLogos,
     },
+    intro: {
+      eyebrow: "Tu motivo importa",
+      title: "Cada persona aprende por una razón distinta.",
+      body: "Antes del nivel, el programa o la plataforma, está la vida que quieres construir. Tu aprendizaje debe empezar ahí.",
+      reasons: ["Un nuevo país.", "Un rol más grande.", "Una conversación.", "Un examen.", "Un nuevo capítulo."],
+      image: "/images/marketing-2026/home/family-travel-independence.webp",
+      imageAlt: "Familia comunicándose con confianza al llegar a un nuevo destino",
+    },
     signature: {
       eyebrow: "Nuestro método",
       titlePrefix: "Langia TailorED: ",
       title: "Más que clases: una ruta hecha para avanzar contigo.",
       body: "Langia TailorED combina diagnóstico, clases en vivo, objetivos personales y seguimiento inteligente para que cada etapa tenga dirección.",
-      image: "/images/Home/Home2.png",
-      imageAlt: "Langia TailorED personalized learning system",
+      image: "/images/marketing-2026/editorial/ai-assisted-human-outcome.webp",
+      imageAlt: "Persona practicando una presentación con apoyo humano y tecnología discreta",
       benefits: [
         { title: "Ruta por nivel", body: "Un camino claro desde tu punto de partida hasta tu próximo objetivo.", icon: "target" },
         { title: "Guía humana", body: "Docentes expertos mantienen el aprendizaje cercano, práctico y enfocado.", icon: "users" },
@@ -208,10 +197,10 @@ export const homepageContent = {
       cta: "Comparar programas",
       ctaHref: "/programs",
       cards: [
-        { title: "Langia Online", body: "Formación estructurada en vivo para adultos que quieren avanzar con claridad.", href: "/programs/langia-online", icon: "globe" },
-        { title: "Talkin' Club", body: "Práctica conversacional para ganar fluidez, confianza y naturalidad.", href: "/programs/talkin-club", icon: "message" },
-        { title: "Test Prep", body: "Preparación enfocada para exámenes, certificaciones y metas académicas.", href: "/programs/test-prep", icon: "target" },
-        { title: "Langia 4 Kids n Teens", body: "Aprendizaje de idiomas para niños y adolescentes con estructura y acompañamiento.", href: "/programs/langia-4-kids-n-teens", icon: "users" },
+        { title: "Langia Online", body: "Formación estructurada en vivo para adultos que quieren avanzar con claridad.", href: "/programs/langia-online", icon: "globe", image: "/images/marketing-2026/programs/langia-online-global-presentation.webp", imageAlt: "Profesional presentando con confianza ante un equipo internacional" },
+        { title: "Talkin' Club", body: "Práctica conversacional para ganar fluidez, confianza y naturalidad.", href: "/programs/talkin-club", icon: "message", image: "/images/marketing-2026/programs/talkin-club-natural-connection.webp", imageAlt: "Profesionales conversando con naturalidad en un encuentro internacional" },
+        { title: "Test Prep", body: "Preparación enfocada para exámenes, certificaciones y metas académicas.", href: "/programs/test-prep", icon: "target", image: "/images/marketing-2026/programs/test-prep-campus-readiness.webp", imageAlt: "Estudiante llegando con confianza a un campus internacional" },
+        { title: "Langia 4 Kids n Teens", body: "Aprendizaje de idiomas para niños y adolescentes con estructura y acompañamiento.", href: "/programs/langia-4-kids-n-teens", icon: "users", image: "/images/marketing-2026/programs/kids-family-discovery-desktop.webp", imageAlt: "Familia explorando un nuevo destino mientras una adolescente se comunica con confianza" },
       ],
     },
     how: {
@@ -226,7 +215,7 @@ export const homepageContent = {
           body: "Empieza con una referencia clara de tu nivel, tus metas y tus necesidades.",
           href: "/test-your-english-level",
           image: "/images/Home/Home3.png",
-          imageAlt: "Discover your starting point",
+          imageAlt: "Persona descubriendo su punto de partida para aprender un idioma",
           linkLabel: "Conocer más",
         },
         {
@@ -235,7 +224,7 @@ export const homepageContent = {
           body: "Conecta tus objetivos con el programa y el ritmo que mejor se ajustan a ti.",
           href: "/programs",
           image: "/images/Home/Home4.png",
-          imageAlt: "Choose your language learning path",
+          imageAlt: "Persona eligiendo su ruta de aprendizaje de idiomas",
           linkLabel: "Conocer más",
         },
         {
@@ -244,84 +233,48 @@ export const homepageContent = {
           body: "Avanza con clases en vivo, estructura y seguimiento cercano.",
           href: "/contact",
           image: "/images/Home/Home5.png",
-          imageAlt: "Begin guided language practice",
+          imageAlt: "Persona iniciando una práctica de idioma con guía",
           linkLabel: "Conocer más",
         },
       ],
       stepLinkLabel: "Conocer más",
     },
-    capabilities: {
-      eyebrow: "Capacidades",
-      title: "Una experiencia premium, organizada con claridad.",
-      body: "Herramientas y acompañamiento para mantener el aprendizaje enfocado.",
-      cards: [
-        { title: "Soporte humano", body: "Orientación docente y retroalimentación en cada etapa.", icon: "users", image: "/images/Home/Home6.png", imageAlt: "Human support for language learning" },
-        { title: "Seguimiento visual", body: "Un espacio central para ver progreso, objetivos y planificación.", icon: "target", image: "/images/Home/Home7.png", imageAlt: "Visual progress dashboard for language learning" },
-        { title: "Flexibilidad online", body: "Un formato estructurado para distintas agendas.", icon: "globe", image: "/images/Home/Home8.png", imageAlt: "Online flexibility for language learning" },
+    reveal: {
+      eyebrow: "La inteligencia detrás del camino",
+      title: "Ningún recorrido de aprendizaje es igual.",
+      titleAccent: "Ninguna lección debería serlo.",
+      body: "Langia TailorED conecta el contexto, el nivel actual, la meta comunicativa y el progreso de cada estudiante para dar dirección a las clases en vivo y al seguimiento docente.",
+      interfaceTitle: "Dirección de aprendizaje",
+      signals: [
+        { label: "Contexto", detail: "El punto de partida y la realidad del estudiante." },
+        { label: "Nivel actual", detail: "Una referencia clara para decidir qué sigue." },
+        { label: "Meta comunicativa", detail: "El uso real del idioma que necesita dominar." },
+        { label: "Guía docente", detail: "Práctica en vivo con dirección humana." },
+        { label: "Progreso", detail: "Seguimiento para orientar el siguiente paso." },
       ],
+      directionLabel: "Próxima dirección",
+      directionValue: "Una lección conectada con el momento del estudiante",
     },
     conversion: {
-      title: "Abre tu camino de aprendizaje con Langia.",
-      body: "Un punto de entrada claro para estudiantes individuales y organizaciones.",
+      title: "Cuéntanos hacia dónde vas.",
+      body: "Empecemos por tu contexto, tu meta y la comunicación que ese futuro va a exigir.",
+      imageAlt: "Profesional preparándose para una nueva oportunidad internacional",
       primary: "Empezar",
       secondary: "Contactar equipo",
       details: ["Contacto inicial", "Opción de ingreso", "Consulta de programa"],
     },
-    testimonials: {
-      eyebrow: "Experiencias Langia",
-      title: "Lo que los estudiantes valoran de aprender con una ruta clara.",
-      body: "Clases en vivo, guía humana y una experiencia pensada para avanzar con más confianza.",
-      cta: "Empezar ahora",
-      // Temporary testimonial content and display names. Replace with approved signed testimonials before final long-term use.
+    faq: {
+      eyebrow: "Preguntas frecuentes",
+      title: "Antes de comenzar.",
+      body: "Lo esencial para elegir tu siguiente paso con claridad.",
       items: [
-        { quote: "Desde las primeras clases sentí que el proceso tenía dirección. No era una clase genérica; trabajábamos exactamente en lo que necesitaba para comunicarme mejor.", name: "Sofía Martínez Navarro", role: "Estudiante de Langia Online", image: "/images/testimonials/testimonial-1.webp" },
-        { quote: "Me costaba hablar porque pensaba demasiado en cada error. Con Langia empecé a practicar con más confianza y a soltarme en conversaciones reales.", name: "Daniel Herrera López", role: "Estudiante de Talkin’ Club", image: "/images/testimonials/testimonial-2.webp" },
-        { quote: "La preparación para mi examen fue mucho más clara de lo que esperaba. Entendí mis puntos débiles y pude practicar con una estrategia concreta.", name: "Camila Rojas Mendoza", role: "Estudiante de Test Prep", image: "/images/testimonials/testimonial-3.webp" },
-        { quote: "Como padre, me gustó que las clases fueran organizadas sin sentirse pesadas. Mi hijo disfrutaba las sesiones y nosotros podíamos seguir su progreso.", name: "Andrés Molina García", role: "Padre Langia 4 Kids n Teens", image: "/images/testimonials/testimonial-4.webp" },
-        { quote: "Lo que más valoré fue la cercanía del profesor. Me corregía con paciencia, me explicaba con claridad y me ayudaba a practicar situaciones de mi vida real.", name: "Valentina Gómez Ruiz", role: "Estudiante de conversación", image: "/images/testimonials/testimonial-5.webp" },
-        { quote: "Necesitaba mejorar mi comunicación para el trabajo. Las clases me ayudaron a ordenar mis ideas, participar mejor en reuniones y sentirme más seguro.", name: "Juan Sebastián Torres Vargas", role: "Estudiante profesional", image: "/images/testimonials/testimonial-6.webp" },
-        { quote: "La experiencia se sintió flexible, pero no improvisada. Podía avanzar a mi ritmo y, al mismo tiempo, sabía qué estábamos construyendo en cada clase.", name: "Mariana Castillo Fernández", role: "Estudiante de programa online", image: "/images/testimonials/testimonial-7.webp" },
-        { quote: "Langia TailorED hizo que el programa se sintiera más personal. Las clases conectaban con mis metas, mis errores frecuentes y las conversaciones que quería dominar.", name: "Nicolás Ramírez Ortega", role: "Estudiante Langia TailorED", image: "/images/testimonials/testimonial-8.webp" },
+        { title: "¿Qué programa de Langia es para mí?", body: "Langia Online ofrece una formación completa y estructurada; Talkin’ Club se enfoca en conversación; Test Prep prepara para exámenes y certificaciones; y Langia 4 Kids n Teens está diseñado para niños y adolescentes." },
+        { title: "¿Las clases son en vivo?", body: "Sí. La experiencia combina clases en vivo, guía docente y una ruta organizada alrededor de tus objetivos." },
+        { title: "¿Langia ofrece idiomas además del inglés?", body: "Sí. Langia trabaja con inglés, francés, español y portugués. La disponibilidad y el programa adecuado se confirman en el contacto inicial." },
+        { title: "¿Cómo funciona Langia TailorED?", body: "El método conecta tu punto de partida, objetivos personales, ritmo y progreso para dar más dirección a las clases y al seguimiento." },
+        { title: "¿También trabajan con empresas?", body: "Sí. Langia cuenta con una ruta Corporate para organizaciones que necesitan soluciones de formación lingüística." },
       ],
     },
-    resources: {
-      eyebrow: "Centro de recursos",
-      title: "Ideas y guías para aprender con más claridad.",
-      body: "Un espacio editorial para orientar decisiones, rutinas y próximos pasos.",
-      articles: [
-        { title: "Cómo elegir un programa", body: "Una guía breve para comparar objetivos, horarios y soporte.", href: "/blog/how-to-choose-the-right-english-program" },
-        { title: "Aprendizaje con apoyo de IA", body: "Ideas para usar tecnología sin perder guía humana.", href: "/blog/what-is-ai-assisted-language-learning" },
-      ],
-      newsletterTitle: "Recibe novedades",
-      newsletterBody: "Recibe recursos, ideas y novedades para aprender con más claridad.",
-      newsletterImage: "/images/Home/Newsletterimage.png",
-      newsletterImageAlt: "Langia newsletter resource image",
-      placeholder: "Correo electrónico",
-    },
-    footer: {
-      tagline: "Idiomas con estructura para comunicación global.",
-      programs: "Programas",
-      company: "Empresa",
-      resources: "Recursos",
-      newsletter: "Novedades",
-      newsletterPlaceholder: "Correo electrónico",
-      structuralLabel: "Wireframe estructural en escala de grises de Langia",
-      columns: [
-        {
-          title: "Programas",
-          links: ["Langia Online", "Talkin' Club", "Test Prep", "Kids n Teens"],
-        },
-        {
-          title: "Empresa",
-          links: ["Nosotros", "Corporativo", "Legal", "Trabaja con nosotros"],
-        },
-        {
-          title: "Recursos",
-          links: ["Centro de recursos", "Prueba de nivel", "Contacto", "Ingresar"],
-        },
-      ],
-    },
-    footerLanguageLabel: "Idioma",
     logo: {
       homeLabel: "Inicio de Langia",
       mark: "L",
@@ -355,6 +308,7 @@ export const homepageContent = {
       rotating: ["Inglês", "Espanhol", "Português", "Francês"],
       line2: "para pessoas",
       line3: "que vão mais longe.",
+      imageAlt: "Profissional se preparando para uma nova oportunidade",
       body: "Aulas ao vivo, orientação especializada e uma rota clara para sua próxima oportunidade.",
       primary: "Começar agora",
       secondary: "Ver programas",
@@ -366,13 +320,21 @@ export const homepageContent = {
       body: "Os logotipos representam lugares onde alunos ou ex-alunos da Langia desenvolveram sua vida profissional. Não implicam patrocínio, parceria ou relação comercial.",
       logos: homeCompanyLogos,
     },
+    intro: {
+      eyebrow: "Seu motivo importa",
+      title: "Cada pessoa aprende por um motivo diferente.",
+      body: "Antes do nível, do programa ou da plataforma, está a vida que você quer construir. Sua aprendizagem deve começar por aí.",
+      reasons: ["Um novo país.", "Um cargo maior.", "Uma conversa.", "Uma prova.", "Um novo capítulo."],
+      image: "/images/marketing-2026/home/family-travel-independence.webp",
+      imageAlt: "Família se comunicando com confiança ao chegar a um novo destino",
+    },
     signature: {
       eyebrow: "Nosso método",
       titlePrefix: "Langia TailorED: ",
       title: "Mais que aulas: uma rota feita para avançar com você.",
       body: "Langia TailorED combina diagnóstico, aulas ao vivo, objetivos pessoais e acompanhamento inteligente para que cada etapa tenha direção.",
-      image: "/images/Home/Home2.png",
-      imageAlt: "Langia TailorED personalized learning system",
+      image: "/images/marketing-2026/editorial/ai-assisted-human-outcome.webp",
+      imageAlt: "Pessoa praticando uma apresentação com apoio humano e tecnologia discreta",
       benefits: [
         { title: "Rota por nível", body: "Um caminho claro desde o seu ponto de partida até o próximo objetivo.", icon: "target" },
         { title: "Orientação humana", body: "Professores especialistas mantêm o aprendizado próximo, prático e focado.", icon: "users" },
@@ -386,10 +348,10 @@ export const homepageContent = {
       cta: "Comparar programas",
       ctaHref: "/programs",
       cards: [
-        { title: "Langia Online", body: "Formação estruturada ao vivo para adultos que querem avançar com clareza.", href: "/programs/langia-online", icon: "globe" },
-        { title: "Talkin' Club", body: "Prática de conversação para ganhar fluência, confiança e naturalidade.", href: "/programs/talkin-club", icon: "message" },
-        { title: "Test Prep", body: "Preparação focada para exames, certificações e objetivos acadêmicos.", href: "/programs/test-prep", icon: "target" },
-        { title: "Langia 4 Kids n Teens", body: "Aprendizagem de idiomas para crianças e adolescentes com estrutura e acompanhamento.", href: "/programs/langia-4-kids-n-teens", icon: "users" },
+        { title: "Langia Online", body: "Formação estruturada ao vivo para adultos que querem avançar com clareza.", href: "/programs/langia-online", icon: "globe", image: "/images/marketing-2026/programs/langia-online-global-presentation.webp", imageAlt: "Profissional apresentando com confiança para uma equipe internacional" },
+        { title: "Talkin' Club", body: "Prática de conversação para ganhar fluência, confiança e naturalidade.", href: "/programs/talkin-club", icon: "message", image: "/images/marketing-2026/programs/talkin-club-natural-connection.webp", imageAlt: "Profissionais conversando com naturalidade em um encontro internacional" },
+        { title: "Test Prep", body: "Preparação focada para exames, certificações e objetivos acadêmicos.", href: "/programs/test-prep", icon: "target", image: "/images/marketing-2026/programs/test-prep-campus-readiness.webp", imageAlt: "Estudante chegando com confiança a um campus internacional" },
+        { title: "Langia 4 Kids n Teens", body: "Aprendizagem de idiomas para crianças e adolescentes com estrutura e acompanhamento.", href: "/programs/langia-4-kids-n-teens", icon: "users", image: "/images/marketing-2026/programs/kids-family-discovery-desktop.webp", imageAlt: "Família explorando um novo destino enquanto uma adolescente se comunica com confiança" },
       ],
     },
     how: {
@@ -404,7 +366,7 @@ export const homepageContent = {
           body: "Comece com uma referência clara do seu nível, objetivos e necessidades.",
           href: "/test-your-english-level",
           image: "/images/Home/Home3.png",
-          imageAlt: "Discover your starting point",
+          imageAlt: "Pessoa descobrindo seu ponto de partida para aprender um idioma",
           linkLabel: "Saiba mais",
         },
         {
@@ -413,7 +375,7 @@ export const homepageContent = {
           body: "Conecte seus objetivos ao programa e ao ritmo que melhor combinam com você.",
           href: "/programs",
           image: "/images/Home/Home4.png",
-          imageAlt: "Choose your language learning path",
+          imageAlt: "Pessoa escolhendo sua rota de aprendizagem de idiomas",
           linkLabel: "Saiba mais",
         },
         {
@@ -422,83 +384,48 @@ export const homepageContent = {
           body: "Avance com aulas ao vivo, estrutura e acompanhamento próximo.",
           href: "/contact",
           image: "/images/Home/Home5.png",
-          imageAlt: "Begin guided language practice",
+          imageAlt: "Pessoa iniciando uma prática de idioma com orientação",
           linkLabel: "Saiba mais",
         },
       ],
       stepLinkLabel: "Saiba mais",
     },
-    capabilities: {
-      eyebrow: "Recursos",
-      title: "Uma experiência premium, organizada com clareza.",
-      body: "Ferramentas e acompanhamento para manter o aprendizado em movimento.",
-      cards: [
-        { title: "Suporte humano", body: "Orientação docente e feedback em cada etapa.", icon: "users", image: "/images/Home/Home6.png", imageAlt: "Human support for language learning" },
-        { title: "Acompanhamento visual", body: "Um espaço central para progresso, objetivos e planejamento.", icon: "target", image: "/images/Home/Home7.png", imageAlt: "Visual progress dashboard for language learning" },
-        { title: "Flexibilidade online", body: "Um formato estruturado para diferentes agendas.", icon: "globe", image: "/images/Home/Home8.png", imageAlt: "Online flexibility for language learning" },
+    reveal: {
+      eyebrow: "A inteligência por trás do caminho",
+      title: "Nenhuma jornada de aprendizagem é igual.",
+      titleAccent: "Nenhuma aula deveria ser.",
+      body: "Langia TailorED conecta o contexto, o nível atual, a meta comunicativa e o progresso de cada estudante para dar direção às aulas ao vivo e ao acompanhamento docente.",
+      interfaceTitle: "Direção de aprendizagem",
+      signals: [
+        { label: "Contexto", detail: "O ponto de partida e a realidade do estudante." },
+        { label: "Nível atual", detail: "Uma referência clara para decidir o que vem depois." },
+        { label: "Meta comunicativa", detail: "O uso real do idioma que precisa dominar." },
+        { label: "Orientação docente", detail: "Prática ao vivo com direção humana." },
+        { label: "Progresso", detail: "Acompanhamento para orientar o próximo passo." },
       ],
+      directionLabel: "Próxima direção",
+      directionValue: "Uma aula conectada ao momento do estudante",
     },
     conversion: {
-      title: "Abra seu caminho de aprendizagem com a Langia.",
-      body: "Um ponto de entrada claro para alunos individuais e organizações.",
+      title: "Conte para nós aonde você quer chegar.",
+      body: "Vamos começar pelo seu contexto, sua meta e a comunicação que esse futuro vai exigir.",
+      imageAlt: "Profissional se preparando para uma nova oportunidade internacional",
       primary: "Começar",
       secondary: "Falar com a equipe",
       details: ["Contato inicial", "Opção de entrada", "Consulta de programa"],
     },
-    testimonials: {
-      eyebrow: "Experiências Langia",
-      title: "O que os alunos valorizam ao aprender com uma rota clara.",
-      body: "Aulas ao vivo, orientação humana e uma experiência pensada para avançar com mais confiança.",
-      cta: "Começar agora",
+    faq: {
+      eyebrow: "Perguntas frequentes",
+      title: "Antes de começar.",
+      body: "O essencial para escolher seu próximo passo com clareza.",
       items: [
-        { quote: "Desde as primeiras aulas senti que o processo tinha direção. Não era uma aula genérica; trabalhávamos exatamente no que eu precisava para me comunicar melhor.", name: "Sofía Martínez Navarro", role: "Aluna Langia Online", image: "/images/testimonials/testimonial-1.webp" },
-        { quote: "Eu tinha dificuldade para falar porque pensava demais em cada erro. Com a Langia, comecei a praticar com mais confiança e a me soltar em conversas reais.", name: "Daniel Herrera López", role: "Aluno Talkin’ Club", image: "/images/testimonials/testimonial-2.webp" },
-        { quote: "A preparação para meu exame foi muito mais clara do que eu esperava. Entendi meus pontos fracos e consegui praticar com uma estratégia concreta.", name: "Camila Rojas Mendoza", role: "Aluna Test Prep", image: "/images/testimonials/testimonial-3.webp" },
-        { quote: "Como pai, gostei porque as aulas eram organizadas sem ficarem pesadas. Meu filho aproveitava as sessões e nós conseguíamos acompanhar o progresso.", name: "Andrés Molina García", role: "Pai Langia 4 Kids n Teens", image: "/images/testimonials/testimonial-4.webp" },
-        { quote: "O que mais valorizei foi a proximidade do professor. Ele corrigia com paciência, explicava com clareza e me ajudava a praticar situações da vida real.", name: "Valentina Gómez Ruiz", role: "Aluna de conversação", image: "/images/testimonials/testimonial-5.webp" },
-        { quote: "Eu precisava melhorar minha comunicação para o trabalho. As aulas me ajudaram a organizar minhas ideias, participar melhor de reuniões e me sentir mais seguro.", name: "Juan Sebastián Torres Vargas", role: "Aluno profissional", image: "/images/testimonials/testimonial-6.webp" },
-        { quote: "A experiência foi flexível, mas não improvisada. Eu podia avançar no meu ritmo e, ao mesmo tempo, sabia o que estávamos construindo em cada aula.", name: "Mariana Castillo Fernández", role: "Aluna de programa online", image: "/images/testimonials/testimonial-7.webp" },
-        { quote: "Langia TailorED fez o programa parecer mais pessoal. As aulas se conectavam com meus objetivos, meus erros frequentes e as conversas que eu queria dominar.", name: "Nicolás Ramírez Ortega", role: "Aluno Langia TailorED", image: "/images/testimonials/testimonial-8.webp" },
+        { title: "Qual programa da Langia é ideal para mim?", body: "Langia Online oferece uma formação completa e estruturada; Talkin’ Club foca em conversação; Test Prep prepara para exames e certificações; e Langia 4 Kids n Teens foi criado para crianças e adolescentes." },
+        { title: "As aulas são ao vivo?", body: "Sim. A experiência combina aulas ao vivo, orientação docente e uma rota organizada em torno dos seus objetivos." },
+        { title: "A Langia oferece outros idiomas além do inglês?", body: "Sim. A Langia trabalha com inglês, francês, espanhol e português. A disponibilidade e o programa adequado são confirmados no contato inicial." },
+        { title: "Como funciona o Langia TailorED?", body: "O método conecta seu ponto de partida, objetivos pessoais, ritmo e progresso para dar mais direção às aulas e ao acompanhamento." },
+        { title: "Vocês também trabalham com empresas?", body: "Sim. A Langia tem uma rota Corporate para organizações que precisam de soluções de formação linguística." },
       ],
     },
-    resources: {
-      eyebrow: "Centro de recursos",
-      title: "Ideias e guias para aprender com mais clareza.",
-      body: "Um espaço editorial para orientar escolhas, rotinas e próximos passos.",
-      articles: [
-        { title: "Como escolher um programa", body: "Um guia breve para comparar objetivos, horários e suporte.", href: "/blog/how-to-choose-the-right-english-program" },
-        { title: "Aprendizagem com apoio de IA", body: "Ideias para usar tecnologia sem perder orientação humana.", href: "/blog/what-is-ai-assisted-language-learning" },
-      ],
-      newsletterTitle: "Receba novidades",
-      newsletterBody: "Receba recursos, ideias e novidades para aprender com mais clareza.",
-      newsletterImage: "/images/Home/Newsletterimage.png",
-      newsletterImageAlt: "Langia newsletter resource image",
-      placeholder: "E-mail",
-    },
-    footer: {
-      tagline: "Idiomas com estrutura para comunicação global.",
-      programs: "Programas",
-      company: "Empresa",
-      resources: "Recursos",
-      newsletter: "Novidades",
-      newsletterPlaceholder: "E-mail",
-      structuralLabel: "Wireframe estrutural em escala de cinza da Langia",
-      columns: [
-        {
-          title: "Programas",
-          links: ["Langia Online", "Talkin' Club", "Test Prep", "Kids n Teens"],
-        },
-        {
-          title: "Empresa",
-          links: ["Sobre nós", "Corporativo", "Legal", "Trabalhe conosco"],
-        },
-        {
-          title: "Recursos",
-          links: ["Centro de recursos", "Teste de nível", "Contato", "Entrar"],
-        },
-      ],
-    },
-    footerLanguageLabel: "Idioma",
     logo: {
       homeLabel: "Início da Langia",
       mark: "L",
@@ -532,6 +459,7 @@ export const homepageContent = {
       rotating: ["English", "Spanish", "Portuguese", "French"],
       line2: "for people",
       line3: "going places.",
+      imageAlt: "Professional preparing for a new opportunity",
       body: "Live classes, expert guidance, and a clear path toward your next opportunity.",
       primary: "Start now",
       secondary: "View programs",
@@ -543,13 +471,21 @@ export const homepageContent = {
       body: "Logos represent places where Langia learners or alumni have developed their professional lives. They do not imply sponsorship, partnership, or a commercial relationship.",
       logos: homeCompanyLogos,
     },
+    intro: {
+      eyebrow: "Your reason matters",
+      title: "Everyone learns for a different reason.",
+      body: "Before the level, the program, or the platform, there is the life you want to build. Your learning should start there.",
+      reasons: ["A new country.", "A bigger role.", "A conversation.", "A test.", "A new chapter."],
+      image: "/images/marketing-2026/home/family-travel-independence.webp",
+      imageAlt: "Family communicating confidently as they arrive at a new destination",
+    },
     signature: {
       eyebrow: "Our method",
       titlePrefix: "Langia TailorED: ",
       title: "More than classes: a path built to move with you.",
       body: "Langia TailorED combines diagnostics, live classes, personal goals, and intelligent follow-up so every stage has direction.",
-      image: "/images/Home/Home2.png",
-      imageAlt: "Langia TailorED personalized learning system",
+      image: "/images/marketing-2026/editorial/ai-assisted-human-outcome.webp",
+      imageAlt: "Learner rehearsing a presentation with human support and subtle technology",
       benefits: [
         { title: "Level-based path", body: "A clear route from your starting point to your next goal.", icon: "target" },
         { title: "Human guidance", body: "Expert teachers keep learning practical, focused, and personal.", icon: "users" },
@@ -563,10 +499,10 @@ export const homepageContent = {
       cta: "Compare programs",
       ctaHref: "/programs",
       cards: [
-        { title: "Langia Online", body: "Structured live training for adults who want clear progress.", href: "/programs/langia-online", icon: "globe" },
-        { title: "Talkin' Club", body: "Conversation practice for fluency, confidence, and natural speaking.", href: "/programs/talkin-club", icon: "message" },
-        { title: "Test Prep", body: "Focused preparation for exams, certifications, and academic goals.", href: "/programs/test-prep", icon: "target" },
-        { title: "Langia 4 Kids n Teens", body: "Language learning for children and teens with structure and support.", href: "/programs/langia-4-kids-n-teens", icon: "users" },
+        { title: "Langia Online", body: "Structured live training for adults who want clear progress.", href: "/programs/langia-online", icon: "globe", image: "/images/marketing-2026/programs/langia-online-global-presentation.webp", imageAlt: "Professional presenting confidently to an international team" },
+        { title: "Talkin' Club", body: "Conversation practice for fluency, confidence, and natural speaking.", href: "/programs/talkin-club", icon: "message", image: "/images/marketing-2026/programs/talkin-club-natural-connection.webp", imageAlt: "Professionals speaking naturally at an international gathering" },
+        { title: "Test Prep", body: "Focused preparation for exams, certifications, and academic goals.", href: "/programs/test-prep", icon: "target", image: "/images/marketing-2026/programs/test-prep-campus-readiness.webp", imageAlt: "Learner arriving confidently at an international campus" },
+        { title: "Langia 4 Kids n Teens", body: "Language learning for children and teens with structure and support.", href: "/programs/langia-4-kids-n-teens", icon: "users", image: "/images/marketing-2026/programs/kids-family-discovery-desktop.webp", imageAlt: "Family exploring a new destination while a teenager communicates confidently" },
       ],
     },
     how: {
@@ -605,77 +541,42 @@ export const homepageContent = {
       ],
       stepLinkLabel: "Learn more",
     },
-    capabilities: {
-      eyebrow: "Capabilities",
-      title: "A premium learning experience, organized with clarity.",
-      body: "Tools and support designed to keep learning focused and moving.",
-      cards: [
-        { title: "Human support", body: "Teacher guidance and feedback throughout the path.", icon: "users", image: "/images/Home/Home6.png", imageAlt: "Human support for language learning" },
-        { title: "Visual progress", body: "A central space for progress, goals, and planning.", icon: "target", image: "/images/Home/Home7.png", imageAlt: "Visual progress dashboard for language learning" },
-        { title: "Online flexibility", body: "A structured format for different schedules.", icon: "globe", image: "/images/Home/Home8.png", imageAlt: "Online flexibility for language learning" },
+    reveal: {
+      eyebrow: "The intelligence behind the path",
+      title: "No two learning journeys are identical.",
+      titleAccent: "Neither should two lessons be.",
+      body: "Langia TailorED connects each learner’s context, current level, communicative goal, and progress to give direction to live classes and teacher follow-up.",
+      interfaceTitle: "Learning direction",
+      signals: [
+        { label: "Context", detail: "The learner’s starting point and real-world situation." },
+        { label: "Current level", detail: "A clear reference for deciding what comes next." },
+        { label: "Communicative goal", detail: "The real use of language they need to master." },
+        { label: "Teacher guidance", detail: "Live practice with human direction." },
+        { label: "Progress", detail: "Follow-up that informs the next step." },
       ],
+      directionLabel: "Next direction",
+      directionValue: "A lesson connected to the learner’s current moment",
     },
     conversion: {
-      title: "Open a learning path with Langia.",
-      body: "A clear entry point for individual learners and organizations.",
+      title: "Tell us where you’re going.",
+      body: "Let’s begin with your context, your goal, and the communication that future will require.",
+      imageAlt: "Professional preparing for a new international opportunity",
       primary: "Get started",
       secondary: "Contact team",
       details: ["Initial contact", "Entry option", "Program consultation"],
     },
-    testimonials: {
-      eyebrow: "Langia experiences",
-      title: "What learners value about a clearer path.",
-      body: "Live classes, human guidance, and an experience designed to help learners move forward with more confidence.",
-      cta: "Start now",
+    faq: {
+      eyebrow: "Frequently asked questions",
+      title: "Before you begin.",
+      body: "The essentials for choosing your next step with clarity.",
       items: [
-        { quote: "From the first classes, the process felt clear. It was not a generic lesson; we worked on exactly what I needed to communicate better.", name: "Sofía Martínez Navarro", role: "Langia Online student", image: "/images/testimonials/testimonial-1.webp" },
-        { quote: "I used to struggle with speaking because I overthought every mistake. With Langia, I started practicing with more confidence and speaking more naturally.", name: "Daniel Herrera López", role: "Talkin’ Club student", image: "/images/testimonials/testimonial-2.webp" },
-        { quote: "My exam preparation felt much clearer than I expected. I understood my weak points and practiced with a concrete strategy.", name: "Camila Rojas Mendoza", role: "Test Prep student", image: "/images/testimonials/testimonial-3.webp" },
-        { quote: "As a parent, I liked that the classes were organized without feeling heavy. My child enjoyed the sessions, and we could follow the progress.", name: "Andrés Molina García", role: "Langia 4 Kids n Teens parent", image: "/images/testimonials/testimonial-4.webp" },
-        { quote: "What I valued most was the teacher’s closeness. I was corrected with patience, explanations were clear, and we practiced real-life situations.", name: "Valentina Gómez Ruiz", role: "Conversation student", image: "/images/testimonials/testimonial-5.webp" },
-        { quote: "I needed to improve my communication for work. The classes helped me organize my ideas, participate better in meetings, and feel more confident.", name: "Juan Sebastián Torres Vargas", role: "Professional learner", image: "/images/testimonials/testimonial-6.webp" },
-        { quote: "The experience felt flexible, but not improvised. I could move at my own pace while still understanding what we were building in every class.", name: "Mariana Castillo Fernández", role: "Online program student", image: "/images/testimonials/testimonial-7.webp" },
-        { quote: "Langia TailorED made the program feel more personal. The classes connected with my goals, recurring mistakes, and the conversations I wanted to master.", name: "Nicolás Ramírez Ortega", role: "Langia TailorED student", image: "/images/testimonials/testimonial-8.webp" },
+        { title: "Which Langia program is right for me?", body: "Langia Online offers complete, structured training; Talkin’ Club focuses on conversation; Test Prep prepares you for exams and certifications; and Langia 4 Kids n Teens is designed for children and teenagers." },
+        { title: "Are classes live?", body: "Yes. The experience combines live classes, teacher guidance, and a path organized around your goals." },
+        { title: "Does Langia offer languages besides English?", body: "Yes. Langia works with English, French, Spanish, and Portuguese. Availability and the right program are confirmed during the initial contact." },
+        { title: "How does Langia TailorED work?", body: "The method connects your starting point, personal goals, rhythm, and progress to give more direction to classes and follow-up." },
+        { title: "Do you also work with companies?", body: "Yes. Langia has a Corporate path for organizations that need language training solutions." },
       ],
     },
-    resources: {
-      eyebrow: "Resource center",
-      title: "Ideas and guides for clearer learning.",
-      body: "An editorial space for decisions, routines, and next steps.",
-      articles: [
-        { title: "Choosing a learning path", body: "A short guide to compare goals, schedules, and support.", href: "/blog/how-to-choose-the-right-english-program" },
-        { title: "AI-assisted learning", body: "Ideas for using technology without losing human guidance.", href: "/blog/what-is-ai-assisted-language-learning" },
-      ],
-      newsletterTitle: "Subscribe for updates",
-      newsletterBody: "Receive resources, ideas, and updates for clearer language learning.",
-      newsletterImage: "/images/Home/Newsletterimage.png",
-      newsletterImageAlt: "Langia newsletter resource image",
-      placeholder: "Email address",
-    },
-    footer: {
-      tagline: "Structured language learning for global communication.",
-      programs: "Programs",
-      company: "Company",
-      resources: "Resources",
-      newsletter: "Newsletter",
-      newsletterPlaceholder: "Email address",
-      structuralLabel: "Langia grayscale structural wireframe",
-      columns: [
-        {
-          title: "Programs",
-          links: ["Langia Online", "Talkin' Club", "Test Prep", "Kids n Teens"],
-        },
-        {
-          title: "Company",
-          links: ["About", "Corporate", "Legal", "Work with Us"],
-        },
-        {
-          title: "Resources",
-          links: ["Resource Center", "Level Test", "Contact", "Login"],
-        },
-      ],
-    },
-    footerLanguageLabel: "Language",
     logo: {
       homeLabel: "Langia home",
       mark: "L",

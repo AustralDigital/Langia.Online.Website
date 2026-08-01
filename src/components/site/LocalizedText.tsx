@@ -20,20 +20,6 @@ export function CommonLabel({ label }: { label: keyof (typeof commonContent)["en
   return <>{commonContent[language][label]}</>;
 }
 
-const categoryLabels: Record<string, Record<SiteLanguage, string>> = {
-  "Learning Guides": {
-    es: "Guías de aprendizaje",
-    pt: "Guias de aprendizagem",
-    en: "Learning Guides",
-  },
-};
-
-export function LocalizedCategory({ category }: { category: string }) {
-  const { language } = useSiteLanguage(defaultLanguage);
-
-  return <>{categoryLabels[category]?.[language] ?? category}</>;
-}
-
 export function BlogLanguageNote({ postLanguage }: { postLanguage: string }) {
   const { language } = useSiteLanguage(defaultLanguage);
   const isEnglishPost = postLanguage.toLowerCase() === "en" || postLanguage.toLowerCase() === "english";

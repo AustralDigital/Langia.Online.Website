@@ -4,10 +4,10 @@ description: "A clear explanation of human-led, AI-assisted language learning an
 date: "2026-01-02"
 language: "en"
 category: "Learning Guides"
-coverImage: "/blog/what-is-ai-assisted-language-learning.webp"
+coverImage: "/images/marketing-2026/editorial/ai-assisted-human-outcome.webp"
 authorName: "Langia Editorial Team"
 authorRole: "Langia Resources"
-authorImage: "/blog/authors/langia-editorial-team.webp"
+authorImage: "/images/marketing-2026/editorial/langia-editorial-mark.svg"
 published: true
 featured: false
 ctaLabel: "Talk to Langia"

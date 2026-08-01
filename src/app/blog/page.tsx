@@ -1,12 +1,23 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import type { ReactNode } from "react";
+import { LocalizedLink as Link } from "@/components/site/LocalizedLink";
 
+import {
+  ArrowIcon,
+  EditorialHeading,
+  FinalCTA,
+  MarketingButton,
+  MarketingSection,
+  MediaFrame,
+  PageHero,
+  SectionEyebrow,
+  SiteContainer,
+} from "@/components/site/MarketingPrimitives";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteNavbar } from "@/components/site/SiteNavbar";
-import { CommonLabel, LocalizedCategory, LocalizedDate, LocalizedText } from "@/components/site/LocalizedText";
-import { siteButtonClass } from "@/components/site/buttonStyles";
+import { CommonLabel, LocalizedDate, LocalizedText } from "@/components/site/LocalizedText";
 import { blogCategories, getPublishedPosts, type BlogPost } from "@/lib/blog";
+
+import { BlogCategoryLabel } from "./BlogLocalized";
 
 export const metadata: Metadata = {
   title: "Resources | Langia",
@@ -30,6 +41,16 @@ const pageCopy = {
     pt: "Guias, ideias e recursos para aprender idiomas com mais clareza.",
     en: "Guides, ideas, and resources for clearer language learning.",
   },
+  topics: {
+    es: "Temas",
+    pt: "Temas",
+    en: "Topics",
+  },
+  latest: {
+    es: "Más lecturas",
+    pt: "Mais leituras",
+    en: "More reads",
+  },
   ctaTitle: {
     es: "¿Necesitas ayuda para elegir tu ruta?",
     pt: "Precisa de ajuda para escolher sua rota?",
@@ -47,62 +68,28 @@ const pageCopy = {
   },
 };
 
-function ArrowIcon({ className = "h-4 w-4" }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="1.8"
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-    >
-      <path d="M5 12h14" />
-      <path d="m13 6 6 6-6 6" />
-    </svg>
-  );
-}
-
-function Eyebrow({ children }: { children: ReactNode }) {
-  return (
-    <p className="font-heading text-xs font-semibold uppercase tracking-[0.18em] text-[#048EFF]">
-      {children}
-    </p>
-  );
-}
-
-function CoverPreview({ post, large = false }: { post: BlogPost; large?: boolean }) {
-  const height = large ? "min-h-[340px]" : "h-56";
-
-  if (post.coverImageExists && post.coverImage) {
-    return (
-      <div
-        className={`${height} rounded-[1.5rem] border border-[#E4EDF7] bg-cover bg-center`}
-        style={{ backgroundImage: `url(${post.coverImage})` }}
-      />
-    );
+function PostMedia({ large = false, post }: { large?: boolean; post: BlogPost }) {
+  if (!post.coverImageExists || !post.coverImage) {
+    return null;
   }
 
   return (
-    <div className={`relative ${height} overflow-hidden rounded-[1.5rem] border border-[#E4EDF7] bg-[#F3F7FB]`}>
-      <div className="absolute left-6 top-6 h-28 w-40 rounded-[1.25rem] border border-[#D8E6F4] bg-white" />
-      <div className="absolute bottom-6 right-6 h-32 w-48 rounded-[1.5rem] border border-[#CFE5FA] bg-[#EAF6FF]" />
-      <div className="absolute bottom-12 left-8 h-3 w-28 rounded-full bg-[#048EFF]/35" />
-      <div className="absolute bottom-7 left-8 h-3 w-44 rounded-full bg-[#D8E6F4]" />
-      <div className="absolute right-14 top-14 h-10 w-10 rounded-full bg-[#F3B737]" />
-    </div>
+    <MediaFrame
+      src={post.coverImage}
+      alt=""
+      aspectClassName={large ? "aspect-[4/3] lg:aspect-[16/11]" : "aspect-[4/3]"}
+      sizes={large ? "(min-width: 1024px) 48vw, 100vw" : "(min-width: 768px) 50vw, 100vw"}
+    />
   );
 }
 
 function PostMeta({ post }: { post: BlogPost }) {
   return (
-    <div className="flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#048EFF]">
-      <span><LocalizedCategory category={post.category} /></span>
-      <span>/</span>
+    <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs font-semibold uppercase tracking-[0.14em] text-[#52657A]">
+      <span className="text-[#0B1F3A]"><BlogCategoryLabel category={post.category} /></span>
+      <span aria-hidden="true">/</span>
       <time dateTime={post.date}><LocalizedDate date={post.date} /></time>
-      <span>/</span>
+      <span aria-hidden="true">/</span>
       <span>{post.readingTime} <CommonLabel label="minRead" /></span>
     </div>
   );
@@ -110,24 +97,28 @@ function PostMeta({ post }: { post: BlogPost }) {
 
 function ArticleCard({ post }: { post: BlogPost }) {
   return (
-    <Link
-      href={`/blog/${post.slug}`}
-      className="group rounded-[1.75rem] border border-[#E4EDF7] bg-white p-5 shadow-[0_16px_42px_rgba(11,31,58,0.055)] transition hover:-translate-y-1 hover:border-[#048EFF]/45"
-    >
-      <CoverPreview post={post} />
-      <div className="mt-6">
-        <PostMeta post={post} />
-        <h2 className="mt-4 font-heading text-2xl font-semibold leading-tight text-[#0B1F3A]">
-          {post.title}
-        </h2>
-        <p className="mt-4 text-base leading-7 text-[#42526A]">{post.description}</p>
-        <p className="mt-5 text-sm font-semibold text-[#0B1F3A]">{post.authorName}</p>
-        <span className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#048EFF]">
-          <CommonLabel label="readArticle" />
-          <ArrowIcon className="h-4 w-4 transition group-hover:translate-x-1" />
-        </span>
-      </div>
-    </Link>
+    <article className="border-t border-[#0B1F3A]/18 pt-6">
+      <Link
+        href={`/blog/${post.slug}`}
+        className="group block rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#048EFF] focus-visible:ring-offset-4"
+      >
+        <PostMedia post={post} />
+        <div className={post.coverImageExists ? "mt-7" : ""}>
+          <PostMeta post={post} />
+          <div lang={post.language}>
+            <EditorialHeading as="h2" className="mt-5 max-w-[19ch]" size="card">
+              {post.title}
+            </EditorialHeading>
+            <p className="mt-5 max-w-xl text-base leading-8 text-[#52657A]">{post.description}</p>
+            <p className="mt-5 text-sm font-semibold text-[#0B1F3A]">{post.authorName}</p>
+          </div>
+          <span className="mt-7 inline-flex items-center gap-3 border-b border-[#0B1F3A]/35 pb-1 text-sm font-semibold text-[#0B1F3A] transition-colors group-hover:border-[#048EFF] group-hover:text-[#048EFF]">
+            <CommonLabel label="readArticle" />
+            <ArrowIcon className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </span>
+        </div>
+      </Link>
+    </article>
   );
 }
 
@@ -137,88 +128,74 @@ export default function BlogIndexPage() {
   const gridPosts = featuredPost
     ? posts.filter((post) => post.slug !== featuredPost.slug)
     : posts;
+  const featuredHasMedia = Boolean(featuredPost?.coverImageExists && featuredPost.coverImage);
 
   return (
-    <main className="min-h-screen bg-white text-[#0B1F3A]">
+    <>
       <SiteNavbar variant="light" />
+      <main className="min-h-screen bg-white text-[#0B1F3A]">
+        <PageHero
+          tone="white"
+          eyebrow={<LocalizedText content={pageCopy.eyebrow} />}
+          title={<LocalizedText content={pageCopy.title} />}
+          body={<LocalizedText content={pageCopy.body} />}
+        />
 
-      <section className="bg-white px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
-        <div className="mx-auto max-w-[1180px]">
-          <Eyebrow><LocalizedText content={pageCopy.eyebrow} /></Eyebrow>
-          <h1 className="mt-5 max-w-4xl font-heading text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
-            <LocalizedText content={pageCopy.title} />
-          </h1>
-          <p className="mt-6 max-w-2xl text-base leading-8 text-[#42526A] sm:text-lg">
-            <LocalizedText content={pageCopy.body} />
-          </p>
-        </div>
-      </section>
+        {featuredPost ? (
+          <MarketingSection tone="mist">
+            <SiteContainer>
+              <article className={featuredHasMedia ? "grid gap-12 lg:grid-cols-[.95fr_1.05fr] lg:items-center lg:gap-20" : "max-w-5xl"}>
+                {featuredHasMedia ? <PostMedia post={featuredPost} large /> : null}
+                <div>
+                  <SectionEyebrow><CommonLabel label="featured" /></SectionEyebrow>
+                  <div className="mt-7"><PostMeta post={featuredPost} /></div>
+                  <div lang={featuredPost.language}>
+                    <EditorialHeading as="h2" className="mt-6 max-w-[17ch]" size="secondary">
+                      {featuredPost.title}
+                    </EditorialHeading>
+                    <p className="mt-6 max-w-2xl text-lg leading-8 text-[#52657A]">{featuredPost.description}</p>
+                    <p className="mt-5 text-sm font-semibold text-[#0B1F3A]">{featuredPost.authorName}</p>
+                  </div>
+                  <MarketingButton href={`/blog/${featuredPost.slug}`} className="mt-9">
+                    <CommonLabel label="readArticle" />
+                  </MarketingButton>
+                </div>
+              </article>
+            </SiteContainer>
+          </MarketingSection>
+        ) : null}
 
-      {featuredPost ? (
-        <section className="bg-[#F3F7FB] px-4 py-16 sm:px-6 lg:px-10">
-          <div className="mx-auto grid max-w-[1180px] gap-8 rounded-[2rem] border border-[#E4EDF7] bg-white p-5 shadow-[0_18px_60px_rgba(11,31,58,0.055)] lg:grid-cols-[0.95fr_1.05fr] lg:items-center sm:p-7">
-            <CoverPreview post={featuredPost} large />
-            <div className="p-2 sm:p-4">
-              <Eyebrow><CommonLabel label="featured" /></Eyebrow>
-              <PostMeta post={featuredPost} />
-              <h2 className="mt-5 font-heading text-3xl font-semibold leading-tight text-[#0B1F3A] sm:text-4xl">
-                {featuredPost.title}
-              </h2>
-              <p className="mt-5 text-base leading-8 text-[#42526A]">{featuredPost.description}</p>
-              <p className="mt-5 text-sm font-semibold text-[#0B1F3A]">{featuredPost.authorName}</p>
-              <Link
-                href={`/blog/${featuredPost.slug}`}
-                className={siteButtonClass({ className: "mt-8" })}
-              >
-                <CommonLabel label="readArticle" />
-                <ArrowIcon />
-              </Link>
-            </div>
-          </div>
-        </section>
-      ) : null}
+        <MarketingSection tone="white">
+          <SiteContainer>
+            <SectionEyebrow><LocalizedText content={pageCopy.topics} /></SectionEyebrow>
+            <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
+              {blogCategories.map((category) => (
+                <li key={category} className="border-b border-[#0B1F3A]/22 pb-1 text-sm font-semibold text-[#52657A]">
+                  <BlogCategoryLabel category={category} />
+                </li>
+              ))}
+            </ul>
 
-      <section className="bg-white px-4 py-12 sm:px-6 lg:px-10">
-        <div className="mx-auto max-w-[1180px]">
-          <div className="flex flex-wrap gap-3">
-            {blogCategories.map((category) => (
-              <span
-                key={category}
-                className="rounded-full border border-[#D8E6F4] bg-[#F3F7FB] px-4 py-2 text-sm font-semibold text-[#0B1F3A]"
-              >
-                <LocalizedCategory category={category} />
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
+            {gridPosts.length > 0 ? (
+              <div className="mt-16">
+                <SectionEyebrow><LocalizedText content={pageCopy.latest} /></SectionEyebrow>
+                <div className="mt-9 grid gap-x-12 gap-y-16 md:grid-cols-2 lg:gap-x-20">
+                  {gridPosts.map((post) => (
+                    <ArticleCard key={post.slug} post={post} />
+                  ))}
+                </div>
+              </div>
+            ) : null}
+          </SiteContainer>
+        </MarketingSection>
 
-      <section className="bg-white px-4 py-16 sm:px-6 lg:px-10">
-        <div className="mx-auto grid max-w-[1180px] gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {gridPosts.map((post) => (
-            <ArticleCard key={post.slug} post={post} />
-          ))}
-        </div>
-      </section>
-
-      <section className="bg-white px-4 py-16 sm:px-6 lg:px-10">
-        <div className="mx-auto grid max-w-[1180px] gap-8 overflow-hidden rounded-[2rem] bg-[#0B1F3A] p-8 text-white shadow-[0_28px_90px_rgba(11,31,58,0.2)] md:grid-cols-[1fr_auto] md:items-center sm:p-10">
-          <div>
-            <h2 className="font-heading text-3xl font-semibold leading-tight sm:text-4xl">
-              <LocalizedText content={pageCopy.ctaTitle} />
-            </h2>
-            <p className="mt-4 max-w-2xl text-base leading-8 text-white/70"><LocalizedText content={pageCopy.ctaBody} /></p>
-          </div>
-          <Link
-            href="/contact"
-            className={siteButtonClass({ variant: "dark" })}
-          >
-            <LocalizedText content={pageCopy.cta} />
-            <ArrowIcon />
-          </Link>
-        </div>
-      </section>
+        <FinalCTA
+          title={<LocalizedText content={pageCopy.ctaTitle} />}
+          body={<LocalizedText content={pageCopy.ctaBody} />}
+          primary={{ href: "/contact", label: <LocalizedText content={pageCopy.cta} /> }}
+        />
+      </main>
       <SiteFooter />
-    </main>
+    </>
   );
 }

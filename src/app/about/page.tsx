@@ -1,17 +1,21 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
-
+import {
+  EditorialHeading,
+  FeatureList,
+  FinalCTA,
+  MarketingButton,
+  MarketingSection,
+  MediaFrame,
+  PageHero,
+  SectionHeader,
+  SiteContainer,
+} from "@/components/site/MarketingPrimitives";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteNavbar } from "@/components/site/SiteNavbar";
-import { siteButtonClass } from "@/components/site/buttonStyles";
 import { pagesContent, type AboutPageContent, type PageBlock } from "@/content/pages";
 import { useSiteLanguage } from "@/hooks/useSiteLanguage";
 import { defaultLanguage, type SiteLanguage } from "@/lib/language";
-
-const aboutImagePath = "/images/about/about-langia.webp";
-const hasAboutImage = false;
 
 function getContent(language: SiteLanguage): AboutPageContent {
   const content = pagesContent[language].about.aboutPage;
@@ -23,328 +27,209 @@ function getContent(language: SiteLanguage): AboutPageContent {
   return content;
 }
 
-function ArrowIcon({ className = "h-4 w-4" }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="1.8"
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-    >
-      <path d="M5 12h14" />
-      <path d="m13 6 6 6-6 6" />
-    </svg>
-  );
-}
+const aboutImageAlt: Record<SiteLanguage, string> = {
+  es: "Colaboración humana en el diseño de una experiencia de aprendizaje de idiomas",
+  pt: "Colaboração humana no desenho de uma experiência de aprendizagem de idiomas",
+  en: "People collaborating on a human-led language learning experience",
+};
 
-function CheckIcon() {
+function EditorialList({ items }: { items: readonly PageBlock[] }) {
   return (
-    <svg
-      className="h-4 w-4"
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="1.9"
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-    >
-      <path d="m5 12 4 4L19 6" />
-    </svg>
-  );
-}
-
-function Eyebrow({ children, dark = false }: { children: string; dark?: boolean }) {
-  return (
-    <p className={`font-heading text-xs font-semibold uppercase tracking-[0.18em] ${dark ? "text-[#7EC7FF]" : "text-[#048EFF]"}`}>
-      {children}
-    </p>
-  );
-}
-
-function CtaLink({
-  href,
-  children,
-  variant = "primary",
-}: {
-  href: string;
-  children: string;
-  variant?: "primary" | "secondary" | "darkSecondary";
-}) {
-  return (
-    <Link
-      href={href}
-      className={siteButtonClass({ variant })}
-    >
-      {children}
-      <ArrowIcon />
-    </Link>
-  );
-}
-
-function HeroVisual() {
-  if (hasAboutImage) {
-    return (
-      <div className="relative min-h-[420px] overflow-hidden rounded-[2rem] border border-[#E4EDF7] bg-[#F3F7FB] shadow-[0_26px_90px_rgba(11,31,58,0.1)]">
-        <Image
-          src={aboutImagePath}
-          alt="Langia learning experience"
-          fill
-          sizes="(min-width: 1024px) 520px, 100vw"
-          className="object-cover"
-          priority
-        />
-      </div>
-    );
-  }
-
-  return (
-    <div className="relative min-h-[420px] overflow-hidden rounded-[2rem] border border-[#E4EDF7] bg-[#F3F7FB] p-6 shadow-[0_26px_90px_rgba(11,31,58,0.1)]">
-      <div className="absolute right-6 top-6 h-24 w-36 rounded-[1.35rem] border border-[#D8E6F4] bg-[#FFFFFF]" />
-      <div className="absolute left-8 top-20 h-48 w-[62%] rounded-[1.75rem] border border-[#D8E6F4] bg-[#FFFFFF] shadow-[0_16px_44px_rgba(11,31,58,0.06)]" />
-      <div className="absolute bottom-8 right-8 h-44 w-[68%] rounded-[1.75rem] border border-[#CFE5FA] bg-[#EAF6FF]" />
-      <div className="absolute bottom-24 left-14 h-3 w-28 rounded-full bg-[#048EFF]/40" />
-      <div className="absolute bottom-16 left-14 h-3 w-48 rounded-full bg-[#D8E6F4]" />
-      <div className="absolute bottom-36 right-20 h-11 w-11 rounded-full bg-[#F3B737]" />
-      <div className="absolute left-16 top-28 h-12 w-12 rounded-2xl border border-[#CFE5FA] bg-[#EAF6FF]" />
-    </div>
-  );
-}
-
-function CardGrid({ cards }: { cards: readonly PageBlock[] }) {
-  return (
-    <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-      {cards.map((card) => (
+    <div className="border-t border-[#0B1F3A]/16">
+      {items.map((item, index) => (
         <article
-          key={card.title}
-          className="rounded-[1.75rem] border border-[#E4EDF7] bg-[#FFFFFF] p-6 shadow-[0_16px_42px_rgba(11,31,58,0.055)]"
+          key={item.title}
+          className={`grid gap-5 border-b border-[#0B1F3A]/16 py-8 sm:grid-cols-[3.5rem_1fr] sm:gap-7 ${
+            index % 2 === 1 ? "lg:ml-14" : "lg:mr-14"
+          }`}
         >
-          <div className="mb-7 flex h-11 w-11 items-center justify-center rounded-2xl border border-[#CFE5FA] bg-[#EAF6FF] text-[#048EFF]">
-            <CheckIcon />
+          <span className="pt-1 text-sm font-semibold tabular-nums text-[var(--langia-blue-ink)]">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+          <div>
+            <EditorialHeading as="h3" size="card">
+              {item.title}
+            </EditorialHeading>
+            <p className="mt-4 max-w-xl text-base leading-8 text-[#52657A]">{item.body}</p>
           </div>
-          <h3 className="font-heading text-xl font-semibold text-[#0B1F3A]">{card.title}</h3>
-          <p className="mt-4 text-sm leading-7 text-[#42526A]">{card.body}</p>
         </article>
       ))}
     </div>
   );
 }
 
-function Hero({ page: { hero } }: { page: AboutPageContent }) {
+function Hero({ language, page }: { language: SiteLanguage; page: AboutPageContent }) {
   return (
-    <section className="bg-[#FFFFFF] px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
-      <div className="mx-auto grid max-w-[1180px] gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
+    <PageHero
+      tone="mist"
+      eyebrow={page.hero.eyebrow}
+      title={page.hero.title}
+      body={page.hero.body}
+      actions={
+        <>
+          <MarketingButton href="/contact">{page.hero.primaryCta}</MarketingButton>
+          <MarketingButton href="/programs" variant="secondary">
+            {page.hero.secondaryCta}
+          </MarketingButton>
+        </>
+      }
+      media={
         <div>
-          <Eyebrow>{hero.eyebrow}</Eyebrow>
-          <h1 className="mt-5 max-w-4xl font-heading text-4xl font-semibold leading-tight text-[#0B1F3A] sm:text-5xl lg:text-6xl">
-            {hero.title}
-          </h1>
-          <p className="mt-6 max-w-2xl text-base leading-8 text-[#42526A] sm:text-lg">
-            {hero.body}
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <CtaLink href="/contact">{hero.primaryCta}</CtaLink>
-            <CtaLink href="/programs" variant="secondary">
-              {hero.secondaryCta}
-            </CtaLink>
-          </div>
-          <div className="mt-10 grid gap-3 sm:grid-cols-2">
-            {hero.quickFacts.map((fact) => (
-              <div
+          <MediaFrame
+            src="/images/marketing-2026/shared/about-human-led-design.webp"
+            alt={aboutImageAlt[language]}
+            aspectClassName="aspect-[5/4] sm:aspect-[16/11]"
+            imageClassName="object-cover object-center"
+            className="ring-1 ring-[#0B1F3A]/8"
+            sizes="(min-width: 1024px) 57vw, 100vw"
+            priority
+          />
+          <ul className="mt-6 grid grid-cols-2 border-y border-[#0B1F3A]/16">
+            {page.hero.quickFacts.map((fact, index) => (
+              <li
                 key={fact}
-                className="rounded-2xl border border-[#E4EDF7] bg-[#FFFFFF] px-4 py-3 text-sm font-semibold text-[#0B1F3A] shadow-[0_10px_28px_rgba(11,31,58,0.04)]"
+                className={`flex min-h-16 items-center py-4 text-base font-semibold leading-6 text-[#0B1F3A] ${
+                  index % 2 === 0 ? "pr-4" : "border-l border-[#0B1F3A]/16 pl-4"
+                } ${index < 2 ? "border-b border-[#0B1F3A]/16" : ""}`}
               >
                 {fact}
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
-        <HeroVisual />
-      </div>
-    </section>
+      }
+    />
   );
 }
 
-function Origin({ page: { origin } }: { page: AboutPageContent }) {
+function Origin({ page }: { page: AboutPageContent }) {
   return (
-    <section className="bg-[#F3F7FB] px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
-      <div className="mx-auto grid max-w-[1180px] gap-8 lg:grid-cols-[1fr_0.72fr] lg:items-start">
-        <div className="rounded-[2rem] border border-[#E4EDF7] bg-[#FFFFFF] p-8 shadow-[0_20px_70px_rgba(11,31,58,0.07)] sm:p-10">
-          <Eyebrow>{origin.eyebrow}</Eyebrow>
-          <h2 className="mt-4 max-w-3xl font-heading text-3xl font-semibold leading-tight text-[#0B1F3A] sm:text-4xl">
-            {origin.title}
-          </h2>
-          <p className="mt-5 text-base leading-8 text-[#42526A]">{origin.body}</p>
-        </div>
-        <div className="rounded-[2rem] border border-[#E4EDF7] bg-[#FFFFFF] p-6 shadow-[0_20px_70px_rgba(11,31,58,0.07)]">
-          <div className="grid gap-4">
-            {origin.timeline.map((item) => (
-              <div key={item.year} className="rounded-[1.5rem] border border-[#E4EDF7] bg-[#F3F7FB] p-5">
-                <p className="font-heading text-3xl font-semibold text-[#048EFF]">{item.year}</p>
-                <p className="mt-2 text-sm font-semibold text-[#0B1F3A]">{item.label}</p>
-              </div>
-            ))}
+    <MarketingSection tone="white">
+      <SiteContainer>
+        <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+          <SectionHeader eyebrow={page.origin.eyebrow} title={page.origin.title} />
+          <div>
+            <p className="max-w-2xl text-lg leading-8 text-[#52657A]">{page.origin.body}</p>
+            <ol className="mt-12 grid border-y border-[#0B1F3A]/16 sm:grid-cols-2">
+              {page.origin.timeline.map((item, index) => (
+                <li
+                  key={item.year}
+                  className={`py-7 ${index === 0 ? "border-b border-[#0B1F3A]/16 sm:border-b-0 sm:pr-8" : "sm:border-l sm:pl-8"}`}
+                >
+                  <p className="font-heading text-4xl font-medium tracking-[-0.05em] text-[#048EFF]">{item.year}</p>
+                  <p className="mt-3 text-base font-semibold leading-7 text-[#0B1F3A]">{item.label}</p>
+                </li>
+              ))}
+            </ol>
           </div>
         </div>
-      </div>
-    </section>
+      </SiteContainer>
+    </MarketingSection>
   );
 }
 
-function EditorialSection({
-  eyebrow,
-  title,
+function NarrativeSection({
   body,
-  cards,
+  eyebrow,
+  items,
+  title,
+  tone,
 }: {
-  eyebrow: string;
-  title: string;
   body: string;
-  cards: readonly PageBlock[];
+  eyebrow: string;
+  items: readonly PageBlock[];
+  title: string;
+  tone: "white" | "mist";
 }) {
   return (
-    <section className="bg-[#FFFFFF] px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
-      <div className="mx-auto max-w-[1180px]">
-        <div className="max-w-3xl">
-          <Eyebrow>{eyebrow}</Eyebrow>
-          <h2 className="mt-4 font-heading text-3xl font-semibold leading-tight text-[#0B1F3A] sm:text-4xl lg:text-5xl">
-            {title}
-          </h2>
-          <p className="mt-5 text-base leading-8 text-[#42526A]">{body}</p>
+    <MarketingSection tone={tone}>
+      <SiteContainer>
+        <div className="grid gap-14 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
+          <SectionHeader eyebrow={eyebrow} title={title} body={body} />
+          <EditorialList items={items} />
         </div>
-        <CardGrid cards={cards} />
-      </div>
-    </section>
+      </SiteContainer>
+    </MarketingSection>
   );
 }
 
-function AiSection({ page: { ai } }: { page: AboutPageContent }) {
+function AiSection({ page }: { page: AboutPageContent }) {
   return (
-    <section className="bg-[#FFFFFF] px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
-      <div className="mx-auto grid max-w-[1180px] gap-10 overflow-hidden rounded-[2rem] bg-[#0B1F3A] p-8 text-[#FFFFFF] shadow-[0_30px_100px_rgba(11,31,58,0.24)] lg:grid-cols-[1fr_0.9fr] lg:p-12">
-        <div>
-          <Eyebrow dark>{ai.eyebrow}</Eyebrow>
-          <h2 className="mt-4 max-w-3xl font-heading text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
-            {ai.title}
-          </h2>
-          <p className="mt-5 text-base leading-8 text-white/72">{ai.body}</p>
-          <div className="mt-8 grid gap-3 sm:grid-cols-2">
-            {ai.bullets.map((bullet) => (
-              <div key={bullet} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/6 px-4 py-3 text-sm font-semibold text-white/86">
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#048EFF] text-[#FFFFFF]">
-                  <CheckIcon />
-                </span>
-                {bullet}
-              </div>
-            ))}
+    <MarketingSection
+      tone="mist"
+      className="overflow-hidden bg-[radial-gradient(circle_at_88%_14%,rgba(4,142,255,.2),transparent_32%),linear-gradient(135deg,#EAF6FF_0%,#F3F7FB_55%,#FFFFFF_100%)]"
+    >
+      <SiteContainer>
+        <div className="grid gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-end lg:gap-24">
+          <SectionHeader eyebrow={page.ai.eyebrow} title={page.ai.title} body={page.ai.body} />
+          <FeatureList items={page.ai.bullets} />
+        </div>
+      </SiteContainer>
+    </MarketingSection>
+  );
+}
+
+function Values({ page }: { page: AboutPageContent }) {
+  return (
+    <MarketingSection tone="white">
+      <SiteContainer>
+        <SectionHeader eyebrow={page.values.eyebrow} title={page.values.title} />
+        <div className="mt-16 lg:ml-auto lg:max-w-[880px]">
+          <EditorialList items={page.values.items} />
+        </div>
+      </SiteContainer>
+    </MarketingSection>
+  );
+}
+
+function Presence({ page }: { page: AboutPageContent }) {
+  return (
+    <MarketingSection tone="mist">
+      <SiteContainer>
+        <div className="grid gap-14 lg:grid-cols-[1.08fr_0.92fr] lg:items-start lg:gap-24">
+          <SectionHeader eyebrow={page.presence.eyebrow} title={page.presence.title} body={page.presence.body} />
+          <div>
+            <ul className="grid grid-cols-2 border-y border-[#0B1F3A]/16">
+              {page.presence.languages.map((language, index) => (
+                <li
+                  key={language}
+                  className={`flex min-h-24 items-center py-5 font-heading text-2xl font-medium tracking-[-0.035em] text-[#0B1F3A] ${
+                    index % 2 === 0 ? "pr-5" : "border-l border-[#0B1F3A]/16 pl-5"
+                  } ${index < 2 ? "border-b border-[#0B1F3A]/16" : ""}`}
+                >
+                  {language}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-7 border-l-2 border-[#048EFF] pl-5 text-base font-semibold leading-8 text-[#0B1F3A]">
+              {page.presence.locationNote}
+            </p>
           </div>
         </div>
-        <div className="relative min-h-[360px] overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/6 p-5">
-          <div className="absolute left-6 top-8 h-28 w-[72%] rounded-[1.5rem] border border-white/10 bg-white/10" />
-          <div className="absolute bottom-8 right-6 h-40 w-[72%] rounded-[1.5rem] border border-[#048EFF]/35 bg-[#048EFF]/12" />
-          <div className="absolute left-12 top-48 h-3 w-36 rounded-full bg-[#7EC7FF]/60" />
-          <div className="absolute left-12 top-56 h-3 w-52 rounded-full bg-white/16" />
-          <div className="absolute right-16 top-24 h-10 w-10 rounded-full bg-[#F3B737]" />
-        </div>
-      </div>
-    </section>
+      </SiteContainer>
+    </MarketingSection>
   );
 }
 
-function Values({ page: { values } }: { page: AboutPageContent }) {
+function NotSection({ page }: { page: AboutPageContent }) {
   return (
-    <section className="bg-[#F3F7FB] px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
-      <div className="mx-auto max-w-[1180px]">
-        <div className="max-w-3xl">
-          <Eyebrow>{values.eyebrow}</Eyebrow>
-          <h2 className="mt-4 font-heading text-3xl font-semibold leading-tight text-[#0B1F3A] sm:text-4xl lg:text-5xl">
-            {values.title}
-          </h2>
+    <MarketingSection tone="white">
+      <SiteContainer>
+        <div className="grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
+          <SectionHeader eyebrow={page.not.eyebrow} title={page.not.title} body={page.not.body} />
+          <ol className="border-t border-[#0B1F3A]/16">
+            {page.not.items.map((item, index) => (
+              <li key={item} className="grid grid-cols-[3rem_1fr] gap-4 border-b border-[#0B1F3A]/16 py-6">
+                <span className="text-sm tabular-nums text-[var(--langia-blue-ink)]">{String(index + 1).padStart(2, "0")}</span>
+                <p className="font-heading text-xl font-medium leading-7 tracking-[-0.025em] text-[#0B1F3A] sm:text-2xl">
+                  {item}
+                </p>
+              </li>
+            ))}
+          </ol>
         </div>
-        <CardGrid cards={values.items} />
-      </div>
-    </section>
-  );
-}
-
-function Presence({ page: { presence } }: { page: AboutPageContent }) {
-  return (
-    <section className="bg-[#FFFFFF] px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
-      <div className="mx-auto grid max-w-[1180px] gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-center">
-        <div>
-          <Eyebrow>{presence.eyebrow}</Eyebrow>
-          <h2 className="mt-4 font-heading text-3xl font-semibold leading-tight text-[#0B1F3A] sm:text-4xl lg:text-5xl">
-            {presence.title}
-          </h2>
-          <p className="mt-5 text-base leading-8 text-[#42526A]">{presence.body}</p>
-          <p className="mt-6 inline-flex rounded-full border border-[#D8E6F4] bg-[#F3F7FB] px-4 py-2 text-sm font-semibold text-[#0B1F3A]">
-            {presence.locationNote}
-          </p>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {presence.languages.map((language) => (
-            <div
-              key={language}
-              className="rounded-[1.75rem] border border-[#E4EDF7] bg-[#FFFFFF] p-6 shadow-[0_16px_42px_rgba(11,31,58,0.055)]"
-            >
-              <div className="mb-8 h-12 w-12 rounded-2xl border border-[#CFE5FA] bg-[#EAF6FF]" />
-              <h3 className="font-heading text-2xl font-semibold text-[#0B1F3A]">{language}</h3>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function NotSection({ page: { not } }: { page: AboutPageContent }) {
-  return (
-    <section className="bg-[#F3F7FB] px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
-      <div className="mx-auto max-w-[1180px]">
-        <div className="max-w-3xl">
-          <Eyebrow>{not.eyebrow}</Eyebrow>
-          <h2 className="mt-4 font-heading text-3xl font-semibold leading-tight text-[#0B1F3A] sm:text-4xl lg:text-5xl">
-            {not.title}
-          </h2>
-          <p className="mt-5 text-base leading-8 text-[#42526A]">{not.body}</p>
-        </div>
-        <div className="mt-10 grid gap-4 md:grid-cols-2">
-          {not.items.map((item) => (
-            <div
-              key={item}
-              className="rounded-[1.5rem] border border-[#E4EDF7] bg-[#FFFFFF] p-5 text-sm font-semibold text-[#0B1F3A] shadow-[0_12px_34px_rgba(11,31,58,0.045)]"
-            >
-              {item}
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function FinalCta({ page: { finalCta } }: { page: AboutPageContent }) {
-  return (
-    <section className="bg-[#FFFFFF] px-4 py-16 sm:px-6 lg:px-10">
-      <div className="mx-auto grid max-w-[1180px] gap-8 overflow-hidden rounded-[2rem] bg-[#0B1F3A] p-8 text-[#FFFFFF] shadow-[0_28px_90px_rgba(11,31,58,0.22)] md:grid-cols-[1fr_auto] md:items-center sm:p-10 lg:p-12">
-        <div>
-          <h2 className="font-heading text-3xl font-semibold leading-tight sm:text-4xl">
-            {finalCta.title}
-          </h2>
-          <p className="mt-4 max-w-2xl text-base leading-8 text-white/70">{finalCta.body}</p>
-        </div>
-        <div className="flex flex-col gap-3 sm:flex-row">
-          <CtaLink href="/contact">{finalCta.primaryCta}</CtaLink>
-          <CtaLink href="/programs" variant="darkSecondary">
-            {finalCta.secondaryCta}
-          </CtaLink>
-        </div>
-      </div>
-    </section>
+      </SiteContainer>
+    </MarketingSection>
   );
 }
 
@@ -353,27 +238,34 @@ export default function AboutPage() {
   const content = getContent(language);
 
   return (
-    <main className="min-h-screen bg-[#FFFFFF] text-[#0B1F3A]">
+    <main className="min-h-screen bg-white text-[#0B1F3A]">
       <SiteNavbar variant="light" language={language} />
-      <Hero page={content} />
+      <Hero language={language} page={content} />
       <Origin page={content} />
-      <EditorialSection
+      <NarrativeSection
         eyebrow={content.why.eyebrow}
         title={content.why.title}
         body={content.why.body}
-        cards={content.why.cards}
+        items={content.why.cards}
+        tone="mist"
       />
-      <EditorialSection
+      <NarrativeSection
         eyebrow={content.difference.eyebrow}
         title={content.difference.title}
         body={content.difference.body}
-        cards={content.difference.cards}
+        items={content.difference.cards}
+        tone="white"
       />
       <AiSection page={content} />
       <Values page={content} />
       <Presence page={content} />
       <NotSection page={content} />
-      <FinalCta page={content} />
+      <FinalCTA
+        title={content.finalCta.title}
+        body={content.finalCta.body}
+        primary={{ href: "/contact", label: content.finalCta.primaryCta }}
+        secondary={{ href: "/programs", label: content.finalCta.secondaryCta }}
+      />
       <SiteFooter />
     </main>
   );

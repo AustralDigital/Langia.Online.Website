@@ -1,6 +1,8 @@
 import type { SiteLanguage } from "@/lib/language";
 
-export const LOGIN_URL = "https://langia-tailored-v2.vercel.app/sign-in";
+export const LOGIN_URL =
+  process.env.NEXT_PUBLIC_LANGIA_LOGIN_URL?.trim() ||
+  "https://langia-tailored-v2.vercel.app/sign-in";
 
 type NavigationItem = {
   title: string;
@@ -19,8 +21,6 @@ type NavigationContent = {
   secondaryCta: string;
   mobileMenuLabel: string;
   closeMenuLabel: string;
-  updates: string;
-  emailPlaceholder: string;
   programsMenu: {
     heading: string;
     description: string;
@@ -33,6 +33,8 @@ type NavigationContent = {
   };
   footer: {
     brandLine: string;
+    contactTitle: string;
+    contactBody: string;
     columns: readonly {
       title: string;
       links: readonly {
@@ -57,8 +59,6 @@ export const navigationContent = {
     secondaryCta: "Hablar con Langia",
     mobileMenuLabel: "Abrir menú",
     closeMenuLabel: "Cerrar menú",
-    updates: "Novedades",
-    emailPlaceholder: "Correo electrónico",
     programsMenu: {
       heading: "Programas",
       description: "Elige la ruta que mejor se ajusta a tu momento.",
@@ -82,6 +82,8 @@ export const navigationContent = {
     },
     footer: {
       brandLine: "Idiomas para personas que van más lejos.",
+      contactTitle: "¿Tienes un objetivo en mente?",
+      contactBody: "Cuéntanos qué quieres lograr y te ayudaremos a elegir una ruta clara.",
       columns: [
         {
           title: "Programas",
@@ -106,7 +108,7 @@ export const navigationContent = {
           title: "Recursos",
           links: [
             { label: "Blog", href: "/blog" },
-            { label: "Prueba de nivel", href: "/test-your-english-level" },
+            { label: "Orientación de nivel", href: "/test-your-english-level" },
             { label: "Programas", href: "/programs" },
           ],
         },
@@ -126,8 +128,6 @@ export const navigationContent = {
     secondaryCta: "Falar com a Langia",
     mobileMenuLabel: "Abrir menu",
     closeMenuLabel: "Fechar menu",
-    updates: "Novidades",
-    emailPlaceholder: "E-mail",
     programsMenu: {
       heading: "Programas",
       description: "Escolha a rota que melhor combina com seu momento.",
@@ -151,6 +151,8 @@ export const navigationContent = {
     },
     footer: {
       brandLine: "Idiomas para pessoas que vão mais longe.",
+      contactTitle: "Você tem um objetivo em mente?",
+      contactBody: "Conte o que deseja alcançar e ajudaremos você a escolher uma rota clara.",
       columns: [
         {
           title: "Programas",
@@ -175,7 +177,7 @@ export const navigationContent = {
           title: "Recursos",
           links: [
             { label: "Blog", href: "/blog" },
-            { label: "Teste de nível", href: "/test-your-english-level" },
+            { label: "Orientação de nível", href: "/test-your-english-level" },
             { label: "Programas", href: "/programs" },
           ],
         },
@@ -195,8 +197,6 @@ export const navigationContent = {
     secondaryCta: "Talk to Langia",
     mobileMenuLabel: "Open menu",
     closeMenuLabel: "Close menu",
-    updates: "Updates",
-    emailPlaceholder: "Email address",
     programsMenu: {
       heading: "Programs",
       description: "Choose the path that fits your moment.",
@@ -220,6 +220,8 @@ export const navigationContent = {
     },
     footer: {
       brandLine: "Languages for people going places.",
+      contactTitle: "Have a goal in mind?",
+      contactBody: "Tell us what you want to achieve and we’ll help you choose a clear path.",
       columns: [
         {
           title: "Programs",
@@ -244,7 +246,7 @@ export const navigationContent = {
           title: "Resources",
           links: [
             { label: "Blog", href: "/blog" },
-            { label: "Level test", href: "/test-your-english-level" },
+            { label: "Level guidance", href: "/test-your-english-level" },
             { label: "Programs", href: "/programs" },
           ],
         },

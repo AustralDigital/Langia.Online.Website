@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-labelledby="title desc">
+  <title id="title">Langia Editorial</title>
+  <desc id="desc">A blue Langia L monogram with a gold destination point.</desc>
+  <rect width="320" height="320" rx="88" fill="#F3F7FB"/>
+  <path d="M86 65v154c0 20 16 36 36 36h112" fill="none" stroke="#0B1F3A" stroke-linecap="round" stroke-width="34"/>
+  <path d="M86 184c41-3 72-24 93-63 15-28 32-43 55-47" fill="none" stroke="#048EFF" stroke-linecap="round" stroke-width="24"/>
+  <circle cx="238" cy="73" r="18" fill="#F3B737"/>
+</svg>

@@ -1,21 +1,37 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
-import { type ReactNode } from "react";
+import { LocalizedLink as Link } from "@/components/site/LocalizedLink";
 
 import { SiteFooter } from "@/components/site/SiteFooter";
-import { SiteNavbar } from "@/components/site/SiteNavbar";
-import { siteButtonClass } from "@/components/site/buttonStyles";
 import {
-  pagesContent,
-  type ProgramCardContent,
-  type ProgramsOverviewContent,
-} from "@/content/pages";
+  ArrowIcon,
+  EditorialHeading,
+  FeatureList,
+  FinalCTA,
+  MarketingButton,
+  MarketingSection,
+  MediaFrame,
+  PageHero,
+  SectionEyebrow,
+  SectionHeader,
+  SiteContainer,
+} from "@/components/site/MarketingPrimitives";
+import { SiteNavbar } from "@/components/site/SiteNavbar";
+import { pagesContent, type ProgramCardContent, type ProgramsOverviewContent } from "@/content/pages";
 import { useSiteLanguage } from "@/hooks/useSiteLanguage";
 import { defaultLanguage, type SiteLanguage } from "@/lib/language";
+import {
+  PROGRAM_IMAGE_PATHS,
+  ResponsiveKidsImage,
+} from "./ProgramRoutePrimitives";
 
-type ImageAvailability = Record<string, boolean>;
+const programImages: Partial<Record<string, { src: string; position: string }>> = {
+  "/programs/langia-online": { src: PROGRAM_IMAGE_PATHS.langiaOnline, position: "object-center" },
+  "/programs/talkin-club": { src: PROGRAM_IMAGE_PATHS.talkinClub, position: "object-center" },
+  "/programs/test-prep": { src: PROGRAM_IMAGE_PATHS.testPrep, position: "object-center" },
+  "/programs/langia-4-kids-n-teens": { src: PROGRAM_IMAGE_PATHS.kidsDesktop, position: "object-center" },
+  "/corporate": { src: PROGRAM_IMAGE_PATHS.corporate, position: "object-center" },
+};
 
 function getProgramsOverview(language: SiteLanguage): ProgramsOverviewContent {
   const content = pagesContent[language].programs.overview ?? pagesContent.es.programs.overview;
@@ -27,220 +43,127 @@ function getProgramsOverview(language: SiteLanguage): ProgramsOverviewContent {
   return content;
 }
 
-function ArrowIcon({ className = "h-4 w-4" }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="1.8"
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-    >
-      <path d="M5 12h14" />
-      <path d="m13 6 6 6-6 6" />
-    </svg>
-  );
-}
+function OverviewHeroMedia({ items }: { items: readonly ProgramCardContent[] }) {
+  const visibleItems = items.slice(0, 3);
 
-function CheckIcon() {
   return (
-    <svg
-      className="h-4 w-4"
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="2"
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-    >
-      <path d="m5 12 4 4L19 6" />
-    </svg>
-  );
-}
+    <div className="grid grid-cols-2 gap-3 sm:gap-4">
+      {visibleItems.map((item, index) => {
+        const media = programImages[item.href];
 
-function Button({
-  href,
-  children,
-  variant = "primary",
-}: {
-  href: string;
-  children: ReactNode;
-  variant?: "primary" | "secondary" | "dark";
-}) {
-  return (
-    <Link
-      href={href}
-      className={siteButtonClass({
-        variant: variant === "dark" ? "darkSecondary" : variant,
+        if (!media) {
+          return null;
+        }
+
+        return (
+          <MediaFrame
+            alt=""
+            aspectClassName="aspect-[4/3]"
+            className={`rounded-[1.5rem] border border-[#0B1F3A]/10 shadow-[0_18px_50px_rgba(11,31,58,0.08)] ${
+              index === 0 ? "col-span-2" : ""
+            }`}
+            imageClassName={`object-cover ${media.position}`}
+            key={item.href}
+            priority={index === 0}
+            sizes={index === 0 ? "(min-width: 1024px) 50vw, 100vw" : "(min-width: 1024px) 25vw, 50vw"}
+            src={media.src}
+          >
+            <p className="absolute bottom-3 left-3 rounded-full border border-white/70 bg-white/90 px-3.5 py-2 font-heading text-xs font-semibold text-[#0B1F3A] shadow-sm backdrop-blur-md sm:bottom-4 sm:left-4 sm:text-sm">
+              {item.name}
+            </p>
+          </MediaFrame>
+        );
       })}
-    >
-      {children}
-      <ArrowIcon />
-    </Link>
+    </div>
   );
 }
 
-function Eyebrow({ children, light = false }: { children: ReactNode; light?: boolean }) {
-  return (
-    <p
-      className={`font-heading text-xs font-semibold uppercase tracking-[0.18em] ${
-        light ? "text-[#7EC7FF]" : "text-[#048EFF]"
-      }`}
-    >
-      {children}
-    </p>
-  );
-}
-
-function ImageSlot({
+function ProgramJourneyCard({
+  ctaLabel,
+  dominant = false,
   item,
-  imageAvailability,
-  priority = false,
-  dark = false,
 }: {
+  ctaLabel: string;
+  dominant?: boolean;
   item: ProgramCardContent;
-  imageAvailability: ImageAvailability;
-  priority?: boolean;
-  dark?: boolean;
 }) {
-  const hasImage = imageAvailability[item.imagePath];
+  const media = programImages[item.href];
 
-  if (hasImage) {
-    return (
-      <Image
-        src={item.imagePath}
-        alt=""
-        fill
-        className="object-cover"
-        sizes="(min-width: 1024px) 42vw, 100vw"
-        priority={priority}
-      />
-    );
+  if (!media) {
+    return null;
   }
 
   return (
-    <div
-      className={`absolute inset-0 overflow-hidden ${
-        dark
-          ? "bg-[linear-gradient(135deg,#0B1F3A_0%,#12345C_52%,#048EFF_100%)]"
-          : "bg-[linear-gradient(135deg,#F3F7FB_0%,#EAF6FF_48%,#FFFFFF_100%)]"
-      }`}
-    >
-      <div className="absolute left-6 top-6 h-20 w-28 rounded-[1.25rem] border border-white/50 bg-white/55 backdrop-blur-md" />
-      <div className="absolute bottom-6 right-6 h-28 w-[58%] rounded-[1.5rem] border border-white/50 bg-white/45 backdrop-blur-md" />
-      <div className="absolute bottom-14 left-8 h-3 w-28 rounded-full bg-[#048EFF]/35" />
-      <div className="absolute bottom-8 left-8 h-3 w-44 max-w-[54%] rounded-full bg-white/65" />
-      <div className="absolute right-12 top-12 h-11 w-11 rounded-full bg-[#F3B737]" />
-    </div>
-  );
-}
-
-function HeroVisual({
-  content,
-  imageAvailability,
-}: {
-  content: ProgramsOverviewContent;
-  imageAvailability: ImageAvailability;
-}) {
-  const heroImage = content.programCards[0];
-
-  return (
-    <div className="relative min-h-[360px] overflow-hidden rounded-[2rem] border border-[#D8E6F4] bg-[#F3F7FB] shadow-[0_24px_80px_rgba(11,31,58,0.08)] lg:min-h-[460px]">
-      <ImageSlot item={heroImage} imageAvailability={imageAvailability} priority />
-      <div className="absolute inset-x-5 bottom-5 rounded-[1.5rem] border border-white/60 bg-white/82 p-5 shadow-[0_18px_46px_rgba(11,31,58,0.1)] backdrop-blur-xl">
-        <div className="flex flex-wrap items-center justify-between gap-4">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#048EFF]">
-              Langia Online
-            </p>
-            <p className="mt-2 max-w-xs font-heading text-xl font-semibold text-[#0B1F3A]">
-              {heroImage.description}
-            </p>
-          </div>
-          <div className="grid h-16 w-24 place-items-center rounded-2xl bg-[#0B1F3A] text-sm font-semibold text-white">
-            A1-C2
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function ProgramCard({
-  item,
-  ctaLabel,
-  imageAvailability,
-  featured = false,
-}: {
-  item: ProgramCardContent;
-  ctaLabel: string;
-  imageAvailability: ImageAvailability;
-  featured?: boolean;
-}) {
-  if (featured) {
-    return (
-      <article className="grid overflow-hidden rounded-[2rem] bg-[#0B1F3A] text-white shadow-[0_28px_80px_rgba(11,31,58,0.18)] lg:grid-cols-[0.92fr_1.08fr]">
-        <div className="relative min-h-[260px]">
-          <ImageSlot item={item} imageAvailability={imageAvailability} dark />
-        </div>
-        <div className="p-7 sm:p-9 lg:p-10">
-          <Eyebrow light>{item.audience}</Eyebrow>
-          <h3 className="mt-4 font-heading text-3xl font-semibold leading-tight">{item.name}</h3>
-          <p className="mt-4 max-w-2xl text-base leading-8 text-white/72">{item.description}</p>
-          <div className="mt-7 flex flex-wrap gap-3">
+    <article>
+      <Link
+        className={`group flex h-full flex-col overflow-hidden rounded-[2rem] border border-[#0B1F3A]/12 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#048EFF] focus-visible:ring-offset-4 ${
+          dominant ? "bg-[linear-gradient(145deg,#FFFFFF_0%,#EAF6FF_100%)]" : "bg-white"
+        }`}
+        href={item.href}
+      >
+        <MediaFrame
+          alt=""
+          aspectClassName="aspect-[4/3]"
+          className="rounded-none"
+          imageClassName={`object-cover transition-transform duration-500 group-hover:scale-[1.02] ${media.position}`}
+          sizes={dominant ? "(min-width: 1024px) 58vw, 100vw" : "(min-width: 1024px) 40vw, 100vw"}
+          src={media.src}
+        />
+        <div className="flex flex-1 flex-col p-6 sm:p-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#0068B8]">{item.audience}</p>
+          <EditorialHeading as="h2" className="mt-4" size="card">
+            {item.name}
+          </EditorialHeading>
+          <p className="mt-5 max-w-2xl text-base leading-8 text-[#52657A]">{item.description}</p>
+          <ul className="mt-7 grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
             {item.highlights.map((highlight) => (
-              <span
-                key={highlight}
-                className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-3 py-2 text-sm font-medium text-white/82"
-              >
-                <CheckIcon />
+              <li key={highlight} className="border-t border-[#0B1F3A]/14 pt-3 text-base font-semibold leading-6 text-[#0B1F3A]">
                 {highlight}
-              </span>
+              </li>
+            ))}
+          </ul>
+          <span className="mt-auto flex items-center gap-3 pt-8 text-base font-semibold text-[#0B1F3A]">
+            {ctaLabel}
+            <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </span>
+        </div>
+      </Link>
+    </article>
+  );
+}
+
+function KidsJourneyCard({ ctaLabel, item }: { ctaLabel: string; item: ProgramCardContent }) {
+  return (
+    <article className="mt-6">
+      <Link
+        className="group grid overflow-hidden rounded-[2rem] border border-[#F3B737]/35 bg-[linear-gradient(120deg,#FFFFFF_0%,#FFF9EA_100%)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#048EFF] focus-visible:ring-offset-4 lg:grid-cols-[1.08fr_0.92fr]"
+        href={item.href}
+      >
+        <div className="relative aspect-[4/5] min-h-0 overflow-hidden bg-[#FFF5D8] sm:aspect-[4/3] lg:aspect-auto lg:min-h-[480px]">
+          <ResponsiveKidsImage
+            alt=""
+            className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]"
+          />
+        </div>
+        <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-12">
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#765200]">{item.audience}</p>
+          <EditorialHeading as="h2" className="mt-5" size="secondary">
+            {item.name}
+          </EditorialHeading>
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-[#52657A]">{item.description}</p>
+          <div className="mt-7 grid gap-x-6 sm:grid-cols-3">
+            {item.highlights.map((highlight) => (
+              <p key={highlight} className="border-t border-[#0B1F3A]/16 py-4 text-base font-semibold text-[#0B1F3A]">
+                {highlight}
+              </p>
             ))}
           </div>
-          <div className="mt-8">
-            <Button href={item.href} variant="dark">
-              {ctaLabel}
-            </Button>
-          </div>
+          <span className="mt-6 flex items-center gap-3 text-base font-semibold text-[#0B1F3A]">
+            {ctaLabel}
+            <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </span>
         </div>
-      </article>
-    );
-  }
-
-  return (
-    <article className="overflow-hidden rounded-[1.75rem] border border-[#E4EDF7] bg-white shadow-[0_16px_44px_rgba(11,31,58,0.06)]">
-      <div className="relative min-h-[230px] border-b border-[#E4EDF7]">
-        <ImageSlot item={item} imageAvailability={imageAvailability} />
-      </div>
-      <div className="p-6 sm:p-7">
-        <Eyebrow>{item.audience}</Eyebrow>
-        <h3 className="mt-4 font-heading text-2xl font-semibold leading-tight text-[#0B1F3A]">
-          {item.name}
-        </h3>
-        <p className="mt-4 min-h-24 text-sm leading-7 text-[#42526A]">{item.description}</p>
-        <div className="mt-6 grid gap-2">
-          {item.highlights.map((highlight) => (
-            <span key={highlight} className="flex items-center gap-2 text-sm font-medium text-[#0B1F3A]">
-              <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[#EAF6FF] text-[#048EFF]">
-                <CheckIcon />
-              </span>
-              {highlight}
-            </span>
-          ))}
-        </div>
-        <Link
-          href={item.href}
-          className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#048EFF] transition hover:text-[#C8921B]"
-        >
-          {ctaLabel}
-          <ArrowIcon />
-        </Link>
-      </div>
+      </Link>
     </article>
   );
 }
@@ -249,21 +172,19 @@ function ComparisonSection({ content }: { content: ProgramsOverviewContent }) {
   const headers = content.comparison.headers;
 
   return (
-    <section id="comparison" className="bg-white px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
-      <div className="mx-auto max-w-[1180px]">
-        <div className="max-w-2xl">
-          <Eyebrow>{content.comparison.eyebrow}</Eyebrow>
-          <h2 className="mt-4 font-heading text-3xl font-semibold leading-tight text-[#0B1F3A] sm:text-4xl">
-            {content.comparison.title}
-          </h2>
-          <p className="mt-4 text-base leading-8 text-[#42526A]">{content.comparison.body}</p>
-        </div>
+    <MarketingSection id="comparison" tone="mist">
+      <SiteContainer>
+        <SectionHeader
+          body={content.comparison.body}
+          eyebrow={content.comparison.eyebrow}
+          title={content.comparison.title}
+        />
 
-        <div className="mt-10 hidden overflow-hidden rounded-[1.5rem] border border-[#E4EDF7] bg-white shadow-[0_18px_50px_rgba(11,31,58,0.06)] lg:block">
-          <table className="w-full border-collapse text-left text-sm">
-            <thead className="bg-[#F3F7FB] text-xs font-semibold uppercase tracking-[0.12em] text-[#42526A]">
+        <div className="mt-14 hidden overflow-hidden rounded-[1.5rem] border border-[#0B1F3A]/14 bg-white shadow-[0_18px_55px_rgba(11,31,58,0.06)] xl:block">
+          <table className="w-full border-collapse text-left text-base">
+            <thead className="border-b border-[var(--langia-signal)] bg-[var(--langia-signal)] text-sm font-semibold uppercase tracking-[0.1em] text-white">
               <tr>
-                <th className="px-5 py-5 text-[#0B1F3A]">{headers.program}</th>
+                <th className="px-5 py-5">{headers.program}</th>
                 <th className="px-5 py-5">{headers.bestFor}</th>
                 <th className="px-5 py-5">{headers.format}</th>
                 <th className="px-5 py-5">{headers.focus}</th>
@@ -271,21 +192,16 @@ function ComparisonSection({ content }: { content: ProgramsOverviewContent }) {
                 <th className="px-5 py-5">{headers.nextStep}</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#E4EDF7]">
+            <tbody className="divide-y divide-[#0B1F3A]/12">
               {content.comparison.rows.map((row) => (
                 <tr key={row.program} className="align-top">
-                  <th className="px-5 py-5 font-heading text-base font-semibold text-[#0B1F3A]">
-                    {row.program}
-                  </th>
-                  <td className="px-5 py-5 leading-7 text-[#42526A]">{row.bestFor}</td>
-                  <td className="px-5 py-5 leading-7 text-[#42526A]">{row.format}</td>
-                  <td className="px-5 py-5 leading-7 text-[#42526A]">{row.focus}</td>
-                  <td className="px-5 py-5 leading-7 text-[#42526A]">{row.practice}</td>
-                  <td className="px-5 py-5">
-                    <Link
-                      href={row.href}
-                      className="inline-flex items-center gap-2 font-semibold text-[#048EFF] hover:text-[#C8921B]"
-                    >
+                  <th className="px-5 py-6 font-heading text-lg font-semibold text-[#0B1F3A]">{row.program}</th>
+                  <td className="px-5 py-6 leading-7 text-[#52657A]">{row.bestFor}</td>
+                  <td className="px-5 py-6 leading-7 text-[#52657A]">{row.format}</td>
+                  <td className="px-5 py-6 leading-7 text-[#52657A]">{row.focus}</td>
+                  <td className="px-5 py-6 leading-7 text-[#52657A]">{row.practice}</td>
+                  <td className="px-5 py-6">
+                    <Link className="inline-flex items-center gap-2 font-semibold text-[#0B1F3A] hover:text-[#0068B8]" href={row.href}>
                       {row.nextStep}
                       <ArrowIcon />
                     </Link>
@@ -296,192 +212,151 @@ function ComparisonSection({ content }: { content: ProgramsOverviewContent }) {
           </table>
         </div>
 
-        <div className="mt-8 grid gap-4 lg:hidden">
+        <div className="mt-14 grid gap-x-8 gap-y-12 md:grid-cols-2 xl:hidden">
           {content.comparison.rows.map((row) => (
-            <article key={row.program} className="rounded-[1.25rem] border border-[#E4EDF7] bg-white p-5 shadow-[0_12px_36px_rgba(11,31,58,0.05)]">
-              <h3 className="font-heading text-xl font-semibold text-[#0B1F3A]">{row.program}</h3>
-              <dl className="mt-5 grid gap-4 text-sm">
-                <div>
-                  <dt className="font-semibold text-[#0B1F3A]">{headers.bestFor}</dt>
-                  <dd className="mt-1 leading-7 text-[#42526A]">{row.bestFor}</dd>
-                </div>
-                <div>
-                  <dt className="font-semibold text-[#0B1F3A]">{headers.format}</dt>
-                  <dd className="mt-1 leading-7 text-[#42526A]">{row.format}</dd>
-                </div>
-                <div>
-                  <dt className="font-semibold text-[#0B1F3A]">{headers.focus}</dt>
-                  <dd className="mt-1 leading-7 text-[#42526A]">{row.focus}</dd>
-                </div>
-                <div>
-                  <dt className="font-semibold text-[#0B1F3A]">{headers.practice}</dt>
-                  <dd className="mt-1 leading-7 text-[#42526A]">{row.practice}</dd>
-                </div>
+            <article key={row.program} className="border-t border-[#0B1F3A]/18 pt-6">
+              <h3 className="font-heading text-2xl font-medium tracking-[-0.03em] text-[#0B1F3A]">{row.program}</h3>
+              <dl className="mt-6 grid gap-x-6 sm:grid-cols-2">
+                {[
+                  [headers.bestFor, row.bestFor],
+                  [headers.format, row.format],
+                  [headers.focus, row.focus],
+                  [headers.practice, row.practice],
+                ].map(([label, value]) => (
+                  <div key={label} className="border-t border-[#0B1F3A]/12 py-4">
+                    <dt className="text-sm font-semibold uppercase tracking-[0.1em] text-[#52657A]">{label}</dt>
+                    <dd className="mt-2 text-base leading-7 text-[#0B1F3A]">{value}</dd>
+                  </div>
+                ))}
               </dl>
-              <Link
-                href={row.href}
-                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#048EFF] hover:text-[#C8921B]"
-              >
+              <Link className="mt-6 inline-flex items-center gap-3 text-base font-semibold text-[#0B1F3A] hover:text-[#0068B8]" href={row.href}>
                 {row.nextStep}
                 <ArrowIcon />
               </Link>
             </article>
           ))}
         </div>
-      </div>
-    </section>
+      </SiteContainer>
+    </MarketingSection>
   );
 }
 
 function FinderSection({ content }: { content: ProgramsOverviewContent }) {
   return (
-    <section className="bg-[#F3F7FB] px-4 py-16 sm:px-6 lg:px-10">
-      <div className="mx-auto grid max-w-[1180px] gap-10 rounded-[2rem] bg-[#0B1F3A] p-7 text-white shadow-[0_28px_90px_rgba(11,31,58,0.18)] md:grid-cols-[1fr_0.8fr] md:items-center sm:p-10 lg:p-12">
-        <div>
-          <Eyebrow light>{content.finder.eyebrow}</Eyebrow>
-          <h2 className="mt-4 font-heading text-3xl font-semibold leading-tight sm:text-4xl">
-            {content.finder.title}
-          </h2>
-          <p className="mt-4 max-w-2xl text-base leading-8 text-white/72">{content.finder.body}</p>
-          <div className="mt-8">
-            <Button href={content.finder.href} variant="primary">
-              {content.finder.cta}
-            </Button>
-          </div>
-        </div>
-        <div className="rounded-[1.5rem] border border-white/15 bg-white/8 p-5">
-          <div className="rounded-[1.25rem] bg-white p-5 text-[#0B1F3A]">
-            <div className="flex items-center justify-between gap-4">
-              <span className="h-3 w-24 rounded-full bg-[#048EFF]/30" />
-              <span className="h-9 w-9 rounded-full bg-[#EAF6FF]" />
+    <MarketingSection tone="mist">
+      <SiteContainer>
+        <div className="relative overflow-hidden rounded-[2rem] border border-[#BBDCF7] bg-[linear-gradient(135deg,#FFFFFF_0%,#E8F5FF_100%)] p-7 shadow-[0_20px_65px_rgba(11,31,58,0.07)] sm:p-10 lg:p-14">
+          <div
+            aria-hidden="true"
+            className="absolute -right-20 -top-20 h-64 w-64 rounded-full border-[3.5rem] border-[#048EFF]/10"
+          />
+          <div className="relative grid gap-14 xl:grid-cols-[0.82fr_1.18fr] xl:items-end xl:gap-24">
+            <div>
+              <SectionHeader body={content.finder.body} eyebrow={content.finder.eyebrow} title={content.finder.title} />
+              <div className="mt-9">
+                <MarketingButton href={content.finder.href}>{content.finder.cta}</MarketingButton>
+              </div>
             </div>
-            <div className="mt-7 grid gap-3">
-              <span className="h-3 w-full rounded-full bg-[#D8E6F4]" />
-              <span className="h-3 w-10/12 rounded-full bg-[#D8E6F4]" />
-              <span className="h-3 w-8/12 rounded-full bg-[#D8E6F4]" />
-            </div>
-            <div className="mt-8 grid grid-cols-3 gap-3">
-              <span className="h-16 rounded-2xl bg-[#F3F7FB]" />
-              <span className="h-16 rounded-2xl bg-[#EAF6FF]" />
-              <span className="h-16 rounded-2xl bg-[#F3F7FB]" />
+            <div className="rounded-[1.5rem] border border-[#CFE5FA] bg-white/85 px-6 py-3 shadow-sm backdrop-blur-sm sm:px-8">
+              <FeatureList items={content.programCards.slice(0, 4).map((item) => item.name)} />
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </SiteContainer>
+    </MarketingSection>
   );
 }
 
-function CorporateSection({
-  content,
-  imageAvailability,
-}: {
-  content: ProgramsOverviewContent;
-  imageAvailability: ImageAvailability;
-}) {
+function CorporateSection({ content }: { content: ProgramsOverviewContent }) {
   const corporateCard = content.programCards[4];
 
   return (
-    <section className="bg-white px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
-      <div className="mx-auto grid max-w-[1180px] overflow-hidden rounded-[2rem] bg-[#0B1F3A] text-white shadow-[0_28px_90px_rgba(11,31,58,0.18)] lg:grid-cols-[0.95fr_1.05fr]">
-        <div className="relative min-h-[320px]">
-          <ImageSlot item={corporateCard} imageAvailability={imageAvailability} dark />
-        </div>
-        <div className="p-8 sm:p-10 lg:p-12">
-          <Eyebrow light>{content.corporate.eyebrow}</Eyebrow>
-          <h2 className="mt-4 font-heading text-3xl font-semibold leading-tight sm:text-5xl">
-            {content.corporate.title}
-          </h2>
-          <p className="mt-5 max-w-2xl text-base leading-8 text-white/72">{content.corporate.body}</p>
-          <div className="mt-8">
-            <Button href={content.corporate.href} variant="primary">
-              {content.corporate.cta}
-            </Button>
+    <MarketingSection tone="white">
+      <SiteContainer>
+        <div className="grid gap-16 xl:grid-cols-[0.86fr_1.14fr] xl:items-center xl:gap-24">
+          <div>
+            <SectionHeader body={content.corporate.body} eyebrow={content.corporate.eyebrow} title={content.corporate.title} />
+            <div className="mt-10 border-t border-[#0B1F3A]/16 pt-7">
+              <SectionEyebrow>{corporateCard.audience}</SectionEyebrow>
+              <EditorialHeading as="h3" className="mt-5" size="card">
+                {corporateCard.name}
+              </EditorialHeading>
+              <p className="mt-4 max-w-xl text-base leading-8 text-[#52657A]">{corporateCard.description}</p>
+              <div className="mt-6">
+                <FeatureList items={corporateCard.highlights} />
+              </div>
+            </div>
+            <div className="mt-9">
+              <MarketingButton href={content.corporate.href}>{content.corporate.cta}</MarketingButton>
+            </div>
           </div>
+          <MediaFrame
+            alt=""
+            aspectClassName="aspect-[4/3]"
+            className="border border-[#BBDCF7] shadow-[0_24px_70px_rgba(11,31,58,0.10)]"
+            imageClassName="object-cover object-center"
+            sizes="(min-width: 1280px) 55vw, 100vw"
+            src={PROGRAM_IMAGE_PATHS.corporate}
+          >
+            <span
+              aria-hidden="true"
+              className="absolute bottom-5 left-5 h-2.5 w-16 rounded-full bg-[#048EFF]"
+            />
+          </MediaFrame>
         </div>
-      </div>
-    </section>
+      </SiteContainer>
+    </MarketingSection>
   );
 }
 
-export function ProgramsOverviewClient({
-  imageAvailability,
-}: {
-  imageAvailability: ImageAvailability;
-}) {
+export function ProgramsOverviewClient() {
   const { language } = useSiteLanguage(defaultLanguage);
   const content = getProgramsOverview(language);
   const individualPrograms = content.programCards.slice(0, 4);
-  const corporateProgram = content.programCards[4];
 
   return (
-    <main className="min-h-screen bg-[#F3F7FB] text-[#0B1F3A]">
+    <main className="min-h-screen bg-white text-[#0B1F3A]">
       <SiteNavbar variant="light" language={language} />
 
-      <section className="bg-[#F3F7FB] px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
-        <div className="mx-auto grid max-w-[1180px] gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-          <div>
-            <Eyebrow>{content.hero.eyebrow}</Eyebrow>
-            <h1 className="mt-5 max-w-4xl font-heading text-4xl font-semibold leading-tight text-[#0B1F3A] sm:text-5xl lg:text-6xl">
-              {content.hero.title}
-            </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-[#42526A] sm:text-lg">
-              {content.hero.body}
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button href="#comparison">{content.hero.primaryCta}</Button>
-              <Button href={content.hero.secondaryHref} variant="secondary">
-                {content.hero.secondaryCta}
-              </Button>
+      <PageHero
+        actions={
+          <>
+            <MarketingButton href="#comparison">{content.hero.primaryCta}</MarketingButton>
+            <MarketingButton href={content.hero.secondaryHref} variant="secondary">
+              {content.hero.secondaryCta}
+            </MarketingButton>
+          </>
+        }
+        body={content.hero.body}
+        eyebrow={content.hero.eyebrow}
+        media={<OverviewHeroMedia items={content.programCards} />}
+        title={content.hero.title}
+      />
+
+      <MarketingSection tone="white">
+        <SiteContainer>
+          <div className="grid gap-6 lg:grid-cols-[1.18fr_0.82fr] lg:items-start">
+            <ProgramJourneyCard ctaLabel={content.cardCtaLabel} dominant item={individualPrograms[0]} />
+            <div className="grid gap-6">
+              {individualPrograms.slice(1, 3).map((item) => (
+                <ProgramJourneyCard ctaLabel={content.cardCtaLabel} item={item} key={item.href} />
+              ))}
             </div>
           </div>
-          <HeroVisual content={content} imageAvailability={imageAvailability} />
-        </div>
-      </section>
-
-      <section className="bg-white px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
-        <div className="mx-auto max-w-[1180px]">
-          <div className="grid gap-6 md:grid-cols-2">
-            {individualPrograms.map((item) => (
-              <ProgramCard
-                key={item.href}
-                item={item}
-                ctaLabel={content.cardCtaLabel}
-                imageAvailability={imageAvailability}
-              />
-            ))}
-          </div>
-          <div className="mt-6">
-            <ProgramCard
-              item={corporateProgram}
-              ctaLabel={content.cardCtaLabel}
-              imageAvailability={imageAvailability}
-              featured
-            />
-          </div>
-        </div>
-      </section>
+          <KidsJourneyCard ctaLabel={content.cardCtaLabel} item={individualPrograms[3]} />
+        </SiteContainer>
+      </MarketingSection>
 
       <ComparisonSection content={content} />
       <FinderSection content={content} />
-      <CorporateSection content={content} imageAvailability={imageAvailability} />
+      <CorporateSection content={content} />
 
-      <section className="bg-[#F3F7FB] px-4 py-16 sm:px-6 lg:px-10">
-        <div className="mx-auto grid max-w-[1180px] gap-8 rounded-[2rem] bg-white p-8 shadow-[0_24px_80px_rgba(11,31,58,0.08)] md:grid-cols-[1fr_auto] md:items-center sm:p-10 lg:p-12">
-          <div>
-            <h2 className="font-heading text-3xl font-semibold leading-tight text-[#0B1F3A] sm:text-4xl">
-              {content.finalCta.title}
-            </h2>
-            <p className="mt-4 max-w-2xl text-base leading-8 text-[#42526A]">{content.finalCta.body}</p>
-          </div>
-          <div className="flex flex-col gap-3 sm:flex-row">
-            <Button href={content.finalCta.primaryHref}>{content.finalCta.primaryCta}</Button>
-            <Button href={content.finalCta.secondaryHref} variant="secondary">
-              {content.finalCta.secondaryCta}
-            </Button>
-          </div>
-        </div>
-      </section>
+      <FinalCTA
+        body={content.finalCta.body}
+        primary={{ href: content.finalCta.primaryHref, label: content.finalCta.primaryCta }}
+        secondary={{ href: content.finalCta.secondaryHref, label: content.finalCta.secondaryCta }}
+        title={content.finalCta.title}
+      />
 
       <SiteFooter />
     </main>

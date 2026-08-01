@@ -1,8 +1,18 @@
 "use client";
 
-import Link from "next/link";
+import { LocalizedLink as Link } from "@/components/site/LocalizedLink";
 import { useState, type ChangeEvent, type FormEvent, type ReactNode } from "react";
 
+import {
+  ArrowIcon,
+  CheckIcon,
+  EditorialHeading,
+  FinalCTA,
+  MarketingSection,
+  PageHero,
+  SectionEyebrow,
+  SiteContainer,
+} from "@/components/site/MarketingPrimitives";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteNavbar } from "@/components/site/SiteNavbar";
 import { siteButtonClass } from "@/components/site/buttonStyles";
@@ -22,6 +32,8 @@ type ContactFormState = {
 };
 
 type RequiredField = Exclude<keyof ContactFormState, "company">;
+type FieldError = "required" | "invalidEmail";
+type FormStatus = "idle" | "config" | "opening";
 
 const initialFormState: ContactFormState = {
   name: "",
@@ -44,7 +56,38 @@ const requiredFields: RequiredField[] = [
   "message",
 ];
 
-const socialLinks = ["Instagram", "LinkedIn", "Facebook", "YouTube"] as const;
+const formUiCopy: Record<
+  SiteLanguage,
+  {
+    invalidEmail: string;
+    openingWhatsapp: string;
+    privacyText: string;
+    privacyLink: string;
+    selectPlaceholder: string;
+  }
+> = {
+  es: {
+    invalidEmail: "Ingresa un email válido para continuar.",
+    openingWhatsapp: "Abriendo WhatsApp con tu mensaje listo para enviar.",
+    privacyText: "Usaremos esta información para responder y dar seguimiento a tu solicitud.",
+    privacyLink: "Consulta nuestra política de privacidad.",
+    selectPlaceholder: "Selecciona una opción",
+  },
+  pt: {
+    invalidEmail: "Digite um email válido para continuar.",
+    openingWhatsapp: "Abrindo o WhatsApp com sua mensagem pronta para enviar.",
+    privacyText: "Usaremos estas informações para responder e acompanhar sua solicitação.",
+    privacyLink: "Consulte nossa política de privacidade.",
+    selectPlaceholder: "Selecione uma opção",
+  },
+  en: {
+    invalidEmail: "Enter a valid email address to continue.",
+    openingWhatsapp: "Opening WhatsApp with your message ready to send.",
+    privacyText: "We’ll use this information to respond to and follow up on your request.",
+    privacyLink: "Read our privacy policy.",
+    selectPlaceholder: "Select an option",
+  },
+};
 
 function getContactContent(language: SiteLanguage): ContactPageContent {
   const page = pagesContent[language].contact.contactPage;
@@ -56,98 +99,75 @@ function getContactContent(language: SiteLanguage): ContactPageContent {
   return page;
 }
 
-function ArrowIcon({ className = "h-4 w-4" }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="1.8"
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-    >
-      <path d="M5 12h14" />
-      <path d="m13 6 6 6-6 6" />
-    </svg>
-  );
-}
-
-function CheckIcon() {
-  return (
-    <svg
-      className="h-4 w-4"
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="2"
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-    >
-      <path d="m5 12 4 4L19 6" />
-    </svg>
-  );
-}
-
-function Eyebrow({ children, light = false }: { children: ReactNode; light?: boolean }) {
-  return (
-    <p className={`font-heading text-xs font-semibold uppercase tracking-[0.18em] ${light ? "text-[#7EC7FF]" : "text-[#048EFF]"}`}>
-      {children}
-    </p>
-  );
-}
-
 function FieldShell({
+  children,
+  error,
   id,
   label,
-  error,
-  children,
 }: {
+  children: ReactNode;
+  error?: string;
   id: string;
   label: string;
-  error?: string;
-  children: ReactNode;
 }) {
+  const errorId = `${id}-error`;
+
   return (
-    <label className="grid gap-2 text-sm font-semibold text-[#0B1F3A]" htmlFor={id}>
-      {label}
+    <label className="grid gap-2.5 text-base font-semibold text-[#0B1F3A]" htmlFor={id}>
+      <span>{label}</span>
       {children}
-      {error ? <span className="text-xs font-medium text-[#B42318]">{error}</span> : null}
+      {error ? (
+        <span id={errorId} className="text-sm font-medium leading-6 text-[#B42318]">
+          {error}
+        </span>
+      ) : null}
     </label>
   );
 }
 
+function getOptionLabel(options: readonly string[], value: string): string {
+  if (value === "") {
+    return "";
+  }
+
+  const index = Number(value);
+  return Number.isInteger(index) ? (options[index] ?? "") : "";
+}
+
 function buildWhatsAppMessage(page: ContactPageContent, form: ContactFormState) {
   const company = form.company.trim() || page.form.companyFallback;
+  const preferredLanguage = getOptionLabel(page.form.preferredLanguageOptions, form.preferredLanguage);
+  const interest = getOptionLabel(page.form.interestOptions, form.interest);
 
   return [
     page.whatsappMessage.intro,
     "",
-    `${page.whatsappMessage.name}: ${form.name}`,
-    `${page.whatsappMessage.email}: ${form.email}`,
-    `${page.whatsappMessage.whatsapp}: ${form.whatsapp}`,
-    `${page.whatsappMessage.country}: ${form.country}`,
-    `${page.whatsappMessage.preferredLanguage}: ${form.preferredLanguage}`,
+    `${page.whatsappMessage.name}: ${form.name.trim()}`,
+    `${page.whatsappMessage.email}: ${form.email.trim()}`,
+    `${page.whatsappMessage.whatsapp}: ${form.whatsapp.trim()}`,
+    `${page.whatsappMessage.country}: ${form.country.trim()}`,
+    `${page.whatsappMessage.preferredLanguage}: ${preferredLanguage}`,
     `${page.whatsappMessage.company}: ${company}`,
-    `${page.whatsappMessage.interest}: ${form.interest}`,
-    `${page.whatsappMessage.message}: ${form.message}`,
+    `${page.whatsappMessage.interest}: ${interest}`,
+    `${page.whatsappMessage.message}: ${form.message.trim()}`,
   ].join("\n");
 }
 
-function ContactForm({ page }: { page: ContactPageContent }) {
+function ContactForm({ language, page }: { language: SiteLanguage; page: ContactPageContent }) {
   const [form, setForm] = useState<ContactFormState>(initialFormState);
-  const [errors, setErrors] = useState<Partial<Record<RequiredField, string>>>({});
-  const [configMessage, setConfigMessage] = useState("");
+  const [errors, setErrors] = useState<Partial<Record<RequiredField, FieldError>>>({});
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const ui = formUiCopy[language];
 
   const inputClass =
-    "min-h-12 rounded-2xl border border-[#D8E6F4] bg-white px-4 text-sm font-medium text-[#0B1F3A] outline-none transition placeholder:text-[#7A8798] focus:border-[#048EFF] focus:ring-4 focus:ring-[#048EFF]/15";
+    "min-h-14 w-full rounded-xl border border-[#D8E6F4] bg-white px-4 text-base font-medium text-[#0B1F3A] outline-none transition placeholder:text-[#7A8798] focus:border-[#048EFF] focus:ring-4 focus:ring-[#048EFF]/15";
   const textareaClass =
-    "min-h-36 rounded-2xl border border-[#D8E6F4] bg-white px-4 py-3 text-sm font-medium text-[#0B1F3A] outline-none transition placeholder:text-[#7A8798] focus:border-[#048EFF] focus:ring-4 focus:ring-[#048EFF]/15";
+    "min-h-40 w-full resize-y rounded-xl border border-[#D8E6F4] bg-white px-4 py-3.5 text-base font-medium text-[#0B1F3A] outline-none transition placeholder:text-[#7A8798] focus:border-[#048EFF] focus:ring-4 focus:ring-[#048EFF]/15";
 
   function updateField(field: keyof ContactFormState, value: string) {
     setForm((current) => ({ ...current, [field]: value }));
+    setStatus("idle");
+
     if (field !== "company") {
       setErrors((current) => {
         const next = { ...current };
@@ -161,113 +181,258 @@ function ContactForm({ page }: { page: ContactPageContent }) {
     updateField(event.target.name as keyof ContactFormState, event.target.value);
   }
 
-  function validateForm() {
-    const nextErrors: Partial<Record<RequiredField, string>> = {};
+  function errorMessage(field: RequiredField): string | undefined {
+    const error = errors[field];
+
+    if (error === "invalidEmail") {
+      return ui.invalidEmail;
+    }
+
+    return error === "required" ? page.form.requiredError : undefined;
+  }
+
+  function fieldAccessibility(field: RequiredField) {
+    const hasError = Boolean(errors[field]);
+
+    return {
+      "aria-describedby": hasError ? `${field}-error` : undefined,
+      "aria-invalid": hasError || undefined,
+    };
+  }
+
+  function validateForm(formElement: HTMLFormElement) {
+    const nextErrors: Partial<Record<RequiredField, FieldError>> = {};
 
     requiredFields.forEach((field) => {
       if (!form[field].trim()) {
-        nextErrors[field] = page.form.requiredError;
+        nextErrors[field] = "required";
       }
     });
 
+    const emailInput = formElement.elements.namedItem("email");
+
+    if (
+      form.email.trim() &&
+      emailInput instanceof HTMLInputElement &&
+      !emailInput.validity.valid
+    ) {
+      nextErrors.email = "invalidEmail";
+    }
+
     setErrors(nextErrors);
-    return Object.keys(nextErrors).length === 0;
+
+    const firstInvalidField = requiredFields.find((field) => nextErrors[field]);
+    if (firstInvalidField) {
+      window.requestAnimationFrame(() => document.getElementById(firstInvalidField)?.focus());
+    }
+
+    return !firstInvalidField;
   }
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setConfigMessage("");
+    setStatus("idle");
 
-    if (!validateForm()) {
+    if (!validateForm(event.currentTarget)) {
       return;
     }
 
     const whatsappNumber = process.env.NEXT_PUBLIC_LANGIA_WHATSAPP_NUMBER?.trim();
 
     if (!whatsappNumber) {
-      console.warn(page.form.configWarning);
-      setConfigMessage(page.form.configWarning);
+      setStatus("config");
       return;
     }
 
     const message = buildWhatsAppMessage(page, form);
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-    const openedWindow = window.open(url, "_blank", "noopener,noreferrer");
+    const openedWindow = window.open("", "_blank");
 
-    if (!openedWindow) {
-      window.location.href = url;
+    setStatus("opening");
+
+    if (openedWindow) {
+      openedWindow.opener = null;
+      openedWindow.location.replace(url);
+      return;
     }
+
+    window.location.assign(url);
   }
+
+  const firstErrorField = requiredFields.find((field) => errors[field]);
 
   return (
     <form
       id="contact-form"
       onSubmit={handleSubmit}
-      className="rounded-[2rem] border border-[#E4EDF7] bg-white p-5 shadow-[0_24px_80px_rgba(11,31,58,0.09)] sm:p-7 lg:p-8"
+      className="rounded-[2rem] border border-[#DCE6F0] bg-white p-6 shadow-[0_22px_70px_rgba(11,31,58,0.07)] sm:p-8 lg:p-10"
       noValidate
     >
-      <div className="max-w-xl">
-        <h2 className="font-heading text-2xl font-semibold leading-tight text-[#0B1F3A]">{page.form.title}</h2>
-        <p className="mt-3 text-sm leading-7 text-[#42526A]">{page.form.body}</p>
+      <div className="max-w-2xl">
+        <EditorialHeading as="h2" size="secondary">
+          {page.form.title}
+        </EditorialHeading>
+        <p className="mt-5 text-base leading-8 text-[#52657A]">{page.form.body}</p>
       </div>
 
-      {configMessage ? (
-        <p className="mt-5 rounded-2xl border border-[#F3B737]/40 bg-[#FFF8E6] px-4 py-3 text-sm font-medium leading-6 text-[#6F4B00]">
-          {configMessage}
+      <div className="sr-only" aria-live="polite">
+        {firstErrorField ? errorMessage(firstErrorField) : ""}
+      </div>
+
+      {status !== "idle" ? (
+        <p
+          className={`mt-6 rounded-xl border px-4 py-3 text-sm font-medium leading-6 ${
+            status === "config"
+              ? "border-[#F3B737]/40 bg-[#FFF8E6] text-[#6F4B00]"
+              : "border-[#CFE5FA] bg-[#EAF6FF] text-[#0B1F3A]"
+          }`}
+          role="status"
+        >
+          {status === "config" ? page.form.configWarning : ui.openingWhatsapp}
         </p>
       ) : null}
 
-      <div className="mt-7 grid gap-5 sm:grid-cols-2">
-        <FieldShell id="name" label={page.form.fields.name} error={errors.name}>
-          <input id="name" name="name" type="text" value={form.name} onChange={handleInputChange} placeholder={page.form.placeholders.name} className={inputClass} required />
+      <div className="mt-8 grid gap-6 sm:grid-cols-2">
+        <FieldShell id="name" label={page.form.fields.name} error={errorMessage("name")}>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            autoComplete="name"
+            value={form.name}
+            onChange={handleInputChange}
+            placeholder={page.form.placeholders.name}
+            className={inputClass}
+            required
+            {...fieldAccessibility("name")}
+          />
         </FieldShell>
-        <FieldShell id="email" label={page.form.fields.email} error={errors.email}>
-          <input id="email" name="email" type="email" value={form.email} onChange={handleInputChange} placeholder={page.form.placeholders.email} className={inputClass} required />
+        <FieldShell id="email" label={page.form.fields.email} error={errorMessage("email")}>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autoComplete="email"
+            value={form.email}
+            onChange={handleInputChange}
+            placeholder={page.form.placeholders.email}
+            className={inputClass}
+            required
+            {...fieldAccessibility("email")}
+          />
         </FieldShell>
-        <FieldShell id="whatsapp" label={page.form.fields.whatsapp} error={errors.whatsapp}>
-          <input id="whatsapp" name="whatsapp" type="tel" value={form.whatsapp} onChange={handleInputChange} placeholder={page.form.placeholders.whatsapp} className={inputClass} required />
+        <FieldShell id="whatsapp" label={page.form.fields.whatsapp} error={errorMessage("whatsapp")}>
+          <input
+            id="whatsapp"
+            name="whatsapp"
+            type="tel"
+            autoComplete="tel"
+            value={form.whatsapp}
+            onChange={handleInputChange}
+            placeholder={page.form.placeholders.whatsapp}
+            className={inputClass}
+            required
+            {...fieldAccessibility("whatsapp")}
+          />
         </FieldShell>
-        <FieldShell id="country" label={page.form.fields.country} error={errors.country}>
-          <input id="country" name="country" type="text" value={form.country} onChange={handleInputChange} placeholder={page.form.placeholders.country} className={inputClass} required />
+        <FieldShell id="country" label={page.form.fields.country} error={errorMessage("country")}>
+          <input
+            id="country"
+            name="country"
+            type="text"
+            autoComplete="country-name"
+            value={form.country}
+            onChange={handleInputChange}
+            placeholder={page.form.placeholders.country}
+            className={inputClass}
+            required
+            {...fieldAccessibility("country")}
+          />
         </FieldShell>
-        <FieldShell id="preferredLanguage" label={page.form.fields.preferredLanguage} error={errors.preferredLanguage}>
-          <select id="preferredLanguage" name="preferredLanguage" value={form.preferredLanguage} onChange={handleInputChange} className={inputClass} required>
-            <option value="">Selecciona una opción</option>
-            {page.form.preferredLanguageOptions.map((option) => (
-              <option key={option} value={option}>
+        <FieldShell
+          id="preferredLanguage"
+          label={page.form.fields.preferredLanguage}
+          error={errorMessage("preferredLanguage")}
+        >
+          <select
+            id="preferredLanguage"
+            name="preferredLanguage"
+            value={form.preferredLanguage}
+            onChange={handleInputChange}
+            className={inputClass}
+            required
+            {...fieldAccessibility("preferredLanguage")}
+          >
+            <option value="">{ui.selectPlaceholder}</option>
+            {page.form.preferredLanguageOptions.map((option, index) => (
+              <option key={option} value={String(index)}>
                 {option}
               </option>
             ))}
           </select>
         </FieldShell>
         <FieldShell id="company" label={page.form.fields.company}>
-          <input id="company" name="company" type="text" value={form.company} onChange={handleInputChange} placeholder={page.form.placeholders.company} className={inputClass} />
+          <input
+            id="company"
+            name="company"
+            type="text"
+            autoComplete="organization"
+            value={form.company}
+            onChange={handleInputChange}
+            placeholder={page.form.placeholders.company}
+            className={inputClass}
+          />
         </FieldShell>
-        <FieldShell id="interest" label={page.form.fields.interest} error={errors.interest}>
-          <select id="interest" name="interest" value={form.interest} onChange={handleInputChange} className={inputClass} required>
-            <option value="">Selecciona una opción</option>
-            {page.form.interestOptions.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
+        <div className="sm:col-span-2">
+          <FieldShell id="interest" label={page.form.fields.interest} error={errorMessage("interest")}>
+            <select
+              id="interest"
+              name="interest"
+              value={form.interest}
+              onChange={handleInputChange}
+              className={inputClass}
+              required
+              {...fieldAccessibility("interest")}
+            >
+              <option value="">{ui.selectPlaceholder}</option>
+              {page.form.interestOptions.map((option, index) => (
+                <option key={option} value={String(index)}>
+                  {option}
+                </option>
+              ))}
+            </select>
+          </FieldShell>
+        </div>
+      </div>
+
+      <div className="mt-6">
+        <FieldShell id="message" label={page.form.fields.message} error={errorMessage("message")}>
+          <textarea
+            id="message"
+            name="message"
+            value={form.message}
+            onChange={handleInputChange}
+            placeholder={page.form.placeholders.message}
+            className={textareaClass}
+            required
+            {...fieldAccessibility("message")}
+          />
         </FieldShell>
       </div>
 
-      <div className="mt-5">
-        <FieldShell id="message" label={page.form.fields.message} error={errors.message}>
-          <textarea id="message" name="message" value={form.message} onChange={handleInputChange} placeholder={page.form.placeholders.message} className={textareaClass} required />
-        </FieldShell>
-      </div>
-
-      <button
-        type="submit"
-        className={siteButtonClass({ className: "mt-7 w-full px-6 sm:w-auto" })}
-      >
+      <button type="submit" className={siteButtonClass({ className: "mt-8 w-full px-6 sm:w-auto" })}>
         {page.form.submit}
         <ArrowIcon />
       </button>
+      <p className="mt-4 max-w-2xl text-sm leading-6 text-[#52657A]">
+        {ui.privacyText}{" "}
+        <Link
+          href="/legal#privacy"
+          className="font-semibold text-[var(--langia-blue-ink)] underline underline-offset-4"
+        >
+          {ui.privacyLink}
+        </Link>
+      </p>
     </form>
   );
 }
@@ -277,124 +442,100 @@ export default function ContactPageClient() {
   const page = getContactContent(language);
 
   return (
-    <main className="min-h-screen bg-[#F3F7FB] text-[#0B1F3A]">
+    <>
       <SiteNavbar variant="light" language={language} />
-
-      <section className="bg-[#F3F7FB] px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
-        <div className="mx-auto grid max-w-[1180px] gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-          <div>
-            <Eyebrow>{page.hero.eyebrow}</Eyebrow>
-            <h1 className="mt-5 max-w-4xl font-heading text-4xl font-semibold leading-tight text-[#0B1F3A] sm:text-5xl lg:text-6xl">
-              {page.hero.title}
-            </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-[#42526A] sm:text-lg">{page.hero.body}</p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              {page.hero.quickPoints.map((point) => (
-                <span key={point} className="inline-flex min-h-11 items-center gap-2 rounded-full border border-[#D8E6F4] bg-white px-4 text-sm font-semibold text-[#0B1F3A]">
-                  <span className="grid h-6 w-6 place-items-center rounded-full bg-[#EAF6FF] text-[#048EFF]">
-                    <CheckIcon />
-                  </span>
-                  {point}
-                </span>
-              ))}
+      <main className="min-h-screen bg-white text-[#0B1F3A]">
+        <PageHero
+          eyebrow={page.hero.eyebrow}
+          title={page.hero.title}
+          body={page.hero.body}
+          media={
+            <div className="rounded-[2rem] border border-[#BFDFFF] bg-[linear-gradient(145deg,#FFFFFF_0%,#EAF6FF_52%,#CFEAFF_100%)] px-6 py-8 text-[#0B1F3A] shadow-[0_22px_70px_rgba(4,142,255,0.1)] sm:px-8 sm:py-10 lg:px-10 lg:py-12">
+              <SectionEyebrow>Langia</SectionEyebrow>
+              <ul className="mt-8 border-t border-[#0B1F3A]/16">
+                {page.hero.quickPoints.map((point) => (
+                  <li key={point} className="flex min-h-16 items-center gap-4 border-b border-[#0B1F3A]/16 py-4 text-base font-semibold">
+                    <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-[#048EFF] text-white">
+                      <CheckIcon />
+                    </span>
+                    {point}
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
-          <div className="rounded-[2rem] border border-[#E4EDF7] bg-white p-6 shadow-[0_24px_80px_rgba(11,31,58,0.08)] sm:p-8">
-            <div className="rounded-[1.5rem] bg-[#0B1F3A] p-6 text-white">
-              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#7EC7FF]">Langia</p>
-              <p className="mt-5 font-heading text-3xl font-semibold leading-tight">
-                Online, personal, and global by design.
-              </p>
-              <div className="mt-8 grid gap-3">
+          }
+        />
+
+        <MarketingSection tone="white">
+          <SiteContainer className="grid gap-14 lg:grid-cols-[1.18fr_.82fr] lg:items-start lg:gap-20">
+            <ContactForm language={language} page={page} />
+            <aside aria-label={page.hero.eyebrow} className="lg:sticky lg:top-32">
+              <SectionEyebrow>{page.hero.eyebrow}</SectionEyebrow>
+              <EditorialHeading as="h2" className="mt-7 max-w-[13ch]" size="secondary">
+                {page.contactCards[3].title}
+              </EditorialHeading>
+              <p className="mt-5 text-base leading-8 text-[#52657A]">{page.contactCards[3].body}</p>
+              <div className="mt-10 border-t border-[#0B1F3A]/16">
                 {page.contactCards.slice(0, 3).map((card) => (
-                  <div key={card.title} className="rounded-2xl border border-white/12 bg-white/10 p-4">
-                    <h2 className="text-sm font-semibold text-white">{card.title}</h2>
-                    <p className="mt-2 text-sm leading-6 text-white/68">{card.body}</p>
-                  </div>
+                  <section key={card.title} className="border-b border-[#0B1F3A]/16 py-7">
+                    <h3 className="font-heading text-xl font-medium tracking-[-0.025em] text-[#0B1F3A]">{card.title}</h3>
+                    <p className="mt-3 text-base leading-7 text-[#52657A]">{card.body}</p>
+                  </section>
                 ))}
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
+            </aside>
+          </SiteContainer>
+        </MarketingSection>
 
-      <section className="bg-white px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
-        <div className="mx-auto grid max-w-[1180px] gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
-          <ContactForm page={page} />
-          <div className="grid gap-5">
-            {page.contactCards.map((card) => (
-              <article key={card.title} className="rounded-[1.5rem] border border-[#E4EDF7] bg-[#F3F7FB] p-6">
-                <div className="mb-5 grid h-10 w-10 place-items-center rounded-2xl bg-white text-[#048EFF]">
-                  <CheckIcon />
-                </div>
-                <h2 className="font-heading text-xl font-semibold text-[#0B1F3A]">{card.title}</h2>
-                <p className="mt-3 text-sm leading-7 text-[#42526A]">{card.body}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#F3F7FB] px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
-        <div className="mx-auto max-w-[1180px]">
-          <Eyebrow>{page.next.eyebrow}</Eyebrow>
-          <h2 className="mt-4 max-w-3xl font-heading text-3xl font-semibold leading-tight text-[#0B1F3A] sm:text-4xl">
-            {page.next.title}
-          </h2>
-          <div className="mt-10 grid gap-5 md:grid-cols-4">
-            {page.next.steps.map((step, index) => (
-              <article key={step} className="rounded-[1.5rem] border border-[#E4EDF7] bg-white p-6 shadow-[0_16px_44px_rgba(11,31,58,0.055)]">
-                <span className="grid h-10 w-10 place-items-center rounded-full bg-[#EAF6FF] font-heading text-sm font-semibold text-[#048EFF]">
-                  {index + 1}
-                </span>
-                <h3 className="mt-6 font-heading text-lg font-semibold leading-snug text-[#0B1F3A]">{step}</h3>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
-        <div className="mx-auto grid max-w-[1180px] gap-8 rounded-[2rem] border border-[#E4EDF7] bg-white p-6 shadow-[0_22px_70px_rgba(11,31,58,0.07)] md:grid-cols-[1fr_0.85fr] md:items-center sm:p-8 lg:p-10">
-          <div>
-            <Eyebrow>{page.presence.eyebrow}</Eyebrow>
-            <h2 className="mt-4 font-heading text-3xl font-semibold leading-tight text-[#0B1F3A] sm:text-4xl">
-              {page.presence.title}
-            </h2>
-            <p className="mt-4 max-w-2xl text-base leading-8 text-[#42526A]">{page.presence.body}</p>
-          </div>
-          <div className="rounded-[1.5rem] bg-[#F3F7FB] p-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#048EFF]">{page.presence.addressLabel}</p>
-            <p className="mt-3 font-heading text-xl font-semibold leading-snug text-[#0B1F3A]">{page.presence.address}</p>
-            <p className="mt-8 text-xs font-semibold uppercase tracking-[0.16em] text-[#048EFF]">{page.presence.socialLabel}</p>
-            <div className="mt-4 flex flex-wrap gap-3">
-              {socialLinks.map((label) => (
-                <a key={label} href="#" aria-label={`Langia ${label}`} className={siteButtonClass({ size: "sm", variant: "secondary" })}>
-                  {label}
-                </a>
+        <MarketingSection tone="mist">
+          <SiteContainer>
+            <SectionEyebrow>{page.next.eyebrow}</SectionEyebrow>
+            <EditorialHeading as="h2" className="mt-7 max-w-[14ch]">
+              {page.next.title}
+            </EditorialHeading>
+            <ol className="mt-14 grid border-t border-[#0B1F3A]/18 md:grid-cols-2 lg:grid-cols-4">
+              {page.next.steps.map((step, index) => (
+                <li
+                  key={step}
+                  className="border-b border-[#0B1F3A]/18 py-8 md:px-7 md:first:pl-0 lg:border-r lg:last:border-r-0"
+                >
+                  <span className="text-sm font-semibold tabular-nums text-[#0B1F3A]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="mt-8 max-w-[15ch] font-heading text-2xl font-medium leading-tight tracking-[-0.035em] text-[#0B1F3A]">
+                    {step}
+                  </h3>
+                </li>
               ))}
+            </ol>
+          </SiteContainer>
+        </MarketingSection>
+
+        <MarketingSection tone="white">
+          <SiteContainer className="grid gap-12 lg:grid-cols-[1.1fr_.9fr] lg:items-center lg:gap-20">
+            <div>
+              <SectionEyebrow>{page.presence.eyebrow}</SectionEyebrow>
+              <EditorialHeading as="h2" className="mt-7 max-w-[13ch]">
+                {page.presence.title}
+              </EditorialHeading>
+              <p className="mt-7 max-w-2xl text-lg leading-8 text-[#52657A]">{page.presence.body}</p>
             </div>
-          </div>
-        </div>
-      </section>
+            <div className="rounded-[2rem] bg-[#F3F7FB] p-7 sm:p-9">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#52657A]">{page.presence.addressLabel}</p>
+              <address className="mt-4 font-heading text-xl font-medium not-italic leading-snug text-[#0B1F3A]">
+                {page.presence.address}
+              </address>
+            </div>
+          </SiteContainer>
+        </MarketingSection>
 
-      <section className="bg-white px-4 py-16 sm:px-6 lg:px-10">
-        <div className="mx-auto grid max-w-[1180px] gap-8 overflow-hidden rounded-[2rem] bg-[#0B1F3A] p-8 text-white shadow-[0_28px_90px_rgba(11,31,58,0.22)] md:grid-cols-[1fr_auto] md:items-center sm:p-10 lg:p-12">
-          <div>
-            <h2 className="font-heading text-3xl font-semibold leading-tight sm:text-4xl">{page.finalCta.title}</h2>
-            <p className="mt-4 max-w-2xl text-base leading-8 text-white/70">{page.finalCta.body}</p>
-          </div>
-          <Link
-            href="#contact-form"
-            className={siteButtonClass()}
-          >
-            {page.finalCta.cta}
-            <ArrowIcon />
-          </Link>
-        </div>
-      </section>
-
-      <SiteFooter />
-    </main>
+        <FinalCTA
+          title={page.finalCta.title}
+          body={page.finalCta.body}
+          primary={{ href: "#contact-form", label: page.finalCta.cta }}
+        />
+      </main>
+      <SiteFooter language={language} />
+    </>
   );
 }

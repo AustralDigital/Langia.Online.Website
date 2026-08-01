@@ -4,10 +4,10 @@ description: "A practical guide to choosing a language program based on your goa
 date: "2026-01-01"
 language: "en"
 category: "Learning Guides"
-coverImage: "/blog/how-to-choose-the-right-english-program.webp"
+coverImage: "/images/marketing-2026/editorial/choose-english-program-destinations.webp"
 authorName: "Langia Editorial Team"
 authorRole: "Langia Resources"
-authorImage: "/blog/authors/langia-editorial-team.webp"
+authorImage: "/images/marketing-2026/editorial/langia-editorial-mark.svg"
 published: true
 featured: true
 ctaLabel: "Talk to Langia"
