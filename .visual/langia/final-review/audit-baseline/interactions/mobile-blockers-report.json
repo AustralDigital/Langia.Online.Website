@@ -1,0 +1,44 @@
+{
+  "kids-image": {
+    "text": "",
+    "href": "/en/programs/langia-4-kids-n-teens",
+    "box": {
+      "x": 28,
+      "y": 265.921875,
+      "width": 334,
+      "height": 420
+    },
+    "hit": "<img alt=\"Family exploring a new destination while a teenager communicates confidently\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-cover transition-transform duration-[1600ms] ease-out group-hover:scale-[1.035]\" style=\"position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent\" sizes=\"(min-width: 10",
+    "hitIsSelf": true,
+    "url": "http://127.0.0.1:4173/en",
+    "tap": true
+  },
+  "final-primary": {
+    "text": "Get started",
+    "href": "/en/contact",
+    "box": {
+      "x": 71,
+      "y": 424.015625,
+      "width": 248,
+      "height": 48
+    },
+    "hit": "<div aria-hidden=\"true\" class=\"absolute left-1/2 top-0 aspect-square w-[160vw] -translate-x-1/2 rounded-full bg-[var(--langia-signal)]\"></div>",
+    "hitIsSelf": false,
+    "tap": false,
+    "error": "locator.tap: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#conversion a').first()\u001b[22m\n\u001b[2m    - locator resolved to <a href=\"/en/contact\" class=\"inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--langia-signal)]/40 focus-visible:ring-offset-2 min-h-12 px-5 text-sm border border-[var(--langia-gold)] bg-[var(--langia-gold)] !text-[var(--langia-navy)] shadow-[0_14px_30px_rgba(243,183,55,0.2)] hover:border-[var(--langia-gold-hover)] hover:bg-[var(--langia-gold-hover)] hover:!text-[var(--langi…>…</a>\u001b[22m\n\u001b[2m  - attempting tap action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div aria-hidden=\"true\" class=\"absolute left-1/2 top-0 aspect-square w-[160vw] -translate-x-1/2 rounded-full bg-[var(--langia-signal)]\"></div> from <footer class=\"relative z-20 -mt-[22svh] min-w-0 overflow-hidden pt-[clamp(23rem,58svh,35rem)] text-[var(--langia-navy)]\">…</footer> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying tap action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not stable\u001b[22m\n\u001b[2m    - retrying tap action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    8 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div aria-hidden=\"true\" class=\"absolute left-1/2 top-0 aspect-square w-[160vw] -translate-x-1/2 rounded-full bg-[var(--langia-signal)]\"></div> from <footer class=\"relative z-20 -mt-[22svh] min-w-0 overflow-hidden pt-[clamp(23rem,58svh,35rem)] text-[var(--langia-navy)]\">…</footer> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying tap action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n"
+  },
+  "final-secondary": {
+    "text": "Contact team",
+    "href": "/en/contact",
+    "box": {
+      "x": 71,
+      "y": 424.015625,
+      "width": 248,
+      "height": 48
+    },
+    "hit": "<div aria-hidden=\"true\" class=\"absolute left-1/2 top-0 aspect-square w-[160vw] -translate-x-1/2 rounded-full bg-[var(--langia-signal)]\"></div>",
+    "hitIsSelf": false,
+    "tap": false,
+    "error": "locator.tap: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#conversion a').nth(1)\u001b[22m\n\u001b[2m    - locator resolved to <a href=\"/en/contact\" class=\"inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--langia-signal)]/40 focus-visible:ring-offset-2 min-h-12 px-5 text-sm border border-[var(--langia-navy)]/18 bg-[var(--langia-white)] !text-[var(--langia-navy)] hover:border-[var(--langia-navy)]/35 hover:bg-[var(--langia-mist)] hover:!text-[var(--langia-navy)]\">…</a>\u001b[22m\n\u001b[2m  - attempting tap action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div aria-hidden=\"true\" class=\"absolute left-1/2 top-0 aspect-square w-[160vw] -translate-x-1/2 rounded-full bg-[var(--langia-signal)]\"></div> from <footer class=\"relative z-20 -mt-[22svh] min-w-0 overflow-hidden pt-[clamp(23rem,58svh,35rem)] text-[var(--langia-navy)]\">…</footer> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying tap action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is not stable\u001b[22m\n\u001b[2m  - retrying tap action\u001b[22m\n\u001b[2m    - waiting 100ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <div aria-hidden=\"true\" class=\"absolute left-1/2 top-0 aspect-square w-[160vw] -translate-x-1/2 rounded-full bg-[var(--langia-signal)]\"></div> from <footer class=\"relative z-20 -mt-[22svh] min-w-0 overflow-hidden pt-[clamp(23rem,58svh,35rem)] text-[var(--langia-navy)]\">…</footer> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying tap action\u001b[22m\n\u001b[2m    - waiting 100ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is not stable\u001b[22m\n\u001b[2m  6 × retrying tap action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div aria-hidden=\"true\" class=\"absolute left-1/2 top-0 aspect-square w-[160vw] -translate-x-1/2 rounded-full bg-[var(--langia-signal)]\"></div> from <footer class=\"relative z-20 -mt-[22svh] min-w-0 overflow-hidden pt-[clamp(23rem,58svh,35rem)] text-[var(--langia-navy)]\">…</footer> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying tap action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n"
+  }
+}

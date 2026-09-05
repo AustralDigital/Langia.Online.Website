@@ -18,7 +18,7 @@ import WorkWithUsClient from "@/app/work-with-us/WorkWithUsClient";
 import { EditorialHomepage } from "@/components/home/EditorialHomepage";
 import { StructuredData } from "@/components/seo/StructuredData";
 import { SiteLanguageProvider } from "@/lib/language-context";
-import { getPostBySlug, getPublishedPosts } from "@/lib/blog";
+import { getLatestPublishedBlogPosts, getPostBySlug, getPublishedPosts } from "@/lib/blog";
 import { isSiteLanguage, supportedLanguages, type SiteLanguage } from "@/lib/language";
 import { defaultSocialImage, localizedMetadata, publicPagePaths, type PublicPagePath } from "@/lib/seo";
 import { articleSchema, pageSchema } from "@/lib/structured-data";
@@ -111,10 +111,21 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
 
   if (isPublicPagePath(path)) {
     const Page = pageComponents[path];
+    const articles = path === "/"
+      ? getLatestPublishedBlogPosts(3).map((post) => ({
+          slug: post.slug,
+          title: post.title,
+          description: post.description,
+          category: post.category,
+          coverImage: post.coverImage,
+          coverImageExists: post.coverImageExists,
+          readingTime: post.readingTime,
+        }))
+      : [];
     return (
       <SiteLanguageProvider language={language}>
         <StructuredData data={pageSchema(language, path)} />
-        {path === "/" ? <EditorialHomepage language={language} /> : <Page />}
+        {path === "/" ? <EditorialHomepage language={language} articles={articles} /> : <Page />}
       </SiteLanguageProvider>
     );
   }

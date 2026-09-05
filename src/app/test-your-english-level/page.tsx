@@ -20,11 +20,12 @@ export default function TestYourEnglishLevelPage() {
 
   return (
     <>
-      <SiteNavbar variant="light" language={language} />
-      <main className="min-h-screen bg-white text-[#0B1F3A]">
+      <SiteNavbar variant="overlay" language={language} />
+      <main className="langia-page min-h-screen bg-white text-[#0B1F3A]">
         <PageHero
+          image={{ src: "/images/marketing-2026/editorial/language-exam-next-step.webp", alt: "" }}
           tone="mist"
-          className="bg-[radial-gradient(circle_at_88%_18%,rgba(4,142,255,.18),transparent_30%),linear-gradient(135deg,#F3F7FB_0%,#FFFFFF_100%)]"
+
           eyebrow={content.eyebrow}
           title={content.title}
           body={content.subtitle}
@@ -34,7 +35,7 @@ export default function TestYourEnglishLevelPage() {
                 {content.cta.primaryLabel}
               </MarketingButton>
               {content.cta.secondaryHref && content.cta.secondaryLabel ? (
-                <MarketingButton href={content.cta.secondaryHref} variant="secondary">
+                <MarketingButton href={content.cta.secondaryHref} variant="inverse">
                   {content.cta.secondaryLabel}
                 </MarketingButton>
               ) : null}

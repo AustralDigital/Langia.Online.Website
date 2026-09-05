@@ -7,7 +7,6 @@ import {
   FinalCTA,
   MarketingButton,
   MarketingSection,
-  MediaFrame,
   PageHero,
   ProcessSteps,
   SectionHeader,
@@ -38,7 +37,7 @@ function getContent(language: SiteLanguage): CorporatePageContent {
 
 function EditorialList({ items }: { items: readonly PageBlock[] }) {
   return (
-    <div className="border-t border-[#0B1F3A]/18">
+    <div className="editorial-panels border-t border-[#0B1F3A]/18">
       {items.map((item, index) => (
         <article
           key={item.title}
@@ -71,35 +70,13 @@ function Hero({ language, page }: { language: SiteLanguage; page: CorporatePageC
       actions={
         <>
           <MarketingButton href="/contact">{page.hero.primaryCta}</MarketingButton>
-          <MarketingButton href="#services" variant="secondary">
+          <MarketingButton href="#services" variant="inverse">
             {page.hero.secondaryCta}
           </MarketingButton>
         </>
       }
-      media={
-        <div>
-          <MediaFrame
-            src="/images/marketing-2026/corporate/global-team-presentation.webp"
-            alt={corporateImageAlt[language]}
-            aspectClassName="aspect-[5/4] sm:aspect-[16/11]"
-            imageClassName="object-cover object-center"
-            className="ring-1 ring-[#0B1F3A]/8"
-            priority
-          />
-          <ul className="mt-6 grid grid-cols-2 border-y border-[#0B1F3A]/16">
-            {page.hero.quickFacts.map((fact, index) => (
-              <li
-                key={fact}
-                className={`flex min-h-16 items-center py-4 text-base font-semibold leading-6 text-[#0B1F3A] ${
-                  index % 2 === 0 ? "pr-4" : "border-l border-[#0B1F3A]/16 pl-4"
-                } ${index < 2 ? "border-b border-[#0B1F3A]/16" : ""}`}
-              >
-                {fact}
-              </li>
-            ))}
-          </ul>
-        </div>
-      }
+      image={{ src: "/images/marketing-2026/corporate/global-team-presentation.webp", alt: corporateImageAlt[language] }}
+      facts={page.hero.quickFacts}
     />
   );
 }
@@ -146,7 +123,7 @@ function Tailored({ page }: { page: CorporatePageContent }) {
   return (
     <MarketingSection
       tone="mist"
-      className="bg-[radial-gradient(circle_at_86%_18%,rgba(4,142,255,.2),transparent_32%),linear-gradient(135deg,#EAF6FF_0%,#F3F7FB_58%,#FFFFFF_100%)]"
+
     >
       <SiteContainer>
         <div className="grid gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-end lg:gap-24">
@@ -240,7 +217,7 @@ function Proposal({ page }: { page: CorporatePageContent }) {
   return (
     <MarketingSection
       tone="white"
-      className="bg-[linear-gradient(110deg,#BFE4FF_0%,#EAF6FF_48%,#FFF4D6_100%)]"
+
     >
       <SiteContainer>
         <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-20">
@@ -270,8 +247,8 @@ export default function CorporatePage() {
   const page = getContent(language);
 
   return (
-    <main className="min-h-screen bg-white text-[#0B1F3A]">
-      <SiteNavbar variant="light" language={language} />
+    <main className="langia-page min-h-screen bg-white text-[#0B1F3A]">
+      <SiteNavbar variant="overlay" language={language} />
       <Hero language={language} page={page} />
       <Overview page={page} />
       <SplitContentSection
@@ -284,7 +261,7 @@ export default function CorporatePage() {
       <MarketingSection
         id="services"
         tone="white"
-        className="bg-[linear-gradient(135deg,#DDF1FF_0%,#F3F7FB_55%,#FFFFFF_100%)]"
+
       >
         <SiteContainer>
           <div className="grid gap-14 lg:grid-cols-[0.82fr_1.18fr] lg:gap-24">

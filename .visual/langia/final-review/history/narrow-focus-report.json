@@ -1,0 +1,288 @@
+[
+  {
+    "label": "secondary focused",
+    "active": "Ver programas",
+    "tag": "A",
+    "href": "#programs",
+    "scrollY": 0,
+    "innerHeight": 800,
+    "visual": {
+      "height": 800,
+      "offsetTop": 0,
+      "pageTop": 0,
+      "scale": 1
+    },
+    "box": {
+      "x": 36,
+      "y": 557.421875,
+      "h": 48
+    },
+    "supportInert": false,
+    "supportOpacity": "1",
+    "supportTransform": "none"
+  },
+  {
+    "label": "tab1 immediate",
+    "active": "Inglés",
+    "tag": "BUTTON",
+    "href": null,
+    "scrollY": 0,
+    "innerHeight": 800,
+    "visual": {
+      "height": 800,
+      "offsetTop": 0,
+      "pageTop": 0,
+      "scale": 1
+    },
+    "box": {
+      "x": 88,
+      "y": 838,
+      "h": 44
+    },
+    "supportInert": false,
+    "supportOpacity": "1",
+    "supportTransform": "none"
+  },
+  {
+    "label": "tab1 settled",
+    "active": "[{\"@context\":\"https://schema.org\",\"@type\":\"EducationalOrganization\",\"@id\":\"https://langia.",
+    "tag": "BODY",
+    "href": null,
+    "scrollY": 406,
+    "innerHeight": 800,
+    "visual": {
+      "height": 800,
+      "offsetTop": 0,
+      "pageTop": 406,
+      "scale": 1
+    },
+    "box": {
+      "x": 0,
+      "y": -406,
+      "h": 18610.40625
+    },
+    "supportInert": true,
+    "supportOpacity": "0",
+    "supportTransform": "matrix(1, 0, 0, 1, 0, -502.812)"
+  },
+  {
+    "label": "tab2 immediate",
+    "active": "Langia Online",
+    "tag": "A",
+    "href": "/es/programs/langia-online",
+    "scrollY": 406,
+    "innerHeight": 800,
+    "visual": {
+      "height": 800,
+      "offsetTop": 0,
+      "pageTop": 406,
+      "scale": 1
+    },
+    "box": {
+      "x": 56,
+      "y": 2771.078125,
+      "h": 48
+    },
+    "supportInert": true,
+    "supportOpacity": "0",
+    "supportTransform": "matrix(1, 0, 0, 1, 0, -502.812)"
+  },
+  {
+    "label": "tab2 settled",
+    "active": "Langia Online",
+    "tag": "A",
+    "href": "/es/programs/langia-online",
+    "scrollY": 2695,
+    "innerHeight": 800,
+    "visual": {
+      "height": 800,
+      "offsetTop": 0,
+      "pageTop": 2695,
+      "scale": 1
+    },
+    "box": {
+      "x": 56,
+      "y": 482.078125,
+      "h": 48
+    },
+    "supportInert": true,
+    "supportOpacity": "0",
+    "supportTransform": "matrix(1, 0, 0, 1, 0, -560)"
+  },
+  {
+    "label": "tab3 immediate",
+    "active": "",
+    "tag": "A",
+    "href": "/es/programs/langia-online",
+    "scrollY": 2704,
+    "innerHeight": 800,
+    "visual": {
+      "height": 800,
+      "offsetTop": 0,
+      "pageTop": 2704,
+      "scale": 1
+    },
+    "box": {
+      "x": 28,
+      "y": 552.8441772460938,
+      "h": 420
+    },
+    "supportInert": true,
+    "supportOpacity": "0",
+    "supportTransform": "matrix(1, 0, 0, 1, 0, -560)"
+  },
+  {
+    "label": "tab3 settled",
+    "active": "",
+    "tag": "A",
+    "href": "/es/programs/langia-online",
+    "scrollY": 2878,
+    "innerHeight": 800,
+    "visual": {
+      "height": 800,
+      "offsetTop": 0,
+      "pageTop": 2878,
+      "scale": 1
+    },
+    "box": {
+      "x": 28,
+      "y": 375.078125,
+      "h": 420
+    },
+    "supportInert": true,
+    "supportOpacity": "0",
+    "supportTransform": "matrix(1, 0, 0, 1, 0, -560)"
+  },
+  {
+    "label": "tab4 immediate",
+    "active": "Talkin' Club",
+    "tag": "A",
+    "href": "/es/programs/talkin-club",
+    "scrollY": 2878,
+    "innerHeight": 800,
+    "visual": {
+      "height": 800,
+      "offsetTop": 0,
+      "pageTop": 2878,
+      "scale": 1
+    },
+    "box": {
+      "x": 56,
+      "y": 1127.078125,
+      "h": 48
+    },
+    "supportInert": true,
+    "supportOpacity": "0",
+    "supportTransform": "matrix(1, 0, 0, 1, 0, -560)"
+  },
+  {
+    "label": "tab4 settled",
+    "active": "Talkin' Club",
+    "tag": "A",
+    "href": "/es/programs/talkin-club",
+    "scrollY": 3575,
+    "innerHeight": 800,
+    "visual": {
+      "height": 800,
+      "offsetTop": 0,
+      "pageTop": 3575,
+      "scale": 1
+    },
+    "box": {
+      "x": 56,
+      "y": 430.078125,
+      "h": 48
+    },
+    "supportInert": true,
+    "supportOpacity": "0",
+    "supportTransform": "matrix(1, 0, 0, 1, 0, -560)"
+  },
+  {
+    "label": "tab5 immediate",
+    "active": "",
+    "tag": "A",
+    "href": "/es/programs/talkin-club",
+    "scrollY": 3575,
+    "innerHeight": 800,
+    "visual": {
+      "height": 800,
+      "offsetTop": 0,
+      "pageTop": 3575,
+      "scale": 1
+    },
+    "box": {
+      "x": 28,
+      "y": 506.083984375,
+      "h": 420
+    },
+    "supportInert": true,
+    "supportOpacity": "0",
+    "supportTransform": "matrix(1, 0, 0, 1, 0, -560)"
+  },
+  {
+    "label": "tab5 settled",
+    "active": "",
+    "tag": "A",
+    "href": "/es/programs/talkin-club",
+    "scrollY": 3701,
+    "innerHeight": 800,
+    "visual": {
+      "height": 800,
+      "offsetTop": 0,
+      "pageTop": 3701,
+      "scale": 1
+    },
+    "box": {
+      "x": 28,
+      "y": 380.078125,
+      "h": 420
+    },
+    "supportInert": true,
+    "supportOpacity": "0",
+    "supportTransform": "matrix(1, 0, 0, 1, 0, -560)"
+  },
+  {
+    "label": "tab6 immediate",
+    "active": "Test Prep",
+    "tag": "A",
+    "href": "/es/programs/test-prep",
+    "scrollY": 3701,
+    "innerHeight": 800,
+    "visual": {
+      "height": 800,
+      "offsetTop": 0,
+      "pageTop": 3701,
+      "scale": 1
+    },
+    "box": {
+      "x": 56,
+      "y": 1132.078125,
+      "h": 48
+    },
+    "supportInert": true,
+    "supportOpacity": "0",
+    "supportTransform": "matrix(1, 0, 0, 1, 0, -560)"
+  },
+  {
+    "label": "tab6 settled",
+    "active": "Test Prep",
+    "tag": "A",
+    "href": "/es/programs/test-prep",
+    "scrollY": 4403,
+    "innerHeight": 800,
+    "visual": {
+      "height": 800,
+      "offsetTop": 0,
+      "pageTop": 4403,
+      "scale": 1
+    },
+    "box": {
+      "x": 56,
+      "y": 430.078125,
+      "h": 48
+    },
+    "supportInert": true,
+    "supportOpacity": "0",
+    "supportTransform": "matrix(1, 0, 0, 1, 0, -560)"
+  }
+]

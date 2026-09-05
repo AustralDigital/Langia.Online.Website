@@ -1,0 +1,87 @@
+{
+  "viewport": {
+    "width": 1918,
+    "height": 946,
+    "density": 1
+  },
+  "errors": [],
+  "motion": [
+    {
+      "name": "hero",
+      "progress": 0,
+      "y": 0,
+      "foreground": "1",
+      "support": "1",
+      "filter": "blur(0px) brightness(1.05)",
+      "whiteTop": 1797.40625
+    },
+    {
+      "name": "hero-copy-exit",
+      "progress": 0.13,
+      "y": 184,
+      "foreground": "0.548466",
+      "support": "1",
+      "filter": "blur(0px) brightness(1.05)",
+      "whiteTop": 1613.40625
+    },
+    {
+      "name": "hero-logos",
+      "progress": 0.25,
+      "y": 355,
+      "foreground": "0",
+      "support": "1",
+      "filter": "blur(0px) brightness(1.05)",
+      "whiteTop": 1442.40625
+    },
+    {
+      "name": "hero-clear",
+      "progress": 0.405,
+      "y": 575,
+      "foreground": "0",
+      "support": "0",
+      "filter": "blur(0px) brightness(1.05)",
+      "whiteTop": 1222.40625
+    },
+    {
+      "name": "hero-blur",
+      "progress": 0.56,
+      "y": 795,
+      "foreground": "0",
+      "support": "0",
+      "filter": "blur(4.67512px) brightness(1.03442)",
+      "whiteTop": 1002.40625
+    },
+    {
+      "name": "hero-takeover-start",
+      "progress": 0.64,
+      "y": 908,
+      "foreground": "0",
+      "support": "0",
+      "filter": "blur(6px) brightness(1.03)",
+      "whiteTop": 889.40625
+    },
+    {
+      "name": "hero-takeover-mid",
+      "progress": 0.86,
+      "y": 1220,
+      "foreground": "0",
+      "support": "0",
+      "filter": "blur(6px) brightness(1.03)",
+      "whiteTop": 577.40625
+    },
+    {
+      "name": "hero-takeover-end",
+      "progress": 1.1,
+      "y": 1561,
+      "foreground": "0",
+      "support": "0",
+      "filter": "blur(6px) brightness(1.03)",
+      "whiteTop": 236.40625
+    }
+  ],
+  "geometry": {
+    "width": 1918,
+    "scrollWidth": 1918,
+    "height": 15539
+  }
+}

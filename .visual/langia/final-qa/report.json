@@ -1,0 +1,53 @@
+{
+  "baseUrl": "http://localhost:4173/en",
+  "desktop": {
+    "dimensions": {
+      "clientWidth": 1918,
+      "scrollWidth": 1918,
+      "scrollHeight": 25745
+    },
+    "navInitial": {
+      "x": 31,
+      "y": 29,
+      "width": 566,
+      "height": 58
+    },
+    "heroActionsAfterScroll": "0",
+    "programCard": {
+      "x": 219,
+      "y": 190.4375,
+      "width": 1480,
+      "height": 690
+    },
+    "processWidths": [
+      713,
+      239,
+      239,
+      239
+    ],
+    "proofWidths": [
+      703,
+      373,
+      373
+    ],
+    "faq": {
+      "first": "false",
+      "second": "true"
+    }
+  },
+  "mobile": {
+    "dimensions": {
+      "clientWidth": 390,
+      "scrollWidth": 390
+    },
+    "menuLabel": "Open menu",
+    "menuOpen": "true",
+    "bodyOverflowOpen": "hidden",
+    "menuAfterEscape": "false"
+  },
+  "reducedMotion": {
+    "heroHeight": 900
+  },
+  "consoleErrors": [],
+  "pageErrors": []
+}

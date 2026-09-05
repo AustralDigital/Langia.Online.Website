@@ -17,10 +17,8 @@ import { defaultLanguage, type SiteLanguage } from "@/lib/language";
 import {
   EditorialBlockGrid,
   FAQSection,
-  HeroFactList,
   PricingCard,
   PROGRAM_IMAGE_PATHS,
-  ProgramHeroImage,
   TailoredFeatureSection,
 } from "../ProgramRoutePrimitives";
 
@@ -39,39 +37,28 @@ export default function TestPrepPage() {
   const page = getContent(language);
 
   return (
-    <main className="min-h-screen bg-white text-[#0B1F3A]">
-      <SiteNavbar variant="light" language={language} />
+    <main className="langia-page min-h-screen bg-white text-[#0B1F3A]">
+      <SiteNavbar variant="overlay" language={language} />
 
       <PageHero
-        className="overflow-hidden bg-[radial-gradient(circle_at_88%_12%,rgba(243,183,55,0.20),transparent_30%),linear-gradient(180deg,#FFFFFF_0%,#FFF9EC_100%)]"
+        className="overflow-hidden"
         actions={
           <>
             <MarketingButton href="/contact">{page.hero.primaryCta}</MarketingButton>
-            <MarketingButton href="#pricing" variant="secondary">
+            <MarketingButton href="#pricing" variant="inverse">
               {page.hero.secondaryCta}
             </MarketingButton>
           </>
         }
-        body={
-          <>
-            <p>{page.hero.body}</p>
-            <HeroFactList items={page.hero.quickFacts} />
-          </>
-        }
+        body={page.hero.body}
         eyebrow={page.hero.eyebrow}
-        media={
-          <ProgramHeroImage
-            accent="gold"
-            alt={page.hero.title}
-            imageClassName="object-cover object-center"
-            src={PROGRAM_IMAGE_PATHS.testPrep}
-          />
-        }
+        image={{ src: PROGRAM_IMAGE_PATHS.testPrep, alt: page.hero.title }}
+        facts={page.hero.quickFacts}
         title={page.hero.title}
         tone="white"
       />
 
-      <MarketingSection className="bg-[linear-gradient(180deg,#FFFFFF_0%,#FFFCF5_100%)]" tone="white">
+      <MarketingSection tone="white">
         <SiteContainer>
           <SectionHeader body={page.exams.body} eyebrow={page.exams.eyebrow} title={page.exams.title} />
           <div className="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 xl:grid-cols-4">

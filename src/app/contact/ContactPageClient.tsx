@@ -5,9 +5,9 @@ import { useState, type ChangeEvent, type FormEvent, type ReactNode } from "reac
 
 import {
   ArrowIcon,
-  CheckIcon,
   EditorialHeading,
   FinalCTA,
+  MarketingButton,
   MarketingSection,
   PageHero,
   SectionEyebrow,
@@ -443,27 +443,15 @@ export default function ContactPageClient() {
 
   return (
     <>
-      <SiteNavbar variant="light" language={language} />
-      <main className="min-h-screen bg-white text-[#0B1F3A]">
+      <SiteNavbar variant="overlay" language={language} />
+      <main className="langia-page min-h-screen bg-white text-[#0B1F3A]">
         <PageHero
           eyebrow={page.hero.eyebrow}
           title={page.hero.title}
           body={page.hero.body}
-          media={
-            <div className="rounded-[2rem] border border-[#BFDFFF] bg-[linear-gradient(145deg,#FFFFFF_0%,#EAF6FF_52%,#CFEAFF_100%)] px-6 py-8 text-[#0B1F3A] shadow-[0_22px_70px_rgba(4,142,255,0.1)] sm:px-8 sm:py-10 lg:px-10 lg:py-12">
-              <SectionEyebrow>Langia</SectionEyebrow>
-              <ul className="mt-8 border-t border-[#0B1F3A]/16">
-                {page.hero.quickPoints.map((point) => (
-                  <li key={point} className="flex min-h-16 items-center gap-4 border-b border-[#0B1F3A]/16 py-4 text-base font-semibold">
-                    <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-[#048EFF] text-white">
-                      <CheckIcon />
-                    </span>
-                    {point}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          }
+          actions={<MarketingButton href="#contact-form">{page.finalCta.cta}</MarketingButton>}
+          facts={page.hero.quickPoints}
+          image={{ src: "/images/marketing-2026/programs/talkin-club-natural-connection.webp", alt: "" }}
         />
 
         <MarketingSection tone="white">

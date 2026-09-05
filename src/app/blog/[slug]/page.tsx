@@ -250,9 +250,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <>
-      <SiteNavbar variant="light" />
-      <main className="min-h-screen bg-white text-[#0B1F3A]">
-        <section className="bg-white px-5 pb-20 pt-32 sm:px-8 sm:pb-24 sm:pt-36 lg:px-12 lg:pb-28 lg:pt-40">
+      <SiteNavbar variant="overlay" />
+      <main className="langia-page min-h-screen bg-white text-[#0B1F3A]">
+        <section className="article-header">
           <SiteContainer>
             <Link
               href="/blog"

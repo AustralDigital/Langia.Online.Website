@@ -1,0 +1,40 @@
+[
+  {
+    "name": "desktop",
+    "errors": [],
+    "shots": [
+      {
+        "selector": "#top",
+        "path": "/tmp/langia-final-implementation/final-hero/desktop-0.png"
+      },
+      {
+        "selector": "#conversion",
+        "path": "/tmp/langia-final-implementation/final-hero/desktop-1.png"
+      }
+    ],
+    "geometry": {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "height": 14625
+    }
+  },
+  {
+    "name": "mobile",
+    "errors": [],
+    "shots": [
+      {
+        "selector": "#top",
+        "path": "/tmp/langia-final-implementation/final-hero/mobile-0.png"
+      },
+      {
+        "selector": "#conversion",
+        "path": "/tmp/langia-final-implementation/final-hero/mobile-1.png"
+      }
+    ],
+    "geometry": {
+      "width": 390,
+      "scrollWidth": 390,
+      "height": 18279
+    }
+  }
+]

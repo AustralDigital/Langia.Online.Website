@@ -1,0 +1,28 @@
+{
+  "cases": [
+    {
+      "key": "en1440",
+      "initialControlsY": 532.09375,
+      "frameHeight": 900,
+      "keyboardSteps": 5,
+      "actions": 3
+    },
+    {
+      "key": "en390",
+      "initialControlsY": 450.703125,
+      "frameHeight": 844,
+      "keyboardSteps": 5,
+      "actions": 3
+    },
+    {
+      "key": "es360",
+      "initialControlsY": 621.421875,
+      "frameHeight": 918,
+      "keyboardSteps": 5,
+      "actions": 3
+    }
+  ],
+  "failures": [],
+  "consoleErrors": [],
+  "pageErrors": []
+}

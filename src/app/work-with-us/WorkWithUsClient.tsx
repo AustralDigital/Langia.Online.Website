@@ -10,7 +10,6 @@ import {
   FinalCTA,
   MarketingButton,
   MarketingSection,
-  MediaFrame,
   PageHero,
   ProcessSteps,
   SectionHeader,
@@ -121,7 +120,7 @@ function getPageContent(language: SiteLanguage): WorkWithUsPageContent {
 
 function EditorialList({ items }: { items: readonly PageBlock[] }) {
   return (
-    <div className="border-t border-[#0B1F3A]/16">
+    <div className="editorial-panels border-t border-[#0B1F3A]/16">
       {items.map((item, index) => (
         <article
           key={item.title}
@@ -154,35 +153,13 @@ function Hero({ language, page }: { language: SiteLanguage; page: WorkWithUsPage
       actions={
         <>
           <MarketingButton href="#teacher-form">{page.hero.primaryCta}</MarketingButton>
-          <MarketingButton href="#requirements" variant="secondary">
+          <MarketingButton href="#requirements" variant="inverse">
             {page.hero.secondaryCta}
           </MarketingButton>
         </>
       }
-      media={
-        <div>
-          <MediaFrame
-            src="/images/marketing-2026/shared/independent-educator-remote-work.webp"
-            alt={educatorImageAlt[language]}
-            aspectClassName="aspect-[5/4] sm:aspect-[16/11]"
-            imageClassName="object-cover object-center"
-            className="ring-1 ring-[#0B1F3A]/8"
-            priority
-          />
-          <ul className="mt-6 grid grid-cols-2 border-y border-[#0B1F3A]/16">
-            {page.hero.quickFacts.map((fact, index) => (
-              <li
-                key={fact}
-                className={`flex min-h-16 items-center py-4 text-base font-semibold leading-6 text-[#0B1F3A] ${
-                  index % 2 === 0 ? "pr-4" : "border-l border-[#0B1F3A]/16 pl-4"
-                } ${index < 2 ? "border-b border-[#0B1F3A]/16" : ""}`}
-              >
-                {fact}
-              </li>
-            ))}
-          </ul>
-        </div>
-      }
+      image={{ src: "/images/marketing-2026/shared/independent-educator-remote-work.webp", alt: educatorImageAlt[language] }}
+      facts={page.hero.quickFacts}
     />
   );
 }
@@ -604,8 +581,8 @@ export default function WorkWithUsClient() {
   const page = getPageContent(language);
 
   return (
-    <main className="min-h-screen bg-white text-[#0B1F3A]">
-      <SiteNavbar variant="light" language={language} />
+    <main className="langia-page min-h-screen bg-white text-[#0B1F3A]">
+      <SiteNavbar variant="overlay" language={language} />
       <Hero language={language} page={page} />
       <SplitContentSection
         eyebrow={page.why.eyebrow}

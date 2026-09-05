@@ -1,0 +1,652 @@
+[
+  {
+    "name": "wide",
+    "width": 1918,
+    "scrollWidth": 1918,
+    "height": 25745,
+    "sections": [
+      {
+        "id": "top",
+        "top": 0,
+        "height": 3614,
+        "headings": []
+      },
+      {
+        "id": "transformation",
+        "top": 3614,
+        "height": 3311,
+        "headings": [
+          "Language stops being theory when it starts moving with you.",
+          "More content. Less connection to real life.",
+          "A path connected to the person you are becoming.",
+          "Language stops being theory whenit starts moving with you.",
+          "More content. Less connection to real life.",
+          "A path connected to the person you are becoming."
+        ]
+      },
+      {
+        "id": "programs",
+        "top": 6925,
+        "height": 5311,
+        "headings": [
+          "Programs.",
+          "Langia Online",
+          "Talkin' Club",
+          "Test Prep",
+          "Langia 4 Kids n Teens",
+          "Languages for teams crossing borders."
+        ]
+      },
+      {
+        "id": "process",
+        "top": 12236,
+        "height": 2588,
+        "headings": [
+          "A simple flow from interest to guided practice.",
+          "Discover your starting point",
+          "Choose your path",
+          "Begin with support",
+          "Langia TailorED",
+          "More than classes: a path built to move with you.",
+          "More than classes: a path built to move with you."
+        ]
+      },
+      {
+        "id": "tailored",
+        "top": 14823,
+        "height": 2095,
+        "headings": [
+          "No two learning journeys are identical. Neither should two lessons be.",
+          "Context",
+          "Current level",
+          "Communicative goal",
+          "Teacher guidance",
+          "Progress"
+        ]
+      },
+      {
+        "id": "credibility",
+        "top": 16918,
+        "height": 1431,
+        "headings": [
+          "GLOBAL PRESENCE"
+        ]
+      },
+      {
+        "id": "metrics",
+        "top": 18349,
+        "height": 818,
+        "headings": [
+          "An international experience, built around people."
+        ]
+      },
+      {
+        "id": "corporate-home",
+        "top": 19167,
+        "height": 812,
+        "headings": [
+          "Languages for teams crossing borders."
+        ]
+      },
+      {
+        "id": "faq",
+        "top": 19979,
+        "height": 1363,
+        "headings": [
+          "FAQ"
+        ]
+      },
+      {
+        "id": "resources-home",
+        "top": 21343,
+        "height": 1113,
+        "headings": [
+          "Ideas for choosing and moving forward with clarity.",
+          "How to prepare for a language exam",
+          "What is AI-assisted language learning?"
+        ]
+      },
+      {
+        "id": "conversion",
+        "top": 22455,
+        "height": 1892,
+        "headings": [
+          "Tell us where you’re going."
+        ]
+      },
+      {
+        "id": "footer",
+        "top": 24139,
+        "height": 1606,
+        "headings": [
+          "Have a goal in mind?",
+          "Programs",
+          "Company",
+          "Resources",
+          "Language"
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "laptop",
+    "width": 1280,
+    "scrollWidth": 1280,
+    "height": 23083,
+    "sections": [
+      {
+        "id": "top",
+        "top": 0,
+        "height": 3056,
+        "headings": []
+      },
+      {
+        "id": "transformation",
+        "top": 3056,
+        "height": 2800,
+        "headings": [
+          "Language stops being theory when it starts moving with you.",
+          "More content. Less connection to real life.",
+          "A path connected to the person you are becoming.",
+          "Language stops being theory whenit starts moving with you.",
+          "More content. Less connection to real life.",
+          "A path connected to the person you are becoming."
+        ]
+      },
+      {
+        "id": "programs",
+        "top": 5856,
+        "height": 4710,
+        "headings": [
+          "Programs.",
+          "Langia Online",
+          "Talkin' Club",
+          "Test Prep",
+          "Langia 4 Kids n Teens",
+          "Languages for teams crossing borders."
+        ]
+      },
+      {
+        "id": "process",
+        "top": 10566,
+        "height": 2420,
+        "headings": [
+          "A simple flow from interest to guided practice.",
+          "Discover your starting point",
+          "Choose your path",
+          "Begin with support",
+          "Langia TailorED",
+          "More than classes: a path built to move with you.",
+          "More than classes: a path built to move with you."
+        ]
+      },
+      {
+        "id": "tailored",
+        "top": 12986,
+        "height": 1978,
+        "headings": [
+          "No two learning journeys are identical. Neither should two lessons be.",
+          "Context",
+          "Current level",
+          "Communicative goal",
+          "Teacher guidance",
+          "Progress"
+        ]
+      },
+      {
+        "id": "credibility",
+        "top": 14964,
+        "height": 1431,
+        "headings": [
+          "GLOBAL PRESENCE"
+        ]
+      },
+      {
+        "id": "metrics",
+        "top": 16395,
+        "height": 725,
+        "headings": [
+          "An international experience, built around people."
+        ]
+      },
+      {
+        "id": "corporate-home",
+        "top": 17120,
+        "height": 812,
+        "headings": [
+          "Languages for teams crossing borders."
+        ]
+      },
+      {
+        "id": "faq",
+        "top": 17932,
+        "height": 1325,
+        "headings": [
+          "FAQ"
+        ]
+      },
+      {
+        "id": "resources-home",
+        "top": 19257,
+        "height": 980,
+        "headings": [
+          "Ideas for choosing and moving forward with clarity.",
+          "How to prepare for a language exam",
+          "What is AI-assisted language learning?"
+        ]
+      },
+      {
+        "id": "conversion",
+        "top": 20237,
+        "height": 1600,
+        "headings": [
+          "Tell us where you’re going."
+        ]
+      },
+      {
+        "id": "footer",
+        "top": 21661,
+        "height": 1422,
+        "headings": [
+          "Have a goal in mind?",
+          "Programs",
+          "Company",
+          "Resources",
+          "Language"
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "tablet",
+    "width": 768,
+    "scrollWidth": 768,
+    "height": 24576,
+    "sections": [
+      {
+        "id": "top",
+        "top": 0,
+        "height": 2918,
+        "headings": []
+      },
+      {
+        "id": "transformation",
+        "top": 2918,
+        "height": 2055,
+        "headings": [
+          "Language stops being theory when it starts moving with you.",
+          "More content. Less connection to real life.",
+          "A path connected to the person you are becoming.",
+          "Language stops being theory whenit starts moving with you.",
+          "More content. Less connection to real life.",
+          "A path connected to the person you are becoming."
+        ]
+      },
+      {
+        "id": "programs",
+        "top": 4973,
+        "height": 5203,
+        "headings": [
+          "Programs.",
+          "Langia Online",
+          "Talkin' Club",
+          "Test Prep",
+          "Langia 4 Kids n Teens",
+          "Languages for teams crossing borders."
+        ]
+      },
+      {
+        "id": "process",
+        "top": 10176,
+        "height": 2366,
+        "headings": [
+          "A simple flow from interest to guided practice.",
+          "Discover your starting point",
+          "Choose your path",
+          "Begin with support",
+          "Langia TailorED",
+          "More than classes: a path built to move with you.",
+          "More than classes: a path built to move with you."
+        ]
+      },
+      {
+        "id": "tailored",
+        "top": 12542,
+        "height": 2200,
+        "headings": [
+          "No two learning journeys are identical. Neither should two lessons be.",
+          "Context",
+          "Current level",
+          "Communicative goal",
+          "Teacher guidance",
+          "Progress"
+        ]
+      },
+      {
+        "id": "credibility",
+        "top": 14742,
+        "height": 1805,
+        "headings": [
+          "GLOBAL PRESENCE"
+        ]
+      },
+      {
+        "id": "metrics",
+        "top": 16546,
+        "height": 990,
+        "headings": [
+          "An international experience, built around people."
+        ]
+      },
+      {
+        "id": "corporate-home",
+        "top": 17536,
+        "height": 1244,
+        "headings": [
+          "Languages for teams crossing borders."
+        ]
+      },
+      {
+        "id": "faq",
+        "top": 18780,
+        "height": 1221,
+        "headings": [
+          "FAQ"
+        ]
+      },
+      {
+        "id": "resources-home",
+        "top": 20001,
+        "height": 2016,
+        "headings": [
+          "Ideas for choosing and moving forward with clarity.",
+          "How to prepare for a language exam",
+          "What is AI-assisted language learning?"
+        ]
+      },
+      {
+        "id": "conversion",
+        "top": 22017,
+        "height": 940,
+        "headings": [
+          "Tell us where you’re going."
+        ]
+      },
+      {
+        "id": "footer",
+        "top": 22732,
+        "height": 1845,
+        "headings": [
+          "Have a goal in mind?",
+          "Programs",
+          "Company",
+          "Resources",
+          "Language"
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "height": 25512,
+    "sections": [
+      {
+        "id": "top",
+        "top": 0,
+        "height": 2405,
+        "headings": []
+      },
+      {
+        "id": "transformation",
+        "top": 2405,
+        "height": 1930,
+        "headings": [
+          "Language stops being theory when it starts moving with you.",
+          "More content. Less connection to real life.",
+          "A path connected to the person you are becoming.",
+          "Language stops being theory whenit starts moving with you.",
+          "More content. Less connection to real life.",
+          "A path connected to the person you are becoming."
+        ]
+      },
+      {
+        "id": "programs",
+        "top": 4336,
+        "height": 5105,
+        "headings": [
+          "Programs.",
+          "Langia Online",
+          "Talkin' Club",
+          "Test Prep",
+          "Langia 4 Kids n Teens",
+          "Languages for teams crossing borders."
+        ]
+      },
+      {
+        "id": "process",
+        "top": 9440,
+        "height": 2862,
+        "headings": [
+          "A simple flow from interest to guided practice.",
+          "Discover your starting point",
+          "Choose your path",
+          "Begin with support",
+          "Langia TailorED",
+          "More than classes: a path built to move with you.",
+          "More than classes: a path built to move with you."
+        ]
+      },
+      {
+        "id": "tailored",
+        "top": 12302,
+        "height": 2623,
+        "headings": [
+          "No two learning journeys are identical. Neither should two lessons be.",
+          "Context",
+          "Current level",
+          "Communicative goal",
+          "Teacher guidance",
+          "Progress"
+        ]
+      },
+      {
+        "id": "credibility",
+        "top": 14926,
+        "height": 1741,
+        "headings": [
+          "GLOBAL PRESENCE"
+        ]
+      },
+      {
+        "id": "metrics",
+        "top": 16666,
+        "height": 1499,
+        "headings": [
+          "An international experience, built around people."
+        ]
+      },
+      {
+        "id": "corporate-home",
+        "top": 18165,
+        "height": 1212,
+        "headings": [
+          "Languages for teams crossing borders."
+        ]
+      },
+      {
+        "id": "faq",
+        "top": 19377,
+        "height": 1375,
+        "headings": [
+          "FAQ"
+        ]
+      },
+      {
+        "id": "resources-home",
+        "top": 20752,
+        "height": 1952,
+        "headings": [
+          "Ideas for choosing and moving forward with clarity.",
+          "How to prepare for a language exam",
+          "What is AI-assisted language learning?"
+        ]
+      },
+      {
+        "id": "conversion",
+        "top": 22704,
+        "height": 908,
+        "headings": [
+          "Tell us where you’re going."
+        ]
+      },
+      {
+        "id": "footer",
+        "top": 23426,
+        "height": 2086,
+        "headings": [
+          "Have a goal in mind?",
+          "Programs",
+          "Company",
+          "Resources",
+          "Language"
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "small-mobile",
+    "width": 360,
+    "scrollWidth": 360,
+    "height": 25720,
+    "sections": [
+      {
+        "id": "top",
+        "top": 0,
+        "height": 2109,
+        "headings": []
+      },
+      {
+        "id": "transformation",
+        "top": 2109,
+        "height": 2002,
+        "headings": [
+          "Language stops being theory when it starts moving with you.",
+          "More content. Less connection to real life.",
+          "A path connected to the person you are becoming.",
+          "Language stops being theory whenit starts moving with you.",
+          "More content. Less connection to real life.",
+          "A path connected to the person you are becoming."
+        ]
+      },
+      {
+        "id": "programs",
+        "top": 4111,
+        "height": 5139,
+        "headings": [
+          "Programs.",
+          "Langia Online",
+          "Talkin' Club",
+          "Test Prep",
+          "Langia 4 Kids n Teens",
+          "Languages for teams crossing borders."
+        ]
+      },
+      {
+        "id": "process",
+        "top": 9250,
+        "height": 2964,
+        "headings": [
+          "A simple flow from interest to guided practice.",
+          "Discover your starting point",
+          "Choose your path",
+          "Begin with support",
+          "Langia TailorED",
+          "More than classes: a path built to move with you.",
+          "More than classes: a path built to move with you."
+        ]
+      },
+      {
+        "id": "tailored",
+        "top": 12214,
+        "height": 2817,
+        "headings": [
+          "No two learning journeys are identical. Neither should two lessons be.",
+          "Context",
+          "Current level",
+          "Communicative goal",
+          "Teacher guidance",
+          "Progress"
+        ]
+      },
+      {
+        "id": "credibility",
+        "top": 15031,
+        "height": 1741,
+        "headings": [
+          "GLOBAL PRESENCE"
+        ]
+      },
+      {
+        "id": "metrics",
+        "top": 16771,
+        "height": 1499,
+        "headings": [
+          "An international experience, built around people."
+        ]
+      },
+      {
+        "id": "corporate-home",
+        "top": 18270,
+        "height": 1212,
+        "headings": [
+          "Languages for teams crossing borders."
+        ]
+      },
+      {
+        "id": "faq",
+        "top": 19482,
+        "height": 1400,
+        "headings": [
+          "FAQ"
+        ]
+      },
+      {
+        "id": "resources-home",
+        "top": 20882,
+        "height": 2055,
+        "headings": [
+          "Ideas for choosing and moving forward with clarity.",
+          "How to prepare for a language exam",
+          "What is AI-assisted language learning?"
+        ]
+      },
+      {
+        "id": "conversion",
+        "top": 22937,
+        "height": 921,
+        "headings": [
+          "Tell us where you’re going."
+        ]
+      },
+      {
+        "id": "footer",
+        "top": 23695,
+        "height": 2025,
+        "headings": [
+          "Have a goal in mind?",
+          "Programs",
+          "Company",
+          "Resources",
+          "Language"
+        ]
+      }
+    ],
+    "errors": []
+  }
+]

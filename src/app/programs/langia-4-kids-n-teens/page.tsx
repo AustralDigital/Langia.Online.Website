@@ -19,7 +19,7 @@ import {
   ChoiceGrid,
   EditorialBlockGrid,
   FAQSection,
-  KidsHeroComposition,
+  PROGRAM_IMAGE_PATHS,
   LevelPath,
   PaymentNotes,
   PricingCard,
@@ -43,27 +43,28 @@ export default function LangiaForKidsAndTeensPage() {
   const common = commonContent[language];
 
   return (
-    <main className="min-h-screen bg-white text-[#0B1F3A]">
-      <SiteNavbar variant="light" language={language} />
+    <main className="langia-page min-h-screen bg-white text-[#0B1F3A]">
+      <SiteNavbar variant="overlay" language={language} />
 
       <PageHero
-        className="overflow-hidden bg-[radial-gradient(circle_at_8%_18%,rgba(243,183,55,0.20),transparent_30%),radial-gradient(circle_at_94%_8%,rgba(4,142,255,0.13),transparent_32%),linear-gradient(180deg,#FFFFFF_0%,#FFF9EA_100%)]"
+        className="overflow-hidden"
         actions={
           <>
             <MarketingButton href="/contact">{page.hero.primaryCta}</MarketingButton>
-            <MarketingButton href="#pricing" variant="secondary">
+            <MarketingButton href="#pricing" variant="inverse">
               {page.hero.secondaryCta}
             </MarketingButton>
           </>
         }
         body={<p>{page.hero.body}</p>}
         eyebrow={page.hero.eyebrow}
-        media={<KidsHeroComposition alt={page.hero.title} items={page.hero.quickFacts} />}
+        image={{ src: PROGRAM_IMAGE_PATHS.kidsDesktop, alt: page.hero.title, mobileSrc: PROGRAM_IMAGE_PATHS.kidsMobile }}
+        facts={page.hero.quickFacts}
         title={page.hero.title}
         tone="white"
       />
 
-      <MarketingSection className="bg-[linear-gradient(180deg,#FFFFFF_0%,#FFFDF8_100%)]" tone="white">
+      <MarketingSection tone="white">
         <SiteContainer>
           <div className="grid gap-14 xl:grid-cols-[0.72fr_1.28fr] xl:gap-24">
             <SectionHeader body={page.who.body} eyebrow={page.who.eyebrow} title={page.who.title} />
@@ -72,7 +73,7 @@ export default function LangiaForKidsAndTeensPage() {
         </SiteContainer>
       </MarketingSection>
 
-      <MarketingSection className="bg-[linear-gradient(180deg,#F3F7FB_0%,#FFF9EA_100%)]" tone="mist">
+      <MarketingSection tone="mist">
         <SiteContainer>
           <SectionHeader body={page.formats.body} eyebrow={page.formats.eyebrow} title={page.formats.title} />
           <div className="mt-14">
@@ -173,7 +174,7 @@ export default function LangiaForKidsAndTeensPage() {
 
       <MarketingSection className="!py-20 sm:!py-24 lg:!py-28" tone="mist">
         <SiteContainer>
-          <div className="grid gap-10 rounded-[2rem] border border-[#F3B737]/35 bg-[linear-gradient(125deg,#FFFFFF_0%,#FFF4D1_100%)] p-7 shadow-[0_18px_55px_rgba(11,31,58,0.06)] sm:p-10 lg:grid-cols-[1fr_auto] lg:items-end lg:p-12">
+          <div className="grid gap-10 rounded-[2rem] border border-[#F3B737]/35 p-7 shadow-[0_18px_55px_rgba(11,31,58,0.06)] sm:p-10 lg:grid-cols-[1fr_auto] lg:items-end lg:p-12">
             <SectionHeader body={page.schools.body} eyebrow={page.schools.eyebrow} title={page.schools.title} />
             <MarketingButton href="/contact" variant="secondary">
               {page.schools.cta}

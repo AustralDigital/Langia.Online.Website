@@ -1,0 +1,112 @@
+[
+  {
+    "name": "desktop",
+    "errors": [],
+    "shots": [
+      {
+        "selector": "#top",
+        "path": "/tmp/langia-final-implementation/stage2/desktop-0.png"
+      },
+      {
+        "selector": "#transformation",
+        "path": "/tmp/langia-final-implementation/stage2/desktop-1.png"
+      },
+      {
+        "selector": "#process",
+        "path": "/tmp/langia-final-implementation/stage2/desktop-2.png"
+      },
+      {
+        "selector": "#tailored",
+        "path": "/tmp/langia-final-implementation/stage2/desktop-3.png"
+      },
+      {
+        "selector": "#learner-stories",
+        "path": "/tmp/langia-final-implementation/stage2/desktop-4.png"
+      },
+      {
+        "selector": "#metrics",
+        "path": "/tmp/langia-final-implementation/stage2/desktop-5.png"
+      },
+      {
+        "selector": "#corporate-home",
+        "path": "/tmp/langia-final-implementation/stage2/desktop-6.png"
+      },
+      {
+        "selector": "#resources-home",
+        "path": "/tmp/langia-final-implementation/stage2/desktop-7.png"
+      },
+      {
+        "selector": "#faq",
+        "path": "/tmp/langia-final-implementation/stage2/desktop-8.png"
+      },
+      {
+        "selector": "#conversion",
+        "path": "/tmp/langia-final-implementation/stage2/desktop-9.png"
+      },
+      {
+        "selector": "footer",
+        "path": "/tmp/langia-final-implementation/stage2/desktop-10.png"
+      }
+    ],
+    "geometry": {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "height": 14651
+    }
+  },
+  {
+    "name": "mobile",
+    "errors": [],
+    "shots": [
+      {
+        "selector": "#top",
+        "path": "/tmp/langia-final-implementation/stage2/mobile-0.png"
+      },
+      {
+        "selector": "#transformation",
+        "path": "/tmp/langia-final-implementation/stage2/mobile-1.png"
+      },
+      {
+        "selector": "#process",
+        "path": "/tmp/langia-final-implementation/stage2/mobile-2.png"
+      },
+      {
+        "selector": "#tailored",
+        "path": "/tmp/langia-final-implementation/stage2/mobile-3.png"
+      },
+      {
+        "selector": "#learner-stories",
+        "path": "/tmp/langia-final-implementation/stage2/mobile-4.png"
+      },
+      {
+        "selector": "#metrics",
+        "path": "/tmp/langia-final-implementation/stage2/mobile-5.png"
+      },
+      {
+        "selector": "#corporate-home",
+        "path": "/tmp/langia-final-implementation/stage2/mobile-6.png"
+      },
+      {
+        "selector": "#resources-home",
+        "path": "/tmp/langia-final-implementation/stage2/mobile-7.png"
+      },
+      {
+        "selector": "#faq",
+        "path": "/tmp/langia-final-implementation/stage2/mobile-8.png"
+      },
+      {
+        "selector": "#conversion",
+        "path": "/tmp/langia-final-implementation/stage2/mobile-9.png"
+      },
+      {
+        "selector": "footer",
+        "path": "/tmp/langia-final-implementation/stage2/mobile-10.png"
+      }
+    ],
+    "geometry": {
+      "width": 390,
+      "scrollWidth": 390,
+      "height": 18314
+    }
+  }
+]

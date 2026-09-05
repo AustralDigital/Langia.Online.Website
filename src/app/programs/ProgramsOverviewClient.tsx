@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 import { LocalizedLink as Link } from "@/components/site/LocalizedLink";
 
 import { SiteFooter } from "@/components/site/SiteFooter";
@@ -43,125 +45,25 @@ function getProgramsOverview(language: SiteLanguage): ProgramsOverviewContent {
   return content;
 }
 
-function OverviewHeroMedia({ items }: { items: readonly ProgramCardContent[] }) {
-  const visibleItems = items.slice(0, 3);
-
-  return (
-    <div className="grid grid-cols-2 gap-3 sm:gap-4">
-      {visibleItems.map((item, index) => {
-        const media = programImages[item.href];
-
-        if (!media) {
-          return null;
-        }
-
-        return (
-          <MediaFrame
-            alt=""
-            aspectClassName="aspect-[4/3]"
-            className={`rounded-[1.5rem] border border-[#0B1F3A]/10 shadow-[0_18px_50px_rgba(11,31,58,0.08)] ${
-              index === 0 ? "col-span-2" : ""
-            }`}
-            imageClassName={`object-cover ${media.position}`}
-            key={item.href}
-            priority={index === 0}
-            sizes={index === 0 ? "(min-width: 1024px) 50vw, 100vw" : "(min-width: 1024px) 25vw, 50vw"}
-            src={media.src}
-          >
-            <p className="absolute bottom-3 left-3 rounded-full border border-white/70 bg-white/90 px-3.5 py-2 font-heading text-xs font-semibold text-[#0B1F3A] shadow-sm backdrop-blur-md sm:bottom-4 sm:left-4 sm:text-sm">
-              {item.name}
-            </p>
-          </MediaFrame>
-        );
-      })}
-    </div>
-  );
-}
-
-function ProgramJourneyCard({
-  ctaLabel,
-  dominant = false,
-  item,
-}: {
-  ctaLabel: string;
-  dominant?: boolean;
-  item: ProgramCardContent;
-}) {
+function ProgramJourneyCard({ ctaLabel, item, index }: { ctaLabel: string; item: ProgramCardContent; index: number }) {
   const media = programImages[item.href];
-
-  if (!media) {
-    return null;
-  }
+  if (!media) return null;
 
   return (
     <article>
-      <Link
-        className={`group flex h-full flex-col overflow-hidden rounded-[2rem] border border-[#0B1F3A]/12 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#048EFF] focus-visible:ring-offset-4 ${
-          dominant ? "bg-[linear-gradient(145deg,#FFFFFF_0%,#EAF6FF_100%)]" : "bg-white"
-        }`}
-        href={item.href}
-      >
-        <MediaFrame
-          alt=""
-          aspectClassName="aspect-[4/3]"
-          className="rounded-none"
-          imageClassName={`object-cover transition-transform duration-500 group-hover:scale-[1.02] ${media.position}`}
-          sizes={dominant ? "(min-width: 1024px) 58vw, 100vw" : "(min-width: 1024px) 40vw, 100vw"}
-          src={media.src}
-        />
-        <div className="flex flex-1 flex-col p-6 sm:p-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#0068B8]">{item.audience}</p>
-          <EditorialHeading as="h2" className="mt-4" size="card">
-            {item.name}
-          </EditorialHeading>
-          <p className="mt-5 max-w-2xl text-base leading-8 text-[#52657A]">{item.description}</p>
-          <ul className="mt-7 grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
-            {item.highlights.map((highlight) => (
-              <li key={highlight} className="border-t border-[#0B1F3A]/14 pt-3 text-base font-semibold leading-6 text-[#0B1F3A]">
-                {highlight}
-              </li>
-            ))}
+      <Link className="program-journey group" href={item.href}>
+        <div className="program-journey-copy">
+          <SectionEyebrow>{item.audience}</SectionEyebrow>
+          <span className="mt-8 text-xs font-semibold tabular-nums text-[var(--langia-blue-ink)]">{String(index + 1).padStart(2, "0")}</span>
+          <EditorialHeading as="h2" className="mt-5 max-w-[16ch]" size="secondary">{item.name}</EditorialHeading>
+          <p className="mt-6 max-w-lg text-base leading-8 text-[var(--langia-muted)]">{item.description}</p>
+          <ul className="mt-7 w-full max-w-lg divide-y divide-[var(--langia-border)] border-y border-[var(--langia-border)]">
+            {item.highlights.map((highlight) => <li key={highlight} className="py-3 text-sm font-medium">{highlight}</li>)}
           </ul>
-          <span className="mt-auto flex items-center gap-3 pt-8 text-base font-semibold text-[#0B1F3A]">
-            {ctaLabel}
-            <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </span>
+          <span className="home-text-action mt-7 !text-[var(--langia-blue-ink)]">{ctaLabel}<ArrowIcon /></span>
         </div>
-      </Link>
-    </article>
-  );
-}
-
-function KidsJourneyCard({ ctaLabel, item }: { ctaLabel: string; item: ProgramCardContent }) {
-  return (
-    <article className="mt-6">
-      <Link
-        className="group grid overflow-hidden rounded-[2rem] border border-[#F3B737]/35 bg-[linear-gradient(120deg,#FFFFFF_0%,#FFF9EA_100%)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#048EFF] focus-visible:ring-offset-4 lg:grid-cols-[1.08fr_0.92fr]"
-        href={item.href}
-      >
-        <div className="relative aspect-[4/5] min-h-0 overflow-hidden bg-[#FFF5D8] sm:aspect-[4/3] lg:aspect-auto lg:min-h-[480px]">
-          <ResponsiveKidsImage
-            alt=""
-            className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]"
-          />
-        </div>
-        <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-12">
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#765200]">{item.audience}</p>
-          <EditorialHeading as="h2" className="mt-5" size="secondary">
-            {item.name}
-          </EditorialHeading>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-[#52657A]">{item.description}</p>
-          <div className="mt-7 grid gap-x-6 sm:grid-cols-3">
-            {item.highlights.map((highlight) => (
-              <p key={highlight} className="border-t border-[#0B1F3A]/16 py-4 text-base font-semibold text-[#0B1F3A]">
-                {highlight}
-              </p>
-            ))}
-          </div>
-          <span className="mt-6 flex items-center gap-3 text-base font-semibold text-[#0B1F3A]">
-            {ctaLabel}
-            <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </span>
+        <div className="program-journey-media">
+          {item.href === "/programs/langia-4-kids-n-teens" ? <ResponsiveKidsImage alt="" /> : <Image src={media.src} alt="" fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />}
         </div>
       </Link>
     </article>
@@ -245,11 +147,7 @@ function FinderSection({ content }: { content: ProgramsOverviewContent }) {
   return (
     <MarketingSection tone="mist">
       <SiteContainer>
-        <div className="relative overflow-hidden rounded-[2rem] border border-[#BBDCF7] bg-[linear-gradient(135deg,#FFFFFF_0%,#E8F5FF_100%)] p-7 shadow-[0_20px_65px_rgba(11,31,58,0.07)] sm:p-10 lg:p-14">
-          <div
-            aria-hidden="true"
-            className="absolute -right-20 -top-20 h-64 w-64 rounded-full border-[3.5rem] border-[#048EFF]/10"
-          />
+        <div className="rounded-[2rem] bg-white p-7 sm:p-10 lg:p-14">
           <div className="relative grid gap-14 xl:grid-cols-[0.82fr_1.18fr] xl:items-end xl:gap-24">
             <div>
               <SectionHeader body={content.finder.body} eyebrow={content.finder.eyebrow} title={content.finder.title} />
@@ -257,7 +155,7 @@ function FinderSection({ content }: { content: ProgramsOverviewContent }) {
                 <MarketingButton href={content.finder.href}>{content.finder.cta}</MarketingButton>
               </div>
             </div>
-            <div className="rounded-[1.5rem] border border-[#CFE5FA] bg-white/85 px-6 py-3 shadow-sm backdrop-blur-sm sm:px-8">
+            <div className="rounded-[1.5rem] bg-[var(--langia-mist)] px-6 py-3 sm:px-8">
               <FeatureList items={content.programCards.slice(0, 4).map((item) => item.name)} />
             </div>
           </div>
@@ -293,7 +191,7 @@ function CorporateSection({ content }: { content: ProgramsOverviewContent }) {
           <MediaFrame
             alt=""
             aspectClassName="aspect-[4/3]"
-            className="border border-[#BBDCF7] shadow-[0_24px_70px_rgba(11,31,58,0.10)]"
+
             imageClassName="object-cover object-center"
             sizes="(min-width: 1280px) 55vw, 100vw"
             src={PROGRAM_IMAGE_PATHS.corporate}
@@ -315,35 +213,30 @@ export function ProgramsOverviewClient() {
   const individualPrograms = content.programCards.slice(0, 4);
 
   return (
-    <main className="min-h-screen bg-white text-[#0B1F3A]">
-      <SiteNavbar variant="light" language={language} />
+    <main className="langia-page min-h-screen bg-white text-[#0B1F3A]">
+      <SiteNavbar variant="overlay" language={language} />
 
       <PageHero
         actions={
           <>
             <MarketingButton href="#comparison">{content.hero.primaryCta}</MarketingButton>
-            <MarketingButton href={content.hero.secondaryHref} variant="secondary">
+            <MarketingButton href={content.hero.secondaryHref} variant="inverse">
               {content.hero.secondaryCta}
             </MarketingButton>
           </>
         }
         body={content.hero.body}
         eyebrow={content.hero.eyebrow}
-        media={<OverviewHeroMedia items={content.programCards} />}
+        image={{ src: "/images/marketing-2026/home/hero-carousel-ferry-v3.png", alt: "" }}
+        facts={individualPrograms.map((item) => item.name)}
         title={content.hero.title}
       />
 
       <MarketingSection tone="white">
         <SiteContainer>
-          <div className="grid gap-6 lg:grid-cols-[1.18fr_0.82fr] lg:items-start">
-            <ProgramJourneyCard ctaLabel={content.cardCtaLabel} dominant item={individualPrograms[0]} />
-            <div className="grid gap-6">
-              {individualPrograms.slice(1, 3).map((item) => (
-                <ProgramJourneyCard ctaLabel={content.cardCtaLabel} item={item} key={item.href} />
-              ))}
-            </div>
+          <div className="grid gap-6">
+            {individualPrograms.map((item, index) => <ProgramJourneyCard key={item.href} item={item} index={index} ctaLabel={content.cardCtaLabel} />)}
           </div>
-          <KidsJourneyCard ctaLabel={content.cardCtaLabel} item={individualPrograms[3]} />
         </SiteContainer>
       </MarketingSection>
 

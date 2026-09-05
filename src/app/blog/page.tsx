@@ -97,7 +97,7 @@ function PostMeta({ post }: { post: BlogPost }) {
 
 function ArticleCard({ post }: { post: BlogPost }) {
   return (
-    <article className="border-t border-[#0B1F3A]/18 pt-6">
+    <article className="min-w-0">
       <Link
         href={`/blog/${post.slug}`}
         className="group block rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#048EFF] focus-visible:ring-offset-4"
@@ -132,8 +132,8 @@ export default function BlogIndexPage() {
 
   return (
     <>
-      <SiteNavbar variant="light" />
-      <main className="min-h-screen bg-white text-[#0B1F3A]">
+      <SiteNavbar variant="overlay" />
+      <main className="langia-page min-h-screen bg-white text-[#0B1F3A]">
         <PageHero
           tone="white"
           eyebrow={<LocalizedText content={pageCopy.eyebrow} />}
@@ -144,7 +144,7 @@ export default function BlogIndexPage() {
         {featuredPost ? (
           <MarketingSection tone="mist">
             <SiteContainer>
-              <article className={featuredHasMedia ? "grid gap-12 lg:grid-cols-[.95fr_1.05fr] lg:items-center lg:gap-20" : "max-w-5xl"}>
+              <article className={featuredHasMedia ? "resource-feature grid gap-12 lg:grid-cols-[.95fr_1.05fr] lg:items-center lg:gap-20" : "max-w-5xl"}>
                 {featuredHasMedia ? <PostMedia post={featuredPost} large /> : null}
                 <div>
                   <SectionEyebrow><CommonLabel label="featured" /></SectionEyebrow>
@@ -170,7 +170,7 @@ export default function BlogIndexPage() {
             <SectionEyebrow><LocalizedText content={pageCopy.topics} /></SectionEyebrow>
             <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
               {blogCategories.map((category) => (
-                <li key={category} className="border-b border-[#0B1F3A]/22 pb-1 text-sm font-semibold text-[#52657A]">
+                <li key={category} className="rounded-full border border-[var(--langia-border)] px-4 py-2 text-sm font-medium text-[var(--langia-muted)]">
                   <BlogCategoryLabel category={category} />
                 </li>
               ))}

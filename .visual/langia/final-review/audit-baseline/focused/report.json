@@ -1,0 +1,234 @@
+[
+  {
+    "name": "desktop",
+    "final": {
+      "y": 21392,
+      "rect": {
+        "x": 0,
+        "y": -0.171875,
+        "width": 1440,
+        "height": 1800,
+        "top": -0.171875,
+        "right": 1440,
+        "bottom": 1799.828125,
+        "left": 0
+      },
+      "image": [
+        {
+          "src": "http://127.0.0.1:4173/_next/image?url=%2Fimages%2Fmarketing-2026%2Fhome%2Ffinal-cta-vision.webp&w=1920&q=75",
+          "complete": true,
+          "w": 1086
+        },
+        {
+          "src": "http://127.0.0.1:4173/images/logo-original.svg",
+          "complete": true,
+          "w": 200
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Get started",
+          "rect": {
+            "x": 801,
+            "y": 768.828125,
+            "width": 249,
+            "height": 48,
+            "top": 768.828125,
+            "right": 1050,
+            "bottom": 816.828125,
+            "left": 801
+          },
+          "hit": true
+        },
+        {
+          "text": "Contact team",
+          "rect": {
+            "x": 1062,
+            "y": 768.828125,
+            "width": 249,
+            "height": 48,
+            "top": 768.828125,
+            "right": 1311,
+            "bottom": 816.828125,
+            "left": 1062
+          },
+          "hit": true
+        }
+      ]
+    }
+  },
+  {
+    "name": "laptop",
+    "final": {
+      "y": 20237,
+      "rect": {
+        "x": 0,
+        "y": -0.1875,
+        "width": 1280,
+        "height": 1600,
+        "top": -0.1875,
+        "right": 1280,
+        "bottom": 1599.8125,
+        "left": 0
+      },
+      "image": [
+        {
+          "src": "http://127.0.0.1:4173/_next/image?url=%2Fimages%2Fmarketing-2026%2Fhome%2Ffinal-cta-vision.webp&w=1920&q=75",
+          "complete": true,
+          "w": 965
+        },
+        {
+          "src": "http://127.0.0.1:4173/images/logo-original.svg",
+          "complete": true,
+          "w": 200
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Get started",
+          "rect": {
+            "x": 705,
+            "y": 674.8125,
+            "width": 217,
+            "height": 48,
+            "top": 674.8125,
+            "right": 922,
+            "bottom": 722.8125,
+            "left": 705
+          },
+          "hit": true
+        },
+        {
+          "text": "Contact team",
+          "rect": {
+            "x": 934,
+            "y": 674.8125,
+            "width": 217,
+            "height": 48,
+            "top": 674.8125,
+            "right": 1151,
+            "bottom": 722.8125,
+            "left": 934
+          },
+          "hit": true
+        }
+      ]
+    }
+  },
+  {
+    "name": "mobile",
+    "final": {
+      "y": 22704,
+      "rect": {
+        "x": 0,
+        "y": 0.015625,
+        "width": 390,
+        "height": 908,
+        "top": 0.015625,
+        "right": 390,
+        "bottom": 908.015625,
+        "left": 0
+      },
+      "image": [
+        {
+          "src": "http://127.0.0.1:4173/_next/image?url=%2Fimages%2Fmarketing-2026%2Fhome%2Ffinal-cta-vision.webp&w=640&q=75",
+          "complete": true,
+          "w": 390
+        },
+        {
+          "src": "http://127.0.0.1:4173/images/logo-original.svg",
+          "complete": true,
+          "w": 200
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Get started",
+          "rect": {
+            "x": 71,
+            "y": 739.015625,
+            "width": 248,
+            "height": 48,
+            "top": 739.015625,
+            "right": 319,
+            "bottom": 787.015625,
+            "left": 71
+          },
+          "hit": false
+        },
+        {
+          "text": "Contact team",
+          "rect": {
+            "x": 71,
+            "y": 799.015625,
+            "width": 248,
+            "height": 48,
+            "top": 799.015625,
+            "right": 319,
+            "bottom": 847.015625,
+            "left": 71
+          },
+          "hit": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "small",
+    "final": {
+      "y": 23289,
+      "rect": {
+        "x": 0,
+        "y": -352.21875,
+        "width": 360,
+        "height": 920.828125,
+        "top": -352.21875,
+        "right": 360,
+        "bottom": 568.609375,
+        "left": 0
+      },
+      "image": [
+        {
+          "src": "http://127.0.0.1:4173/_next/image?url=%2Fimages%2Fmarketing-2026%2Fhome%2Ffinal-cta-vision.webp&w=640&q=75",
+          "complete": true,
+          "w": 360
+        },
+        {
+          "src": "http://127.0.0.1:4173/images/logo-original.svg",
+          "complete": true,
+          "w": 200
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Get started",
+          "rect": {
+            "x": 71,
+            "y": 399.609375,
+            "width": 218,
+            "height": 48,
+            "top": 399.609375,
+            "right": 289,
+            "bottom": 447.609375,
+            "left": 71
+          },
+          "hit": false
+        },
+        {
+          "text": "Contact team",
+          "rect": {
+            "x": 71,
+            "y": 459.609375,
+            "width": 218,
+            "height": 48,
+            "top": 459.609375,
+            "right": 289,
+            "bottom": 507.609375,
+            "left": 71
+          },
+          "hit": false
+        }
+      ]
+    }
+  }
+]

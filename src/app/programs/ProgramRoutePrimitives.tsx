@@ -5,7 +5,6 @@ import {
   EditorialHeading,
   FAQList,
   MarketingSection,
-  MediaFrame,
   SectionEyebrow,
   SectionHeader,
   SiteContainer,
@@ -24,86 +23,6 @@ export const PROGRAM_IMAGE_PATHS = {
   talkinClub: "/images/marketing-2026/programs/talkin-club-natural-connection.webp",
   testPrep: "/images/marketing-2026/programs/test-prep-campus-readiness.webp",
 } as const;
-
-type ProgramAccent = "blue" | "cyan" | "gold";
-
-const accentStyles: Record<ProgramAccent, { border: string; detail: string; wash: string }> = {
-  blue: {
-    border: "border-[#048EFF]/22",
-    detail: "bg-[#048EFF]",
-    wash: "bg-[#048EFF]/12",
-  },
-  cyan: {
-    border: "border-[#35B7E9]/28",
-    detail: "bg-[#35B7E9]",
-    wash: "bg-[#35B7E9]/14",
-  },
-  gold: {
-    border: "border-[#F3B737]/35",
-    detail: "bg-[#F3B737]",
-    wash: "bg-[#F3B737]/18",
-  },
-};
-
-export function HeroFactList({
-  inverse = false,
-  items,
-}: {
-  inverse?: boolean;
-  items: readonly string[];
-}) {
-  return (
-    <ul className={`mt-8 grid sm:grid-cols-2 ${inverse ? "border-white/18" : "border-[#0B1F3A]/16"}`}>
-      {items.map((item) => (
-        <li
-          key={item}
-          className={`border-t py-4 pr-5 text-base font-semibold leading-6 ${
-            inverse ? "border-white/18 text-white" : "border-[#0B1F3A]/16 text-[#0B1F3A]"
-          }`}
-        >
-          {item}
-        </li>
-      ))}
-    </ul>
-  );
-}
-
-export function ProgramHeroImage({
-  accent = "blue",
-  alt = "",
-  imageClassName = "object-cover",
-  src,
-}: {
-  accent?: ProgramAccent;
-  alt?: string;
-  imageClassName?: string;
-  src: string;
-}) {
-  const styles = accentStyles[accent];
-
-  return (
-    <div className="relative pb-4 pl-4 sm:pb-6 sm:pl-6">
-      <div
-        aria-hidden="true"
-        className={`absolute inset-x-0 bottom-0 top-12 rounded-[2rem] ${styles.wash}`}
-      />
-      <MediaFrame
-        alt={alt}
-        aspectClassName="aspect-[4/3]"
-        className={`relative rounded-[1.75rem] border shadow-[0_24px_70px_rgba(11,31,58,0.10)] sm:rounded-[2rem] ${styles.border}`}
-        imageClassName={imageClassName}
-        priority
-        sizes="(min-width: 1280px) 46vw, (min-width: 1024px) 50vw, 100vw"
-        src={src}
-      >
-        <span
-          aria-hidden="true"
-          className={`absolute bottom-5 left-5 h-2.5 w-14 rounded-full shadow-sm ${styles.detail}`}
-        />
-      </MediaFrame>
-    </div>
-  );
-}
 
 export function ResponsiveKidsImage({
   alt,
@@ -150,38 +69,6 @@ export function ResponsiveKidsImage({
   );
 }
 
-export function KidsHeroComposition({
-  alt,
-  items,
-}: {
-  alt: string;
-  items: readonly string[];
-}) {
-  return (
-    <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-[#F3B737]/35 bg-[#FFF9EA] shadow-[0_24px_70px_rgba(11,31,58,0.10)] sm:aspect-[4/3]">
-      <ResponsiveKidsImage alt={alt} priority />
-      <div className="absolute left-5 top-5 flex items-center gap-3 rounded-full border border-white/70 bg-white/88 px-4 py-2 shadow-sm backdrop-blur-md sm:left-7 sm:top-7">
-        <span className="h-2.5 w-2.5 rounded-full bg-[#F3B737]" />
-        <span className="text-xs font-semibold uppercase tracking-[0.16em] text-[#0B1F3A]">
-          Langia 4 Kids n Teens
-        </span>
-      </div>
-      <ul className="absolute inset-x-4 bottom-4 grid overflow-hidden rounded-[1.25rem] border border-white/70 bg-white/92 shadow-[0_18px_44px_rgba(11,31,58,0.12)] backdrop-blur-md sm:inset-x-6 sm:bottom-6 sm:grid-cols-2">
-        {items.map((item, index) => (
-          <li
-            key={item}
-            className={`flex min-h-14 items-center px-4 py-3 text-sm font-semibold leading-5 text-[#0B1F3A] sm:px-5 ${
-              index > 0 ? "border-t border-[#0B1F3A]/10 sm:[&:nth-child(even)]:border-l" : ""
-            }`}
-          >
-            {item}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
 export function EditorialBlockGrid({
   columns = 3,
   items,
@@ -196,7 +83,7 @@ export function EditorialBlockGrid({
   }[columns];
 
   return (
-    <div className={`grid gap-x-8 gap-y-12 ${columnClass}`}>
+    <div className={`editorial-blocks grid gap-x-8 gap-y-12 ${columnClass}`}>
       {items.map((item, index) => (
         <article key={`${item.title}-${index}`} className="border-t border-[#0B1F3A]/18 pt-6">
           <span className="text-sm tabular-nums text-[#0068B8]">{String(index + 1).padStart(2, "0")}</span>
@@ -252,16 +139,12 @@ export function TailoredFeatureSection({
   return (
     <MarketingSection tone="mist">
       <SiteContainer>
-        <div className="overflow-hidden rounded-[2rem] border border-[#BBDCF7] bg-white shadow-[0_24px_80px_rgba(11,31,58,0.08)] sm:rounded-[2.5rem]">
+        <div className="overflow-hidden rounded-[2rem] bg-white">
           <div className="grid xl:grid-cols-[0.8fr_1.2fr]">
-            <div className="relative overflow-hidden bg-[linear-gradient(145deg,#FFFFFF_0%,#EAF6FF_100%)] p-7 sm:p-10 lg:p-14">
-              <div
-                aria-hidden="true"
-                className="absolute -right-16 -top-16 h-48 w-48 rounded-full border-[2.5rem] border-[#048EFF]/10"
-              />
+            <div className="p-7 sm:p-10 lg:p-14">
               <div className="relative">
                 <SectionHeader body={tailored.body} eyebrow={tailored.eyebrow} title={tailored.title} />
-                <div className="mt-12 rounded-[1.5rem] border border-[#CFE5FA] bg-white/88 p-5 shadow-sm backdrop-blur-sm">
+                <div className="mt-12 rounded-[1.5rem] bg-[var(--langia-mist)] p-6">
                   <div className="flex items-center gap-3 text-sm font-semibold text-[#0B1F3A]">
                     <span className="h-2.5 w-2.5 rounded-full bg-[#F3B737]" />
                     Langia TailorED
@@ -277,7 +160,7 @@ export function TailoredFeatureSection({
                 </div>
               </div>
             </div>
-            <div className="bg-[var(--langia-signal)] p-7 text-white sm:p-10 lg:p-14">
+            <div className="bg-[var(--langia-navy)] p-7 text-white sm:p-10 lg:p-14">
               <SectionEyebrow className="!text-white [&>span]:!bg-white" inverse>
                 {includesEyebrow}
               </SectionEyebrow>
@@ -368,11 +251,11 @@ export function PricingCard({
   title: ReactNode;
 }) {
   return (
-    <article className="flex min-h-full flex-col rounded-[1.5rem] border border-[#0B1F3A]/14 bg-white p-6 sm:p-8">
+    <article className="pricing-card flex min-h-full flex-col rounded-[1.5rem] border border-[#0B1F3A]/14 bg-white p-6 sm:p-8">
       <div className="flex flex-wrap items-start justify-between gap-4">
         <h3 className="font-heading text-3xl font-medium tracking-[-0.04em] text-[#0B1F3A]">{title}</h3>
         {badge ? (
-          <span className="rounded-full bg-[#F3B737]/18 px-3 py-2 text-sm font-semibold text-[#765200]">{badge}</span>
+          <span data-pricing-badge className="rounded-full bg-[#F3B737]/18 px-3 py-2 text-sm font-semibold text-[#765200]">{badge}</span>
         ) : null}
       </div>
       {children}

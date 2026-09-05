@@ -51,7 +51,7 @@ export function SiteContainer({
   reading?: boolean;
 }) {
   return (
-    <div className={`mx-auto w-full ${reading ? "max-w-[72ch]" : "max-w-[1360px]"} ${className}`}>
+    <div className={`mx-auto w-full ${reading ? "max-w-[72ch]" : "max-w-[1480px]"} ${className}`}>
       {children}
     </div>
   );
@@ -77,7 +77,8 @@ export function MarketingSection({
   return (
     <section
       id={id}
-      className={`scroll-mt-28 px-5 py-24 sm:px-8 sm:py-28 lg:px-12 lg:py-36 ${tones[tone]} ${className}`}
+      data-tone={tone}
+      className={`marketing-section scroll-mt-28 px-5 py-24 sm:px-8 sm:py-32 lg:px-12 ${tones[tone]} ${className}`}
     >
       {children}
     </section>
@@ -95,11 +96,11 @@ export function SectionEyebrow({
 }) {
   return (
     <p
-      className={`flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] ${
-        inverse ? "text-white/72" : "text-[var(--langia-muted)]"
+      className={`flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] ${
+        inverse ? "text-white/72" : "text-[var(--langia-blue-ink)]"
       } ${className}`}
     >
-      <span className={`h-px w-8 ${inverse ? "bg-white/70" : "bg-[var(--langia-signal)]"}`} />
+      <span className={`h-2 w-2 shrink-0 rounded-full ${inverse ? "bg-[var(--langia-gold)]" : "bg-[var(--langia-brand-signal)]"}`} />
       {children}
     </p>
   );
@@ -121,7 +122,7 @@ export function EditorialHeading({
   const Component = as;
   const sizes = {
     hero: "text-[clamp(2.75rem,5.6vw,5.75rem)] leading-[0.98] tracking-[-0.06em]",
-    major: "text-[clamp(2.4rem,4.4vw,4.5rem)] leading-[1] tracking-[-0.055em]",
+    major: "text-[clamp(2.5rem,4.2vw,5rem)] leading-[1.02] tracking-[-0.06em]",
     secondary: "text-[clamp(2rem,3.2vw,3.25rem)] leading-[1.04] tracking-[-0.045em]",
     card: "text-[clamp(1.4rem,2vw,2rem)] leading-[1.08] tracking-[-0.035em]",
   };
@@ -149,13 +150,13 @@ export function SectionHeader({
   title: ReactNode;
 }) {
   return (
-    <div className={className}>
+    <div className={`section-header ${className}`}>
       <SectionEyebrow inverse={inverse}>{eyebrow}</SectionEyebrow>
-      <EditorialHeading className="mt-7 max-w-[14ch]" inverse={inverse}>
+      <EditorialHeading className="mt-8 max-w-[18ch]" inverse={inverse}>
         {title}
       </EditorialHeading>
       {body ? (
-        <div className={`mt-7 max-w-2xl text-lg leading-8 ${inverse ? "text-white/76" : "text-[var(--langia-muted)]"}`}>
+        <div className={`mt-7 max-w-2xl text-base leading-8 ${inverse ? "text-white/76" : "text-[var(--langia-muted)]"}`}>
           {body}
         </div>
       ) : null}
@@ -187,7 +188,8 @@ export function PageHero({
   body,
   className = "",
   eyebrow,
-  media,
+  facts,
+  image,
   title,
   tone = "mist",
 }: {
@@ -195,33 +197,39 @@ export function PageHero({
   body: ReactNode;
   className?: string;
   eyebrow: ReactNode;
-  media?: ReactNode;
+  facts?: readonly string[];
+  image?: { src: string; alt: string; position?: string; mobileSrc?: string };
   title: ReactNode;
   tone?: MarketingTone;
 }) {
-  const inverse = tone === "signal";
-  const tones: Record<MarketingTone, string> = {
-    white: "bg-[var(--langia-white)]",
-    mist: "bg-[var(--langia-mist)]",
-    signal: "langia-signal-surface",
-  };
+  const inverse = Boolean(image) || tone === "signal";
 
   return (
-    <section className={`px-5 pb-20 pt-32 sm:px-8 sm:pb-24 sm:pt-36 lg:px-12 lg:pb-28 lg:pt-40 ${tones[tone]} ${className}`}>
-      <SiteContainer>
-        <div className={`grid gap-12 ${media ? "lg:grid-cols-[.92fr_1.08fr] lg:items-center lg:gap-20" : ""}`}>
-          <div className="min-w-0">
-            <SectionEyebrow inverse={inverse}>{eyebrow}</SectionEyebrow>
-            <EditorialHeading as="h1" className="mt-7 max-w-[12ch]" inverse={inverse} size="hero">
-              {title}
-            </EditorialHeading>
-            <div className={`mt-7 max-w-2xl text-lg leading-8 ${inverse ? "text-white/76" : "text-[var(--langia-muted)]"}`}>
-              {body}
-            </div>
-            {actions ? <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">{actions}</div> : null}
-          </div>
-          {media ? <div className="min-w-0">{media}</div> : null}
+    <section className={`page-hero ${image ? "page-hero-photo" : "page-hero-editorial"} ${inverse ? "bg-[var(--langia-navy)] text-white" : "bg-[var(--langia-mist)] text-[var(--langia-navy)]"} ${className}`}>
+      {image ? (
+        <div className="absolute inset-0 overflow-hidden rounded-[inherit]">
+          <Image src={image.src} alt={image.alt} fill priority sizes="100vw" className={`object-cover ${image.mobileSrc ? "hidden sm:block" : ""}`} style={{ objectPosition: image.position ?? "65% center" }} />
+          {image.mobileSrc ? <Image src={image.mobileSrc} alt="" fill priority sizes="100vw" className="object-cover sm:hidden" /> : null}
+          <div className="page-hero-shade absolute inset-0" />
         </div>
+      ) : null}
+      <SiteContainer className="relative flex flex-1 flex-col">
+        <div className="page-hero-copy">
+          <SectionEyebrow inverse={inverse}>{eyebrow}</SectionEyebrow>
+          <EditorialHeading as="h1" className="page-hero-title mt-8" inverse={inverse} size="hero">{title}</EditorialHeading>
+          <div className={`page-hero-body mt-7 max-w-[34rem] text-base leading-8 ${inverse ? "text-white/85" : "text-[var(--langia-muted)]"}`}>{body}</div>
+          {actions ? <div className="page-hero-actions mt-8 flex flex-wrap items-center gap-4 sm:gap-6">{actions}</div> : null}
+        </div>
+        {facts?.length ? (
+          <ul className={`page-hero-facts mt-auto grid gap-x-8 pt-12 sm:grid-cols-2 lg:grid-cols-4 ${inverse ? "text-white" : "text-[var(--langia-navy)]"}`}>
+            {facts.map((fact, index) => (
+              <li key={fact} className={`border-t py-5 text-sm font-medium leading-6 ${inverse ? "border-white/30" : "border-[var(--langia-border)]"}`}>
+                <span className={`mb-3 block text-xs tabular-nums ${inverse ? "text-white/60" : "text-[var(--langia-blue-ink)]"}`}>{String(index + 1).padStart(2, "0")}</span>
+                {fact}
+              </li>
+            ))}
+          </ul>
+        ) : null}
       </SiteContainer>
     </section>
   );
@@ -299,37 +307,12 @@ export function ProcessSteps({
   items: readonly { title: string; body: string }[];
 }) {
   return (
-    <ol className={`border-t ${inverse ? "border-white/24" : "border-[var(--langia-navy)]/18"}`}>
+    <ol className="process-steps grid gap-3 sm:grid-cols-2">
       {items.map((item, index) => (
-        <li
-          key={`${item.title}-${index}`}
-          className={`grid gap-4 border-b py-8 sm:grid-cols-[4rem_1fr] ${
-            inverse ? "border-white/24" : "border-[var(--langia-navy)]/18"
-          }`}
-        >
-          <span
-            className={`text-sm tabular-nums ${
-              inverse ? "text-[var(--langia-luminous)]" : "text-[var(--langia-blue-ink)]"
-            }`}
-          >
-            {String(index + 1).padStart(2, "0")}
-          </span>
-          <div>
-            <h3
-              className={`font-heading text-2xl font-medium tracking-[-0.03em] ${
-                inverse ? "text-white" : "text-[var(--langia-navy)]"
-              }`}
-            >
-              {item.title}
-            </h3>
-            <p
-              className={`mt-3 max-w-xl text-base leading-7 ${
-                inverse ? "text-white/76" : "text-[var(--langia-muted)]"
-              }`}
-            >
-              {item.body}
-            </p>
-          </div>
+        <li key={`${item.title}-${index}`} className={`rounded-[1.75rem] p-6 sm:p-8 ${inverse ? "bg-white/10 text-white" : "bg-[var(--langia-mist)] text-[var(--langia-navy)]"}`}>
+          <span className={`text-xs font-semibold tabular-nums ${inverse ? "text-white/65" : "text-[var(--langia-blue-ink)]"}`}>{String(index + 1).padStart(2, "0")}</span>
+          <h3 className="mt-10 font-heading text-2xl font-medium leading-tight tracking-[-0.035em]">{item.title}</h3>
+          <p className={`mt-4 max-w-xl text-sm leading-7 ${inverse ? "text-white/76" : "text-[var(--langia-muted)]"}`}>{item.body}</p>
         </li>
       ))}
     </ol>
@@ -381,59 +364,23 @@ export function FinalCTA({
   secondary?: { href: string; label: ReactNode };
   title: ReactNode;
 }) {
-  const actions = (
-    <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-      <MarketingButton href={primary.href}>{primary.label}</MarketingButton>
-      {secondary ? (
-        <MarketingButton href={secondary.href} variant="secondary">
-          {secondary.label}
-        </MarketingButton>
-      ) : null}
-    </div>
-  );
+  const photograph = image ?? { src: "/images/marketing-2026/home/final-cta-vision.webp", alt: "" };
 
   return (
-    <MarketingSection className={`!pb-6 sm:!pb-8 lg:!pb-10 ${className}`} tone="white">
-      <SiteContainer>
-        <div className="relative overflow-hidden rounded-[2rem] bg-[linear-gradient(135deg,var(--langia-signal)_0%,var(--langia-legacy)_62%,var(--langia-bright-sky)_100%)] px-6 py-16 sm:px-10 sm:py-20 lg:px-16 lg:py-24">
-          <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full border-[4.5rem] border-white/22" />
-          <div className="pointer-events-none absolute bottom-10 right-[22%] h-5 w-5 rounded-full bg-[var(--langia-gold)] shadow-[0_12px_30px_rgba(11,31,58,0.14)]" />
-          <div
-            className={`relative grid gap-10 ${
-              image
-                ? "lg:grid-cols-[minmax(0,1.08fr)_minmax(20rem,.92fr)] lg:items-stretch lg:gap-12"
-                : "lg:grid-cols-[1fr_auto] lg:items-end"
-            }`}
-          >
-            <div className={image ? "flex flex-col justify-center" : ""}>
-              {eyebrow ? (
-                <SectionEyebrow inverse>{eyebrow}</SectionEyebrow>
-              ) : null}
-              <EditorialHeading className={eyebrow ? "mt-7 max-w-[13ch]" : "max-w-[13ch]"} inverse>
-                {title}
-              </EditorialHeading>
-              <div className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/82">
-                {body}
-              </div>
-              {image ? <div className="mt-9">{actions}</div> : null}
-            </div>
-            {image ? (
-              <div className="relative min-h-72 overflow-hidden rounded-[1.5rem] border border-white/24 bg-white/12 shadow-[0_24px_70px_rgba(11,31,58,.18)] sm:min-h-96 lg:min-h-full">
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  sizes="(min-width: 1024px) 38vw, 100vw"
-                  className="object-cover object-center"
-                />
-                <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(4,142,255,.14),transparent_30%)]" />
-              </div>
-            ) : (
-              actions
-            )}
+    <section className={`page-conversion ${className}`}>
+      <div className="relative overflow-hidden rounded-[2rem] bg-[var(--langia-navy)]">
+        <Image src={photograph.src} alt={photograph.alt} fill sizes="100vw" className="object-cover object-[65%_20%]" />
+        <div className="page-hero-shade absolute inset-0" />
+        <div className="relative px-7 py-20 sm:px-12 sm:py-24 lg:px-[60px] lg:py-28">
+          {eyebrow ? <SectionEyebrow inverse>{eyebrow}</SectionEyebrow> : null}
+          <EditorialHeading className={`${eyebrow ? "mt-8" : ""} max-w-[16ch]`} inverse>{title}</EditorialHeading>
+          <div className="mt-7 max-w-lg text-base leading-8 text-white/85">{body}</div>
+          <div className="mt-9 flex flex-wrap items-center gap-6">
+            <MarketingButton href={primary.href} className="shadow-none">{primary.label}</MarketingButton>
+            {secondary ? <Link href={secondary.href} className="home-text-action !text-white">{secondary.label}<ArrowIcon /></Link> : null}
           </div>
         </div>
-      </SiteContainer>
-    </MarketingSection>
+      </div>
+    </section>
   );
 }

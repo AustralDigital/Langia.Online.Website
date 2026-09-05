@@ -19,13 +19,11 @@ import {
   ChoiceGrid,
   EditorialBlockGrid,
   FAQSection,
-  HeroFactList,
   LevelPath,
   PaymentNotes,
   PricingCard,
   PricingDefinitionList,
   PROGRAM_IMAGE_PATHS,
-  ProgramHeroImage,
   TailoredFeatureSection,
 } from "../ProgramRoutePrimitives";
 
@@ -45,39 +43,28 @@ export default function LangiaOnlinePage() {
   const common = commonContent[language];
 
   return (
-    <main className="min-h-screen bg-white text-[#0B1F3A]">
-      <SiteNavbar variant="light" language={language} />
+    <main className="langia-page min-h-screen bg-white text-[#0B1F3A]">
+      <SiteNavbar variant="overlay" language={language} />
 
       <PageHero
-        className="overflow-hidden bg-[radial-gradient(circle_at_8%_12%,rgba(4,142,255,0.12),transparent_32%),linear-gradient(180deg,#FFFFFF_0%,#F3F9FF_100%)]"
+        className="overflow-hidden"
         actions={
           <>
             <MarketingButton href="/contact">{page.hero.primaryCta}</MarketingButton>
-            <MarketingButton href="#pricing" variant="secondary">
+            <MarketingButton href="#pricing" variant="inverse">
               {page.hero.secondaryCta}
             </MarketingButton>
           </>
         }
-        body={
-          <>
-            <p>{page.hero.body}</p>
-            <HeroFactList items={page.hero.quickFacts} />
-          </>
-        }
+        body={page.hero.body}
         eyebrow={page.hero.eyebrow}
-        media={
-          <ProgramHeroImage
-            accent="blue"
-            alt={page.hero.title}
-            imageClassName="object-cover object-center"
-            src={PROGRAM_IMAGE_PATHS.langiaOnline}
-          />
-        }
+        image={{ src: PROGRAM_IMAGE_PATHS.langiaOnline, alt: page.hero.title }}
+        facts={page.hero.quickFacts}
         title={page.hero.title}
         tone="white"
       />
 
-      <MarketingSection className="bg-[linear-gradient(180deg,#FFFFFF_0%,#F8FBFE_100%)]" tone="white">
+      <MarketingSection tone="white">
         <SiteContainer>
           <div className="grid gap-14 xl:grid-cols-[0.88fr_1.12fr] xl:gap-24">
             <SectionHeader body={page.who.body} eyebrow={page.who.eyebrow} title={page.who.title} />

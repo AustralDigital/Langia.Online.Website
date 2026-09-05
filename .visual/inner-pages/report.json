@@ -1,0 +1,911 @@
+{
+  "layouts": [
+    {
+      "width": 390,
+      "locale": "en",
+      "route": "about",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "route": "corporate",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "route": "programs",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "route": "programs/langia-online",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "route": "programs/talkin-club",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "route": "programs/test-prep",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "route": "programs/langia-4-kids-n-teens",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "route": "contact",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "route": "work-with-us",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "route": "test-your-english-level",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "route": "legal",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "route": "blog",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "route": "blog/how-to-choose-the-right-english-program",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "route": "blog/how-to-prepare-for-a-language-exam",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "route": "blog/what-is-ai-assisted-language-learning",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "es",
+      "route": "about",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "es",
+      "route": "corporate",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "es",
+      "route": "programs",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "es",
+      "route": "programs/langia-online",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "es",
+      "route": "programs/talkin-club",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "es",
+      "route": "programs/test-prep",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "es",
+      "route": "programs/langia-4-kids-n-teens",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "es",
+      "route": "contact",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "es",
+      "route": "work-with-us",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "es",
+      "route": "test-your-english-level",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "es",
+      "route": "legal",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "es",
+      "route": "blog",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "es",
+      "route": "blog/how-to-choose-the-right-english-program",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "es",
+      "route": "blog/how-to-prepare-for-a-language-exam",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "es",
+      "route": "blog/what-is-ai-assisted-language-learning",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "pt",
+      "route": "about",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "pt",
+      "route": "corporate",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "pt",
+      "route": "programs",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "pt",
+      "route": "programs/langia-online",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "pt",
+      "route": "programs/talkin-club",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "pt",
+      "route": "programs/test-prep",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "pt",
+      "route": "programs/langia-4-kids-n-teens",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "pt",
+      "route": "contact",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "pt",
+      "route": "work-with-us",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "pt",
+      "route": "test-your-english-level",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "pt",
+      "route": "legal",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "pt",
+      "route": "blog",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "pt",
+      "route": "blog/how-to-choose-the-right-english-program",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "pt",
+      "route": "blog/how-to-prepare-for-a-language-exam",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "locale": "pt",
+      "route": "blog/what-is-ai-assisted-language-learning",
+      "status": 200,
+      "scrollWidth": 390,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "route": "about",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "route": "corporate",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "route": "programs",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "route": "programs/langia-online",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "route": "programs/talkin-club",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "route": "programs/test-prep",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "route": "programs/langia-4-kids-n-teens",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "route": "contact",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "route": "work-with-us",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "route": "test-your-english-level",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "route": "legal",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "route": "blog",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "route": "blog/how-to-choose-the-right-english-program",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "route": "blog/how-to-prepare-for-a-language-exam",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "route": "blog/what-is-ai-assisted-language-learning",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "es",
+      "route": "about",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "es",
+      "route": "corporate",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "es",
+      "route": "programs",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "es",
+      "route": "programs/langia-online",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "es",
+      "route": "programs/talkin-club",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "es",
+      "route": "programs/test-prep",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "es",
+      "route": "programs/langia-4-kids-n-teens",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "es",
+      "route": "contact",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "es",
+      "route": "work-with-us",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "es",
+      "route": "test-your-english-level",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "es",
+      "route": "legal",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "es",
+      "route": "blog",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "es",
+      "route": "blog/how-to-choose-the-right-english-program",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "es",
+      "route": "blog/how-to-prepare-for-a-language-exam",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "es",
+      "route": "blog/what-is-ai-assisted-language-learning",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "pt",
+      "route": "about",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "pt",
+      "route": "corporate",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "pt",
+      "route": "programs",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "pt",
+      "route": "programs/langia-online",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "pt",
+      "route": "programs/talkin-club",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "pt",
+      "route": "programs/test-prep",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "pt",
+      "route": "programs/langia-4-kids-n-teens",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "pt",
+      "route": "contact",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "pt",
+      "route": "work-with-us",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "pt",
+      "route": "test-your-english-level",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "pt",
+      "route": "legal",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "pt",
+      "route": "blog",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "pt",
+      "route": "blog/how-to-choose-the-right-english-program",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "pt",
+      "route": "blog/how-to-prepare-for-a-language-exam",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "locale": "pt",
+      "route": "blog/what-is-ai-assisted-language-learning",
+      "status": 200,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "headingFits": true,
+      "overflows": []
+    }
+  ],
+  "errors": [],
+  "interactions": [
+    "FAQ opens and closes",
+    "Mobile menu opens and closes with Escape",
+    "contact: empty submission shows field errors",
+    "work-with-us: empty submission shows field errors"
+  ]
+}

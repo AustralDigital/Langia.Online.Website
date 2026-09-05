@@ -1,0 +1,4012 @@
+{
+  "desktop": [
+    {
+      "i": 0,
+      "scope": "header",
+      "href": "/en",
+      "n": 0,
+      "text": "Langia",
+      "imageAlt": "Langia",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": "Langia",
+        "imageAlt": "Langia",
+        "descendants": [
+          "none"
+        ]
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": "Langia",
+        "imageAlt": "Langia",
+        "descendants": [
+          "none"
+        ]
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(16, 16, 16) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.439664 -0.0424169 -0.108532 / 0.4) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": "Langia",
+        "imageAlt": "Langia",
+        "descendants": [
+          "none"
+        ]
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en",
+        "h1": "English for people going places.Englishfor peoplegoing places."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en",
+        "h1": "English for people going places.Englishfor peoplegoing places."
+      }
+    },
+    {
+      "i": 1,
+      "scope": "header",
+      "href": "/en/programs",
+      "n": 0,
+      "text": "Programs",
+      "hasBox": true,
+      "menu": "Programs",
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(16, 16, 16) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.439664 -0.0424169 -0.108532 / 0.347561) 0px 0px 0px 1.98606px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "hover": {
+        "color": "rgb(0, 104, 184)",
+        "bg": "rgb(243, 247, 251)",
+        "outline": "rgb(16, 16, 16) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.439664 -0.0424169 -0.108532 / 0.35) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "focus": {
+        "color": "rgb(0, 104, 184)",
+        "bg": "rgb(243, 247, 251)",
+        "outline": "rgb(16, 16, 16) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.439664 -0.0424169 -0.108532 / 0.35) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs",
+        "h1": "Choose the path that fits your next chapter."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs",
+        "h1": "Choose the path that fits your next chapter."
+      }
+    },
+    {
+      "i": 2,
+      "scope": "header",
+      "href": "/en/programs/langia-online",
+      "n": 0,
+      "text": "Langia OnlineStructured live training for adults.",
+      "hasBox": true,
+      "menu": "Programs",
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(243, 247, 251)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(243, 247, 251)",
+        "outline": "rgb(16, 16, 16) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.439664 -0.0424169 -0.108532 / 0.35) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/langia-online",
+        "h1": "Communicate your ideas with clarity."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/langia-online",
+        "h1": "Communicate your ideas with clarity."
+      }
+    },
+    {
+      "i": 3,
+      "scope": "header",
+      "href": "/en/programs/talkin-club",
+      "n": 0,
+      "text": "Talkin’ ClubPrivate conversation practice for fluency and confidence.",
+      "hasBox": true,
+      "menu": "Programs",
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(243, 247, 251)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(243, 247, 251)",
+        "outline": "rgb(11, 31, 57) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.439664 -0.0424169 -0.108532 / 0.0114792) 0px 0px 0px 0.0655955px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/talkin-club",
+        "h1": "Practice the conversations your life actually needs."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/talkin-club",
+        "h1": "Practice the conversations your life actually needs."
+      }
+    },
+    {
+      "i": 4,
+      "scope": "header",
+      "href": "/en/programs/test-prep",
+      "n": 0,
+      "text": "Test PrepPreparation for exams and certifications.",
+      "hasBox": true,
+      "menu": "Programs",
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(243, 247, 251)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(243, 247, 251)",
+        "outline": "rgb(11, 31, 58) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0 0 0 / 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/test-prep",
+        "h1": "Prepare with a clear plan for your target score."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/test-prep",
+        "h1": "Prepare with a clear plan for your target score."
+      }
+    },
+    {
+      "i": 5,
+      "scope": "header",
+      "href": "/en/programs/langia-4-kids-n-teens",
+      "n": 0,
+      "text": "Langia 4 Kids n TeensLanguage learning for kids and teens.",
+      "hasBox": true,
+      "menu": "Programs",
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(243, 247, 251)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(243, 247, 251)",
+        "outline": "rgb(11, 31, 57) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.439664 -0.0424169 -0.108532 / 0.0114792) 0px 0px 0px 0.0655955px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/langia-4-kids-n-teens",
+        "h1": "Language learning parents can trust and kids can enjoy."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/langia-4-kids-n-teens",
+        "h1": "Language learning parents can trust and kids can enjoy."
+      }
+    },
+    {
+      "i": 6,
+      "scope": "header",
+      "href": "/en/programs",
+      "n": 1,
+      "text": "View all programsCompare available learning paths.",
+      "hasBox": true,
+      "menu": "Programs",
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(243, 247, 251, 0.835)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(243, 247, 251, 0.992)",
+        "outline": "rgb(11, 31, 58) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0 0 0 / 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs",
+        "h1": "Choose the path that fits your next chapter."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs",
+        "h1": "Choose the path that fits your next chapter."
+      }
+    },
+    {
+      "i": 7,
+      "scope": "header",
+      "href": "/en/about",
+      "n": 0,
+      "text": "About us",
+      "hasBox": true,
+      "menu": "About us",
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(16, 16, 16) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.439664 -0.0424169 -0.108532 / 0.35) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "hover": {
+        "color": "rgb(0, 104, 184)",
+        "bg": "rgb(243, 247, 251)",
+        "outline": "rgb(16, 16, 16) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.439664 -0.0424169 -0.108532 / 0.35) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "focus": {
+        "color": "rgb(0, 104, 184)",
+        "bg": "rgb(243, 247, 251)",
+        "outline": "rgb(16, 16, 16) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.439664 -0.0424169 -0.108532 / 0.35) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/about",
+        "h1": "A company built for clearer language learning."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/about",
+        "h1": "A company built for clearer language learning."
+      }
+    },
+    {
+      "i": 8,
+      "scope": "header",
+      "href": "/en/about",
+      "n": 1,
+      "text": "About LangiaWho we are and why we exist.",
+      "hasBox": true,
+      "menu": "About us",
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(243, 247, 251)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(243, 247, 251)",
+        "outline": "rgb(11, 31, 57) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.439664 -0.0424169 -0.108532 / 0.0114792) 0px 0px 0px 0.0655955px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/about",
+        "h1": "A company built for clearer language learning."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/about",
+        "h1": "A company built for clearer language learning."
+      }
+    },
+    {
+      "i": 9,
+      "scope": "header",
+      "href": "/en/corporate",
+      "n": 0,
+      "text": "CorporateLanguage solutions for companies.",
+      "hasBox": true,
+      "menu": "About us",
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0 0 0 / 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/corporate",
+        "h1": "Languages for teams crossing borders."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/corporate",
+        "h1": "Languages for teams crossing borders."
+      }
+    },
+    {
+      "i": 10,
+      "scope": "header",
+      "href": "/en/legal",
+      "n": 0,
+      "text": "LegalPolicies and legal information.",
+      "hasBox": true,
+      "menu": "About us",
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(243, 247, 251)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(243, 247, 251)",
+        "outline": "rgb(11, 31, 58) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0 0 0 / 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/legal",
+        "h1": "Policies and legal information."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/legal",
+        "h1": "Policies and legal information."
+      }
+    },
+    {
+      "i": 11,
+      "scope": "header",
+      "href": "/en/work-with-us",
+      "n": 0,
+      "text": "Work with usFuture opportunities for teachers.",
+      "hasBox": true,
+      "menu": "About us",
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(243, 247, 251)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(243, 247, 251)",
+        "outline": "rgb(11, 31, 58) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0 0 0 / 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/work-with-us",
+        "h1": "Teach languages from anywhere with Langia."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/work-with-us",
+        "h1": "Teach languages from anywhere with Langia."
+      }
+    },
+    {
+      "i": 12,
+      "scope": "header",
+      "href": "/en/blog",
+      "n": 0,
+      "text": "Resources",
+      "hasBox": true,
+      "menu": "Resources",
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(14, 21, 29) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.439664 -0.0424169 -0.108532 / 0.243322) 0px 0px 0px 1.39041px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "hover": {
+        "color": "rgb(0, 104, 184)",
+        "bg": "rgb(243, 247, 251)",
+        "outline": "rgb(16, 16, 16) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.439664 -0.0424169 -0.108532 / 0.35) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "focus": {
+        "color": "rgb(0, 104, 184)",
+        "bg": "rgb(243, 247, 251)",
+        "outline": "rgb(16, 16, 16) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.439664 -0.0424169 -0.108532 / 0.35) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/blog",
+        "h1": "Short reads to make better decisions."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/blog",
+        "h1": "Short reads to make better decisions."
+      }
+    },
+    {
+      "i": 13,
+      "scope": "header",
+      "href": "/en/contact",
+      "n": 0,
+      "text": "Contact",
+      "hasBox": true,
+      "menu": "Contact",
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(16, 16, 16) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.439664 -0.0424169 -0.108532 / 0.35) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "hover": {
+        "color": "rgb(0, 104, 184)",
+        "bg": "rgb(243, 247, 251)",
+        "outline": "rgb(16, 16, 16) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.439664 -0.0424169 -0.108532 / 0.35) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "focus": {
+        "color": "rgb(0, 104, 184)",
+        "bg": "rgb(243, 247, 251)",
+        "outline": "rgb(16, 16, 16) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.439664 -0.0424169 -0.108532 / 0.35) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/contact",
+        "h1": "Your next chapter starts with a conversation."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/contact",
+        "h1": "Your next chapter starts with a conversation."
+      }
+    },
+    {
+      "i": 14,
+      "scope": "header",
+      "href": "https://langia-tailored-v2.vercel.app/sign-in",
+      "n": 0,
+      "text": "Log in",
+      "hasBox": true,
+      "external": "Tested separately once; actual rendered href preserved"
+    },
+    {
+      "i": 15,
+      "scope": "header",
+      "href": "/en/contact",
+      "n": 1,
+      "text": "Start",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(243, 183, 55)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(229, 168, 35)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(229, 168, 35)",
+        "outline": "rgb(11, 31, 57) none 2px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.016) 0px 0px 0px 0.0345348px, oklab(0.439664 -0.0424169 -0.108532 / 0.00690696) 0px 0px 0px 0.0690696px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/contact",
+        "h1": "Your next chapter starts with a conversation."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/contact",
+        "h1": "Your next chapter starts with a conversation."
+      }
+    },
+    {
+      "i": 16,
+      "scope": "#top",
+      "href": "/en/contact",
+      "n": 0,
+      "text": "Start now",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(243, 183, 55)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(229, 168, 35)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(229, 168, 35)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0 0 0 / 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/contact",
+        "h1": "Your next chapter starts with a conversation."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/contact",
+        "h1": "Your next chapter starts with a conversation."
+      }
+    },
+    {
+      "i": 17,
+      "scope": "#top",
+      "href": "#programs",
+      "n": 0,
+      "text": "View programs",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(255, 255, 255) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "hover": {
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(255, 255, 255) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "focus": {
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(16, 16, 16) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.999994 0.0000455677 0.0000200868 / 0.7) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en#programs",
+        "targetTop": 1846
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en#programs",
+        "targetTop": 5737
+      }
+    },
+    {
+      "i": 18,
+      "scope": "#programs",
+      "href": "/en/programs/langia-online",
+      "n": 0,
+      "text": "Langia Online",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(4, 142, 255)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(4, 141, 254)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(4, 142, 255)",
+        "outline": "rgb(11, 31, 58) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(4, 142, 255) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/langia-online",
+        "h1": "Communicate your ideas with clarity."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/langia-online",
+        "h1": "Communicate your ideas with clarity."
+      }
+    },
+    {
+      "i": 19,
+      "scope": "#programs",
+      "href": "/en/programs/langia-online",
+      "n": 1,
+      "text": "Professional presenting confidently to an international team",
+      "imageAlt": "Professional presenting confidently to an international team",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "imageAlt": "Professional presenting confidently to an international team",
+        "descendants": [
+          "none",
+          "none"
+        ]
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "imageAlt": "Professional presenting confidently to an international team",
+        "descendants": [
+          "none",
+          "none"
+        ]
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(16, 16, 16) auto 1px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "imageAlt": "Professional presenting confidently to an international team",
+        "descendants": [
+          "none",
+          "none"
+        ]
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/langia-online",
+        "h1": "Communicate your ideas with clarity."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/langia-online",
+        "h1": "Communicate your ideas with clarity."
+      }
+    },
+    {
+      "i": 20,
+      "scope": "#programs",
+      "href": "/en/programs/talkin-club",
+      "n": 0,
+      "text": "Talkin' Club",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(4, 142, 255)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(4, 142, 255)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(4, 142, 255)",
+        "outline": "rgb(11, 31, 58) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(4, 142, 255) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/talkin-club",
+        "h1": "Practice the conversations your life actually needs."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/talkin-club",
+        "h1": "Practice the conversations your life actually needs."
+      }
+    },
+    {
+      "i": 21,
+      "scope": "#programs",
+      "href": "/en/programs/talkin-club",
+      "n": 1,
+      "text": "Professionals speaking naturally at an international gathering",
+      "imageAlt": "Professionals speaking naturally at an international gathering",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "imageAlt": "Professionals speaking naturally at an international gathering",
+        "descendants": [
+          "none",
+          "none"
+        ]
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "imageAlt": "Professionals speaking naturally at an international gathering",
+        "descendants": [
+          "none",
+          "none"
+        ]
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(16, 16, 16) auto 1px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "imageAlt": "Professionals speaking naturally at an international gathering",
+        "descendants": [
+          "none",
+          "none"
+        ]
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/talkin-club",
+        "h1": "Practice the conversations your life actually needs."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/talkin-club",
+        "h1": "Practice the conversations your life actually needs."
+      }
+    },
+    {
+      "i": 22,
+      "scope": "#programs",
+      "href": "/en/programs/test-prep",
+      "n": 0,
+      "text": "Test Prep",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(4, 142, 255)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(11, 33, 61)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(11, 33, 61)",
+        "outline": "rgb(11, 31, 58) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(4, 142, 255) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/test-prep",
+        "h1": "Prepare with a clear plan for your target score."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/test-prep",
+        "h1": "Prepare with a clear plan for your target score."
+      }
+    },
+    {
+      "i": 23,
+      "scope": "#programs",
+      "href": "/en/programs/test-prep",
+      "n": 1,
+      "text": "Learner arriving confidently at an international campus",
+      "imageAlt": "Learner arriving confidently at an international campus",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "imageAlt": "Learner arriving confidently at an international campus",
+        "descendants": [
+          "none",
+          "none"
+        ]
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "imageAlt": "Learner arriving confidently at an international campus",
+        "descendants": [
+          "none",
+          "none"
+        ]
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(16, 16, 16) auto 1px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "imageAlt": "Learner arriving confidently at an international campus",
+        "descendants": [
+          "none",
+          "none"
+        ]
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/test-prep",
+        "h1": "Prepare with a clear plan for your target score."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/test-prep",
+        "h1": "Prepare with a clear plan for your target score."
+      }
+    },
+    {
+      "i": 24,
+      "scope": "#programs",
+      "href": "/en/programs/langia-4-kids-n-teens",
+      "n": 0,
+      "text": "Langia 4 Kids n Teens",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(4, 142, 255)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(11, 31, 58)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(11, 31, 58)",
+        "outline": "rgb(11, 31, 58) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(4, 142, 255) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/langia-4-kids-n-teens",
+        "h1": "Language learning parents can trust and kids can enjoy."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/langia-4-kids-n-teens",
+        "h1": "Language learning parents can trust and kids can enjoy."
+      }
+    },
+    {
+      "i": 25,
+      "scope": "#programs",
+      "href": "/en/programs/langia-4-kids-n-teens",
+      "n": 1,
+      "text": "Family exploring a new destination while a teenager communicates confidently",
+      "imageAlt": "Family exploring a new destination while a teenager communicates confidently",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "imageAlt": "Family exploring a new destination while a teenager communicates confidently",
+        "descendants": [
+          "none",
+          "none"
+        ]
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "imageAlt": "Family exploring a new destination while a teenager communicates confidently",
+        "descendants": [
+          "none",
+          "none"
+        ]
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(16, 16, 16) auto 1px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "imageAlt": "Family exploring a new destination while a teenager communicates confidently",
+        "descendants": [
+          "none",
+          "none"
+        ]
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/langia-4-kids-n-teens",
+        "h1": "Language learning parents can trust and kids can enjoy."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/langia-4-kids-n-teens",
+        "h1": "Language learning parents can trust and kids can enjoy."
+      }
+    },
+    {
+      "i": 26,
+      "scope": "#programs",
+      "href": "/en/corporate",
+      "n": 0,
+      "text": "Explore Corporate",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(4, 142, 255)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(4, 142, 255)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(4, 142, 255)",
+        "outline": "rgb(11, 31, 58) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(4, 142, 255) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/corporate",
+        "h1": "Languages for teams crossing borders."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/corporate",
+        "h1": "Languages for teams crossing borders."
+      }
+    },
+    {
+      "i": 27,
+      "scope": "#programs",
+      "href": "/en/corporate",
+      "n": 1,
+      "text": "International team collaborating in a bright professional environment",
+      "imageAlt": "International team collaborating in a bright professional environment",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "imageAlt": "International team collaborating in a bright professional environment",
+        "descendants": [
+          "none",
+          "none"
+        ]
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "imageAlt": "International team collaborating in a bright professional environment",
+        "descendants": [
+          "none",
+          "none"
+        ]
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(16, 16, 16) auto 1px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "imageAlt": "International team collaborating in a bright professional environment",
+        "descendants": [
+          "none",
+          "none"
+        ]
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/corporate",
+        "h1": "Languages for teams crossing borders."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/corporate",
+        "h1": "Languages for teams crossing borders."
+      }
+    },
+    {
+      "i": 28,
+      "scope": "#programs",
+      "href": "/en/programs",
+      "n": 0,
+      "text": "Compare programs",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) auto 1px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs",
+        "h1": "Choose the path that fits your next chapter."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs",
+        "h1": "Choose the path that fits your next chapter."
+      }
+    },
+    {
+      "i": 34,
+      "scope": "#tailored",
+      "href": "/en/contact",
+      "n": 0,
+      "text": "Learning direction",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(243, 183, 55)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(229, 168, 35)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(229, 168, 35)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0 0 0 / 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/contact",
+        "h1": "Your next chapter starts with a conversation."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/contact",
+        "h1": "Your next chapter starts with a conversation."
+      }
+    },
+    {
+      "i": 35,
+      "scope": "#corporate-home",
+      "href": "/en/corporate",
+      "n": 0,
+      "text": "Explore Corporate",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(243, 183, 55)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none",
+          "none"
+        ]
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(229, 168, 35)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none",
+          "none"
+        ]
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(229, 168, 35)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0 0 0 / 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": [
+          "none",
+          "none"
+        ]
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/corporate",
+        "h1": "Languages for teams crossing borders."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/corporate",
+        "h1": "Languages for teams crossing borders."
+      }
+    },
+    {
+      "i": 36,
+      "scope": "#corporate-home",
+      "href": "/en/corporate",
+      "n": 1,
+      "text": "Explore Corporate",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(4, 142, 255)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(11, 31, 58)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(11, 31, 58)",
+        "outline": "rgb(11, 31, 58) auto 1px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/corporate",
+        "h1": "Languages for teams crossing borders."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/corporate",
+        "h1": "Languages for teams crossing borders."
+      }
+    },
+    {
+      "i": 37,
+      "scope": "#faq",
+      "href": "/en/contact",
+      "n": 0,
+      "text": "Frequently asked questions",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(243, 183, 55)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(229, 168, 35)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(229, 168, 35)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0 0 0 / 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/contact",
+        "h1": "Your next chapter starts with a conversation."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/contact",
+        "h1": "Your next chapter starts with a conversation."
+      }
+    },
+    {
+      "i": 38,
+      "scope": "#resources-home",
+      "href": "/en/blog",
+      "n": 0,
+      "text": "Explore resources",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(255, 255, 255)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(243, 247, 251)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(243, 247, 251)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0 0 0 / 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/blog",
+        "h1": "Short reads to make better decisions."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/blog",
+        "h1": "Short reads to make better decisions."
+      }
+    },
+    {
+      "i": 39,
+      "scope": "#resources-home",
+      "href": "/en/blog/how-to-prepare-for-a-language-exam",
+      "n": 0,
+      "text": "Test Prep3 min · Read articleHow to prepare for a language exam",
+      "imageAlt": "",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(11, 31, 58)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "imageAlt": "",
+        "descendants": [
+          "none"
+        ]
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(11, 31, 58)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "imageAlt": "",
+        "descendants": [
+          "none"
+        ]
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(11, 31, 58)",
+        "outline": "rgb(16, 16, 16) auto 1px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "imageAlt": "",
+        "descendants": [
+          "none"
+        ]
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/blog/how-to-prepare-for-a-language-exam",
+        "h1": "How to prepare for a language exam"
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/blog/how-to-prepare-for-a-language-exam",
+        "h1": "How to prepare for a language exam"
+      }
+    },
+    {
+      "i": 40,
+      "scope": "#resources-home",
+      "href": "/en/blog/what-is-ai-assisted-language-learning",
+      "n": 0,
+      "text": "Learning Guides3 min · Read articleWhat is AI-assisted language learning?",
+      "imageAlt": "",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(11, 31, 58)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "imageAlt": "",
+        "descendants": [
+          "none"
+        ]
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(11, 31, 58)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "imageAlt": "",
+        "descendants": [
+          "none"
+        ]
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(11, 31, 58)",
+        "outline": "rgb(16, 16, 16) auto 1px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "imageAlt": "",
+        "descendants": [
+          "none"
+        ]
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/blog/what-is-ai-assisted-language-learning",
+        "h1": "What is AI-assisted language learning?"
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/blog/what-is-ai-assisted-language-learning",
+        "h1": "What is AI-assisted language learning?"
+      }
+    },
+    {
+      "i": 41,
+      "scope": "#conversion",
+      "href": "/en/contact",
+      "n": 0,
+      "text": "Get started",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(243, 183, 55)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none",
+          "none"
+        ]
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(229, 168, 35)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none",
+          "none"
+        ]
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(229, 168, 35)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0 0 0 / 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": [
+          "none",
+          "none"
+        ]
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/contact",
+        "h1": "Your next chapter starts with a conversation."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/contact",
+        "h1": "Your next chapter starts with a conversation."
+      }
+    },
+    {
+      "i": 42,
+      "scope": "#conversion",
+      "href": "/en/contact",
+      "n": 1,
+      "text": "Contact team",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(255, 255, 255)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(243, 247, 251)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(243, 247, 251)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0 0 0 / 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/contact",
+        "h1": "Your next chapter starts with a conversation."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/contact",
+        "h1": "Your next chapter starts with a conversation."
+      }
+    },
+    {
+      "i": 43,
+      "scope": "footer",
+      "href": "/en",
+      "n": 0,
+      "text": "Langia",
+      "imageAlt": "Langia",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": "Langia",
+        "imageAlt": "Langia",
+        "descendants": [
+          "none"
+        ]
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": "Langia",
+        "imageAlt": "Langia",
+        "descendants": [
+          "none"
+        ]
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(16, 16, 16) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.439664 -0.0424169 -0.108532 / 0.4) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": "Langia",
+        "imageAlt": "Langia",
+        "descendants": [
+          "none"
+        ]
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en",
+        "h1": "English for people going places.Englishfor peoplegoing places."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en",
+        "h1": "English for people going places.Englishfor peoplegoing places."
+      }
+    },
+    {
+      "i": 44,
+      "scope": "footer",
+      "href": "/en/contact",
+      "n": 0,
+      "text": "Talk to Langia",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(243, 183, 55)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(243, 183, 55, 0.24) 0px 14px 30px 0px",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "hover": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(229, 168, 35)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(243, 183, 55, 0.24) 0px 14px 30px 0px",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "focus": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(229, 168, 35)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0 0 0 / 0) 0px 0px 0px 0px, rgba(243, 183, 55, 0.24) 0px 14px 30px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/contact",
+        "h1": "Your next chapter starts with a conversation."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/contact",
+        "h1": "Your next chapter starts with a conversation."
+      }
+    },
+    {
+      "i": 45,
+      "scope": "footer",
+      "href": "/en/programs/langia-online",
+      "n": 0,
+      "text": "Langia Online",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(82, 101, 122)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(82, 101, 122) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "hover": {
+        "color": "rgb(0, 104, 184)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(0, 104, 184) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "focus": {
+        "color": "rgb(0, 104, 184)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(0, 104, 184) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0 0 0 / 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/langia-online",
+        "h1": "Communicate your ideas with clarity."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/langia-online",
+        "h1": "Communicate your ideas with clarity."
+      }
+    },
+    {
+      "i": 46,
+      "scope": "footer",
+      "href": "/en/programs/talkin-club",
+      "n": 0,
+      "text": "Talkin’ Club",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(82, 101, 122)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(82, 101, 122) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "hover": {
+        "color": "rgb(0, 104, 184)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(0, 104, 184) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "focus": {
+        "color": "rgb(0, 104, 184)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(0, 104, 184) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0 0 0 / 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/talkin-club",
+        "h1": "Practice the conversations your life actually needs."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/talkin-club",
+        "h1": "Practice the conversations your life actually needs."
+      }
+    },
+    {
+      "i": 47,
+      "scope": "footer",
+      "href": "/en/programs/test-prep",
+      "n": 0,
+      "text": "Test Prep",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(82, 101, 122)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(82, 101, 122) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "hover": {
+        "color": "rgb(0, 104, 184)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(0, 104, 184) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "focus": {
+        "color": "rgb(0, 104, 184)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(0, 104, 184) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0 0 0 / 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/test-prep",
+        "h1": "Prepare with a clear plan for your target score."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/test-prep",
+        "h1": "Prepare with a clear plan for your target score."
+      }
+    },
+    {
+      "i": 48,
+      "scope": "footer",
+      "href": "/en/programs/langia-4-kids-n-teens",
+      "n": 0,
+      "text": "Langia 4 Kids n Teens",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(82, 101, 122)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(82, 101, 122) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "hover": {
+        "color": "rgb(0, 104, 184)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(0, 104, 184) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "focus": {
+        "color": "rgb(0, 104, 184)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(0, 104, 184) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0 0 0 / 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/langia-4-kids-n-teens",
+        "h1": "Language learning parents can trust and kids can enjoy."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/langia-4-kids-n-teens",
+        "h1": "Language learning parents can trust and kids can enjoy."
+      }
+    },
+    {
+      "i": 49,
+      "scope": "footer",
+      "href": "/en/corporate",
+      "n": 0,
+      "text": "Corporate",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(82, 101, 122)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(82, 101, 122) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "hover": {
+        "color": "rgb(0, 104, 184)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(0, 104, 184) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "focus": {
+        "color": "rgb(0, 104, 184)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(0, 104, 184) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0 0 0 / 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/corporate",
+        "h1": "Languages for teams crossing borders."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/corporate",
+        "h1": "Languages for teams crossing borders."
+      }
+    },
+    {
+      "i": 50,
+      "scope": "footer",
+      "href": "/en/about",
+      "n": 0,
+      "text": "About Langia",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(82, 101, 122)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(82, 101, 122) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "hover": {
+        "color": "rgb(0, 104, 184)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(0, 104, 184) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "focus": {
+        "color": "rgb(0, 104, 184)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(0, 104, 184) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0 0 0 / 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/about",
+        "h1": "A company built for clearer language learning."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/about",
+        "h1": "A company built for clearer language learning."
+      }
+    },
+    {
+      "i": 51,
+      "scope": "footer",
+      "href": "/en/contact",
+      "n": 1,
+      "text": "Contact",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(82, 101, 122)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(82, 101, 122) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "hover": {
+        "color": "rgb(0, 104, 184)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(0, 104, 184) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "focus": {
+        "color": "rgb(0, 104, 184)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(0, 104, 184) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0 0 0 / 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/contact",
+        "h1": "Your next chapter starts with a conversation."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/contact",
+        "h1": "Your next chapter starts with a conversation."
+      }
+    },
+    {
+      "i": 52,
+      "scope": "footer",
+      "href": "/en/work-with-us",
+      "n": 0,
+      "text": "Work with us",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(82, 101, 122)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(82, 101, 122) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "hover": {
+        "color": "rgb(0, 104, 184)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(0, 104, 184) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "focus": {
+        "color": "rgb(0, 104, 184)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(0, 104, 184) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0 0 0 / 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/work-with-us",
+        "h1": "Teach languages from anywhere with Langia."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/work-with-us",
+        "h1": "Teach languages from anywhere with Langia."
+      }
+    },
+    {
+      "i": 53,
+      "scope": "footer",
+      "href": "/en/legal",
+      "n": 0,
+      "text": "Legal",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(82, 101, 122)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(82, 101, 122) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "hover": {
+        "color": "rgb(0, 104, 184)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(0, 104, 184) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "focus": {
+        "color": "rgb(0, 104, 184)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(0, 104, 184) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0 0 0 / 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/legal",
+        "h1": "Policies and legal information."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/legal",
+        "h1": "Policies and legal information."
+      }
+    },
+    {
+      "i": 54,
+      "scope": "footer",
+      "href": "/en/blog",
+      "n": 0,
+      "text": "Blog",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(82, 101, 122)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(82, 101, 122) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "hover": {
+        "color": "rgb(0, 104, 184)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(0, 104, 184) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "focus": {
+        "color": "rgb(0, 104, 184)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(15, 23, 29) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.439664 -0.0424169 -0.108532 / 0.368106) 0px 0px 0px 1.84053px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/blog",
+        "h1": "Short reads to make better decisions."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/blog",
+        "h1": "Short reads to make better decisions."
+      }
+    },
+    {
+      "i": 55,
+      "scope": "footer",
+      "href": "/en/test-your-english-level",
+      "n": 0,
+      "text": "Level guidance",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(82, 101, 122)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(82, 101, 122) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "hover": {
+        "color": "rgb(0, 104, 184)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(0, 104, 184) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "focus": {
+        "color": "rgb(0, 104, 184)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(0, 104, 184) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0 0 0 / 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/test-your-english-level",
+        "h1": "Discover your starting point."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/test-your-english-level",
+        "h1": "Discover your starting point."
+      }
+    },
+    {
+      "i": 56,
+      "scope": "footer",
+      "href": "/en/programs",
+      "n": 0,
+      "text": "Programs",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(82, 101, 122)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(82, 101, 122) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "hover": {
+        "color": "rgb(0, 104, 184)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(0, 104, 184) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "focus": {
+        "color": "rgb(0, 104, 184)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(0, 104, 184) none 1px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0 0 0 / 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": true,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "enter": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs",
+        "h1": "Choose the path that fits your next chapter."
+      },
+      "click": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs",
+        "h1": "Choose the path that fits your next chapter."
+      }
+    },
+    {
+      "i": 57,
+      "scope": "footer",
+      "href": "https://langia-tailored-v2.vercel.app/sign-in",
+      "n": 0,
+      "text": "Log in",
+      "hasBox": true,
+      "external": "Tested separately once; actual rendered href preserved"
+    }
+  ],
+  "mobile": [
+    {
+      "i": 0,
+      "scope": "header",
+      "href": "/en",
+      "n": 0,
+      "text": "Langia",
+      "imageAlt": "Langia",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": "Langia",
+        "imageAlt": "Langia",
+        "descendants": [
+          "none"
+        ]
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en",
+        "h1": "English for people going places.Englishfor peoplegoing places."
+      }
+    },
+    {
+      "i": 16,
+      "scope": "header",
+      "href": "/en/programs",
+      "n": 2,
+      "text": "Programs",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs",
+        "h1": "Choose the path that fits your next chapter."
+      }
+    },
+    {
+      "i": 17,
+      "scope": "header",
+      "href": "/en/programs/langia-online",
+      "n": 1,
+      "text": "Langia Online",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/langia-online",
+        "h1": "Communicate your ideas with clarity."
+      }
+    },
+    {
+      "i": 18,
+      "scope": "header",
+      "href": "/en/programs/talkin-club",
+      "n": 1,
+      "text": "Talkin’ Club",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/talkin-club",
+        "h1": "Practice the conversations your life actually needs."
+      }
+    },
+    {
+      "i": 19,
+      "scope": "header",
+      "href": "/en/programs/test-prep",
+      "n": 1,
+      "text": "Test Prep",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/test-prep",
+        "h1": "Prepare with a clear plan for your target score."
+      }
+    },
+    {
+      "i": 20,
+      "scope": "header",
+      "href": "/en/programs/langia-4-kids-n-teens",
+      "n": 1,
+      "text": "Langia 4 Kids n Teens",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/langia-4-kids-n-teens",
+        "h1": "Language learning parents can trust and kids can enjoy."
+      }
+    },
+    {
+      "i": 21,
+      "scope": "header",
+      "href": "/en/programs",
+      "n": 3,
+      "text": "View all programs",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs",
+        "h1": "Choose the path that fits your next chapter."
+      }
+    },
+    {
+      "i": 22,
+      "scope": "header",
+      "href": "/en/about",
+      "n": 2,
+      "text": "About us",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/about",
+        "h1": "A company built for clearer language learning."
+      }
+    },
+    {
+      "i": 23,
+      "scope": "header",
+      "href": "/en/about",
+      "n": 3,
+      "text": "About Langia",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/about",
+        "h1": "A company built for clearer language learning."
+      }
+    },
+    {
+      "i": 24,
+      "scope": "header",
+      "href": "/en/corporate",
+      "n": 1,
+      "text": "Corporate",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/corporate",
+        "h1": "Languages for teams crossing borders."
+      }
+    },
+    {
+      "i": 25,
+      "scope": "header",
+      "href": "/en/legal",
+      "n": 1,
+      "text": "Legal",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/legal",
+        "h1": "Policies and legal information."
+      }
+    },
+    {
+      "i": 26,
+      "scope": "header",
+      "href": "/en/work-with-us",
+      "n": 1,
+      "text": "Work with us",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/work-with-us",
+        "h1": "Teach languages from anywhere with Langia."
+      }
+    },
+    {
+      "i": 27,
+      "scope": "header",
+      "href": "/en/blog",
+      "n": 1,
+      "text": "Resources",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/blog",
+        "h1": "Short reads to make better decisions."
+      }
+    },
+    {
+      "i": 28,
+      "scope": "header",
+      "href": "/en/contact",
+      "n": 2,
+      "text": "Contact",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/contact",
+        "h1": "Your next chapter starts with a conversation."
+      }
+    },
+    {
+      "i": 29,
+      "scope": "header",
+      "href": "/en/contact",
+      "n": 3,
+      "text": "Start",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(243, 183, 55)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(243, 183, 55, 0.24) 0px 14px 30px 0px",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/contact",
+        "h1": "Your next chapter starts with a conversation."
+      }
+    },
+    {
+      "i": 30,
+      "scope": "header",
+      "href": "https://langia-tailored-v2.vercel.app/sign-in",
+      "n": 1,
+      "text": "Log in",
+      "hasBox": true,
+      "external": "Tested separately once; actual rendered href preserved"
+    },
+    {
+      "i": 31,
+      "scope": "#top",
+      "href": "/en/contact",
+      "n": 0,
+      "text": "Start now",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(243, 183, 55)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/contact",
+        "h1": "Your next chapter starts with a conversation."
+      }
+    },
+    {
+      "i": 32,
+      "scope": "#top",
+      "href": "#programs",
+      "n": 0,
+      "text": "View programs",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(255, 255, 255) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en#programs",
+        "targetTop": 2012.609375
+      }
+    },
+    {
+      "i": 33,
+      "scope": "#programs",
+      "href": "/en/programs/langia-online",
+      "n": 0,
+      "text": "Langia Online",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(4, 142, 255)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/langia-online",
+        "h1": "Communicate your ideas with clarity."
+      }
+    },
+    {
+      "i": 34,
+      "scope": "#programs",
+      "href": "/en/programs/langia-online",
+      "n": 1,
+      "text": "Professional presenting confidently to an international team",
+      "imageAlt": "Professional presenting confidently to an international team",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "imageAlt": "Professional presenting confidently to an international team",
+        "descendants": [
+          "none",
+          "none"
+        ]
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/langia-online",
+        "h1": "Communicate your ideas with clarity."
+      }
+    },
+    {
+      "i": 35,
+      "scope": "#programs",
+      "href": "/en/programs/talkin-club",
+      "n": 0,
+      "text": "Talkin' Club",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(4, 142, 255)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/talkin-club",
+        "h1": "Practice the conversations your life actually needs."
+      }
+    },
+    {
+      "i": 36,
+      "scope": "#programs",
+      "href": "/en/programs/talkin-club",
+      "n": 1,
+      "text": "Professionals speaking naturally at an international gathering",
+      "imageAlt": "Professionals speaking naturally at an international gathering",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "imageAlt": "Professionals speaking naturally at an international gathering",
+        "descendants": [
+          "none",
+          "none"
+        ]
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/talkin-club",
+        "h1": "Practice the conversations your life actually needs."
+      }
+    },
+    {
+      "i": 37,
+      "scope": "#programs",
+      "href": "/en/programs/test-prep",
+      "n": 0,
+      "text": "Test Prep",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(4, 142, 255)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/test-prep",
+        "h1": "Prepare with a clear plan for your target score."
+      }
+    },
+    {
+      "i": 38,
+      "scope": "#programs",
+      "href": "/en/programs/test-prep",
+      "n": 1,
+      "text": "Learner arriving confidently at an international campus",
+      "imageAlt": "Learner arriving confidently at an international campus",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "imageAlt": "Learner arriving confidently at an international campus",
+        "descendants": [
+          "none",
+          "none"
+        ]
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/test-prep",
+        "h1": "Prepare with a clear plan for your target score."
+      }
+    },
+    {
+      "i": 39,
+      "scope": "#programs",
+      "href": "/en/programs/langia-4-kids-n-teens",
+      "n": 0,
+      "text": "Langia 4 Kids n Teens",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(4, 142, 255)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/langia-4-kids-n-teens",
+        "h1": "Language learning parents can trust and kids can enjoy."
+      }
+    },
+    {
+      "i": 40,
+      "scope": "#programs",
+      "href": "/en/programs/langia-4-kids-n-teens",
+      "n": 1,
+      "text": "Family exploring a new destination while a teenager communicates confidently",
+      "imageAlt": "Family exploring a new destination while a teenager communicates confidently",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "imageAlt": "Family exploring a new destination while a teenager communicates confidently",
+        "descendants": [
+          "none",
+          "none"
+        ]
+      },
+      "tap": {
+        "ok": false,
+        "url": "http://127.0.0.1:4173/en",
+        "error": "locator.tap: Timeout 4000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#programs a[href=\"/en/programs/langia-4-kids-n-teens\"]').nth(1)\u001b[22m\n\u001b[2m    - locator resolved to <a class=\"group absolute inset-0\" href=\"/en/programs/langia-4-kids-n-teens\">…</a>\u001b[22m\n\u001b[2m  - attempting tap action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not stable\u001b[22m\n\u001b[2m    - retrying tap action\u001b[22m"
+      }
+    },
+    {
+      "i": 41,
+      "scope": "#programs",
+      "href": "/en/corporate",
+      "n": 0,
+      "text": "Explore Corporate",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(4, 142, 255)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/corporate",
+        "h1": "Languages for teams crossing borders."
+      }
+    },
+    {
+      "i": 42,
+      "scope": "#programs",
+      "href": "/en/corporate",
+      "n": 1,
+      "text": "International team collaborating in a bright professional environment",
+      "imageAlt": "International team collaborating in a bright professional environment",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "imageAlt": "International team collaborating in a bright professional environment",
+        "descendants": [
+          "none",
+          "none"
+        ]
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/corporate",
+        "h1": "Languages for teams crossing borders."
+      }
+    },
+    {
+      "i": 43,
+      "scope": "#programs",
+      "href": "/en/programs",
+      "n": 0,
+      "text": "Compare programs",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs",
+        "h1": "Choose the path that fits your next chapter."
+      }
+    },
+    {
+      "i": 49,
+      "scope": "#tailored",
+      "href": "/en/contact",
+      "n": 0,
+      "text": "Learning direction",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(243, 183, 55)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/contact",
+        "h1": "Your next chapter starts with a conversation."
+      }
+    },
+    {
+      "i": 50,
+      "scope": "#corporate-home",
+      "href": "/en/corporate",
+      "n": 0,
+      "text": "Explore Corporate",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(243, 183, 55)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none",
+          "none"
+        ]
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/corporate",
+        "h1": "Languages for teams crossing borders."
+      }
+    },
+    {
+      "i": 51,
+      "scope": "#corporate-home",
+      "href": "/en/corporate",
+      "n": 1,
+      "text": "Explore Corporate",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(4, 142, 255)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/corporate",
+        "h1": "Languages for teams crossing borders."
+      }
+    },
+    {
+      "i": 52,
+      "scope": "#faq",
+      "href": "/en/contact",
+      "n": 0,
+      "text": "Frequently asked questions",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(243, 183, 55)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/contact",
+        "h1": "Your next chapter starts with a conversation."
+      }
+    },
+    {
+      "i": 53,
+      "scope": "#resources-home",
+      "href": "/en/blog",
+      "n": 0,
+      "text": "Explore resources",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(255, 255, 255)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/blog",
+        "h1": "Short reads to make better decisions."
+      }
+    },
+    {
+      "i": 54,
+      "scope": "#resources-home",
+      "href": "/en/blog/how-to-prepare-for-a-language-exam",
+      "n": 0,
+      "text": "Test Prep3 min · Read articleHow to prepare for a language exam",
+      "imageAlt": "",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(11, 31, 58)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "imageAlt": "",
+        "descendants": [
+          "none"
+        ]
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/blog/how-to-prepare-for-a-language-exam",
+        "h1": "How to prepare for a language exam"
+      }
+    },
+    {
+      "i": 55,
+      "scope": "#resources-home",
+      "href": "/en/blog/what-is-ai-assisted-language-learning",
+      "n": 0,
+      "text": "Learning Guides3 min · Read articleWhat is AI-assisted language learning?",
+      "imageAlt": "",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(11, 31, 58)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "imageAlt": "",
+        "descendants": [
+          "none"
+        ]
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/blog/what-is-ai-assisted-language-learning",
+        "h1": "What is AI-assisted language learning?"
+      }
+    },
+    {
+      "i": 56,
+      "scope": "#conversion",
+      "href": "/en/contact",
+      "n": 0,
+      "text": "Get started",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(243, 183, 55)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none",
+          "none"
+        ]
+      },
+      "tap": {
+        "ok": false,
+        "url": "http://127.0.0.1:4173/en",
+        "error": "locator.tap: Timeout 4000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#conversion a[href=\"/en/contact\"]').first()\u001b[22m\n\u001b[2m    - locator resolved to <a href=\"/en/contact\" class=\"inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--langia-signal)]/40 focus-visible:ring-offset-2 min-h-12 px-5 text-sm border border-[var(--langia-gold)] bg-[var(--langia-gold)] !text-[var(--langia-navy)] shadow-[0_14px_30px_rgba(243,183,55,0.2)] hover:border-[var(--langia-gold-hover)] hover:bg-[var(--langia-gold-hover)] hover:!text-[var(--langi…>…</a>\u001b[22m\n\u001b[2m  - attempting tap action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m"
+      }
+    },
+    {
+      "i": 57,
+      "scope": "#conversion",
+      "href": "/en/contact",
+      "n": 1,
+      "text": "Contact team",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(255, 255, 255)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "tap": {
+        "ok": false,
+        "url": "http://127.0.0.1:4173/en",
+        "error": "locator.tap: Timeout 4000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#conversion a[href=\"/en/contact\"]').nth(1)\u001b[22m\n\u001b[2m    - locator resolved to <a href=\"/en/contact\" class=\"inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--langia-signal)]/40 focus-visible:ring-offset-2 min-h-12 px-5 text-sm border border-[var(--langia-navy)]/18 bg-[var(--langia-white)] !text-[var(--langia-navy)] hover:border-[var(--langia-navy)]/35 hover:bg-[var(--langia-mist)] hover:!text-[var(--langia-navy)]\">…</a>\u001b[22m\n\u001b[2m  - attempting tap action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m"
+      }
+    },
+    {
+      "i": 58,
+      "scope": "footer",
+      "href": "/en",
+      "n": 0,
+      "text": "Langia",
+      "imageAlt": "Langia",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": "Langia",
+        "imageAlt": "Langia",
+        "descendants": [
+          "none"
+        ]
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en",
+        "h1": "English for people going places.Englishfor peoplegoing places."
+      }
+    },
+    {
+      "i": 59,
+      "scope": "footer",
+      "href": "/en/contact",
+      "n": 0,
+      "text": "Talk to Langia",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(11, 31, 58)",
+        "bg": "rgb(243, 183, 55)",
+        "outline": "rgb(11, 31, 58) none 3px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(243, 183, 55, 0.24) 0px 14px 30px 0px",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": [
+          "none"
+        ]
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/contact",
+        "h1": "Your next chapter starts with a conversation."
+      }
+    },
+    {
+      "i": 60,
+      "scope": "footer",
+      "href": "/en/programs/langia-online",
+      "n": 0,
+      "text": "Langia Online",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(82, 101, 122)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(82, 101, 122) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/langia-online",
+        "h1": "Communicate your ideas with clarity."
+      }
+    },
+    {
+      "i": 61,
+      "scope": "footer",
+      "href": "/en/programs/talkin-club",
+      "n": 0,
+      "text": "Talkin’ Club",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(82, 101, 122)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(82, 101, 122) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/talkin-club",
+        "h1": "Practice the conversations your life actually needs."
+      }
+    },
+    {
+      "i": 62,
+      "scope": "footer",
+      "href": "/en/programs/test-prep",
+      "n": 0,
+      "text": "Test Prep",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(82, 101, 122)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(82, 101, 122) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/test-prep",
+        "h1": "Prepare with a clear plan for your target score."
+      }
+    },
+    {
+      "i": 63,
+      "scope": "footer",
+      "href": "/en/programs/langia-4-kids-n-teens",
+      "n": 0,
+      "text": "Langia 4 Kids n Teens",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(82, 101, 122)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(82, 101, 122) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs/langia-4-kids-n-teens",
+        "h1": "Language learning parents can trust and kids can enjoy."
+      }
+    },
+    {
+      "i": 64,
+      "scope": "footer",
+      "href": "/en/corporate",
+      "n": 0,
+      "text": "Corporate",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(82, 101, 122)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(82, 101, 122) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/corporate",
+        "h1": "Languages for teams crossing borders."
+      }
+    },
+    {
+      "i": 65,
+      "scope": "footer",
+      "href": "/en/about",
+      "n": 0,
+      "text": "About Langia",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(82, 101, 122)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(82, 101, 122) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/about",
+        "h1": "A company built for clearer language learning."
+      }
+    },
+    {
+      "i": 66,
+      "scope": "footer",
+      "href": "/en/contact",
+      "n": 1,
+      "text": "Contact",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(82, 101, 122)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(82, 101, 122) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/contact",
+        "h1": "Your next chapter starts with a conversation."
+      }
+    },
+    {
+      "i": 67,
+      "scope": "footer",
+      "href": "/en/work-with-us",
+      "n": 0,
+      "text": "Work with us",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(82, 101, 122)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(82, 101, 122) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/work-with-us",
+        "h1": "Teach languages from anywhere with Langia."
+      }
+    },
+    {
+      "i": 68,
+      "scope": "footer",
+      "href": "/en/legal",
+      "n": 0,
+      "text": "Legal",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(82, 101, 122)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(82, 101, 122) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/legal",
+        "h1": "Policies and legal information."
+      }
+    },
+    {
+      "i": 69,
+      "scope": "footer",
+      "href": "/en/blog",
+      "n": 0,
+      "text": "Blog",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(82, 101, 122)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(82, 101, 122) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/blog",
+        "h1": "Short reads to make better decisions."
+      }
+    },
+    {
+      "i": 70,
+      "scope": "footer",
+      "href": "/en/test-your-english-level",
+      "n": 0,
+      "text": "Level guidance",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(82, 101, 122)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(82, 101, 122) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/test-your-english-level",
+        "h1": "Discover your starting point."
+      }
+    },
+    {
+      "i": 71,
+      "scope": "footer",
+      "href": "/en/programs",
+      "n": 0,
+      "text": "Programs",
+      "hasBox": true,
+      "normal": {
+        "color": "rgb(82, 101, 122)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(82, 101, 122) none 3px",
+        "shadow": "none",
+        "cursor": "pointer",
+        "focusVisible": false,
+        "ariaLabel": null,
+        "descendants": []
+      },
+      "tap": {
+        "ok": true,
+        "url": "http://127.0.0.1:4173/en/programs",
+        "h1": "Choose the path that fits your next chapter."
+      }
+    },
+    {
+      "i": 72,
+      "scope": "footer",
+      "href": "https://langia-tailored-v2.vercel.app/sign-in",
+      "n": 0,
+      "text": "Log in",
+      "hasBox": true,
+      "external": "Tested separately once; actual rendered href preserved"
+    }
+  ],
+  "errors": [],
+  "routes": {
+    "http://127.0.0.1:4173/en": {
+      "h1": "English for people going places.Englishfor peoplegoing places."
+    },
+    "http://127.0.0.1:4173/en/programs": {
+      "h1": "Choose the path that fits your next chapter."
+    },
+    "http://127.0.0.1:4173/en/programs/langia-online": {
+      "h1": "Communicate your ideas with clarity."
+    },
+    "http://127.0.0.1:4173/en/programs/talkin-club": {
+      "h1": "Practice the conversations your life actually needs."
+    },
+    "http://127.0.0.1:4173/en/programs/test-prep": {
+      "h1": "Prepare with a clear plan for your target score."
+    },
+    "http://127.0.0.1:4173/en/programs/langia-4-kids-n-teens": {
+      "h1": "Language learning parents can trust and kids can enjoy."
+    },
+    "http://127.0.0.1:4173/en/about": {
+      "h1": "A company built for clearer language learning."
+    },
+    "http://127.0.0.1:4173/en/corporate": {
+      "h1": "Languages for teams crossing borders."
+    },
+    "http://127.0.0.1:4173/en/legal": {
+      "h1": "Policies and legal information."
+    },
+    "http://127.0.0.1:4173/en/work-with-us": {
+      "h1": "Teach languages from anywhere with Langia."
+    },
+    "http://127.0.0.1:4173/en/blog": {
+      "h1": "Short reads to make better decisions."
+    },
+    "http://127.0.0.1:4173/en/contact": {
+      "h1": "Your next chapter starts with a conversation."
+    },
+    "http://127.0.0.1:4173/en/blog/how-to-prepare-for-a-language-exam": {
+      "h1": "How to prepare for a language exam"
+    },
+    "http://127.0.0.1:4173/en/blog/what-is-ai-assisted-language-learning": {
+      "h1": "What is AI-assisted language learning?"
+    },
+    "http://127.0.0.1:4173/en/test-your-english-level": {
+      "h1": "Discover your starting point."
+    }
+  },
+  "login": {
+    "href": "https://langia-tailored-v2.vercel.app/sign-in",
+    "url": "https://langia-tailored-v2.vercel.app/sign-in",
+    "title": "Langia TailorEd",
+    "body": "English for people going places.\nLessons are one to one with a human teacher.\nTailorEd works from your teacher’s notes. It never invents a syllabus of its own.\nEnglish, Spanish, Portuguese and French.\n\nLangia Language Solutions\n\nWELCOME BACK\n\nSign in to TailorEd\n\nContinue to your Langia workspace with the credentials provided by your administrator.\n\nUsername or email\nPassword\nSign in\n\nTailorEd is a private Langia platform. Contact your administrator if you need access."
+  }
+}

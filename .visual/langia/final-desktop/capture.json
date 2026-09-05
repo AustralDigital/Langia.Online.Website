@@ -1,0 +1,670 @@
+{
+  "baseUrl": "http://localhost:4173/en",
+  "viewport": {
+    "width": 1918,
+    "height": 946
+  },
+  "page": {
+    "scrollHeight": 24822,
+    "clientWidth": 1918,
+    "scrollWidth": 1918
+  },
+  "captures": [
+    {
+      "name": "hero-p000",
+      "selector": "#top",
+      "progress": 0,
+      "y": 0,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/hero-p000.png",
+      "geometry": {
+        "top": 0,
+        "height": 3614,
+        "travel": 2668
+      }
+    },
+    {
+      "name": "hero-p003",
+      "selector": "#top",
+      "progress": 0.03,
+      "y": 80.03999999999999,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/hero-p003.png",
+      "geometry": {
+        "top": 0,
+        "height": 3614,
+        "travel": 2668
+      }
+    },
+    {
+      "name": "hero-p006",
+      "selector": "#top",
+      "progress": 0.055,
+      "y": 146.74,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/hero-p006.png",
+      "geometry": {
+        "top": 0,
+        "height": 3614,
+        "travel": 2668
+      }
+    },
+    {
+      "name": "hero-p010",
+      "selector": "#top",
+      "progress": 0.1,
+      "y": 266.8,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/hero-p010.png",
+      "geometry": {
+        "top": 0,
+        "height": 3614,
+        "travel": 2668
+      }
+    },
+    {
+      "name": "hero-p014",
+      "selector": "#top",
+      "progress": 0.14,
+      "y": 373.52000000000004,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/hero-p014.png",
+      "geometry": {
+        "top": 0,
+        "height": 3614,
+        "travel": 2668
+      }
+    },
+    {
+      "name": "hero-p019",
+      "selector": "#top",
+      "progress": 0.19,
+      "y": 506.92,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/hero-p019.png",
+      "geometry": {
+        "top": 0,
+        "height": 3614,
+        "travel": 2668
+      }
+    },
+    {
+      "name": "hero-p021",
+      "selector": "#top",
+      "progress": 0.21,
+      "y": 560.28,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/hero-p021.png",
+      "geometry": {
+        "top": 0,
+        "height": 3614,
+        "travel": 2668
+      }
+    },
+    {
+      "name": "hero-p023",
+      "selector": "#top",
+      "progress": 0.23,
+      "y": 613.64,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/hero-p023.png",
+      "geometry": {
+        "top": 0,
+        "height": 3614,
+        "travel": 2668
+      }
+    },
+    {
+      "name": "hero-p034",
+      "selector": "#top",
+      "progress": 0.34,
+      "y": 907.1200000000001,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/hero-p034.png",
+      "geometry": {
+        "top": 0,
+        "height": 3614,
+        "travel": 2668
+      }
+    },
+    {
+      "name": "hero-p055",
+      "selector": "#top",
+      "progress": 0.55,
+      "y": 1467.4,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/hero-p055.png",
+      "geometry": {
+        "top": 0,
+        "height": 3614,
+        "travel": 2668
+      }
+    },
+    {
+      "name": "hero-p068",
+      "selector": "#top",
+      "progress": 0.68,
+      "y": 1814.2400000000002,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/hero-p068.png",
+      "geometry": {
+        "top": 0,
+        "height": 3614,
+        "travel": 2668
+      }
+    },
+    {
+      "name": "hero-p072",
+      "selector": "#top",
+      "progress": 0.72,
+      "y": 1920.96,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/hero-p072.png",
+      "geometry": {
+        "top": 0,
+        "height": 3614,
+        "travel": 2668
+      }
+    },
+    {
+      "name": "hero-p082",
+      "selector": "#top",
+      "progress": 0.82,
+      "y": 2187.7599999999998,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/hero-p082.png",
+      "geometry": {
+        "top": 0,
+        "height": 3614,
+        "travel": 2668
+      }
+    },
+    {
+      "name": "hero-p090",
+      "selector": "#top",
+      "progress": 0.9,
+      "y": 2401.2000000000003,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/hero-p090.png",
+      "geometry": {
+        "top": 0,
+        "height": 3614,
+        "travel": 2668
+      }
+    },
+    {
+      "name": "hero-p096",
+      "selector": "#top",
+      "progress": 0.96,
+      "y": 2561.2799999999997,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/hero-p096.png",
+      "geometry": {
+        "top": 0,
+        "height": 3614,
+        "travel": 2668
+      }
+    },
+    {
+      "name": "hero-p100",
+      "selector": "#top",
+      "progress": 1,
+      "y": 2668,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/hero-p100.png",
+      "geometry": {
+        "top": 0,
+        "height": 3614,
+        "travel": 2668
+      }
+    },
+    {
+      "name": "transformation-p000",
+      "selector": "#transformation",
+      "progress": 0,
+      "y": 3613.71875,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/transformation-p000.png",
+      "geometry": {
+        "top": 3613.71875,
+        "height": 3311,
+        "travel": 2365
+      }
+    },
+    {
+      "name": "transformation-p010",
+      "selector": "#transformation",
+      "progress": 0.1,
+      "y": 3850.21875,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/transformation-p010.png",
+      "geometry": {
+        "top": 3613.71875,
+        "height": 3311,
+        "travel": 2365
+      }
+    },
+    {
+      "name": "transformation-p018",
+      "selector": "#transformation",
+      "progress": 0.18,
+      "y": 4039.41875,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/transformation-p018.png",
+      "geometry": {
+        "top": 3613.71875,
+        "height": 3311,
+        "travel": 2365
+      }
+    },
+    {
+      "name": "transformation-p026",
+      "selector": "#transformation",
+      "progress": 0.26,
+      "y": 4228.61875,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/transformation-p026.png",
+      "geometry": {
+        "top": 3613.71875,
+        "height": 3311,
+        "travel": 2365
+      }
+    },
+    {
+      "name": "transformation-p036",
+      "selector": "#transformation",
+      "progress": 0.36,
+      "y": 4465.11875,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/transformation-p036.png",
+      "geometry": {
+        "top": 3613.71875,
+        "height": 3311,
+        "travel": 2365
+      }
+    },
+    {
+      "name": "transformation-p046",
+      "selector": "#transformation",
+      "progress": 0.46,
+      "y": 4701.61875,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/transformation-p046.png",
+      "geometry": {
+        "top": 3613.71875,
+        "height": 3311,
+        "travel": 2365
+      }
+    },
+    {
+      "name": "transformation-p056",
+      "selector": "#transformation",
+      "progress": 0.56,
+      "y": 4938.11875,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/transformation-p056.png",
+      "geometry": {
+        "top": 3613.71875,
+        "height": 3311,
+        "travel": 2365
+      }
+    },
+    {
+      "name": "transformation-p070",
+      "selector": "#transformation",
+      "progress": 0.7,
+      "y": 5269.21875,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/transformation-p070.png",
+      "geometry": {
+        "top": 3613.71875,
+        "height": 3311,
+        "travel": 2365
+      }
+    },
+    {
+      "name": "transformation-p084",
+      "selector": "#transformation",
+      "progress": 0.84,
+      "y": 5600.31875,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/transformation-p084.png",
+      "geometry": {
+        "top": 3613.71875,
+        "height": 3311,
+        "travel": 2365
+      }
+    },
+    {
+      "name": "transformation-p100",
+      "selector": "#transformation",
+      "progress": 1,
+      "y": 5978.71875,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/transformation-p100.png",
+      "geometry": {
+        "top": 3613.71875,
+        "height": 3311,
+        "travel": 2365
+      }
+    },
+    {
+      "name": "credibility-start",
+      "selector": "#credibility",
+      "offset": 0,
+      "y": 16918.265625,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/credibility-start.png",
+      "geometry": {
+        "top": 16918.265625,
+        "height": 1431
+      }
+    },
+    {
+      "name": "credibility-mid",
+      "selector": "#credibility",
+      "offset": 0.46,
+      "y": 17141.365625,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/credibility-mid.png",
+      "geometry": {
+        "top": 16918.265625,
+        "height": 1431
+      }
+    },
+    {
+      "name": "programs-start",
+      "selector": "#programs",
+      "offset": 0,
+      "y": 6924.71875,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/programs-start.png",
+      "geometry": {
+        "top": 6924.71875,
+        "height": 5311
+      }
+    },
+    {
+      "name": "programs-mid",
+      "selector": "#programs",
+      "offset": 0.46,
+      "y": 8932.61875,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/programs-mid.png",
+      "geometry": {
+        "top": 6924.71875,
+        "height": 5311
+      }
+    },
+    {
+      "name": "process-start",
+      "selector": "#process",
+      "offset": 0,
+      "y": 12235.765625,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/process-start.png",
+      "geometry": {
+        "top": 12235.765625,
+        "height": 2588
+      }
+    },
+    {
+      "name": "process-mid",
+      "selector": "#process",
+      "offset": 0.46,
+      "y": 12991.085625,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/process-mid.png",
+      "geometry": {
+        "top": 12235.765625,
+        "height": 2588
+      }
+    },
+    {
+      "name": "tailored-start",
+      "selector": "#tailored",
+      "offset": 0,
+      "y": 14823.390625,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/tailored-start.png",
+      "geometry": {
+        "top": 14823.390625,
+        "height": 2095
+      }
+    },
+    {
+      "name": "tailored-mid",
+      "selector": "#tailored",
+      "offset": 0.46,
+      "y": 15351.930625,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/tailored-mid.png",
+      "geometry": {
+        "top": 14823.390625,
+        "height": 2095
+      }
+    },
+    {
+      "name": "metrics-start",
+      "selector": "#metrics",
+      "offset": 0,
+      "y": 18349.265625,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/metrics-start.png",
+      "geometry": {
+        "top": 18349.265625,
+        "height": 818
+      }
+    },
+    {
+      "name": "metrics-mid",
+      "selector": "#metrics",
+      "offset": 0.46,
+      "y": 18349.265625,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/metrics-mid.png",
+      "geometry": {
+        "top": 18349.265625,
+        "height": 818
+      }
+    },
+    {
+      "name": "corporate-start",
+      "selector": "#corporate-home",
+      "offset": 0,
+      "y": 19167.28125,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/corporate-start.png",
+      "geometry": {
+        "top": 19167.28125,
+        "height": 812
+      }
+    },
+    {
+      "name": "corporate-mid",
+      "selector": "#corporate-home",
+      "offset": 0.46,
+      "y": 19167.28125,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/corporate-mid.png",
+      "geometry": {
+        "top": 19167.28125,
+        "height": 812
+      }
+    },
+    {
+      "name": "resources-start",
+      "selector": "#resources-home",
+      "offset": 0,
+      "y": 21342.734375,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/resources-start.png",
+      "geometry": {
+        "top": 21342.734375,
+        "height": 1113
+      }
+    },
+    {
+      "name": "resources-mid",
+      "selector": "#resources-home",
+      "offset": 0.46,
+      "y": 21419.554375,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/resources-mid.png",
+      "geometry": {
+        "top": 21342.734375,
+        "height": 1113
+      }
+    },
+    {
+      "name": "faq-start",
+      "selector": "#faq",
+      "offset": 0,
+      "y": 19979.28125,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/faq-start.png",
+      "geometry": {
+        "top": 19979.28125,
+        "height": 1363
+      }
+    },
+    {
+      "name": "faq-mid",
+      "selector": "#faq",
+      "offset": 0.46,
+      "y": 20171.10125,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/faq-mid.png",
+      "geometry": {
+        "top": 19979.28125,
+        "height": 1363
+      }
+    },
+    {
+      "name": "conversion-start",
+      "selector": "#conversion",
+      "offset": 0,
+      "y": 22455.34375,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/conversion-start.png",
+      "geometry": {
+        "top": 22455.34375,
+        "height": 969
+      }
+    },
+    {
+      "name": "conversion-mid",
+      "selector": "#conversion",
+      "offset": 0.46,
+      "y": 22465.92375,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/conversion-mid.png",
+      "geometry": {
+        "top": 22455.34375,
+        "height": 969
+      }
+    },
+    {
+      "name": "footer-start",
+      "selector": "footer",
+      "offset": 0,
+      "y": 23216.46875,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/footer-start.png",
+      "geometry": {
+        "top": 23216.46875,
+        "height": 1606
+      }
+    },
+    {
+      "name": "footer-mid",
+      "selector": "footer",
+      "offset": 0.46,
+      "y": 23520.06875,
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/footer-mid.png",
+      "geometry": {
+        "top": 23216.46875,
+        "height": 1606
+      }
+    }
+  ],
+  "interactions": [
+    {
+      "name": "program-card-1-settled",
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/program-card-1-settled.png",
+      "y": 7662.4375
+    },
+    {
+      "name": "program-card-1-overlap",
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/program-card-1-overlap.png",
+      "y": 8036.5175
+    },
+    {
+      "name": "program-card-2-settled",
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/program-card-2-settled.png",
+      "y": 8522.703125
+    },
+    {
+      "name": "program-card-2-overlap",
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/program-card-2-overlap.png",
+      "y": 8896.783125
+    },
+    {
+      "name": "program-card-3-settled",
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/program-card-3-settled.png",
+      "y": 9382.96875
+    },
+    {
+      "name": "program-card-3-overlap",
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/program-card-3-overlap.png",
+      "y": 9757.04875
+    },
+    {
+      "name": "program-card-4-settled",
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/program-card-4-settled.png",
+      "y": 10243.234375
+    },
+    {
+      "name": "program-card-4-overlap",
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/program-card-4-overlap.png",
+      "y": 10617.314375
+    },
+    {
+      "name": "program-card-5-settled",
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/program-card-5-settled.png",
+      "y": 11103.5
+    },
+    {
+      "name": "program-card-5-overlap",
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/program-card-5-overlap.png",
+      "y": 11477.58
+    },
+    {
+      "name": "process-panel-1",
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/process-panel-1.png"
+    },
+    {
+      "name": "process-panel-2",
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/process-panel-2.png"
+    },
+    {
+      "name": "process-panel-3",
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/process-panel-3.png"
+    },
+    {
+      "name": "process-panel-4",
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/process-panel-4.png"
+    },
+    {
+      "name": "proof-panel-1",
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/proof-panel-1.png"
+    },
+    {
+      "name": "proof-panel-2",
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/proof-panel-2.png"
+    },
+    {
+      "name": "proof-panel-3",
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/proof-panel-3.png"
+    },
+    {
+      "name": "faq-item-1",
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/faq-item-1.png"
+    },
+    {
+      "name": "faq-item-2",
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/faq-item-2.png"
+    },
+    {
+      "name": "faq-item-3",
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/faq-item-3.png"
+    },
+    {
+      "name": "footer-stage-1",
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/footer-stage-1.png",
+      "y": 22431.66875
+    },
+    {
+      "name": "footer-stage-2",
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/footer-stage-2.png",
+      "y": 22715.46875
+    },
+    {
+      "name": "footer-stage-3",
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/footer-stage-3.png",
+      "y": 22980.34875
+    },
+    {
+      "name": "footer-stage-4",
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/footer-stage-4.png",
+      "y": 23188.46875
+    },
+    {
+      "name": "footer-stage-5",
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/footer-stage-5.png",
+      "y": 23518.46875
+    },
+    {
+      "name": "footer-stage-6",
+      "file": "/workspaces/Langia.Online.Website/.visual/langia/final-desktop/footer-stage-6.png",
+      "y": 23848.46875
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": []
+}

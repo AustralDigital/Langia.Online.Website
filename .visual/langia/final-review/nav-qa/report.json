@@ -1,0 +1,209 @@
+{
+  "desktop": {
+    "slowHoverBridge": {
+      "expanded": "true",
+      "visible": true
+    },
+    "enteredPanel": true,
+    "firstSubmenuFocus": {
+      "tag": "A",
+      "text": "Langia OnlineStructured live training for adults.",
+      "label": null,
+      "href": "/en/programs/langia-online"
+    },
+    "escape": {
+      "expanded": "false",
+      "visible": false,
+      "active": {
+        "tag": "A",
+        "text": "Programs",
+        "label": null,
+        "href": "/en/programs"
+      },
+      "inert": true
+    },
+    "afterEscapeTab": {
+      "tag": "A",
+      "text": "About us",
+      "label": null,
+      "href": "/en/about"
+    },
+    "scrolledActions": {
+      "opacity": "1",
+      "transform": "none",
+      "pointerEvents": "auto",
+      "box": {
+        "y": 29,
+        "h": 58
+      }
+    },
+    "scrolledLogin": {
+      "tag": "A",
+      "text": "Log in",
+      "label": null,
+      "href": "https://langia-tailored-v2.vercel.app/sign-in"
+    }
+  },
+  "mobile": {
+    "opened": {
+      "expanded": "true",
+      "overflow": "hidden",
+      "active": {
+        "tag": "A",
+        "text": "Programs",
+        "label": null,
+        "href": "/en/programs"
+      }
+    },
+    "focusWalk": [
+      {
+        "text": "Langia Online",
+        "label": null,
+        "allowed": true
+      },
+      {
+        "text": "Talkin’ Club",
+        "label": null,
+        "allowed": true
+      },
+      {
+        "text": "Test Prep",
+        "label": null,
+        "allowed": true
+      },
+      {
+        "text": "Langia 4 Kids n Teens",
+        "label": null,
+        "allowed": true
+      },
+      {
+        "text": "View all programs",
+        "label": null,
+        "allowed": true
+      },
+      {
+        "text": "About us",
+        "label": null,
+        "allowed": true
+      },
+      {
+        "text": "About Langia",
+        "label": null,
+        "allowed": true
+      },
+      {
+        "text": "Corporate",
+        "label": null,
+        "allowed": true
+      },
+      {
+        "text": "Legal",
+        "label": null,
+        "allowed": true
+      },
+      {
+        "text": "Work with us",
+        "label": null,
+        "allowed": true
+      },
+      {
+        "text": "Resources",
+        "label": null,
+        "allowed": true
+      },
+      {
+        "text": "Contact",
+        "label": null,
+        "allowed": true
+      },
+      {
+        "text": "Start",
+        "label": null,
+        "allowed": true
+      },
+      {
+        "text": "Log in",
+        "label": null,
+        "allowed": true
+      },
+      {
+        "text": "",
+        "label": "Close menu",
+        "allowed": true
+      },
+      {
+        "text": "Programs",
+        "label": null,
+        "allowed": true
+      },
+      {
+        "text": "Langia Online",
+        "label": null,
+        "allowed": true
+      },
+      {
+        "text": "Talkin’ Club",
+        "label": null,
+        "allowed": true
+      }
+    ],
+    "reverseWrap": {
+      "tag": "A",
+      "text": "Log in",
+      "label": null,
+      "href": "https://langia-tailored-v2.vercel.app/sign-in"
+    },
+    "scrollToActions": {
+      "scrollTop": 71,
+      "scrollHeight": 801,
+      "clientHeight": 730,
+      "panelBottom": 822,
+      "linkBottom": 805,
+      "linkTop": 757,
+      "windowHeight": 844,
+      "overflowY": "auto"
+    },
+    "forwardWrap": {
+      "tag": "BUTTON",
+      "text": "",
+      "label": "Close menu",
+      "href": null
+    },
+    "escape": {
+      "expanded": "false",
+      "active": {
+        "tag": "BUTTON",
+        "text": "",
+        "label": "Open menu",
+        "href": null
+      },
+      "overflow": ""
+    },
+    "landscapeActions": {
+      "scrollTop": 525,
+      "panelBottom": 384,
+      "actionBottom": 367,
+      "viewportHeight": 390
+    },
+    "actualStartTapDestination": "/en/contact"
+  },
+  "footer": {
+    "desktop": {
+      "marginTop": "0px",
+      "background": "rgb(243, 247, 251)",
+      "transform": "none",
+      "transformedDescendants": 0,
+      "links": 15,
+      "languageButtons": 3,
+      "wordmark": true
+    },
+    "mobile": {
+      "marginTop": "0px",
+      "scrollWidth": 390,
+      "viewportWidth": 390,
+      "narrowTargets": []
+    }
+  },
+  "pageErrors": [],
+  "failures": []
+}

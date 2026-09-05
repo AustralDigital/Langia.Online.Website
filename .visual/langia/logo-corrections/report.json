@@ -1,0 +1,125 @@
+[
+  {
+    "name": "desktop",
+    "locale": "en",
+    "metrics": 0,
+    "logos": [
+      {
+        "location": "header",
+        "width": 112,
+        "height": 44,
+        "fit": "contain",
+        "loaded": true,
+        "withinViewport": true
+      },
+      {
+        "location": "content",
+        "width": 112,
+        "height": 48,
+        "fit": "contain",
+        "loaded": true,
+        "withinViewport": true
+      },
+      {
+        "location": "content",
+        "width": 112,
+        "height": 48,
+        "fit": "contain",
+        "loaded": true,
+        "withinViewport": true
+      },
+      {
+        "location": "footer",
+        "width": 122.09375,
+        "height": 56,
+        "fit": "contain",
+        "loaded": true,
+        "withinViewport": true
+      }
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "mobile",
+    "locale": "en",
+    "metrics": 0,
+    "logos": [
+      {
+        "location": "header",
+        "width": 128,
+        "height": 48,
+        "fit": "contain",
+        "loaded": true,
+        "withinViewport": true
+      },
+      {
+        "location": "content",
+        "width": 112,
+        "height": 48,
+        "fit": "contain",
+        "loaded": true,
+        "withinViewport": true
+      },
+      {
+        "location": "content",
+        "width": 112,
+        "height": 48,
+        "fit": "contain",
+        "loaded": true,
+        "withinViewport": true
+      },
+      {
+        "location": "footer",
+        "width": 87.203125,
+        "height": 40,
+        "fit": "contain",
+        "loaded": true,
+        "withinViewport": true
+      }
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "narrow",
+    "locale": "pt",
+    "metrics": 0,
+    "logos": [
+      {
+        "location": "header",
+        "width": 128,
+        "height": 48,
+        "fit": "contain",
+        "loaded": true,
+        "withinViewport": true
+      },
+      {
+        "location": "content",
+        "width": 112,
+        "height": 48,
+        "fit": "contain",
+        "loaded": true,
+        "withinViewport": true
+      },
+      {
+        "location": "content",
+        "width": 112,
+        "height": 48,
+        "fit": "contain",
+        "loaded": true,
+        "withinViewport": true
+      },
+      {
+        "location": "footer",
+        "width": 87.203125,
+        "height": 40,
+        "fit": "contain",
+        "loaded": true,
+        "withinViewport": true
+      }
+    ],
+    "errors": [],
+    "overflow": false
+  }
+]

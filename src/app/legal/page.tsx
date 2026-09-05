@@ -31,6 +31,7 @@ function getContent(language: SiteLanguage): LegalPageContent {
 function Hero({ page }: { page: LegalPageContent }) {
   return (
     <PageHero
+      facts={page.hero.quickFacts}
       tone="mist"
       eyebrow={page.hero.eyebrow}
       title={page.hero.title}
@@ -40,18 +41,7 @@ function Hero({ page }: { page: LegalPageContent }) {
           <p className="mt-7 max-w-3xl border-l-2 border-[#048EFF] pl-5 text-base leading-8 text-[#52657A]">
             {page.hero.note}
           </p>
-          <ul className="mt-10 grid max-w-5xl border-y border-[#0B1F3A]/16 sm:grid-cols-2 lg:grid-cols-4">
-            {page.hero.quickFacts.map((fact, index) => (
-              <li
-                key={fact}
-                className={`flex min-h-16 items-center py-4 text-base font-semibold leading-6 text-[#0B1F3A] ${
-                  index > 0 ? "sm:border-l sm:border-[#0B1F3A]/16 sm:pl-5" : ""
-                } ${index % 2 === 0 ? "sm:pr-5" : ""} ${index < 3 ? "border-b border-[#0B1F3A]/16 sm:border-b-0" : ""}`}
-              >
-                {fact}
-              </li>
-            ))}
-          </ul>
+
         </div>
       }
     />
@@ -163,8 +153,8 @@ export default function LegalPage() {
   const content = getContent(language);
 
   return (
-    <main id="top" className="min-h-screen bg-white text-[#0B1F3A]">
-      <SiteNavbar variant="light" language={language} />
+    <main id="top" className="langia-page min-h-screen bg-white text-[#0B1F3A]">
+      <SiteNavbar variant="overlay" language={language} />
       <Hero page={content} />
       <PolicyNav page={content} />
       <Policies page={content} />

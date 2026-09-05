@@ -111,6 +111,37 @@ export type HomepageCopy = {
     body: string;
     items: Array<{ title: string; body: string }>;
   };
+  editorial: {
+    transformation: {
+      eyebrow: string;
+      title: string;
+      beforeLabel: string;
+      beforeTitle: string;
+      beforeItems: string[];
+      afterLabel: string;
+      afterTitle: string;
+      afterItems: string[];
+    };
+    metrics: {
+      eyebrow: string;
+      title: string;
+      items: Array<{ value: string; label: string }>;
+    };
+    corporate: {
+      eyebrow: string;
+      title: string;
+      body: string;
+      cta: string;
+      imageAlt: string;
+    };
+    resources: {
+      eyebrow: string;
+      title: string;
+      body: string;
+      cta: string;
+      readLabel: string;
+    };
+  };
   logo: {
     homeLabel: string;
     mark: string;
@@ -182,8 +213,8 @@ export const homepageContent = {
       titlePrefix: "Langia TailorED: ",
       title: "Más que clases: una ruta hecha para avanzar contigo.",
       body: "Langia TailorED combina diagnóstico, clases en vivo, objetivos personales y seguimiento inteligente para que cada etapa tenga dirección.",
-      image: "/images/marketing-2026/editorial/ai-assisted-human-outcome.webp",
-      imageAlt: "Persona practicando una presentación con apoyo humano y tecnología discreta",
+      image: "/images/marketing-2026/shared/about-human-led-design.webp",
+      imageAlt: "Docente y estudiante practicando una conversación con tarjetas en una mesa luminosa",
       benefits: [
         { title: "Ruta por nivel", body: "Un camino claro desde tu punto de partida hasta tu próximo objetivo.", icon: "target" },
         { title: "Guía humana", body: "Docentes expertos mantienen el aprendizaje cercano, práctico y enfocado.", icon: "users" },
@@ -259,8 +290,8 @@ export const homepageContent = {
       title: "Cuéntanos hacia dónde vas.",
       body: "Empecemos por tu contexto, tu meta y la comunicación que ese futuro va a exigir.",
       imageAlt: "Profesional preparándose para una nueva oportunidad internacional",
-      primary: "Empezar",
-      secondary: "Contactar equipo",
+      primary: "Para mí",
+      secondary: "Para mi empresa",
       details: ["Contacto inicial", "Opción de ingreso", "Consulta de programa"],
     },
     faq: {
@@ -274,6 +305,42 @@ export const homepageContent = {
         { title: "¿Cómo funciona Langia TailorED?", body: "El método conecta tu punto de partida, objetivos personales, ritmo y progreso para dar más dirección a las clases y al seguimiento." },
         { title: "¿También trabajan con empresas?", body: "Sí. Langia cuenta con una ruta Corporate para organizaciones que necesitan soluciones de formación lingüística." },
       ],
+    },
+    editorial: {
+      transformation: {
+        eyebrow: "De aprender a comunicar",
+        title: "El idioma deja de ser teoría cuando empieza a moverse contigo.",
+        beforeLabel: "Aprendizaje tradicional",
+        beforeTitle: "Mucho contenido. Poca conexión con la vida real.",
+        beforeItems: ["Contenido genérico", "Ejercicios pasivos", "Vocabulario sin contexto", "Gramática que no llega a la conversación"],
+        afterLabel: "Con Langia",
+        afterTitle: "Una ruta conectada con la persona que quieres llegar a ser.",
+        afterItems: ["Objetivos reales", "Contextos personalizados", "Conversación práctica", "Progreso con dirección"],
+      },
+      metrics: {
+        eyebrow: "Langia en perspectiva",
+        title: "Una experiencia internacional, construida alrededor de personas.",
+        items: [
+          { value: "4", label: "idiomas" },
+          { value: "4", label: "programas para estudiantes" },
+          { value: "2020", label: "año de fundación" },
+          { value: "1", label: "ruta Corporate" },
+        ],
+      },
+      corporate: {
+        eyebrow: "Para empresas",
+        title: "Idiomas para equipos que cruzan fronteras.",
+        body: "Programas en vivo para compañías que necesitan comunicarse mejor con clientes, mercados y equipos internacionales.",
+        cta: "Explorar Corporate",
+        imageAlt: "Equipo internacional colaborando en un entorno profesional luminoso",
+      },
+      resources: {
+        eyebrow: "Recursos",
+        title: "Ideas para elegir y avanzar con más claridad.",
+        body: "Guías breves sobre programas, preparación de exámenes y aprendizaje asistido por IA.",
+        cta: "Explorar recursos",
+        readLabel: "Leer artículo",
+      },
     },
     logo: {
       homeLabel: "Inicio de Langia",
@@ -333,8 +400,8 @@ export const homepageContent = {
       titlePrefix: "Langia TailorED: ",
       title: "Mais que aulas: uma rota feita para avançar com você.",
       body: "Langia TailorED combina diagnóstico, aulas ao vivo, objetivos pessoais e acompanhamento inteligente para que cada etapa tenha direção.",
-      image: "/images/marketing-2026/editorial/ai-assisted-human-outcome.webp",
-      imageAlt: "Pessoa praticando uma apresentação com apoio humano e tecnologia discreta",
+      image: "/images/marketing-2026/shared/about-human-led-design.webp",
+      imageAlt: "Professora e aluno praticando uma conversa com cartões em uma mesa iluminada",
       benefits: [
         { title: "Rota por nível", body: "Um caminho claro desde o seu ponto de partida até o próximo objetivo.", icon: "target" },
         { title: "Orientação humana", body: "Professores especialistas mantêm o aprendizado próximo, prático e focado.", icon: "users" },
@@ -410,8 +477,8 @@ export const homepageContent = {
       title: "Conte para nós aonde você quer chegar.",
       body: "Vamos começar pelo seu contexto, sua meta e a comunicação que esse futuro vai exigir.",
       imageAlt: "Profissional se preparando para uma nova oportunidade internacional",
-      primary: "Começar",
-      secondary: "Falar com a equipe",
+      primary: "Para mim",
+      secondary: "Para minha empresa",
       details: ["Contato inicial", "Opção de entrada", "Consulta de programa"],
     },
     faq: {
@@ -425,6 +492,42 @@ export const homepageContent = {
         { title: "Como funciona o Langia TailorED?", body: "O método conecta seu ponto de partida, objetivos pessoais, ritmo e progresso para dar mais direção às aulas e ao acompanhamento." },
         { title: "Vocês também trabalham com empresas?", body: "Sim. A Langia tem uma rota Corporate para organizações que precisam de soluções de formação linguística." },
       ],
+    },
+    editorial: {
+      transformation: {
+        eyebrow: "De aprender a comunicar",
+        title: "O idioma deixa de ser teoria quando começa a se mover com você.",
+        beforeLabel: "Aprendizagem tradicional",
+        beforeTitle: "Muito conteúdo. Pouca conexão com a vida real.",
+        beforeItems: ["Conteúdo genérico", "Exercícios passivos", "Vocabulário sem contexto", "Gramática que não chega à conversa"],
+        afterLabel: "Com a Langia",
+        afterTitle: "Uma rota conectada à pessoa que você quer se tornar.",
+        afterItems: ["Objetivos reais", "Contextos personalizados", "Conversa prática", "Progresso com direção"],
+      },
+      metrics: {
+        eyebrow: "Langia em perspectiva",
+        title: "Uma experiência internacional, construída ao redor de pessoas.",
+        items: [
+          { value: "4", label: "idiomas" },
+          { value: "4", label: "programas para estudantes" },
+          { value: "2020", label: "ano de fundação" },
+          { value: "1", label: "rota Corporate" },
+        ],
+      },
+      corporate: {
+        eyebrow: "Para empresas",
+        title: "Idiomas para equipes que cruzam fronteiras.",
+        body: "Programas ao vivo para empresas que precisam se comunicar melhor com clientes, mercados e equipes internacionais.",
+        cta: "Explorar Corporate",
+        imageAlt: "Equipe internacional colaborando em um ambiente profissional iluminado",
+      },
+      resources: {
+        eyebrow: "Recursos",
+        title: "Ideias para escolher e avançar com mais clareza.",
+        body: "Guias breves sobre programas, preparação para exames e aprendizagem assistida por IA.",
+        cta: "Explorar recursos",
+        readLabel: "Ler artigo",
+      },
     },
     logo: {
       homeLabel: "Início da Langia",
@@ -484,8 +587,8 @@ export const homepageContent = {
       titlePrefix: "Langia TailorED: ",
       title: "More than classes: a path built to move with you.",
       body: "Langia TailorED combines diagnostics, live classes, personal goals, and intelligent follow-up so every stage has direction.",
-      image: "/images/marketing-2026/editorial/ai-assisted-human-outcome.webp",
-      imageAlt: "Learner rehearsing a presentation with human support and subtle technology",
+      image: "/images/marketing-2026/shared/about-human-led-design.webp",
+      imageAlt: "Teacher and learner working together in a bright learning space",
       benefits: [
         { title: "Level-based path", body: "A clear route from your starting point to your next goal.", icon: "target" },
         { title: "Human guidance", body: "Expert teachers keep learning practical, focused, and personal.", icon: "users" },
@@ -561,8 +664,8 @@ export const homepageContent = {
       title: "Tell us where you’re going.",
       body: "Let’s begin with your context, your goal, and the communication that future will require.",
       imageAlt: "Professional preparing for a new international opportunity",
-      primary: "Get started",
-      secondary: "Contact team",
+      primary: "For myself",
+      secondary: "For my company",
       details: ["Initial contact", "Entry option", "Program consultation"],
     },
     faq: {
@@ -576,6 +679,42 @@ export const homepageContent = {
         { title: "How does Langia TailorED work?", body: "The method connects your starting point, personal goals, rhythm, and progress to give more direction to classes and follow-up." },
         { title: "Do you also work with companies?", body: "Yes. Langia has a Corporate path for organizations that need language training solutions." },
       ],
+    },
+    editorial: {
+      transformation: {
+        eyebrow: "From learning to communicating",
+        title: "Language stops being theory when it starts moving with you.",
+        beforeLabel: "Traditional learning",
+        beforeTitle: "More content. Less connection to real life.",
+        beforeItems: ["Generic content", "Passive exercises", "Vocabulary without context", "Grammar that never reaches conversation"],
+        afterLabel: "With Langia",
+        afterTitle: "A path connected to the person you are becoming.",
+        afterItems: ["Real goals", "Personalized contexts", "Practical conversation", "Progress with direction"],
+      },
+      metrics: {
+        eyebrow: "Langia in perspective",
+        title: "An international experience, built around people.",
+        items: [
+          { value: "4", label: "languages" },
+          { value: "4", label: "learner programs" },
+          { value: "2020", label: "year founded" },
+          { value: "1", label: "Corporate path" },
+        ],
+      },
+      corporate: {
+        eyebrow: "For companies",
+        title: "Languages for teams crossing borders.",
+        body: "Live programs for companies that need to communicate better with clients, markets, and international teams.",
+        cta: "Explore Corporate",
+        imageAlt: "International team collaborating in a bright professional environment",
+      },
+      resources: {
+        eyebrow: "Resources",
+        title: "Ideas for choosing and moving forward with clarity.",
+        body: "Short guides about programs, exam preparation, and AI-assisted language learning.",
+        cta: "Explore resources",
+        readLabel: "Read article",
+      },
     },
     logo: {
       homeLabel: "Langia home",

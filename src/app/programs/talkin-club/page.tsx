@@ -18,11 +18,9 @@ import { defaultLanguage, type SiteLanguage } from "@/lib/language";
 import {
   EditorialBlockGrid,
   FAQSection,
-  HeroFactList,
   LabelGrid,
   PricingCard,
   PROGRAM_IMAGE_PATHS,
-  ProgramHeroImage,
   TailoredFeatureSection,
 } from "../ProgramRoutePrimitives";
 
@@ -41,34 +39,23 @@ export default function TalkinClubPage() {
   const page = getContent(language);
 
   return (
-    <main className="min-h-screen bg-white text-[#0B1F3A]">
-      <SiteNavbar variant="light" language={language} />
+    <main className="langia-page min-h-screen bg-white text-[#0B1F3A]">
+      <SiteNavbar variant="overlay" language={language} />
 
       <PageHero
-        className="overflow-hidden bg-[radial-gradient(circle_at_92%_10%,rgba(53,183,233,0.18),transparent_34%),linear-gradient(180deg,#FFFFFF_0%,#F0FAFD_100%)]"
+        className="overflow-hidden"
         actions={
           <>
             <MarketingButton href="/contact">{page.hero.primaryCta}</MarketingButton>
-            <MarketingButton href="#pricing" variant="secondary">
+            <MarketingButton href="#pricing" variant="inverse">
               {page.hero.secondaryCta}
             </MarketingButton>
           </>
         }
-        body={
-          <>
-            <p>{page.hero.body}</p>
-            <HeroFactList items={page.hero.quickFacts} />
-          </>
-        }
+        body={page.hero.body}
         eyebrow={page.hero.eyebrow}
-        media={
-          <ProgramHeroImage
-            accent="cyan"
-            alt={page.hero.title}
-            imageClassName="object-cover object-center"
-            src={PROGRAM_IMAGE_PATHS.talkinClub}
-          />
-        }
+        image={{ src: PROGRAM_IMAGE_PATHS.talkinClub, alt: page.hero.title }}
+        facts={page.hero.quickFacts}
         title={page.hero.title}
         tone="white"
       />
@@ -104,7 +91,7 @@ export default function TalkinClubPage() {
         </SiteContainer>
       </MarketingSection>
 
-      <MarketingSection className="bg-[linear-gradient(180deg,#FFFFFF_0%,#F5FCFE_100%)]" tone="white">
+      <MarketingSection tone="white">
         <SiteContainer>
           <div className="grid gap-14 xl:grid-cols-[0.72fr_1.28fr] xl:gap-24">
             <SectionHeader body={page.topics.body} eyebrow={page.topics.eyebrow} title={page.topics.title} />

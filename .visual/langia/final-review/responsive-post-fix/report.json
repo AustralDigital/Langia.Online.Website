@@ -1,0 +1,262 @@
+[
+  {
+    "prefix": "es-360x800-regular",
+    "states": [
+      {
+        "y": 0,
+        "foreground": {
+          "top": 8,
+          "bottom": 605.421875,
+          "opacity": "1"
+        },
+        "support": {
+          "top": 637,
+          "bottom": 902,
+          "opacity": "1"
+        },
+        "logos": {
+          "top": 710,
+          "bottom": 766
+        },
+        "gap": 31.578125
+      },
+      {
+        "y": 120,
+        "foreground": {
+          "top": -196.5454559326172,
+          "bottom": 400.8764190673828,
+          "opacity": "0.678322"
+        },
+        "support": {
+          "top": 637,
+          "bottom": 902,
+          "opacity": "1"
+        },
+        "logos": {
+          "top": 710,
+          "bottom": 766
+        },
+        "gap": 236.1235809326172
+      },
+      {
+        "y": 220,
+        "foreground": {
+          "top": -367.421875,
+          "bottom": 230,
+          "opacity": "0"
+        },
+        "support": {
+          "top": 479.9682922363281,
+          "bottom": 744.96826171875,
+          "opacity": "1"
+        },
+        "logos": {
+          "top": 552.96826171875,
+          "bottom": 608.96826171875
+        },
+        "gap": 249.96829223632812
+      },
+      {
+        "y": 300,
+        "foreground": {
+          "top": -385.21875,
+          "bottom": 212.203125,
+          "opacity": "0"
+        },
+        "support": {
+          "top": 334.22406005859375,
+          "bottom": 599.2240600585938,
+          "opacity": "1"
+        },
+        "logos": {
+          "top": 407.22406005859375,
+          "bottom": 463.22406005859375
+        },
+        "gap": 122.02093505859375
+      }
+    ],
+    "heading": {
+      "text": "Programas.",
+      "scrollWidth": 320,
+      "clientWidth": 320,
+      "fontSize": "53.6px"
+    },
+    "errors": []
+  },
+  {
+    "prefix": "es-360x800-reduced",
+    "states": [
+      {
+        "y": 0,
+        "foreground": {
+          "top": 8,
+          "bottom": 605.421875,
+          "opacity": "1"
+        },
+        "support": {
+          "top": 637,
+          "bottom": 902,
+          "opacity": "1"
+        },
+        "logos": {
+          "top": 710,
+          "bottom": 766
+        },
+        "gap": 31.578125
+      },
+      {
+        "y": 120,
+        "foreground": {
+          "top": -112,
+          "bottom": 485.421875,
+          "opacity": "1"
+        },
+        "support": {
+          "top": 517,
+          "bottom": 782,
+          "opacity": "1"
+        },
+        "logos": {
+          "top": 590,
+          "bottom": 646
+        },
+        "gap": 31.578125
+      }
+    ],
+    "heading": null,
+    "errors": []
+  },
+  {
+    "prefix": "pt-360x800-regular",
+    "states": [
+      {
+        "y": 0,
+        "foreground": {
+          "top": 8,
+          "bottom": 564.0625,
+          "opacity": "1"
+        },
+        "support": {
+          "top": 596,
+          "bottom": 861,
+          "opacity": "1"
+        },
+        "logos": {
+          "top": 669,
+          "bottom": 725
+        },
+        "gap": 31.9375
+      },
+      {
+        "y": 120,
+        "foreground": {
+          "top": -196.5454559326172,
+          "bottom": 359.5170440673828,
+          "opacity": "0.678322"
+        },
+        "support": {
+          "top": 596,
+          "bottom": 861,
+          "opacity": "1"
+        },
+        "logos": {
+          "top": 669,
+          "bottom": 725
+        },
+        "gap": 236.4829559326172
+      },
+      {
+        "y": 220,
+        "foreground": {
+          "top": -367.421875,
+          "bottom": 188.640625,
+          "opacity": "0"
+        },
+        "support": {
+          "top": 438.9682922363281,
+          "bottom": 703.96826171875,
+          "opacity": "1"
+        },
+        "logos": {
+          "top": 511.9682922363281,
+          "bottom": 567.96826171875
+        },
+        "gap": 250.32766723632812
+      },
+      {
+        "y": 300,
+        "foreground": {
+          "top": -385.21875,
+          "bottom": 170.84375,
+          "opacity": "0"
+        },
+        "support": {
+          "top": 293.22406005859375,
+          "bottom": 558.2240600585938,
+          "opacity": "1"
+        },
+        "logos": {
+          "top": 366.22406005859375,
+          "bottom": 422.22406005859375
+        },
+        "gap": 122.38031005859375
+      }
+    ],
+    "heading": {
+      "text": "Programas.",
+      "scrollWidth": 320,
+      "clientWidth": 320,
+      "fontSize": "53.6px"
+    },
+    "errors": []
+  },
+  {
+    "prefix": "pt-360x800-reduced",
+    "states": [
+      {
+        "y": 0,
+        "foreground": {
+          "top": 8,
+          "bottom": 564.0625,
+          "opacity": "1"
+        },
+        "support": {
+          "top": 596,
+          "bottom": 861,
+          "opacity": "1"
+        },
+        "logos": {
+          "top": 669,
+          "bottom": 725
+        },
+        "gap": 31.9375
+      },
+      {
+        "y": 120,
+        "foreground": {
+          "top": -112,
+          "bottom": 444.0625,
+          "opacity": "1"
+        },
+        "support": {
+          "top": 476,
+          "bottom": 741,
+          "opacity": "1"
+        },
+        "logos": {
+          "top": 549,
+          "bottom": 605
+        },
+        "gap": 31.9375
+      }
+    ],
+    "heading": null,
+    "errors": []
+  },
+  {
+    "comparison": {
+      "width": 16,
+      "height": 16
+    }
+  }
+]

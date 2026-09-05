@@ -1,0 +1,637 @@
+{
+  "base": "http://127.0.0.1:4174/en",
+  "desktop": {
+    "hero": {
+      "photos": [
+        "/_next/image?url=/images/marketing-2026/home/hero-international-city-option2.png&w=3840&q=90"
+      ],
+      "initial": [
+        {
+          "name": "English",
+          "pressed": "true"
+        },
+        {
+          "name": "Spanish",
+          "pressed": "false"
+        },
+        {
+          "name": "Portuguese",
+          "pressed": "false"
+        },
+        {
+          "name": "French",
+          "pressed": "false"
+        }
+      ],
+      "rotated": [
+        {
+          "name": "English",
+          "pressed": "false"
+        },
+        {
+          "name": "Spanish",
+          "pressed": "true"
+        },
+        {
+          "name": "Portuguese",
+          "pressed": "false"
+        },
+        {
+          "name": "French",
+          "pressed": "false"
+        }
+      ],
+      "manualPause": {
+        "before": [
+          {
+            "name": "English",
+            "pressed": "false"
+          },
+          {
+            "name": "Spanish",
+            "pressed": "false"
+          },
+          {
+            "name": "Portuguese",
+            "pressed": "true"
+          },
+          {
+            "name": "French",
+            "pressed": "false"
+          }
+        ],
+        "after": [
+          {
+            "name": "English",
+            "pressed": "false"
+          },
+          {
+            "name": "Spanish",
+            "pressed": "false"
+          },
+          {
+            "name": "Portuguese",
+            "pressed": "true"
+          },
+          {
+            "name": "French",
+            "pressed": "false"
+          }
+        ],
+        "resumeVisible": true
+      },
+      "resumed": [
+        {
+          "name": "English",
+          "pressed": "false"
+        },
+        {
+          "name": "Spanish",
+          "pressed": "false"
+        },
+        {
+          "name": "Portuguese",
+          "pressed": "false"
+        },
+        {
+          "name": "French",
+          "pressed": "true"
+        }
+      ],
+      "focusPause": {
+        "before": [
+          {
+            "name": "English",
+            "pressed": "false"
+          },
+          {
+            "name": "Spanish",
+            "pressed": "false"
+          },
+          {
+            "name": "Portuguese",
+            "pressed": "false"
+          },
+          {
+            "name": "French",
+            "pressed": "true"
+          }
+        ],
+        "after": [
+          {
+            "name": "English",
+            "pressed": "false"
+          },
+          {
+            "name": "Spanish",
+            "pressed": "false"
+          },
+          {
+            "name": "Portuguese",
+            "pressed": "false"
+          },
+          {
+            "name": "French",
+            "pressed": "true"
+          }
+        ]
+      },
+      "hidden": [
+        {
+          "node": "foreground",
+          "inert": true,
+          "ariaHidden": "true",
+          "opacity": "0"
+        },
+        {
+          "node": "support",
+          "inert": true,
+          "ariaHidden": "true",
+          "opacity": "0"
+        }
+      ]
+    },
+    "process": [
+      {
+        "i": 0,
+        "hovered": "true",
+        "keyboard": "true",
+        "name": "Step 1: Discover your starting point",
+        "openBodies": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "i": 1,
+        "hovered": "true",
+        "keyboard": "true",
+        "name": "Step 2: Choose your path",
+        "openBodies": [
+          false,
+          true,
+          false
+        ]
+      },
+      {
+        "i": 2,
+        "hovered": "true",
+        "keyboard": "true",
+        "name": "Step 3: Begin with support",
+        "openBodies": [
+          false,
+          false,
+          true
+        ]
+      }
+    ],
+    "processFocusedLink": {
+      "href": "/en/test-your-english-level",
+      "color": "rgb(0, 104, 184)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "visible": true
+    },
+    "closedProcessCannotFocus": true,
+    "stories": [
+      {
+        "i": 0,
+        "selected": "true",
+        "quote": "I wanted to stop rehearsing every sentence in my head and start enjoying the conversation.",
+        "placeholder": true,
+        "attribution": "Sample learner voice · attribution to follow",
+        "photos": 0
+      },
+      {
+        "i": 1,
+        "selected": "true",
+        "quote": "I have ideas I want to share. My goal is to feel as comfortable expressing them in another language as I do in my own.",
+        "placeholder": true,
+        "attribution": "Sample learner voice · attribution to follow",
+        "photos": 0
+      },
+      {
+        "i": 2,
+        "selected": "true",
+        "quote": "For me, learning a language is about the little things: meeting a neighbor, making a friend, and feeling part of a new place.",
+        "placeholder": true,
+        "attribution": "Sample learner voice · attribution to follow",
+        "photos": 0
+      }
+    ],
+    "faq": [
+      {
+        "i": 0,
+        "expanded": "true",
+        "openCount": 1,
+        "bodyHidden": "false",
+        "closed": "false"
+      },
+      {
+        "i": 1,
+        "expanded": "true",
+        "openCount": 1,
+        "bodyHidden": "false",
+        "closed": "false"
+      },
+      {
+        "i": 2,
+        "expanded": "true",
+        "openCount": 1,
+        "bodyHidden": "false",
+        "closed": "false"
+      },
+      {
+        "i": 3,
+        "expanded": "true",
+        "openCount": 1,
+        "bodyHidden": "false",
+        "closed": "false"
+      },
+      {
+        "i": 4,
+        "expanded": "true",
+        "openCount": 1,
+        "bodyHidden": "false",
+        "closed": "false"
+      }
+    ]
+  },
+  "mobile": {
+    "hero": [
+      {
+        "label": "English",
+        "pressed": "true",
+        "resume": true
+      },
+      {
+        "label": "Spanish",
+        "pressed": "true",
+        "resume": true
+      },
+      {
+        "label": "Portuguese",
+        "pressed": "true",
+        "resume": true
+      },
+      {
+        "label": "French",
+        "pressed": "true",
+        "resume": true
+      }
+    ],
+    "process": [
+      {
+        "i": 0,
+        "expanded": "true",
+        "openCount": 1,
+        "hidden": false
+      },
+      {
+        "i": 1,
+        "expanded": "true",
+        "openCount": 1,
+        "hidden": false
+      },
+      {
+        "i": 2,
+        "expanded": "true",
+        "openCount": 1,
+        "hidden": false
+      }
+    ],
+    "closedProcessCannotFocus": true,
+    "stories": [
+      {
+        "i": 0,
+        "selected": "true",
+        "quote": "I wanted to stop rehearsing every sentence in my head and start enjoying the conversation.",
+        "placeholder": true,
+        "attribution": "Sample learner voice · attribution to follow",
+        "photos": 0
+      },
+      {
+        "i": 1,
+        "selected": "true",
+        "quote": "I have ideas I want to share. My goal is to feel as comfortable expressing them in another language as I do in my own.",
+        "placeholder": true,
+        "attribution": "Sample learner voice · attribution to follow",
+        "photos": 0
+      },
+      {
+        "i": 2,
+        "selected": "true",
+        "quote": "For me, learning a language is about the little things: meeting a neighbor, making a friend, and feeling part of a new place.",
+        "placeholder": true,
+        "attribution": "Sample learner voice · attribution to follow",
+        "photos": 0
+      }
+    ],
+    "faq": [
+      {
+        "i": 0,
+        "expanded": "true",
+        "openCount": 1,
+        "bodyHidden": "false",
+        "closed": "false"
+      },
+      {
+        "i": 1,
+        "expanded": "true",
+        "openCount": 1,
+        "bodyHidden": "false",
+        "closed": "false"
+      },
+      {
+        "i": 2,
+        "expanded": "true",
+        "openCount": 1,
+        "bodyHidden": "false",
+        "closed": "false"
+      },
+      {
+        "i": 3,
+        "expanded": "true",
+        "openCount": 1,
+        "bodyHidden": "false",
+        "closed": "false"
+      },
+      {
+        "i": 4,
+        "expanded": "true",
+        "openCount": 1,
+        "bodyHidden": "false",
+        "closed": "false"
+      }
+    ]
+  },
+  "reducedMotion": {
+    "before": [
+      {
+        "name": "English",
+        "pressed": "true"
+      },
+      {
+        "name": "Spanish",
+        "pressed": "false"
+      },
+      {
+        "name": "Portuguese",
+        "pressed": "false"
+      },
+      {
+        "name": "French",
+        "pressed": "false"
+      }
+    ],
+    "after": [
+      {
+        "name": "English",
+        "pressed": "true"
+      },
+      {
+        "name": "Spanish",
+        "pressed": "false"
+      },
+      {
+        "name": "Portuguese",
+        "pressed": "false"
+      },
+      {
+        "name": "French",
+        "pressed": "false"
+      }
+    ],
+    "photoCount": 1,
+    "heroHeight": 800,
+    "pauseControls": 0,
+    "manualControl": "true"
+  },
+  "routes": [
+    {
+      "mobile": true,
+      "kind": "content",
+      "scope": "#programs",
+      "href": "/en/programs/langia-online",
+      "name": "Langia Online",
+      "image": false,
+      "url": "http://127.0.0.1:4174/en/programs/langia-online",
+      "h1": "Communicate your ideas with clarity.",
+      "passed": true
+    },
+    {
+      "mobile": true,
+      "kind": "content",
+      "scope": "#programs",
+      "href": "/en/programs/talkin-club",
+      "name": "Talkin' Club",
+      "image": false,
+      "url": "http://127.0.0.1:4174/en/programs/talkin-club",
+      "h1": "Practice the conversations your life actually needs.",
+      "passed": true
+    },
+    {
+      "mobile": true,
+      "kind": "content",
+      "scope": "#programs",
+      "href": "/en/programs/test-prep",
+      "name": "Test Prep",
+      "image": false,
+      "url": "http://127.0.0.1:4174/en/programs/test-prep",
+      "h1": "Prepare with a clear plan for your target score.",
+      "passed": true
+    },
+    {
+      "mobile": true,
+      "kind": "content",
+      "scope": "#programs",
+      "href": "/en/programs/langia-4-kids-n-teens",
+      "name": "Langia 4 Kids n Teens",
+      "image": false,
+      "url": "http://127.0.0.1:4174/en/programs/langia-4-kids-n-teens",
+      "h1": "Language learning parents can trust and kids can enjoy.",
+      "passed": true
+    },
+    {
+      "mobile": true,
+      "kind": "content",
+      "scope": "#programs",
+      "href": "/en/programs",
+      "name": "Compare programs",
+      "image": false,
+      "url": "http://127.0.0.1:4174/en/programs",
+      "h1": "Choose the path that fits your next chapter.",
+      "passed": true
+    },
+    {
+      "mobile": true,
+      "kind": "content",
+      "scope": "#corporate-home",
+      "href": "/en/corporate",
+      "name": "Explore Corporate",
+      "image": false,
+      "url": "http://127.0.0.1:4174/en/corporate",
+      "h1": "Languages for teams crossing borders.",
+      "passed": true
+    },
+    {
+      "mobile": true,
+      "kind": "content",
+      "scope": "#resources-home",
+      "href": "/en/blog",
+      "name": "Explore resources",
+      "image": false,
+      "url": "http://127.0.0.1:4174/en/blog",
+      "h1": "Short reads to make better decisions.",
+      "passed": true
+    },
+    {
+      "mobile": true,
+      "kind": "content",
+      "scope": "#resources-home",
+      "href": "/en/blog/how-to-prepare-for-a-language-exam",
+      "name": "Test PrepHow to prepare for a language exam3 min · Read article",
+      "image": true,
+      "url": "http://127.0.0.1:4174/en/blog/how-to-prepare-for-a-language-exam",
+      "h1": "How to prepare for a language exam",
+      "passed": true
+    },
+    {
+      "mobile": true,
+      "kind": "content",
+      "scope": "#resources-home",
+      "href": "/en/blog/what-is-ai-assisted-language-learning",
+      "name": "Learning GuidesWhat is AI-assisted language learning?3 min · Read article",
+      "image": true,
+      "url": "http://127.0.0.1:4174/en/blog/what-is-ai-assisted-language-learning",
+      "h1": "What is AI-assisted language learning?",
+      "passed": true
+    },
+    {
+      "mobile": true,
+      "kind": "final",
+      "text": "For myself",
+      "href": "/en/contact",
+      "w": 256,
+      "h": 48,
+      "hitIsSelf": true,
+      "svgCount": 1,
+      "url": "http://127.0.0.1:4174/en/contact",
+      "passed": true
+    },
+    {
+      "mobile": true,
+      "kind": "final",
+      "text": "For my company",
+      "href": "/en/corporate",
+      "w": 256,
+      "h": 48,
+      "hitIsSelf": true,
+      "svgCount": 1,
+      "url": "http://127.0.0.1:4174/en/corporate",
+      "passed": true
+    },
+    {
+      "mobile": false,
+      "kind": "content",
+      "scope": "#programs",
+      "href": "/en/programs/langia-online",
+      "name": "Langia Online",
+      "image": false,
+      "url": "http://127.0.0.1:4174/en/programs/langia-online",
+      "h1": "Communicate your ideas with clarity.",
+      "passed": true
+    },
+    {
+      "mobile": false,
+      "kind": "content",
+      "scope": "#programs",
+      "href": "/en/programs/talkin-club",
+      "name": "Talkin' Club",
+      "image": false,
+      "url": "http://127.0.0.1:4174/en/programs/talkin-club",
+      "h1": "Practice the conversations your life actually needs.",
+      "passed": true
+    },
+    {
+      "mobile": false,
+      "kind": "content",
+      "scope": "#programs",
+      "href": "/en/programs/test-prep",
+      "name": "Test Prep",
+      "image": false,
+      "url": "http://127.0.0.1:4174/en/programs/test-prep",
+      "h1": "Prepare with a clear plan for your target score.",
+      "passed": true
+    },
+    {
+      "mobile": false,
+      "kind": "content",
+      "scope": "#programs",
+      "href": "/en/programs/langia-4-kids-n-teens",
+      "name": "Langia 4 Kids n Teens",
+      "image": false,
+      "url": "http://127.0.0.1:4174/en/programs/langia-4-kids-n-teens",
+      "h1": "Language learning parents can trust and kids can enjoy.",
+      "passed": true
+    },
+    {
+      "mobile": false,
+      "kind": "content",
+      "scope": "#programs",
+      "href": "/en/programs",
+      "name": "Compare programs",
+      "image": false,
+      "url": "http://127.0.0.1:4174/en/programs",
+      "h1": "Choose the path that fits your next chapter.",
+      "passed": true
+    },
+    {
+      "mobile": false,
+      "kind": "content",
+      "scope": "#corporate-home",
+      "href": "/en/corporate",
+      "name": "Explore Corporate",
+      "image": false,
+      "url": "http://127.0.0.1:4174/en/corporate",
+      "h1": "Languages for teams crossing borders.",
+      "passed": true
+    },
+    {
+      "mobile": false,
+      "kind": "content",
+      "scope": "#resources-home",
+      "href": "/en/blog",
+      "name": "Explore resources",
+      "image": false,
+      "url": "http://127.0.0.1:4174/en/blog",
+      "h1": "Short reads to make better decisions.",
+      "passed": true
+    },
+    {
+      "mobile": false,
+      "kind": "content",
+      "scope": "#resources-home",
+      "href": "/en/blog/how-to-prepare-for-a-language-exam",
+      "name": "Test PrepHow to prepare for a language exam3 min · Read article",
+      "image": true,
+      "url": "http://127.0.0.1:4174/en/blog/how-to-prepare-for-a-language-exam",
+      "h1": "How to prepare for a language exam",
+      "passed": true
+    },
+    {
+      "mobile": false,
+      "kind": "content",
+      "scope": "#resources-home",
+      "href": "/en/blog/what-is-ai-assisted-language-learning",
+      "name": "Learning GuidesWhat is AI-assisted language learning?3 min · Read article",
+      "image": true,
+      "url": "http://127.0.0.1:4174/en/blog/what-is-ai-assisted-language-learning",
+      "h1": "What is AI-assisted language learning?",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "consoleErrors": [],
+  "pageErrors": []
+}
