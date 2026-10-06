@@ -10,8 +10,9 @@ import { defaultLanguage, type SiteLanguage } from "@/lib/language";
 import { siteButtonClass } from "@/components/site/buttonStyles";
 
 type SiteNavbarProps = {
-  variant?: "overlay" | "light";
+  variant?: "overlay" | "light" | "editorial";
   language?: SiteLanguage;
+  primaryCta?: string;
 };
 
 function Icon({ name }: { name: "menu" | "close" | "arrow" }) {
@@ -56,6 +57,7 @@ function Icon({ name }: { name: "menu" | "close" | "arrow" }) {
 export function SiteNavbar({
   variant = "light",
   language: languageProp,
+  primaryCta: primaryCtaProp,
 }: SiteNavbarProps) {
   const [open, setOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -68,6 +70,7 @@ export function SiteNavbar({
   const { language: storedLanguage } = useSiteLanguage(defaultLanguage);
   const language = languageProp ?? storedLanguage;
   const copy = navigationContent[language];
+  const primaryCta = primaryCtaProp ?? copy.primaryCta;
   const isOverlay = variant === "overlay";
   const navLinks = [
     { label: copy.programs, href: "/programs", menu: copy.programsMenu },
@@ -103,7 +106,9 @@ export function SiteNavbar({
     let frame = 0;
     const update = () => {
       window.cancelAnimationFrame(frame);
-      frame = window.requestAnimationFrame(() => setScrolled(window.scrollY > 72));
+      frame = window.requestAnimationFrame(() =>
+        setScrolled(window.scrollY > 72),
+      );
     };
     update();
     window.addEventListener("scroll", update, { passive: true });
@@ -127,7 +132,7 @@ export function SiteNavbar({
     const previousBodyOverflow = document.body.style.overflow;
     const focusFrame = window.requestAnimationFrame(() => {
       mobilePanelRef.current
-        ?.querySelector<HTMLElement>('a[href], button:not([disabled])')
+        ?.querySelector<HTMLElement>("a[href], button:not([disabled])")
         ?.focus();
     });
 
@@ -192,7 +197,9 @@ export function SiteNavbar({
             className={`flex min-h-12 shrink-0 items-center focus-visible:rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--langia-signal)] sm:min-h-14 ${isOverlay ? "xl:min-h-11" : ""}`}
             aria-label={copy.logoAlt}
           >
-            <span className={`block h-12 w-32 shrink-0 sm:h-14 sm:w-36 ${isOverlay ? "xl:h-11 xl:w-28" : ""}`}>
+            <span
+              className={`block h-12 w-32 shrink-0 sm:h-14 sm:w-36 ${isOverlay ? "xl:h-11 xl:w-28" : ""}`}
+            >
               <Image
                 src="/images/logo-lockup.svg"
                 alt={copy.logoAlt}
@@ -210,7 +217,9 @@ export function SiteNavbar({
                 <div
                   key={link.label}
                   className="relative"
-                  onMouseEnter={() => setOpenDropdown(link.menu ? link.href : null)}
+                  onMouseEnter={() =>
+                    setOpenDropdown(link.menu ? link.href : null)
+                  }
                   onMouseLeave={(event) => {
                     if (!event.currentTarget.contains(document.activeElement)) {
                       setOpenDropdown(null);
@@ -229,7 +238,9 @@ export function SiteNavbar({
                   onKeyDown={(event) => {
                     if (event.key === "Escape" && openDropdown === link.href) {
                       event.preventDefault();
-                      event.currentTarget.querySelector<HTMLAnchorElement>("a[href]")?.focus();
+                      event.currentTarget
+                        .querySelector<HTMLAnchorElement>("a[href]")
+                        ?.focus();
                       setOpenDropdown(null);
                     }
                   }}
@@ -237,8 +248,12 @@ export function SiteNavbar({
                   <Link
                     href={link.href}
                     className={linkClass}
-                    aria-expanded={link.menu ? openDropdown === link.href : undefined}
-                    aria-controls={link.menu ? `${desktopMenuId}-${index}` : undefined}
+                    aria-expanded={
+                      link.menu ? openDropdown === link.href : undefined
+                    }
+                    aria-controls={
+                      link.menu ? `${desktopMenuId}-${index}` : undefined
+                    }
                   >
                     {link.label}
                   </Link>
@@ -248,7 +263,9 @@ export function SiteNavbar({
                       inert={openDropdown !== link.href}
                       className={`absolute left-0 top-full z-30 w-[22rem] pt-3 ${openDropdown === link.href ? "visible" : "invisible"}`}
                     >
-                      <div className={`rounded-[1.5rem] border p-4 backdrop-blur-2xl ${menuPanelClass}`}>
+                      <div
+                        className={`rounded-[1.5rem] border p-4 backdrop-blur-2xl ${menuPanelClass}`}
+                      >
                         <div className="mb-3 border-b border-[var(--langia-border)] pb-3">
                           <p className="font-heading text-sm font-semibold text-[var(--langia-navy)]">
                             {link.menu.heading}
@@ -288,13 +305,17 @@ export function SiteNavbar({
           </a>
           <Link
             href="/contact"
-            className={siteButtonClass({
-              variant: "navigation",
-              size: "md",
-              className: `min-h-12 px-5 shadow-none ${isOverlay ? "xl:min-h-11 xl:px-4" : ""}`,
-            })}
+            className={
+              variant === "editorial"
+                ? "premium-nav-cta"
+                : siteButtonClass({
+                    variant: "navigation",
+                    size: "md",
+                    className: `min-h-12 px-5 shadow-none ${isOverlay ? "xl:min-h-11 xl:px-4" : ""}`,
+                  })
+            }
           >
-            {copy.primaryCta}
+            {primaryCta}
             <Icon name="arrow" />
           </Link>
         </div>
@@ -350,12 +371,16 @@ export function SiteNavbar({
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className={siteButtonClass({
-                variant: "navigation",
-                className: "w-full",
-              })}
+              className={
+                variant === "editorial"
+                  ? "premium-nav-cta"
+                  : siteButtonClass({
+                      variant: "navigation",
+                      className: "w-full",
+                    })
+              }
             >
-              {copy.primaryCta}
+              {primaryCta}
               <Icon name="arrow" />
             </Link>
             <a

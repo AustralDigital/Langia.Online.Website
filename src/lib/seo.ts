@@ -24,9 +24,9 @@ type SeoCopy = Record<SiteLanguage, { title: string; description: string }>;
 
 const seoCopy: Record<PublicPagePath, SeoCopy> = {
   "/": {
-    es: { title: "Langia Online | Formación de idiomas en vivo", description: "Formación de idiomas online con profesores en vivo, rutas personalizadas y apoyo tecnológico para adultos, jóvenes y empresas." },
-    pt: { title: "Langia Online | Formação de idiomas ao vivo", description: "Formação de idiomas online com professores ao vivo, percursos personalizados e apoio tecnológico para adultos, jovens e empresas." },
-    en: { title: "Langia Online | Live Language Training", description: "Online language training with live teachers, personalized learning paths, and useful technology for adults, young learners, and companies." },
+    es: { title: "Langia | Inglés para quienes van más allá", description: "Clases de idiomas en vivo con excelentes profesores y Langia TailorED: aprendizaje adaptado a tus metas, tu profesión y tu nivel." },
+    pt: { title: "Langia | Inglês para quem vai mais longe", description: "Aulas de idiomas ao vivo com excelentes professores e Langia TailorED: aprendizagem adaptada às suas metas, sua profissão e seu nível." },
+    en: { title: "Langia | English for people going places", description: "Live language learning with exceptional teachers and Langia TailorED. Personalized around your goals, industry, level, and the way you communicate." },
   },
   "/about": {
     es: { title: "Sobre Langia | Aprendizaje humano con apoyo de IA", description: "Conoce cómo Langia combina enseñanza en vivo, orientación humana y tecnología útil para aprender idiomas con claridad." },
@@ -92,10 +92,10 @@ const seoCopy: Record<PublicPagePath, SeoCopy> = {
 
 const openGraphLocales: Record<SiteLanguage, string> = { es: "es_ES", pt: "pt_BR", en: "en_US" };
 export const defaultSocialImage = {
-  url: "/images/marketing-2026/home/hero-airport-professional-desktop-v2.png",
-  width: 1831,
-  height: 859,
-  alt: "Langia Online language learning",
+  url: "/images/langia-editorial/hero.webp",
+  width: 1536,
+  height: 1024,
+  alt: "English for people going places — Langia Language Solutions",
 };
 
 export function getSiteUrl() {
