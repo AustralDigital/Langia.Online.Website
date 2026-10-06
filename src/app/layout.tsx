@@ -5,14 +5,15 @@ import { headers } from "next/headers";
 import { Analytics } from "@/components/seo/Analytics";
 import { languageAlternates } from "@/lib/seo";
 import "./globals.css";
+import "./premium-home.css";
 
-const defaultTitle = "Langia Online | Premium Language Training";
+const defaultTitle = "Langia | English for people going places";
 const defaultDescription =
-  "Premium online language training in English, French, Spanish, and Portuguese for adults, kids, teens, and companies.";
+  "Live language learning with exceptional teachers and Langia TailorED, personalized around your goals, your industry, and your level.";
 const defaultSocialImage = {
-  url: "/images/marketing-2026/home/hero-airport-professional-desktop-v2.png",
-  width: 1831,
-  height: 859,
+  url: "/images/langia-editorial/hero.webp",
+  width: 1536,
+  height: 1024,
   alt: "A professional preparing for an international opportunity",
 };
 

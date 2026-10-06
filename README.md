@@ -13,7 +13,10 @@ npm run dev
 
 ```bash
 npm run lint
+npm run typecheck
 npm run build
+# With a local production server running:
+npm run verify:marketing -- http://localhost:3000
 ```
 
 ## Production SEO configuration
@@ -39,5 +42,18 @@ or use a hosted asset URL, then set:
 NEXT_PUBLIC_LANGIA_METHOD_VIDEO_URL=/videos/langia-method.mp4
 ```
 
-The section uses its existing image as the poster and transitions to the muted,
-looping, full-bleed video only after the video can play.
+The homepage outcomes section uses the original Langia learning image as its
+poster. The configured video has native playback controls and loads only on
+demand. With no configured video, the optimized photograph remains visible.
+
+## Editorial homepage
+
+Homepage copy for EN/ES/PT lives in `src/content/premium-homepage.ts`. The section
+components live in `src/components/home/`; their styles are scoped in
+`src/app/premium-home.css` to preserve existing program, contact, legal, and blog
+pages. Original generated photographs are committed as optimized WebP assets
+under `public/images/langia-editorial/`.
+
+The TailorED interface is an explicitly labeled illustrative composition.
+Unapproved testimonials remain in the content model and are not rendered on the
+homepage. Professional industry descriptors avoid implying client partnerships.

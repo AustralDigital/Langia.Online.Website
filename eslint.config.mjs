@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Historical visual captures contain one-off CommonJS helpers, not app code.
+    ".visual/**",
   ]),
 ]);
 

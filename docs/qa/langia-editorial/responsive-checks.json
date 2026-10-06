@@ -1,0 +1,74 @@
+[
+  {
+    "clientWidth": 305,
+    "h1": "English for people\ngoing places.",
+    "lang": "en",
+    "overflow": [],
+    "scrollWidth": 305,
+    "width": 320
+  },
+  {
+    "clientWidth": 305,
+    "h1": "Inglés para quienes\nvan más allá.",
+    "lang": "es",
+    "overflow": [],
+    "scrollWidth": 305,
+    "width": 320
+  },
+  {
+    "clientWidth": 305,
+    "h1": "Inglês para quem\nvai mais longe.",
+    "lang": "pt-BR",
+    "overflow": [],
+    "scrollWidth": 305,
+    "width": 320
+  },
+  {
+    "clientWidth": 753,
+    "h1": "English for people\ngoing places.",
+    "lang": "en",
+    "overflow": [],
+    "scrollWidth": 753,
+    "width": 768
+  },
+  {
+    "clientWidth": 753,
+    "h1": "Inglés para quienes\nvan más allá.",
+    "lang": "es",
+    "overflow": [],
+    "scrollWidth": 753,
+    "width": 768
+  },
+  {
+    "clientWidth": 753,
+    "h1": "Inglês para quem\nvai mais longe.",
+    "lang": "pt-BR",
+    "overflow": [],
+    "scrollWidth": 753,
+    "width": 768
+  },
+  {
+    "clientWidth": 1009,
+    "h1": "English for people\ngoing places.",
+    "lang": "en",
+    "overflow": [],
+    "scrollWidth": 1009,
+    "width": 1024
+  },
+  {
+    "clientWidth": 1009,
+    "h1": "Inglés para quienes\nvan más allá.",
+    "lang": "es",
+    "overflow": [],
+    "scrollWidth": 1009,
+    "width": 1024
+  },
+  {
+    "clientWidth": 1009,
+    "h1": "Inglês para quem\nvai mais longe.",
+    "lang": "pt-BR",
+    "overflow": [],
+    "scrollWidth": 1009,
+    "width": 1024
+  }
+]
