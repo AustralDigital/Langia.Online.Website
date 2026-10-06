@@ -47,7 +47,7 @@ No actionable P0/P1/P2 issues remain in the reviewed implementation.
 
 - Approved customer testimonials and client logos were not available. Existing draft testimonial content stays unrendered; professional categories and outcomes provide an honest substitute.
 - The TailorED UI is a marketing example, not a live student record or embedded TailorED application.
-- Field Core Web Vitals require real traffic; no field-score claim is made. Vercel preview verification is recorded in the implementation report after the branch push.
+- Field Core Web Vitals require real traffic; no field-score claim is made. The Vercel preview was visually and functionally reviewed after the branch push; see the deployed verification below.
 
 ## Implementation checklist
 
@@ -56,5 +56,15 @@ No actionable P0/P1/P2 issues remain in the reviewed implementation.
 - [x] Existing routes, contact mechanisms, analytics hooks, metadata, and login link retained.
 - [x] Desktop/mobile visual review and key interaction checks.
 - [x] Lint, types, production build, route and asset checks.
+
+## Deployed verification
+
+Vercel deployed the GitHub branch successfully. The protected preview was inspected through the authenticated browser session after the user signed in. No deployment protection setting was changed, and no temporary share URL was created.
+
+- Desktop 1440 × 1000 and mobile 390 × 844: homepage render and responsive geometry passed; no horizontal overflow.
+- All homepage images loaded through the deployed Next/Image optimizer.
+- TailorED click/keyboard panels, FAQ, mobile menu and Escape focus return, EN/ES/PT switching, localized document languages, canonical metadata, contact navigation, and seven required-field validation states passed.
+- No Langia application console errors were observed. Earlier Vercel/GitHub login errors were outside the application and resolved through the user signing in.
+- A small follow-up preserves an actual space between the display heading line spans for plain-text extraction, without changing its visible layout.
 
 final result: passed

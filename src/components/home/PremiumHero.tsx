@@ -18,8 +18,11 @@ export function PremiumHero({ copy }: { copy: PremiumHomeCopy["hero"] }) {
       <div className="premium-hero-content">
         <Label>{copy.label}</Label>
         <h1 id="home-title">
-          {copy.lines.map((line) => (
-            <span key={line}>{line}</span>
+          {copy.lines.map((line, index) => (
+            <span key={line}>
+              {line}
+              {index < copy.lines.length - 1 ? " " : null}
+            </span>
           ))}
         </h1>
         <p className="premium-hero-description">{copy.body}</p>
